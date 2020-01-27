@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-2.1.4.js"></script>
+</head>
+<body>
+<div class="out"></div>
+<div class="div1">这是一个单个的元素</div>
+<script>
+//    创建节点  createElement();
+    $('<div class="red"></div>');
+
+//    追加 appendChild();     insertBefore
+//    子元素追加到父元素
+//    $('<div>这是jquery创建的</div>').appendTo($('.out'));
+
+//    父元素去包含子元素
+//    $('.out').append($('<div>这是jquery创建的2</div>'));
+
+//    prepend    prependTo    追加的第一个位置
+    $('<div>这是jquery创建的3</div>').prependTo($('.out'));
+
+
+//    兄弟节点的追加
+//    追加到前面
+    $('<div>我是你的兄弟1</div>').insertBefore($('.div1'));
+//    追加到后面
+    $('<div>我是你的兄弟2</div>').insertAfter($('.div1'));
+
+
+    //替换 replaceAll  replaceWith
+    //复制 克隆  clone()
+    //删除 empty() remove()
+
+
+</script>
+</body>
+</html>

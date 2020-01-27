@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-1.6.4.js"></script>
+</head>
+<body>
+
+<script>
+    $.ajax({
+        url:'./01.php',
+        type:'get',
+        data:'name=张三',     //js获取的用户名输入框里面的数据
+        dateType:'json',
+        success:function(date){
+//            js eval() JSON.parse()
+//            console.log(typeof date);
+
+            if(data=true){
+                alert('用户名已被注册 请更换')
+            }else{
+                alert('用户名可用')
+            }
+        },
+        error:function(error){
+            document.write('请求错误：错误的状态码是:'+error.readyState+ '，错误的提示信息是：'
+                    +error.statusText+'http请求的错误码：'+error.status)
+        }
+    })
+</script>
+</body>
+</html>

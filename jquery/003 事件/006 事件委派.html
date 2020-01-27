@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='jquery-1.6.4.min.js'></script>
+	<style>
+		*{
+			padding: 0px;
+			margin: 0px;
+		}
+		.content{
+			border:1px solid #000;
+			overflow: hidden;
+			width:600px;
+			
+		}
+		ul li{
+			text-decoration: none;
+			list-style: none;
+		}
+		.ul1{
+			width:200px;
+			line-height: 40px;
+			padding: 10px;
+			text-align: center;
+			float: left;
+			background-color: #ddd;
+
+		}
+		.ul1 li:hover{
+			background-color: #f00;
+			cursor: pointer;
+		}
+		.ul1 li.cur{
+			background-color:#f00;
+		}
+		.ul2 li:hover{
+				background-color: #f00;
+			cursor: pointer;
+		}
+		.ul2 li.cur{
+			background-color: #f00;
+		}
+		.caozuo{
+			width:50px;
+			line-height: 40px;
+			padding: 10px;
+			text-align: center;
+			float: left;
+		}
+		.caozuo p:hover{
+			background-color: #ddd;
+			cursor: pointer;
+		}
+		.ul2{
+			width:200px;
+			line-height: 40px;
+			padding: 10px;
+			text-align: center;
+			float: right;
+			background-color: #ddd;
+		}
+	</style>
+</head>
+<body>
+	<div class="content">
+		<ul class="ul1">
+			<li>歌手1</li>
+			<li>歌手2</li>
+			<li>歌手3</li>
+			<li>歌手4</li>
+			<li>歌手5</li>
+		</ul>
+		<div class="caozuo">
+			<p> -> </p>
+			<p> => </p>
+			<p> <- </p>
+			<p> <= </p>
+		</div>
+		<ul class="ul2">
+			<li>演员1</li>
+			<li>演员2</li>
+			<li>演员3</li>
+			<li>演员4</li>
+			<li>演员5</li>
+		</ul>
+	</div>
+
+	<script>
+		//点击添加class
+		 $('.content li').click(function(){
+		 	// $(this).addClass('cur');
+		 });
+
+		// //第一个按钮的操作
+		// $('.caozuo p:eq(0)').click(function(){
+		// 	$('.ul1 li:[class=cur]').appendTo($('.ul2')).removeClass('cur');
+		// });
+		// //第二个按钮操作
+		// $('.caozuo p:eq(1)').click(function(){
+		// 	 $('.ul1 li').appendTo($('.ul2'));
+		// });
+		// //第三个按钮的操作
+		// $('.caozuo p:eq(2)').click(function(){
+		// 	$('.ul2 li:[class=cur]').appendTo($('.ul1')).removeClass('cur');
+		// });
+		// //第四个按钮操作
+		// $('.caozuo p:eq(3)').click(function(){
+		// 	 $('.ul2 li').appendTo($('.ul1'));
+		// });
+		// 
+		// 
+		//快捷操作的实现
+		// $('.ul1 li').click(function(){
+		// 	$(this).appendTo($('.ul2'));
+		// });
+		// $('.ul2 li').click(function(){
+		// 	$(this).appendTo($('.ul1'));
+		// });
+
+		//ul1 li只能跳转到ul2
+		//ul2 li只能跳转到ul1
+		//事件委派机制  给将来出现的元素绑定事件 脱离了原来的环境会自动去除掉原来委派的事件
+		//应用场景2:ajax请求数据 追加元素   事件委派 可以给后追加的元素绑定事件
+		$('.ul1 li').live('click',function(){
+			$(this).appendTo($('.ul2'));
+		});
+		$('.ul2 li').live('click',function(){
+			$(this).appendTo($('.ul1'));
+		});
+	</script>
+</body>
+</html>

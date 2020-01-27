@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-1.6.4.min.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        ul{
+            border: 1px solid #000;
+        }
+        ul li{
+            background-color: #ddd;
+            margin-bottom: 10px;
+        }
+        /*nth-child: 先去找父级元素 在子元素中找第一个标签+前边的限制条件 */
+        ul li:nth-child(1) {
+            background-color: #f00;
+        }
+
+        /*先去找到li的列表  在li的列表中 选中第一个元素*/
+        ul li:nth-of-type(1){
+            background-color: #f00;
+        }
+    </style>
+</head>
+<body>
+<ul id="box1" class="ul1">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    </li>
+</ul>
+
+<script>
+//    id选择器
+    console.log($('#box1'));
+
+//    class选择器
+    console.log($('.ul1'));
+
+//    标签选择器
+    console.log($('ul'));
+
+//    后代元素选择器
+    console.log($('ul li'));
+
+//    jQuery 可以对一组数据进行操作    简化了在原生js中的循环操作
+    $('ul li:even').css('backgroundColor','#f00');
+
+</script>
+</body>
+</html>

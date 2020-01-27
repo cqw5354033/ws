@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../jquery-1.6.4.min.js"></script>
+    <style>
+        img{
+            width: 200px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+<img src="102.jpg" alt=""/>
+<button>放大</button>
+<button>缩小</button>
+<script>
+    $('button:eq(0)').click(function(){
+        $('img').width($('img').width()+10);
+        $('img').height($('img').height()+10);
+    });
+    $('button:eq(1)').click(function(){
+        $('img').width($('img').width()-10);
+        $('img').height($('img').height()-10);
+    });
+</script>
+</body>
+</html>

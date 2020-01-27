@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-1.6.4.min.js"></script>
+    <style>
+        .div1{
+            display: none;
+            width: 200px;
+            height: 200px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="div1">这是div1里边的内容</div>
+<div id="div2">这是div2里边的内容</div>
+<p>这是p标签里边的内容</p>
+<button>点击</button>
+<script>
+//    通过原生获取到的是原生js对象，可以操作原生js的属性方法
+    console.log(document.getElementsByClassName('div1')[0]);
+//    在原生对象的基础上又做了一层封装，把jquery的一些方法和属性继承过来供我们进行调用
+    console.log($('.div1'));
+    console.log($('#div2'));
+    console.log($('p'));
+
+
+//    jquery中绑定事件 要去掉 on前缀
+    $('.div1').show(1000);          //元素的显示
+
+    $('.div1').click(function(){    //点击隐藏
+        $('.div1').hide(1000);      //隐藏时间
+    });
+
+    $('button').click(function(){
+        $('.div1').toggle(2000);    //控制元素的显示和隐藏
+    });
+
+</script>
+</body>
+</html>

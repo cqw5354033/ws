@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-1.6.4.min.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #input1{
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+<input type="text" id="input1"/>
+<script>
+    $('#input1').blur(function(){
+       $(this).val('确定吗？'); //.val 可获取，可设置
+    });
+    console.log($('#input1').width(200));   //宽高快捷键操作
+    console.log($('#input1').height(200));
+</script>
+</body>
+</html>

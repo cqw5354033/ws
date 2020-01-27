@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+<header>
+    <h3>这是头部的标题</h3>
+</header>
+<button>操作window里的p</button>
+<script>
+    window.onload=function(){
+//        获取window页面
+        var window_in = window.parent;
+        var p_in = window_in.document.getElementsByTagName('p')[0];
+        var btn = document.getElementsByTagName('button')[0];
+
+        btn.onclick=function(){
+            p_in.style.backgroundColor='green';
+        }
+
+
+
+    }
+</script>
+</body>
+</html>

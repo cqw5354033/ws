@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/localization/messages_zh.js"></script>
+
+    <script>
+        $(document).ready(function(){
+            //初始化插件     自定义验证规则和提示信息
+            $('#form1').validate({
+//                定义显示错误的标签
+                  errorElement:'em',
+                errorPlacement: function(error, element) {
+
+                    $(element).before(error);
+                },
+//                验证规则
+                  rules:{
+                      username:{
+                        required:true,
+                        maxlength:10,
+                        minlength:5
+                      }
+                  },
+                  messages:{
+                      username:{
+                          required:'说了是必填的',
+                          maxlength:'说了最长10位',
+                          minlength:'说了最短5位'
+                      }
+                  }
+            });
+        })
+    </script>
+    <style>
+        .error{
+            color: #f00;
+        }
+    </style>
+</head>
+<body>
+<form action="./01.php" id="form1">
+    <p>
+        <label for="username">用户名</label>
+        <input type="text" id="username" name="username" required/>
+    </p>
+    <p>
+        <label for="password">密码</label>
+        <input type="text" id="password" name="password" required/>
+    </p>
+    <p>
+        <label for="email">邮箱</label>
+        <input type="text" id="email" name="email" required/>
+    </p>
+    <input type="submit" value="提交"/>
+</form>
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-1.6.4.min.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .content{
+            border: 1px solid black;
+            width: 600px;
+            margin: 0 auto;
+            height: 550px;
+            overflow: hidden;
+        }
+        .content .header{
+            height: 50px;
+            overflow: hidden;
+        }
+        .content .header span{
+            display: inline-block;
+            width: 25%;
+            line-height: 50px;
+            float: left;
+        }
+        .content .header .cur{
+            background-color: red;
+        }
+        .content .in_1{
+            width: 600px;
+            height: 500px;
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li id="two">2</li>
+    <li>3</li>
+    <li>4</li>
+</ul>
+
+<div class="content">
+    <div class="header">
+        <span class="cur">第一栏</span>
+        <span>第二栏</span>
+        <span>第三栏</span>
+        <span>第四栏</span>
+    </div>
+    <div class="in">
+        <div class="in_1">内容一</div>
+        <div class="in_1">内容二</div>
+        <div class="in_1">内容三</div>
+        <div class="in_1">内容四</div>
+    </div>
+</div>
+<script>
+//    知道索引找到具体的对象
+    $('li').eq(0).css('backgroundColor','red');
+//    知道具体的对象，去找索引
+    console.log($('#two').index());
+
+//    用eq 和index方法实现tab切换
+    $('.header span').click(function(){
+//        删除原来的cur
+        $('.header span').removeClass('cur');
+//        把当前的span加上cur
+        $(this).addClass('cur');
+//        把原来的隐藏掉
+        $('.in_1').hide();
+//        获取现在的下标值，并在1秒内淡入显示
+        $('.in_1').eq($(this).index()).fadeIn(1000);
+    });
+</script>
+</body>
+</html>

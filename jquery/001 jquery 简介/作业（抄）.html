@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-1.6.4.min.js"></script>
+</head>
+<body>
+用jquery 实现按钮的功能
+<p>1号 <input type="radio"></p>
+<p>2号 <input type="radio"></p>
+<p>3号 <input type="radio"></p>
+<p>4号 <input type="radio"></p>
+<p>5号 <input type="radio"></p>
+<p>6号 <input type="radio"></p>
+<p>7号 <input type="radio"></p>
+<p>8号 <input type="radio"></p>
+<button>全选</button>
+<button>反选</button>
+<button>全不选</button>
+
+<script>
+//    全选
+    $('button:eq(0)').click(function(){
+        $('input').attr('checked',true);
+    });
+//    全不选
+    $('button:eq(2)').click(function(){
+        $('input').attr('checked',false);
+    });
+//    反选
+    $('button:eq(1)').click(function(){
+        for(var i=0;i<$('input').length;i++){
+//            修复默认点击不能用
+            $('input:eq('+i+')').click(function(){
+                if($(this).attr('checked')==undefined){
+                    $(this).attr('checked',true);
+                }else{
+                    $(this).attr('checked',false);
+                }
+            });
+
+            if($('input:eq('+i+')').attr('checked')==undefined){
+                $('input:eq('+i+')').attr('checked',true);
+            }else{
+                $('input:eq('+i+')').attr('checked',false);
+            }
+        }
+    });
+</script>
+
+
+</body>
+</html>

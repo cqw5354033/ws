@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-1.6.4.min.js"></script>
+</head>
+<body>
+用jquery 实现按钮的功能
+<p>1号 <input type="radio"></p>
+<p>2号 <input type="radio"></p>
+<p>3号 <input type="radio"></p>
+<p>4号 <input type="radio"></p>
+<p>5号 <input type="radio"></p>
+<p>6号 <input type="radio"></p>
+<p>7号 <input type="radio"></p>
+<p>8号 <input type="radio"></p>
+<button id="quan">全选</button>
+<button id="fan">反选</button>
+<button id="quanbu">全不选</button>
+
+<script>
+    $(function() {
+        $("#quan").click(function() {
+            $("input[type=radio]").each(function() {
+//                $(this).prop("checked", true);
+                $(this).attr('checked','checked');
+            });
+        });
+        $("#quanbu").click(function() {
+            $("input[type=radio]").each(function() {
+//                $(this).prop("checked", false);
+                $(this).removeAttr('checked');
+            });
+        });
+        $("#fan").click(function(){
+            $("input[type=radio]").each(function(){
+                if($(this).prop("checked")){
+                    $(this).prop("checked",false)
+                }else{
+                    $(this).prop("checked","checked");
+                }
+//                this.checked=!this.checked;
+            })
+        })
+
+
+    });
+</script>
+</body>
+</html>

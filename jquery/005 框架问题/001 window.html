@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+<iframe src="./header.html" frameborder="0"></iframe>
+<p>这是window中的文字</p>
+<button>点击操作头部</button>
+<script>
+//    window是js 当前页面 的执行环境 是js最大的对象
+
+//    获取框架中的操作环境    iframes.contentWindow
+window.onload=function(){
+
+    var btn = document.getElementsByTagName('button')[0];
+    var iframes = document.getElementsByTagName('iframe')[0];
+    console.log(iframes);
+    var header =iframes.contentWindow.document.getElementsByTagName('header')[0];
+    console.log(header);
+    btn.onclick=function(){
+        header.style.backgroundColor='red';
+    }
+
+}
+
+
+</script>
+</body>
+</html>

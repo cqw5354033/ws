@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--<script src="jquery-1.6.4.min.js"></script>-->
+    <script src="jquery-2.1.4.js"></script>
+    <!--<script src="jquery-1.1.3.js"></script>-->
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .div1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="div1"></div>
+<script>
+//    传统方式
+//    $('.div1').click(function(){
+//        alert();
+//    });
+
+//    live方法  事件委派机制    live方法在 1.9 之后的版本被删除了
+//    $('.div1').live('click',function(){
+//        alert();
+//    });
+
+//    bind方法    支持所有版本，但没有事件委派机制
+    $('.div1').bind('click',function(){
+        alert();
+    });
+
+//    on方法      只支持1.7以上的版本 支持事件委派
+//    $('.div1').on('click',function(){
+//        alert();
+//    });
+
+//    delegate 方法    支持1.4.2以上的版本  支持事件委派
+//    父元素              子元素的元素 事件名 执行函数
+    $('body').delegate('.div1','click',function(){
+        alert();
+    });
+</script>
+</body>
+</html>

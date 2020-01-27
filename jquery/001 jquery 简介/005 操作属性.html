@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-1.6.4.min.js"></script>
+</head>
+<body>
+    <img src="https://www.baidu.com/img/bd_logo1.png">
+    <!--<img src="https://t11.baidu.com/it/u=3947383753,2674293072&fm=173&s=EBB21CC5F6167FC61A8804EB0300F01A&w=218&h=146&img.GIF" alt=""/>-->
+
+    <script>
+//        获取属性值和操作属性  都是 div.attr();
+        $('img').click(function(){
+//            获取图片 并 点击切换图片：
+            $('img').attr('src','https://t11.baidu.com/it/u=3947383753,' +
+                    '2674293072&fm=173&s=EBB21CC5F6167FC61A8804EB0300F01A&w=218&h=' +
+                    '146&img.GIF');
+        })
+    </script>
+
+</body>
+</html>

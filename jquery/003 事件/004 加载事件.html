@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-2.1.4.js"></script>
+</head>
+<body>
+<div class="div1">这是div1</div>
+<script>
+    window.onload=function(){
+        var div1=document.getElementsByClassName('div1')[0];
+        console.log(div1);
+        alert('这是onload方法');
+    };
+
+    $(document).ready(function(){
+        var div1=document.getElementsByClassName('div1')[0];
+        console.log(div1);
+        alert('这是ready方法');
+    });
+//    变形写法
+    $().ready(function(){
+        alert('加载完成了2');
+    });
+    $(function(){
+        alert('加载完成了3');
+    });
+//    onload 事件本质： 是一个属性 后边的赋值，会覆盖前边
+//    jquery 加载事件能使用多次，效率更高，执行更快
+
+//    底层原理：
+    // 	传统加载事件速度慢：
+    // 必须是页面上全部内容都加载完成，通过浏览器可以看到，这时候才会执行加载事件。
+    // jquery加载事件较传统速度快：
+    // 只要html&css内容在内存里边形成了DOM树结构后，该加载事件就会执行。
+
+</script>
+</body>
+</html>

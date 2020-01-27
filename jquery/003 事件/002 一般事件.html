@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-2.1.4.js"></script>
+    <style>
+        .div1{
+            width: 100%;
+            height: 1500px;
+            background-color: #ccc;
+        }
+    </style>
+</head>
+<body>
+<div class="div1"></div>
+<textarea name="" id="text1" cols="30" rows="10">a</textarea>
+
+
+<script>
+//    click点击(event.clientX)     blur失去焦点    mouseover鼠标移入   mouseout鼠标移出
+//    keydown 键盘按下    keyup键盘抬起   (event.keyCode)   change内容变化    dblclick双击
+//        submit表单提交事件（绑定给form return false 阻止提交）
+
+
+
+//    滚动事件： scroll 发生滚动 和 滚动过程中都会执行一次
+//    300一次   600一次   800一次
+    $(document).scroll(function(){
+//        console.log($(document).scrollTop());   //滚动上去内容的高度
+        if($(document).scrollTop()==300){
+            alert('300');
+        }
+    });
+
+    $('#text1').select(function(){
+        alert();
+    });
+
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

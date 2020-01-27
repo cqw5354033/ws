@@ -1,0 +1,114 @@
+@charset "UTF-8";
+*{
+    padding: 0;
+    margin: 0;
+}
+.cb{
+    *zoom: 1;
+}
+.cb:after{
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+}
+.box{
+    margin: 0 auto;
+    width: 400px;
+    height: 100%;
+    text-align: center;
+    box-sizing: border-box;
+}
+.box h1{
+    padding-top: 5%;
+}
+.box h2{
+    padding: 5% 0;
+    font-size: 26px;
+    font-weight: 500;
+}
+.box h2 span{
+    font-weight: bolder;
+}
+
+.box .content{
+    border: 1px solid #c7c7c7;
+    width: 100%;
+    height: 75%;
+}
+.content .header{
+    height: 50px;
+    overflow: hidden;
+}
+.content .header span{
+    display: inline-block;
+    line-height: 50px;
+    width: 33%;
+    float: left;
+    text-align: center;
+
+}
+.content .header .cur{
+    color: red;
+    border: 1px solid red;
+    border-bottom: none;
+}
+.content .header .in1{
+    width: 400px;
+    height: 100%;
+    padding: 0 28px;
+}
+.content .header .form1{
+    border: 1px solid red;
+    padding: 0 28px;
+}
+.form1>input{
+    width: 80%;
+    line-height: 40px;
+    margin:  0 0 25px;
+}
+.form1 div{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.form1 .inputBox input{
+    line-height: 40px;
+    width: 200px;
+    float: left;
+    border-right: 0 transparent;
+    margin-bottom: 25px;
+}
+.form1 .inputBox button{
+    float: left;
+    line-height: 40px;
+    width: 118px;
+}
+.form1 .middle h3{
+    float: left;
+    font-size: 16px;
+    line-height: 36px;
+}
+.form1 .middle a{
+    color: red;
+    line-height: 36px;
+    float: right;
+}
+
+.form1 .floor{
+    margin: 30px 40px 20px;
+}
+.form1 .floor a{
+    float: left;
+    color: red;
+    line-height: 40px;
+}
+.form1 .floor input{
+    width: 50%;
+    line-height: 40px;
+    background-color: red;
+    float: right;
+    border: none;
+}
+
+

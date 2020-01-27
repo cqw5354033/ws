@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-1.6.4.min.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .content{
+            border: 1px solid #000;
+            width: 500px;
+        }
+        .content h3{
+            line-height: 50px;
+            text-align: center;
+            background-color: #ddd;
+        }
+        .content p{
+            line-height: 30px;
+            /*display: none;*/
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <h3>文件详情</h3>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab amet dicta fugiat ipsa ipsum, iusto laboriosam libero natus nulla officiis omnis perspiciatis possimus quis recusandae rem repellendus repudiandae saepe temporibus.</p>
+</div>
+<script>
+    $('h3').click(function(){
+//        $('.content p').slideDown(1000);      //显示
+//        $('.content p').slideUp(1000);        //隐藏
+//        $('.content p').slideToggle(1000);    //显示加隐藏
+
+        $('.content p').fadeIn(1000);       //显示  淡入
+        $('.content p').fadeOut(1000);      //隐藏  淡出
+        $('.content p').fadeToggle(1000);   //显示加隐藏
+        $('.content p').fadeTo(1000,0.3,'linear');    //加了一个不透明度选项 （前两个必选）
+    });
+
+//    下拉  回滚  反向操作
+//    动画时间    线性  回调函数  （都是可选的）
+
+</script>
+</body>
+</html>

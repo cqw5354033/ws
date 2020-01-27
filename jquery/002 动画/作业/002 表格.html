@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../jquery-1.6.4.min.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        table{
+            border: 1px solid black;
+            margin: 100px auto;
+        }
+        table td,th{
+            border: 1px solid black;
+            width: 100px;
+            height: auto;
+        }
+        table td:nth-of-type(2){
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0">
+    <tr>
+        <th>序号</th>
+        <th>名称</th>
+        <th>价格</th>
+        <th>数量</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>apple手机</td>
+        <td>5000</td>
+        <td>10</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>htc手机</td>
+        <td>3000</td>
+        <td>11</td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td>诺基亚手机</td>
+        <td>2000</td>
+        <td>12</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>三星手机</td>
+        <td>4000</td>
+        <td>13</td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td>草莓手机</td>
+        <td>3500</td>
+        <td>14</td>
+    </tr>
+</table>
+
+<script>
+    $('table tr:first').css('backgroundColor','yellow');
+    $('table tr:not(tr:first):odd').css('backgroundColor','blue');
+</script>
+</body>
+</html>

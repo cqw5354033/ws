@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-1.6.4.min.js"></script>
+</head>
+<body>
+    <div class="div1">div1里边的字符串 <p></p></div>
+    <script>
+//        原生js的方法
+        var str=document.getElementsByClassName('div1')[0].innerHTML;
+        console.log(str);
+
+//        jQuery    .html()     .text()
+        console.log($('.div1').html());      //html方法能够获取全部内容
+        console.log($('.div1').text());      //text 只会获取到字符串
+
+//        $('.div1').html('这是一行新的字符串1');     //操作标签里边的内容
+        $('.div1').text('这是一行新的字符串2');
+
+
+    </script>
+</body>
+</html>

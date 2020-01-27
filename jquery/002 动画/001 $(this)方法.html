@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+	<meta name="Description" content="最牛逼的方法"/>
+	<meta name="robots" content="NOINDEX,NOFOLLOW">
+    <title></title>
+    <script src="jquery-1.6.4.min.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        li{
+            line-height: 50px;
+            background-color: #ddd;
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+</ul>
+<script>
+    var lis=document.getElementsByTagName('li');
+//    js:
+//    for(var i=0;i<lis.length;i++){
+//        lis[i].onclick=function(){
+//            this.style.backgroundColor='red';
+//        }
+//    }
+
+    for(var i=0;i<lis.length;i++){
+        $('li:eq('+i+')').click(function(){
+//            juqery:
+            $(this).css('backgroundColor','red');  //$(this)
+//            代表当前li的jquery对象
+
+//            js:
+            $(this)[0].style.backgroundColor='red';
+//            原生对象和jquery的相互转换：this->$(this)   $(this)->$(this)[0]
+        });
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../jquery-1.6.4.min.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .box{
+            width: 800px;
+            height: 500px;
+            background-color: #ddd;
+            margin: 80px auto;
+            padding: 100px 150px;
+            box-sizing: border-box;
+        }
+        .left, .right{
+            width: 200px;
+            height: 300px;
+            background-color: red;
+            float: left;
+            padding: 30px;
+            box-sizing: border-box;
+        }
+        .right{
+            float: right;
+        }
+        .btn{
+            float: left;
+            width: 100px;
+            height: 300px;
+            text-align: center;
+            padding: 50px 0;
+            box-sizing: border-box;
+        }
+        .in{
+            width: 100%;
+            height: 100%;
+            background-color: #dddddd;
+        }
+        .in option{
+            text-align: center;
+        }
+        .btn button{
+            margin: 15px 0;
+            width: 50px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="left">
+        <select class="in">
+            <option>选项一</option>
+            <option>选项二</option>
+            <option>选项三</option>
+            <option>选项四</option>
+            <option>选项五</option>
+            <option>选项六</option>
+            <option>选项七</option>
+            <option>选项八</option>
+            <option>选项九</option>
+            <option>选项十</option>
+        </select>
+    </div>
+    <div class="btn">
+        <button>--></button><br/>
+        <button>==></button><br/>
+        <button><--</button><br/>
+        <button><==</button><br/>
+    </div>
+    <div class="right">
+        <select class="in"></select>
+    </div>
+</div>
+
+<script>
+    $(document).ready(function(){
+
+//        单击
+        $('.btn button:eq(0)').click(function(){
+                $('.left option:selected').appendTo('.right .in');
+        });
+        $('.btn button:eq(2)').click(function(){
+                $('.right option:selected').appendTo('.left .in');
+        });
+
+
+//        双击
+        $('.left .in').dblclick(function(){
+            $('option:selected',this).appendTo('.right .in');
+        });
+        $('.right .in').dblclick(function(){
+            $('option:selected',this).appendTo('.left .in');
+        });
+
+
+//        全部
+        $('.btn button:eq(1)').click(function(){
+            $('.left .in option').appendTo('.right .in');
+        });
+        $('.btn button:eq(3)').click(function(){
+            $('.right .in option').appendTo('.left .in')
+        });
+
+    });
+
+
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-2.1.4.js"></script>
+    <style>
+        .div1{
+            width: 100px;
+            height: 100px;
+            background-color: black;
+        }
+    </style>
+</head>
+<body>
+<div class="div1"></div>
+
+<script>
+//    给jquery对象 变色，加边框   js==jquery  jQuery.fn==jQuery.prototype
+//    加在原型上  .延伸
+    jQuery.fn.extend({bianse:function(){
+        $(this).css({backgroundColor:'red',border:'1px solid blue'})
+    }});
+    $('.div1').bianse();        //每个jquery对象都可以调用原型上的bianse方法
+
+
+//    把插件封装到构造函数中       添加了一个静态方法
+    jQuery.extend({chajian2:function(){
+        console.log('我是插件2里的具体内容')
+    }});
+    jQuery.chajian2();
+
+</script>
+</body>
+</html>

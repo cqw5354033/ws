@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-2.1.4.js"></script>
+    <style>
+        .div1{
+            width: 100px;
+            height: 100px;
+            background-color: black;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+    </style>
+</head>
+<body>
+<div class="div1"></div>
+<script>
+    //原生js  获取位置  offsetleft    style
+
+//    jQuery 中 获取和设置 都是 obj.offset()
+    $('.div1').offset({top:200,left:500});
+
+
+</script>
+</body>
+</html>

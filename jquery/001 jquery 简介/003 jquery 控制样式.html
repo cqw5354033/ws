@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-1.6.4.min.js"></script>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .div1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        .cur{
+            border: 1px solid red;
+            background-color: #ddd;
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+</head>
+<body>
+<div class="div1"></div>
+
+<script>
+//    原生js操作css样式：
+      div.style.width='';
+      div.style.cssText='';
+      div.className='newClassName';
+
+
+//jquery 操作css样式：
+//      操作单独的样式：
+    $('.div1').css('width','200px');
+
+//    批量操作样式传一个字面量形式的对象：
+    $('.div1').css({height:'400px',width:'400px',backgroundColor:'black'});
+
+//    给元素加 class名：
+    $('.div1').addClass('cur');
+//    去除某个class名字：
+    $('.div1').removeClass('cur');
+//    相比js    不会影响到其他的class名，对于我们代码的编写来说，省去了一些判断
+
+
+//    通过css方法   获取到样式的属性值：
+//    .css比较强大，不仅可以获取行内样式，还可以获取style和文件里面的样式
+    console.log($('.div1').css('border'));
+
+
+
+</script>
+</body>
+</html>
