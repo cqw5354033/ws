@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .wrap {
+            width: 1000px;
+            height: 600px;
+            margin: 50px auto;
+            border: 1px solid #F1F1F1;
+            background-color: #bbb;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+
+        ul li {
+            float: left;
+            margin-left: 20px;
+        }
+
+        li img {
+            width: 200px;
+            height: 250px;
+        }
+
+
+    </style>
+</head>
+<body>
+<div class="wrap">
+    <ul>
+        <li><img src="../资料一/img/42.jpg"><br/><input type="button" value="赞(1)"/></li>
+        <li><img src="../资料一/img/43.jpg"><br/><input type="button" value="赞(1)"/></li>
+        <li><img src="../资料一/img/44.jpg"><br/><input type="button" value="赞(1)"/></li>
+        <li><img src="../资料一/img/45.jpg"><br/><input type="button" value="赞(1)"/></li>
+    </ul>
+</div>
+<script>
+    // 封装一个通过标签名获取元素的函数
+
+    function tagName$(name) {
+        return document.getElementsByTagName(name);
+    }
+
+    //通过闭包的方式获取数据，并缓存
+    // 通过闭包，外层函数与内层函数之间的语句只会执行一次
+    function getvalue() {
+        var value = 2;
+        return function () {
+            this.value = "赞(" + (value++) + ")";
+        }
+    }
+
+    // 循环遍历获取按钮
+    var button = tagName$("input");
+    for (var i = 0; i < button.length; i++) {
+        button[i].onclick = getvalue();
+    }
+
+
+</script>
+</body>
+</html>

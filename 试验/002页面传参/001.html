@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>传参页面</title>
+    <script src="jquery-1.11.3.js"></script>
+</head>
+<body>
+<h1>hello</h1>
+
+
+<script>
+    // var url2 = "002.html?index="+index;
+     var url=window.location.href;
+    var arr=url.split('?');
+    var str1=arr[1];
+    var arr1=str1.split('=');
+    var str=arr1[1];
+    console.log(str);
+    var aH=document.getElementsByTagName('h1')[0];
+    aH.innerHTML=str+"nihao";
+    var m=localStorage.getItem('a');
+    console.log(m);
+
+
+    
+</script>
+</body>
+</html>

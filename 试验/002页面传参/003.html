@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="jquery-1.11.3.js"></script>
+</head>
+<body>
+<div id="nowapp_id">你好</div>
+<div id="nowpc_id">你好1</div>
+<div id="online_id">你好2</div>
+<div id="pv_id">你好3</div>
+<div id="click_id">你好4</div>
+
+
+<script>
+    var js_date = "2016-1-1";//日期
+    var js_nowapp = "0";//在线人数 app
+    var js_nowpc = "0";//在线人数 pc
+    var js_pv = "0";//pv
+    var js_click = "0";//click
+    // http://localhost:8080/export/iphone.html?now_app=11&now_pc=22&pv=33&click=44
+    //获取URL地址栏参数   by  linying
+    function getpara()
+    {
+        var js_url = window.location.href;//url
+        var js_parameter = "";//url参数
+        //判断是否有参数
+        if (js_url.lastIndexOf("?") > 0) {
+            js_parameter = js_url.substring(js_url.lastIndexOf("?") + 1, js_url.length);
+            var js_parr = js_parameter.split("&");
+            /**
+             js_parr 内容：
+
+             0: "now_app=11"
+             1: "now_pc=22"
+             2: "pv=33"
+             3: "click=44"
+             **/
+            js_date=js_parr[0].split("=")[1];
+            js_nowapp=js_parr[1].split("=")[1];
+            js_nowpc=js_parr[2].split("=")[1];
+            js_pv=js_parr[3].split("=")[1];
+            js_click=js_parr[4].split("=")[1];
+
+            $("#nowapp_id").html(js_nowapp);
+            $("#nowpc_id").html(js_nowpc);
+            $("#online_id").html(parseInt(js_nowpc)+parseInt(js_nowapp));
+            $("#pv_id").html(js_pv);
+            $("#click_id").html(js_click);
+
+            console.log("日期："+js_date);
+            console.log("在线人数app："+js_nowapp);
+            console.log("在线人数pc:"+js_nowpc);
+            console.log("浏览量pv:"+js_pv);
+            console.log("点击量click："+js_click);
+
+             for (var i = 0; i < js_parr.length; i++) {
+                js_parameter += "   第" + (i + 1) + "个参数>>名:" + js_parr[i].split("=")[0];
+                js_parameter += " 值:" + js_parr[i].split("=")[1];
+                $("#pc_id").html("pc"+js_parr[i].split("=")[1])
+            }
+            document.write(js_parameter);
+            console.log(js_parameter);
+        } else {
+            console.log("没有参数");
+            $("#nowapp_id").html("0");
+            $("#nowpc_id").html("0");
+            $("#online_id").html("0");
+            $("#pv_id").html("0");
+            $("#click_id").html("0");
+            document.write("没有参数!");
+        }
+    }
+</script>
+</body>
+</html>

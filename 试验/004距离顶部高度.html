@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .banner{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+
+</head>
+<body>
+<div style="height: 1000px"></div>
+<div class="banner"></div>
+<div class="banner"></div>
+<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+<script>
+    //原生
+    //获取div距离顶部的距离
+    var mTop = document.getElementsByClassName('banner')[0].offsetTop;
+    //减去滚动条的高度
+    var sTop = document.body.scrollTop;
+    var result = mTop - sTop;
+    console.log(result);
+
+    //Jquery
+    mTop = $('.banner')[0].offsetTop;
+    sTop = $(window).scrollTop();
+    result = mTop - sTop;
+    console.log(result);
+
+    // jquery元素到窗口顶部得距离：
+    var a = $('.banner').offset().top - $(window).scrollTop();
+    console.log(a)
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>页面传参</title>
+    <script src="jquery-1.11.3.js"></script>
+</head>
+<body>
+
+<div id="more" value="这是一个值">点击</div>
+
+<script>
+    var index = "lemon";
+    var de ="wo";
+    var url = "001.html?index="+index+"&de="+de;
+    $("#more").click(function(){
+        window.location.href = url;
+    });
+    localStorage.setItem('a','b');
+
+</script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Title</title>
+    <script src="002页面传参/jquery-1.11.3.js"></script>
+    <style>
+        .menu{width: 300px;margin: 100px auto;cursor: pointer;}
+        .menu li{font-size: 25px;width: 50px;height: 50px;line-height: 50px;text-align: center;border: 1px solid;position: relative}
+        .menu li div{width: 200px;height: 50px;border: 1px solid; font-size: 14px;position: absolute;left: 51px;top: -1px;display: none}
+    </style>
+</head>
+<body>
+<ul class="menu">
+    <li>
+        1
+        <div>我是 菜单1 的子菜单</div>
+    </li>
+    <li>
+        2
+        <div>我是 菜单2 的子菜单</div>
+    </li>
+    <li>
+        3
+        <div>我是 菜单3 的子菜单</div>
+    </li>
+</ul>
+<script>
+    var li = $('.menu li');
+    li.click(function(){
+        var n = li.index($(this));
+        $('.menu li:not(:eq('+n+'))').find('div').hide();
+        $(this).find('div').toggle();
+    });
+</script>
+</body>
+</html>

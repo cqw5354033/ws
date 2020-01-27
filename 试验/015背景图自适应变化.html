@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html,body{
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+        }
+        img{
+            left:0px;
+            top:0px;
+            width:100%; 
+            height:100%;
+            position: fixed;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body>
+    <img src="backtest.png" alt="">
+    <h4 class="h4">看看能不能挡住</h4>
+    
+    <script>
+        let a = document.querySelector("h4");
+        let b = document.getElementsByClassName("h4");
+        console.log(a);
+        console.log(b);
+    </script>
+</body>
+</html>

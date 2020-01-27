@@ -1,0 +1,143 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>气泡上升</title>
+    <style>
+        body, div, h1, h2, h3, html, li, p, ul {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .bolls{
+            width: 184px;
+            height: 184px;
+            border: 1px solid #fe810c;
+            box-shadow: 0 0 7px #fe810c inset;
+            border-radius: 50%;
+            margin: 0 auto;
+        }
+        .boll {
+            height: 174px;
+            width: 174px;
+            border-radius: 50%;
+            background:#fe810c ;
+            border: 2px solid #fe810c;
+            position: relative;
+            font-size: 14px;
+            overflow: hidden;
+            margin: 4px auto 0;
+        }
+
+
+        .bolls .boll a {
+            height:100%;
+            display: block;
+        }
+
+        .boll a i {
+            position: absolute;
+            bottom: 26px;
+            left: 20px;
+            width: 5px;
+            height: 5px;
+            opacity: 0;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 2px #ff6a82;
+            display: block;
+        }
+
+        .bolls .boll a.hover .i-1 {
+            width: 10px;
+            height: 10px;
+            animation: lightAni1 3s linear infinite;
+        }
+
+        .bolls .boll a.hover .i-2 {
+            animation: lightAni2 3s 1s linear infinite;
+        }
+
+        .bolls .boll a.hover .i-3 {
+            animation: lightAni1 3s 2s linear infinite;
+        }
+
+        .bolls .boll a.hover .i-4 {
+            animation: lightAni1 3s 2.2s linear infinite;
+        }
+
+        .bolls .boll a.hover .i-5 {
+            animation: lightAni3 3s 1.5s linear infinite;
+        }
+
+        .bolls .boll a.hover .i-6 {
+            animation: lightAni2 3s .5s linear infinite;
+        }
+
+        .bolls .boll a.hover .i-7 {
+            animation: lightAni1 3s .8s linear infinite;
+        }
+
+        @keyframes lightAni1 {
+            0% {
+                opacity: 0.5;
+                transform: translateY(0);
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(-50px);
+            }
+            100% {
+                opacity: 0;
+                transform: translateY(-100px);
+            }
+        }
+
+        @keyframes lightAni2 {
+            0% {
+                opacity: 0.5;
+                transform: translate(0, 0);
+            }
+            50% {
+                opacity: 1;
+                transform: translate(-10px, -50px);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(-20px, -100px);
+            }
+        }
+
+        @keyframes lightAni3 {
+            0% {
+                opacity: 0.5;
+                transform: translate(0, 0);
+            }
+            50% {
+                opacity: 1;
+                transform: translate(10px, -50px);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(20px, -100px);
+            }
+        }
+    </style>
+</head>
+<body>
+<ul class="bolls">
+    <li class="boll">
+        <a href="#" class="hover">
+            <i class="i-1"></i>
+            <i class="i-2"></i>
+            <i class="i-3"></i>
+            <i class="i-4"></i>
+            <i class="i-5"></i>
+            <i class="i-6"></i>
+            <i class="i-7"></i>
+        </a>
+    </li>
+</ul>
+</body>
+</html>
