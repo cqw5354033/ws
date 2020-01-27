@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>generator-yield 是个啥</title>
+	</head>
+	<body>
+		<pre>
+			yield可以　传参、返回中间结果
+			
+		</pre>
+		<script type="text/javascript">
+			
+//			传参:
+			function *show (aa,bb) {
+				alert(`${aa},${bb}`);
+				alert('a');
+				let shishi = yield;
+				alert('b');
+				alert(shishi);
+			}
+			let gen=show(12,22);
+			
+			gen.next(12);	//第一个没法给yield传参
+			gen.next(5);
+			
+			
+//			返回值:
+			function * show2 () {
+				alert('c');
+				yield 10;
+				alert('d');
+//				最后一个显示不出来,要靠return 才可以
+				return 55;
+			}
+			let gen2=show2();
+			let rest1=gen2.next();
+			console.log(rest1);			//value: 10, done(完成): false
+			let rest2=gen2.next();
+			console.log(rest2);			//value: undefined, done: true
+			
+			
+//			yield 到底是个啥:
+
+			/*function *炒菜 (菜市场刚买回来的) {
+				洗菜——>洗好的菜
+				
+				let 干净的菜 = yield 洗好的菜;
+				干净的菜——>切——>丝
+				
+				let 切好的菜=yield 丝;
+				切好的菜——>爆炒——>熟的菜;
+				
+				return 熟的菜
+			}*/
+			
+			
+		</script>
+	</body>
+</html>

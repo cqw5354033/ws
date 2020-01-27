@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/react.js"></script>
+		<script src="js/react-dom.js"></script>
+		<script src="js/browser.js"></script>
+		<script type="text/babel">
+//			创建一个 Test 类名,来继承 这个里面的东西
+			class Item extends React.Component{
+				constructor(...args){
+					super(...args);
+				};
+				render(){
+					return <li>{this.props.str}</li>;
+				}
+			}
+			class List extends React.Component{
+				constructor(...args){
+					super(...args);
+				};
+				render(){
+					console.log(this.props.arr);
+					
+//					let aItem = [];
+//					for(var i=0;i<this.props.arr.length;i++){
+//						aItem.push(<Item str={this.props.arr[i]}></Item>)
+//					};
+//					和上面的作用一样,写法不同
+					let aItem=this.props.arr.map(a=><Item str={a}></Item>)
+					
+					return <ul>
+						{aItem}
+					</ul>;
+				}
+			}
+			
+			window.onload=function () {
+				let oDiv = document.getElementById('div1');
+				
+//				react 最基础的东西
+//						渲染 就是能把这个东西投到页面上
+				ReactDOM.render(
+					<List arr={['abc','ddd','cqw']}></List>,
+					oDiv
+				);
+			};
+		</script>
+	</head>
+	<body>
+		<div id="div1"></div>
+	</body>
+</html>

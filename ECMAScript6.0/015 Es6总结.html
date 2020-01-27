@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		1、变量：
+			var: 		可重复声明，函数级作用域
+			let: 		不可重复声明，块级作用域，变量
+			const: 		不可重复声明，块级作用域，常量
+			
+		2、 箭头函数
+			a.方便
+				i.如果只有一个参数，那么 () 可以省略
+				ii.如果只有一个return，那么 {} 也可以省略
+			b.修正了this
+				this相对正常点
+		
+		3、参数扩展	...
+			收集
+			扩展
+			默认参数
+			
+		4、数组方法
+			map: 		映射：进去几个出来几个
+			reduce: 	汇总：一堆->一个
+			filter: 	过滤：一堆->剩下的
+			forEach: 	循环
+		
+		5、字符串
+			startsWith/endsWith：判断（布尔值）  是不是以什么开头或结尾
+			字符串模板：${} 把变量塞到字符串中去，可以折行
+				`${a}xxxx${b}`
+				
+		6、promise
+			封装异步操作
+			Promise.all([]);
+			
+		7、generator
+			function *show(){
+				yield:需要停几次就yield的几次
+			}
+			
+		8、JSON
+			stringify:把json转化为字符串
+				JSON.stringify({a:12,b:6}) => '{"a":12,"b":6}';
+				
+			parse：把字符串转化为json
+				JSON.parse('{"a":55,"b":22}') => {a:55,b:22};
+				
+		9、解构赋值
+			a.左右两边结构一样
+			b.右边是个合法的东西
+			c.声明和赋值必须一次完成
+			
+		10、面向对象
+			class Test{
+				构造函数：
+				constructor(){
+					this.xxx=xxx;
+				}
+				方法1(){
+					
+				}
+				方法2(){
+					
+				}
+			}
+			继承：
+				class Test2 extends Test{
+					constructor(){
+						super();
+					}
+				}
+			
+			
+		<script>
+//			参数扩展: 1、收集
+			function show (a,b,...arg) {
+				alert(a);
+				alert(b);
+				alert(arg);
+			}
+			show(1,2,3,4,5,6,7,8,9,9);
+			
+//				2、扩展：
+			let arr=[1,2,3];
+//			写...arr就和直接把1，2，3放进去是一样的
+			let arr2=[...arr,...arr];
+			alert(arr2);
+			
+//				3、默认参数
+			function show2 (a,b=22) {
+				alert(a);
+				alert(b);
+			}
+			show2(1);
+			
+//			JSON和字符串的转换
+//				json转字符串
+				let a=JSON.stringify({a:16,b:12});
+				console.log(a);
+//				字符串转json
+				let b=JSON.parse('{"a":12,"b":1}');
+				console.log(b);
+				
+//			面向对象
+				class Test{
+					constructor(name,pass){
+						this.name=name;
+						this.pass=pass;
+					}
+					name(){
+						console.log(this.name);
+					}
+					pass(){
+						console.log(this.pass);
+					}
+				}
+				let T1=new Test('cqw','cqwjj');
+				console.log(T1);
+				
+//				继承:
+				class Test2 extends Test{
+					constructor(name,pass,jicheng){
+						super(name,pass);
+						this.jicheng=jicheng;
+					}
+					shishi(){
+						alert(this.jicheng);
+					}
+				}
+				let T2=new Test2('chen','quan','wei');
+				console.log(T2);
+		</script>
+	</body>
+	
+</html>

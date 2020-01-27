@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>renerator-KOA</title>
+	</head>
+	<body>
+		<pre>
+			renerator-KOA:是nodejs的东西
+			在异步时可以体现出来
+		</pre>
+		<script>
+//			引入一下koa 和 一个库
+			const koa=require('koa');
+			const mysql=require('koa-mysql');
+			
+			let db=mysql.createPool({host:'localhost',user:'root',password:'cqwjj',database:'111'});
+			
+			let server=new koa();
+			
+			server.use(function *(){
+//				用同步的方式来完成数据库的连接
+				let data=yield db.query('SELECT * FROM user_table')
+				
+				this.body='abc';
+			});
+			server.listen(8080);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="jquery.js"></script>
+	</head>
+	<body>
+		Promise——承诺
+		异步：操作之间没啥关系，同时进行多个操作      代码更复杂
+		同步：同时只能做一件事				代码简单
+		
+		Promise——消除异步操作
+			*用同步一样的方式，来书写异步代码
+			
+		promise的主要用法：	
+		Promise.all($.ajax(),$.ajax()]).then(results=>{},err=>{});
+		
+		其他用法：
+		Promise.race 	竞速
+		
+		<script>
+//			用法：
+			function creatPromise (url) {
+				return new Promise(function (resolve,reject) {
+					//异步代码
+	//				resolve——成功了
+	//				reject——失败了
+					$.ajax({
+						dataType:"json",
+//						url:url,
+						url,
+						success(arr){
+							resolve(arr);
+						},
+						error(err){
+							reject(err);
+						}
+					});
+
+				});
+			}
+
+			
+//			p1.then(function(){
+//				alert("成功");
+//			},function(){
+//				alert("失败");
+//			});
+
+			Promise.all([
+				creatPromise('data/arr.txt'),
+				creatPromise('data/json.txt')
+			]).then(function (arr) {
+//				成功
+
+//				解构赋值
+				let [res1,res2]=arr;
+//				
+				alert("全部成功了");
+				console.log(arr);
+				
+			},function () {
+//				失败
+				alert("至少一个失败");
+			})
+		</script>
+		
+	</body>
+</html>
+

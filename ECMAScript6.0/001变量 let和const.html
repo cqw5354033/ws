@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<pre>
+			let 是变量       都是块级作用域  不能重复声明
+			const 是常量
+		</pre>
+		<input type="button" value="按钮1"/>
+		<input type="button" value="按钮2"/>
+		<input type="button" value="按钮3"/>
+		
+		<script>
+			var aBtn = document.getElementsByTagName('input');
+//			相当于一个闭包  用函数作用域链的特性 来使他完成作用
+//				for(var i=0;i<aBtn.length;i++){
+//					(function(i){
+//						aBtn[i].onclick=function () {
+//							alert(i)
+//						}
+//					})(i);
+//					
+//				}
+
+//			用let写相当于直接变成了块元素
+			for(let j=0;j<aBtn.length;j++){
+				aBtn[j].onclick=function(){
+					alert(i);
+				}
+			}
+			
+			
+		</script>
+		
+	</body>
+</html>

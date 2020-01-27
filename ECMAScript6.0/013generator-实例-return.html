@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<pre>
+			Promise——适合  一次读一堆
+			generator——适合 逻辑性比较强的
+		</pre>
+		<script>
+			/*异步操作:
+			1:回调
+			2:Promise
+			3:generator*/
+			
+//			回调:
+			$.ajax({
+				type:"json",
+				url:"1.txt",
+				async:true,
+				success(data1){
+					$.ajax({
+						type:"json",
+						url:"2.txt",
+						async:true,
+						success(data2){
+//							完事
+						
+						},
+						error(){
+							alert("错了");
+						}
+					});
+				},
+				error(){
+					alert("错了");
+				}
+			});
+			
+			Promise写法:
+			Promise.all([
+				$.ajax({url:"1/txt",dataType:'json'});
+				$.ajax({url:"1/txt",dataType:'json'});
+				$.ajax({url:"1/txt",dataType:'json'})
+			]).then(results=>{
+//				完事
+			},err=>{
+				alert("错了");
+			});
+			
+			
+//			generator
+			runner(function *(){
+				let data1=yield $.ajax({type:"get",url:""});
+				let data1=yield $.ajax({type:"get",url:""});
+				let data1=yield $.ajax({type:"get",url:""})
+				
+//				完事
+			})
+//			带逻辑-generator
+			runner(function *(){
+				let userDate=yield $.ajax({
+					type:"get",
+					url:"",
+					async:true
+				});
+				if(userDate.type=='VIP'){
+					let items=yield $.ajax({
+						type:"get",
+						url:"getVIPItems",
+						async:true
+					});
+				}else{
+					let items=yield $.ajax({
+						type:"get",
+						url:"getItems",
+						async:true
+					});
+				}
+//				生成
+			});
+			
+			
+		</script>
+	</body>
+</html>

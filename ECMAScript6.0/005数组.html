@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<pre>
+			map 		映射			一个对一个
+			reduce 		汇总			一堆出来一个
+			filter 		过滤器		根据条件筛选
+			forEach 	循环（迭代）			
+			
+		</pre>
+		
+		<script>
+			let arr = [10,200,3];
+//			let result = arr.map(function(item){
+//				return	item*2;
+//			});
+//			map 映射:
+			let result = arr.map(item=>item>=60?'及格':'不及格');
+			alert(arr);
+			alert(result);
+			
+			
+//			reduce	汇总:   
+			let arr2 = [1,2,3,4];
+//												中间值,数值,下标
+			let result2 = arr2.reduce((tmp,item,index)=>{
+//				算平均数,不是最后一个的时候只算总和,最后一个算和 还得 在除 数量
+				if(index!=arr2.length-1){	//不是最后一个
+					return tmp+item;
+				}else{					//是最后一个
+					return (tmp+item)/arr2.length;
+				}
+			})
+			console.log(result2);
+			
+			
+//			filter 	过滤器:
+			let arr3 = [1,3,5,7,9,12,14,18];
+			let result3 = arr3.filter(item=>{
+				if(item%3==0){
+					return true;
+				}else{
+					return false;
+				}
+			});
+			alert(result3);
+			
+			let lianxi = [
+				{title:'狗',price:'1000'},
+				{title:'猫',price:'500'},
+				{title:'狼',price:'100'},
+				{title:'蛇',price:'2000'}
+			];
+			let lianxis = lianxi.filter(json=>json.price>=1000);
+			console.log(lianxis);
+			
+			
+//			forEach	循环：
+			let arr4 = [11,21,13,41];
+			arr4.forEach((item,index)=>{
+				alert(index+':'+item);
+			});
+			
+		</script>
+	</body>
+</html>

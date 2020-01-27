@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<pre>
+			特性：
+			1、class关键字		构造器和类分开了
+			2、class里面直接加方法
+			
+			继承：
+			
+		</pre>
+		<script>
+//			以前的面向对象
+			function User (name,pass) {
+				this.name=name;
+				this.pass=pass;
+			};
+			User.prototype.showName=function(){
+				alert(this.name);
+			};
+			User.prototype.showPass=function(){
+				alert(this.pass);
+			};
+			let ul = new User('cqw','12345');
+			console.log(ul);
+			ul.showName();
+			ul.showPass();
+			
+//			现在的面向对象
+			class User2{
+//				构造函数(构造器)
+				constructor(name,pass){
+					this.name=name;
+					this.pass=pass;
+				}
+				
+				showName2(){
+					alert(this.name);
+				}
+				showPass2(){
+					alert(this.pass);
+				}
+			}
+			let u2 = new User2('cqwjj','123456');
+			console.log(u2);
+			
+			class VipUser extends User2{
+				constructor(name,pass,level){
+					super(name,pass);
+					this.level=level;
+				}
+				showLevel(){
+					alert(this.level);
+				}
+			}
+			let u3 = new VipUser('chenquanwei','123','2');
+			console.log(u3);
+			
+		</script>
+	</body>
+</html>

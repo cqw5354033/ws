@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>生成器</title>
+	</head>
+	<body>
+		<pre>
+			generator---生成器
+			generat---生成
+			
+			普通函数--- 一路到底
+			generator--- 中间能停		踹一脚走一步
+			
+			yield---放弃
+			
+			
+		</pre>
+		<script>
+			function *show(){
+				alert('a');
+				yield;
+				
+				
+				alert('b');
+			}
+			show();
+			let genObj=show();
+			console.log(genObj);
+			genObj.next();
+			genObj.next();
+			
+			
+			
+		</script>
+	</body>
+</html>

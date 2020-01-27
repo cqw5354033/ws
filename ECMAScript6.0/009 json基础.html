@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		JSON对象
+			作用：1、json的串行化（字符串化）： 把json变成字符串	stringify
+				2、解析：把字符串变成json 	parse
+				
+		json的标准写法：
+			1、只能用双引号
+			2、所有名字都需要用引号包起来
+		<script>
+//			1、串行化
+			let json = {a:12,b:1};
+//														变成动词:字符串化
+			let str = 'http://cqwjj.com/user?data='+JSON.stringify(json);
+			alert(str);
+			
+//			2、解析
+			let str2 = '{"a":12,"b":5,"c":"abc"}';
+			let json2 = JSON.parse(str2);
+			console.log(json2);
+		</script>		
+	</body>
+</html>

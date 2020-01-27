@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/react.js"></script>
+		<script src="js/react-dom.js"></script>
+		<script src="js/browser.js"></script>
+		<script type="text/babel">
+//			创建一个 Test 类名,来继承 这个里面的东西
+			class Test extends React.Component{
+				constructor(...args){
+					super(...args);
+				};
+				render(){
+					return <span>123</span>;
+				}
+			}
+			
+			window.onload=function () {
+				let oDiv = document.getElementById('div1');
+				
+//				react 最基础的东西
+//						渲染 就是能把这个东西投到页面上
+				ReactDOM.render(
+					<Test></Test>,
+//					<span>1243</span>,
+					oDiv
+				);
+			};
+		</script>
+	</head>
+	<body>
+		<pre>
+			面向对象应用	React
+		
+			React：
+			1、组件化（模块化）	——class
+			要求一切组件都是可见的
+			2、强依赖于 JSX
+			JSX == babel == browser.js
+		</pre>
+		
+		<div id="div1"></div>
+		
+		
+		
+	</body>
+</html>

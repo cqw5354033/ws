@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<pre>
+			1、参数扩展/展开
+			2、默认参数
+			
+			参数扩展：（作用）	...参数名
+			1、收集剩余的参数
+			*Rest Parameter 必须是最后一个
+			
+			2、展开数组
+			
+		</pre>
+		<script type="text/javascript">
+			
+//			收集剩余的参数
+//							必须是最后一个形参
+			function show (a,b,...args) {
+				alert(a);
+				alert(b);
+				alert(args);
+			}
+			show(12,13,14,15);
+			
+			
+//			把数组展开
+			let arr = [1,2,3];
+			show(...arr);
+			
+			let arr2 = [4,5,6];
+			let arr3=[...arr,...arr2];
+//			展开后的效果,跟直接把数组的内容写在这儿一样
+//			相当于：	let arr3=[1,2,3,4,5,6];
+			alert(arr3);
+			
+//			默认参数  传了就按 传了的来， 没传就按默认的来
+			function show3 (a,b=10,c=20) {
+				console.log(a,b,c)
+			}
+			show3(22,15);
+			
+		</script>
+	</body>
+</html>

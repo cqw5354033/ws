@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		json的简写:
+			1、名字和值(key和value)一样的时候,可以只写一个值
+			2、有函数方法的时候， 连 :function 一起删除
+				原来：show:function(){...};
+				现在：show(){...};
+		<script>
+			let a =12;
+			let b =23;
+//			let json = {a:a,b:b};
+//			名字和值一样的时候,可以只写一个值
+			let json = {a,b,c:'55'};
+			console.log(json);
+			
+			let json2={
+				a:12,
+				show:function(){
+					alert(this.a);
+				}
+			}
+			json2.show();
+		</script>
+	</body>
+</html>
