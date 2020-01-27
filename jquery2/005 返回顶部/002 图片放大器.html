@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../jquery-1.11.3.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        img{
+            display: block;
+        }
+        ul li img{
+            width: 390px;
+            height: 200px;
+        }
+        .box{
+            width: 1200px;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+        .box ul li{
+            float: left;
+            margin-right: 10px;
+        }
+        .bigImg{
+            position: absolute;
+            left: 0;
+            top: 0;
+            display: none;
+        }
+    </style>
+    <script>
+        $(function(){
+            $('.box li').hover(function(){
+//                鼠标移入li，让大图显示
+                $('.bigImg').show();
+//                移入哪个li，把对应li里的img的src路径赋值，给大图里的img的src
+                var srcImg = $(this).children().attr('src');
+//                alert(srcImg);
+                $(this).parent().next().children().attr('src',srcImg);
+
+//                把鼠标的 x 和 y 的坐标赋值给bigImg
+                $(window).mousemove(function(e){
+//                    由于鼠标在bigImg的0，0点，所以在快速移动鼠标的时候，鼠标会进入bigImg的元素中，
+//                    由于bigImg加了定位属性，所以层级高于li，会触发li的鼠标离开效果，
+//                    执行盒子消失的属性，所以会有闪烁的效果，所以可以人为的给鼠标移动的横纵坐标加上10px。
+                    var x = e.pageX+10;
+                    var y = e.pageY+10;
+                    $('.bigImg').css({'left':x+'px','top':y+'px'});
+                });
+            },function(){
+                $('.bigImg').hide();
+            })
+        })
+    </script>
+</head>
+<body>
+<div class="box">
+    <ul>
+        <li>
+            <img src="img/100.jpg" alt=""/>
+        </li>
+        <li>
+            <img src="img/101.jpg" alt=""/>
+        </li>
+        <li>
+            <img src="img/102.jpg" alt=""/>
+        </li>
+    </ul>
+    <div class="bigImg">
+        <img src="img/100.jpg" alt="" width="500" height="300"/>
+    </div>
+</div>
+</body>
+</html>

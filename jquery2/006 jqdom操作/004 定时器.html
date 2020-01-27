@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../jquery-1.11.3.min.js"></script>
+    <script>
+        $(function(){
+            var timer01 = null;
+            var timer02 = null;
+            $('button').eq(0).click(function(){
+                timer01 = setTimeout(function(){
+                    alert('开启单次定时器');
+                },1000)
+            });
+
+            $('button').eq(1).click(function(){
+                clearTimeout(timer01);
+            });
+
+            $('button').eq(2).click(function(){
+                timer02 = setInterval(function(){
+                    alert('开启多次定时器');
+                },1000)
+            });
+
+            $('button').eq(3).click(function(){
+                clearInterval(timer02);
+            });
+
+        })
+    </script>
+</head>
+<body>
+<button>开启单次定时器</button>
+<button>关闭单次定时器</button>
+<button>开启多次定时器</button>
+<button>关闭多次定时器</button>
+</body>
+</html>

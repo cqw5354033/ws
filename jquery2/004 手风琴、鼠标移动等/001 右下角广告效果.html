@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../jquery-1.11.3.min.js"></script>
+    <style>
+        div{
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            display: none;
+            cursor: pointer;
+        }
+        button{
+            margin: 300px auto ;
+        }
+        span{
+            width: 40px;
+            height: 18px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: url("img/h.jpg")no-repeat;
+        }
+    </style>
+    <script>
+        $(function(){
+            var btn = $('button');
+            btn.click(function(){
+//                $('div').slideUp(500);
+//                $('div').slideDown(500);
+
+//                由于元素定位 是控制的 bottom 属性，所以动画和jq函数的滑动效果是相反的。
+//                $('div').slideDown(1000,function(){
+//                    $('div').slideUp(1000,function(){
+//                        $('div').fadeIn(1000);
+//                    })
+//                })
+                $('div').slideDown(1000).slideUp(1000).fadeIn(1000);
+
+            });
+            $('span').click(function(){
+                $(this).parent().fadeOut(1000);
+            });
+
+        })
+    </script>
+</head>
+<body>
+<div>
+    <img src="img/adv.gif" alt="" width="300" height="180"/>
+    <span></span>
+</div>
+<button>消失</button>
+</body>
+</html>

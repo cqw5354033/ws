@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../jquery-1.11.3.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .box{
+            width: 105px;
+            margin: 100px auto;
+            position: relative;
+        }
+        .box a{
+            width: 90px;
+            height: 25px;
+            border: 1px solid #ccc;
+            display: block;
+            text-decoration: none;
+            color: black;
+            padding-left: 10px;
+            line-height: 25px;
+            background: url("img/xiala.png")no-repeat right center;
+            background-size: 25px;
+            z-index: 10;
+        }
+        .box ul{
+            width: 100px;
+            border: 1px solid #ccc;
+            position: absolute;
+            left: 0;
+            top: 26px;
+            display: none;
+        }
+        .box ul li{
+            line-height: 25px;
+            padding-left: 10px;
+            cursor: pointer;
+        }
+        .box ul li:hover{
+            background: pink;
+        }
+        .box .btn.enter{
+            border-color: orange;
+        }
+        .box ul li.selected{
+            background: orange;
+        }
+    </style>
+    <script>
+        $(function(){
+            $('.btn').hover(function(){
+                $(this).addClass('enter');
+            },function(){
+                $(this).removeClass('enter');
+            });
+
+//            单击a标签
+            $('.btn').click(function(){
+//                让下拉菜单显示     next()是紧挨着的下一个同级元素
+                $(this).next().show();
+            });
+
+//            所有的下拉列表
+            $('.box ul li').click(function(){
+//                1、单击哪个li，让谁背景色变成橘色，其他正常
+                $(this).addClass('selected').siblings().removeClass('selected');
+
+//                2、把li标签中的内容替换到 a标签中的内容去
+
+//                提取li中的内容
+                var txt = $(this).html();
+
+//                $('.btn').html(txt);      prev() 是紧挨着的上一个同级元素
+                $(this).parent().prev().html(txt);
+
+
+//                3、让下拉列表隐藏
+                $('.box ul').hide();
+            });
+
+            $('.box').mouseleave(function(){
+                $('.box ul').hide();
+            })
+        })
+    </script>
+</head>
+<body>
+<div class="box">
+    <a href="##" class="btn">年付</a>
+    <ul>
+        <li>年付</li>
+        <li>半年付</li>
+        <li>月付</li>
+        <li>日付</li>
+    </ul>
+</div>
+</body>
+</html>

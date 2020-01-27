@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../jquery-1.11.3.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .box{
+            width: 600px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            margin: 100px auto;
+        }
+        textarea{
+            width: 600px;
+            height: 140px;
+
+            /*让他不能拖拽*/
+            resize: none;
+            outline: none;
+            border-color: #ccc;
+
+        }
+        .btn{
+            width: 80px;
+            height: 30px;
+            display: block;
+            background: orange;
+            text-align: center;
+            color: white;
+            line-height: 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 12px;
+        }
+        .box ul{
+            overflow: hidden;
+            height: 140px;
+        }
+        .box ul li{
+            border-bottom: 1px dashed #ccc;
+            line-height: 33px;
+            overflow: hidden;
+        }
+        .box ul li span{
+            float: left;
+        }
+        .box ul li a{
+            float: right;
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+    <script>
+        $(function(){
+//            文本域获取焦点事件
+            $('.box textarea').focus(function(){
+//                边框变成红色
+               $(this).css('border-color','red');
+            });
+//            文本域失去焦点
+            $('.box textarea').blur(function(){
+                $(this).css('border-color','#ccc')
+            });
+
+//            单机发送按钮
+            $('.box .btn').click(function(){
+                var txt = $('textarea').val();
+                if(txt == ''){
+                    alert('请输入微博内容');
+                }else if(txt.length > 140){
+                    alert('字数不能超过140');
+                }else{
+                    //                创建li微博
+                    var li = $('<li><span>'+txt+'</span> <a href="##">删除</a></li>');
+
+//                生成li
+                    $('.box ul').prepend(li);
+//                让li下滑
+                    $('.box ul li:first').hide().slideDown(500);
+
+                    $('.box textarea').val('');
+                }
+            });
+
+//            删除：
+
+//            由于 click 这种调用事件的方法 不支持操作动态创建的节点，所以不用了
+//            $('.box ul li a').click(function(){
+////                直接删除li
+////                $(this).parent().remove();
+////                先执行动画隐藏，在执行删除标签
+//                $(this).parent().slideUp(500,function(){
+////                    动画执行完，执行代码
+////                    $(this) 代表的是li
+//                    $(this).remove();
+//
+//                })
+//            });
+
+//            这种注册时间安的方式支持操作动态创建的节点，兼容性好，是人们目前最常用的方式
+            $(document).on('click','.box ul li a',function(){
+                $(this).parent().slideUp(500,function(){
+//                    动画执行完，执行代码
+//                    $(this) 代表的是li
+                    $(this).remove();
+                })
+            });
+
+        })
+    </script>
+</head>
+<body>
+<div class="box">
+    <textarea></textarea>
+    <a href="##" class="btn">发送</a>
+    <ul>
+        <li>
+            <span>新闻111111111</span>
+            <a href="##">删除</a>
+        </li>
+        <li>
+            <span>新闻222222222</span>
+            <a href="##">删除</a>
+        </li>
+        <li>
+            <span>新闻333333333</span>
+            <a href="##">删除</a>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

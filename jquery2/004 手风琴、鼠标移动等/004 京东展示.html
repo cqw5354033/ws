@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../jquery-1.11.3.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        img{
+            display: block;
+        }
+        .box{
+            width: 790px;
+            height: 362px;
+            border: 1px solid #000;
+            margin: 100px auto;
+        }
+        .box ul li{
+            width: 158px;
+            float: left;
+            overflow: hidden;
+
+        }
+
+    </style>
+    <script>
+        $(function(){
+            $('.box ul img').hover(function(){
+                $(this).stop().animate({'margin-left':'-15px'});
+            },function(){
+                $('.box ul img').stop().animate({'margin-left':'0px'});
+            })
+        })
+    </script>
+</head>
+<body>
+<div class="box">
+    <ul>
+        <li>
+            <img src="img/52.jpg" alt="" width="173" height="181"/>
+            <img src="img/53.jpg" alt="" width="173" height="181"/>
+        </li>
+        <li>
+            <img src="img/54.jpg" alt="" width="173" height="362"/>
+        </li>
+        <li>
+            <img src="img/55.jpg" alt="" width="173" height="181"/>
+            <img src="img/56.jpg" alt="" width="173" height="181"/>
+        </li>
+        <li>
+            <img src="img/57.jpg" alt="" width="173" height="362"/>
+        </li>
+        <li>
+            <img src="img/58.jpg" alt="" width="173" height="181"/>
+            <img src="img/59.jpg" alt="" width="173" height="181"/>
+        </li>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../jquery-1.11.3.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .ul1 li{
+            background: url("img/radio.gif")no-repeat left top;
+            padding-left: 20px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .ul1 li.current{
+            background-position-y: bottom;
+        }
+
+        .ul2 li{
+            background: url("img/duo1.png")no-repeat;
+            padding-left: 30px;
+            line-height: 20px;
+            height: 20px;
+        }
+        .ul2 li.current{
+            background: url("img/duo2.png")no-repeat;
+        }
+    </style>
+    <script>
+        $(function(){
+            $('.ul1 li').click(function(){
+                $(this).addClass('current').siblings().removeClass('current');
+            });
+
+
+            $('.ul2 li').click(function(){
+//                第一种：切换类名
+//                 $(this).toggleClass('current');
+
+//                第二种：判断是否有类名
+                if($(this).hasClass('current')){
+                    $(this).removeClass('current');
+                }else{
+                    $(this).addClass('current');
+                }
+
+            });
+        })
+    </script>
+</head>
+<body>
+<h2>单选</h2>
+<ul class="ul1">
+    <li>我是li，但我可以变成单选按钮</li>
+    <li>我是li，但我可以变成单选按钮</li>
+    <li>我是li，但我可以变成单选按钮</li>
+</ul>
+
+<h2>多选</h2>
+<ul class="ul2">
+    <li>我是li，但我可以变成多选按钮</li>
+    <li>我是li，但我可以变成多选按钮</li>
+    <li>我是li，但我可以变成多选按钮</li>
+</ul>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-1.11.3.min.js"></script>
+    <style>
+        div{
+            width: 100px;
+            height: 100px;
+            background-color:pink;
+        }
+    </style>
+    <script>
+//        原生js
+//        window.onload = function(){
+//            var btn = document.getElementById('btn');
+//            var box = document.getElementById('box');
+//
+//            btn.onclick=function(){
+//                box.style.display = 'none';
+//            }
+//        };
+
+
+//        jq:
+//        入口函数
+        $(function(){
+            $('button').click(function(){
+                $('#box').hide(1000);
+            });
+        })
+
+
+    </script>
+</head>
+<body>
+<button id="btn">点击</button>
+<div id="box"></div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../jquery-1.11.3.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        div{
+            width: 200px;
+            height: 200px;
+            background: pink;
+            position: absolute;
+            left: 0;
+            top: 200px;
+        }
+    </style>
+    <script>
+        $(function(){
+            var timer = null;
+            num = 0;
+            $('button').eq(0).click(function(){
+//                $('div').stop().animate({'left':'200'},500);
+
+//                为了避免定时器累加操作，在开启定时器之前，先关掉定时器
+                clearInterval(timer);
+
+                timer = setInterval(function(){
+                    num += 3;
+                    $('div').css('left',num+'px');
+                },30);      //定时器最小时间间隔是30毫秒
+
+                $('button').eq(1).click(function(){
+                    clearInterval(timer);
+                });
+
+            });
+        })
+    </script>
+</head>
+<body>
+<button>开始</button>
+<button>停止</button>
+<div></div>
+
+</body>
+</html>

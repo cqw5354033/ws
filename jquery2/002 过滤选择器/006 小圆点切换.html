@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../jquery-1.11.3.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        ol li{
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            background-color: #ccc;
+            float: left;
+            border-radius: 50%;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        $(function(){
+            $('ol li').click(function(){
+//                $(this).css('background','red');
+////                目标的周围的兄弟元素
+//                $(this).siblings().css('background','#ccc');
+
+//                链式编程
+                $(this).css('background','red').siblings().css('background','#ccc');
+
+            });
+        })
+    </script>
+</head>
+<body>
+<ol>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+</ol>
+</body>
+</html>

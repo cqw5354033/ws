@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../jquery-1.11.3.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .box{
+            width: 600px;
+            padding: 10px;
+            border: 1px solid black;
+            margin: 100px auto;
+        }
+        .box ul{
+            /*有溢出隐藏的作用，同时还有清除浮动的作用，但工作中不推荐使用。*/
+            overflow: hidden;
+        }
+        .box li{
+            float: left;
+            width: 33%;
+            text-align: center;
+            line-height: 26px;
+            height: 26px;
+        }
+        .box button{
+            display: block;
+            width: 200px;
+            height: 20px;
+            border: 1px solid black;
+            margin: 10px auto;
+            background:white  url("one.png")no-repeat 30px center;
+            outline: none;
+        }
+
+    </style>
+    <script>
+        $(function(){
+//            大于编号2并且排除最后一个 的隐藏
+//            var lis = $('.box ul li:gt(2):not(:last)');
+//            gt(2)第一次过滤，会将过滤后的li标签重新进行索引的排列，所以现在这个编号是9
+            var lis = $('.box ul li:gt(2):not(:eq(9))');
+            lis.css('display','none');
+
+            $('.box .btn').click(function(){
+                if($('.btn').html() == '显示所有内容'){
+//                    改变文本内容为隐藏所有内容
+                    $('.btn').html('隐藏所有内容');
+
+//                    改变背景图 为 2
+                    $('.btn').css('background-image','url(two.png)');
+
+//                    显示内容
+                    lis.slideDown(500);
+                }else{
+                    $('.btn').html('显示所有内容');
+                    $('.btn').css('background-image','url(one.png)');
+                    lis.slideUp(500);
+                }
+            });
+        })
+    </script>
+</head>
+<body>
+<div class="box">
+    <ul>
+        <li>佳能</li>
+        <li>索尼</li>
+        <li>三星</li>
+        <li>尼康</li>
+        <li>松下</li>
+        <li>卡西欧</li>
+        <li>富士</li>
+        <li>柯达</li>
+        <li>宾得</li>
+        <li>理光</li>
+        <li>奥林巴斯</li>
+        <li>明基</li>
+        <li>其他品牌相机</li>
+    </ul>
+    <button class="btn">显示所有内容</button>
+</div>
+</body>
+</html>

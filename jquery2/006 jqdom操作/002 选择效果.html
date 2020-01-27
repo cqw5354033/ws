@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../jquery-1.11.3.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        select{
+            width: 170px;
+            height: 240px;
+            background: greenyellow;
+            font-size: 20px;
+        }
+        button{
+            width: 50px;
+        }
+    </style>
+    <script>
+        $(function(){
+//            把第一个下拉列表里的option节点 追加到 第二个下拉列表里
+            $('button').eq(0).click(function(){
+                var options = $('#select_1 option');
+//                相当于把 $('#select_1 option') 这个集合移动位置
+                $('#select_2').append(options);
+            });
+
+//            把第二个下拉列表里的option节点 追加到 第一个下拉列表里
+            $('button').eq(1).click(function(){
+                var options = $('#select_2 option');
+//                相当于把 $('#select_2 option') 这个集合移动位置
+                $('#select_1').append(options);
+            });
+
+            $('button').eq(2).click(function(){
+//                :selected 用选择器选中所有选择中的列表项目
+                var options = $('#select_1 option:selected');
+                $('#select_2').append(options);
+            });
+
+        })
+    </script>
+</head>
+<body>
+<div class="box">
+    <!--当html标签属性的属性名和属性值相同的时候，可以直接写一个属性名-->
+                    <!--multiple 多选下拉 -->
+    <select id="select_1" multiple="multiple">
+        <option value="0">奔驰</option>
+                        <!--下拉选中-->
+        <option value="1" selected="selected">宝马</option>
+        <option value="2">奥迪</option>
+        <option value="3">奥拓</option>
+    </select>
+
+    <button> >>>> </button>
+    <button> <<<< </button>
+    <button> > </button>
+    <button> < </button>
+
+    <select id="select_2" multiple="multiple">
+
+    </select>
+</div>
+</body>
+</html>

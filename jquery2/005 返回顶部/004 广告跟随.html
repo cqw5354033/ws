@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../jquery-1.11.3.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 160px;
+        }
+    </style>
+    <script>
+        $(function(){
+            $(window).scroll(function(){
+//                        窗口滚动的垂直距离
+                $(window).scrollTop(function(){
+//                    获取页面滚动的距离，然后以动画的形式赋值给img的top，就是img需要移动的垂直距离
+                    var move = $(window).scrollTop()+160;
+                    $('img').stop().animate({'top':move+'px'},500);
+                });
+            })
+        })
+    </script>
+</head>
+<body style="height: 1000px">
+
+<img src="../img/1.gif" alt=""/>
+</body>
+</html>

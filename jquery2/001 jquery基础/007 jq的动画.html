@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-1.11.3.min.js"></script>
+    <script>
+        $(function(){
+//            对角线方式动画
+//            $('button').eq(0).click(function(){
+//                $('img').hide(500);
+//            });
+//            $('button').eq(1).click(function(){
+//                $('img').show(500);
+//            });
+//            $('button').eq(2).click(function(){
+//                $('img').toggle(500);
+//            });
+
+//            滑动方式动画（卷帘动画）
+//            在设置图片标签的时候要给宽度和高度，否则还是对角线动画
+            $('button').eq(0).click(function(){
+                $('img').slideUp(500);
+            });
+            $('button').eq(1).click(function(){
+                $('img').slideDown(500);
+            });
+            $('button').eq(2).click(function(){
+                $('img').slideToggle(500);
+            });
+        })
+    </script>
+</head>
+<body>
+<button>隐藏</button>
+<button>显示</button>
+<button>切换</button>
+<br/>
+<img src="100.jpg" alt="" width="400" height="250"/>
+</body>
+</html>

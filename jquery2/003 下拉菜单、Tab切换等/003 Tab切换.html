@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../jquery-1.11.3.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .box{
+            width: 800px;
+            margin: 100px auto;
+        }
+        .box ul{
+            width: 320px;
+            height: 35px;
+            border: 1px solid #000;
+            border-bottom: 0 none;
+        }
+        .box ul li{
+            width: 80px;
+            height: 35px;
+            line-height: 35px;
+            float: left;
+            text-align: center;
+            border-top: 4px solid transparent;
+            box-sizing: border-box;
+            position: relative;
+        }
+        .box ul li a{
+            text-decoration: none;
+            color: #000;
+        }
+        .box ul li:after{
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 10px;
+            width: 1px;
+            height: 15px;
+            background-color: #ccc;
+        }
+        .box ul li:last-of-type:after{
+            display: none;
+        }
+        .box ul li.cur{
+            border-color: red;
+        }
+        .content{
+            border: 1px solid #ccc;
+        }
+        .content img{
+            display: block;
+            width: 100%;
+            height: 500px;
+        }
+
+    </style>
+    <script>
+        $(function(){
+            $('.content img:gt(0)').hide();
+
+            $('.box ul li').click(function(){
+                $(this).addClass('cur').siblings().removeClass();
+
+                $('.content img').eq($(this).index()).show().siblings().hide();
+            });
+        })
+    </script>
+</head>
+<body>
+<div class="box">
+    <ul>
+        <li class="cur">
+            <a href="##">微信支付</a>
+        </li>
+        <li>
+            <a href="##">支付宝</a>
+        </li>
+        <li>
+            <a href="##">清洁用品</a>
+        </li>
+        <li>
+            <a href="##">男士精品</a>
+        </li>
+    </ul>
+    <div class="content">
+        <img src="img/48.jpg" alt=""/>
+        <img src="img/49.jpg" alt=""/>
+        <img src="img/50.jpg" alt=""/>
+        <img src="img/51.jpg" alt=""/>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>清空下拉框</title>
+    <script src="jquery-1.11.3.min.js"></script>
+</head>
+<body>
+<select id="skill" onfocus="choose()" onblur="turnoff()">
+    <option value="请选择">请选择</option>
+    <option value="java">java</option>
+    <option value="javaScript">javaScript</option>
+    <option value="vue">vue</option>
+    <option value="bootStrap">bootStrap</option>
+    <option value="springMvc">springMvc</option>
+</select>
+<script type="text/javascript">
+    $(function () {
+        $("#skill").val("请选择");
+    })
+    /**
+     * 得到焦点事件
+     */
+    function choose() {
+        if($("#skill").val() == "请选择"){
+            $("#skill option:eq(0)").remove();
+            $("#skill").val("");
+        }
+    }
+    /**
+     * 失去焦点事件
+     */
+    function turnoff() {
+        if($("#skill").val() == null || $("#skill").val() == ""){
+            $("#skill").prepend("<option value='请选择' selected='selected'>请选择</option>");
+        }
+    }
+</script>
+
+</body>
+</html>

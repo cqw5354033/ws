@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="fullpage/jquery.fullPage.min.css"/>
+		<style>
+
+			nav{
+				position: fixed;
+				top: 0;
+				left: 0;
+				z-index: 1000;
+			}
+			nav ul li{
+				float: left;
+				list-style: none;
+				margin: 0 100px;
+			}
+			nav ul li a{
+				color: black;
+			}
+		</style>
+		<script src="fullpage/jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="fullpage/jquery.fullPage.min.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function(){
+
+				//初始化函数
+				$('#fullpage').fullpage({
+					//设置每一屏的背景色
+					'sectionsColor':['red','green','blue','pink'],
+					//是否用css3的动画滚动 默认值false
+					'css3':true,
+					//字体是否缩放 默认false
+					'resize':true,
+//					默认滚动条是否显示  默认是false
+					'scrollBar':true,
+//					是否自动滚动  默认是true
+					'autoScrolling':true,
+
+//					内容超过满屏之后是否显示滚动条（需要引入插件  js）
+					'scrollOverflow':true,
+
+//					是否显示导航条（右侧小圆点）  默认是false
+					'navigation':true,
+//					导航提示文本 默认为空
+					'navigationTooltips':['1','2','3','4'],
+
+//					有缝滚动（与无缝 互斥）
+//					'loopTop':true,
+//					'loopBottom':true,
+//					无缝滚动
+					'continuousVertical':true
+
+
+
+				})
+			})
+
+		</script>
+	</head>
+	<body>
+	<nav>
+		<ul>
+			<li><a href="##">1</a></li>
+			<li><a href="##">2</a></li>
+			<li><a href="##">3</a></li>
+			<li><a href="##">4</a></li>
+			<li><a href="##">5</a></li>
+		</ul>
+	</nav>
+		<div id="fullpage">
+		    <div class="section">
+		       第一屏
+		    </div>
+		    <div class="section">
+		        第二屏
+		    </div>
+		    <div class="section">
+		        第三屏
+		    </div>
+		    <div class="section">
+		        第四屏
+		    </div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../jquery-1.11.3.min.js"></script>
+    <script>
+        $(function(){
+
+            var apple = '苹果';
+            $('button').eq(0).click(function(){
+                alert(apple);
+                apple = '咬了一口';
+            });
+            $('button').eq(1).click(function(){
+                alert(apple);
+            });
+        })
+    </script>
+</head>
+<body>
+
+<button>咱家</button>
+<button>老王家</button>
+</body>
+</html>

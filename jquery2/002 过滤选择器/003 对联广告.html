@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../jquery-1.11.3.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            width: 100px;
+            height: 290px;
+            background-color: pink;
+            position: fixed;
+            left: 0;
+            top: 0;
+            border: 1px solid black;
+        }
+        div span{
+            width: 30px;
+            height: 30px;
+            background-color: lightblue;
+            text-align: center;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        .box2{
+            /*由于left 和 right 不是一个属性名，所以不能层叠，只能给某个属性设置auto*/
+            left: auto;
+            right: 0;
+
+        }
+    </style>
+    <script>
+        $(function(){
+            $('div span').click(function(){
+//                点击叉子，关闭
+//                $('div').hide(500);
+                $(this).parent().hide(500);
+
+            });
+        })
+    </script>
+</head>
+<body>
+<div class="box1"><span>X</span></div>
+<div class="box2"><span>X</span></div>
+
+
+
+
+
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad cupiditate delectus deleniti dicta ea earum maxime minus numquam, quis tempore tenetur unde voluptatum? Architecto consectetur earum esse praesentium tenetur.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad cupiditate delectus deleniti dicta ea earum maxime minus numquam, quis tempore tenetur unde voluptatum? Architecto consectetur earum esse praesentium tenetur.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad cupiditate delectus deleniti dicta ea earum maxime minus numquam, quis tempore tenetur unde voluptatum? Architecto consectetur earum esse praesentium tenetur.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad cupiditate delectus deleniti dicta ea earum maxime minus numquam, quis tempore tenetur unde voluptatum? Architecto consectetur earum esse praesentium tenetur.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad cupiditate delectus deleniti dicta ea earum maxime minus numquam, quis tempore tenetur unde voluptatum? Architecto consectetur earum esse praesentium tenetur.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad cupiditate delectus deleniti dicta ea earum maxime minus numquam, quis tempore tenetur unde voluptatum? Architecto consectetur earum esse praesentium tenetur.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad cupiditate delectus deleniti dicta ea earum maxime minus numquam, quis tempore tenetur unde voluptatum? Architecto consectetur earum esse praesentium tenetur.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad cupiditate delectus deleniti dicta ea earum maxime minus numquam, quis tempore tenetur unde voluptatum? Architecto consectetur earum esse praesentium tenetur.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad cupiditate delectus deleniti dicta ea earum maxime minus numquam, quis tempore tenetur unde voluptatum? Architecto consectetur earum esse praesentium tenetur.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad cupiditate delectus deleniti dicta ea earum maxime minus numquam, quis tempore tenetur unde voluptatum? Architecto consectetur earum esse praesentium tenetur.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad cupiditate delectus deleniti dicta ea earum maxime minus numquam, quis tempore tenetur unde voluptatum? Architecto consectetur earum esse praesentium tenetur.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad cupiditate delectus deleniti dicta ea earum maxime minus numquam, quis tempore tenetur unde voluptatum? Architecto consectetur earum esse praesentium tenetur.</p>
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab ad cupiditate delectus deleniti dicta ea earum maxime minus numquam, quis tempore tenetur unde voluptatum? Architecto consectetur earum esse praesentium tenetur.</p>
+</body>
+</html>

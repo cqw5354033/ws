@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../jquery-1.11.3.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+    </style>
+    <script>
+        $(function(){
+//            鼠标移动事件
+            $(window).mousemove(function(e){
+//                获取鼠标在窗口中的X Y坐标
+                var x = e.pageX;
+                var y = e.pageY;
+                console.log(x+''+y);
+
+            })
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>

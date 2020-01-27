@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../jquery-1.11.3.min.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        img{
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            display: none;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        $(function(){
+            $(window).scroll(function(){
+                if($(window).scrollTop()>$(window).height()){
+                    $('.huo').show();
+                }else{
+                    $('.huo').hide();
+                }
+            });
+            $('.huo').click(function(){
+//                html 和 body 都要写   兼容浏览器
+                $('html,body').animate({'scrollTop':'0'});
+            });
+        })
+    </script>
+</head>
+<body style="height: 10000px">
+<img src="../img/102.jpg" alt="" class="huo"/>
+</body>
+</html>

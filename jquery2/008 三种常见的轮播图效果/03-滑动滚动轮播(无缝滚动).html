@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		 <style type="text/css">
+        *{margin: 0;padding: 0;list-style: none;}
+        .box{width: 900px;height: 350px;margin:100px auto;position: relative;overflow: hidden;}
+        .box ul{
+        	width: 5400px;
+        	height: 350px;
+        	position: absolute;
+        	left:0;
+        	top:0;
+        }
+        .box ul li{
+        	float:left;
+        }
+        .box ol{position: absolute;right:10px;bottom:10px;}
+        .box ol li{float: left;width: 20px;height: 20px;line-height:20px;border: 1px solid #fff;background: #333;color:#999;text-align: center;margin-left: 10px;cursor: pointer;}
+        .box ol .current{border-color: #f60;color:#f60;}
+        .box .leftBtn,.box .rightBtn{width: 40px;height: 100px;background:url(img/index.png) 0 0;position:absolute;top:50%;margin-top: -50px;}
+        .box .leftBtn{left:0;}
+        .box .rightBtn{right:0;background-position: -50px 0px;}
+    </style>
+    <script src="jquery-1.11.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+    	$(function(){
+//  第一种方法:缺点代码写死了，如果跟换图片路径，需要该jq代码
+//var myLi = $('<li><img src="img/01.jpg" height="350" width="900" alt="" /></li>');
+			var myLi = $('.box ul li:first').clone(true);
+			$('.box ul').append(myLi);
+			//记录小圆点
+			var olNum = 0;
+			//记录li
+			var ulNum = 0;
+			//定时器
+			var timer = null;
+			function slide(par1){
+				if(par1 == 'right'){
+					//小圆点
+					olNum++;
+	    			if(olNum > 4){
+	    				olNum = 0;
+	    			}
+	    			//图片
+	    			ulNum++;
+	    			if(ulNum > 5){
+	    				ulNum = 1;
+	    			//先让图片位置一瞬间回到0的位置，造成视觉上的错觉	
+	    				$('.box ul').css('left','0');
+	    			}
+	    		}else if(par1 == 'left'){
+		    			//小圆点
+	    			olNum--;
+	    			if(olNum < 0){
+	    				olNum = 4;
+	    			}
+		    			//图片
+	    			ulNum--;
+	    			if(ulNum < 0){
+	    				ulNum = 4;
+	    				$('.box ul').css('left','-4500px');
+	    			}
+	    		}
+	    			$('.box ol li').eq(olNum).addClass('current').siblings().removeClass('current');
+	    		var move = ulNum  * -900;
+    			$('.box ul').stop().animate({'left':move+'px'},500);
+				
+			}
+			//右按钮
+			$('.rightBtn').click(function(){
+				slide('right');
+			})
+			
+    		//左按钮
+    		$('.leftBtn').click(function(){
+    			slide('left');
+    		})
+    		
+    		//单击小圆点
+    		$('.box ol li').click(function(){
+    				$(this).addClass('current').siblings().removeClass('current');
+    			var move = $(this).index() * -900;
+    			$('.box ul').stop().animate({'left':move+'px'},500);
+    			// 两个变量都需要统一
+    			olNum = $(this).index();
+    			ulNum = $(this).index();
+    		})
+    		function timerSlide(){
+    			timer = setInterval(function(){
+		    			slide('right');
+		    		},500);
+
+    		}
+    		timerSlide();
+    		//可以区域事件
+    		$('.box').hover(function(){
+    			clearInterval(timer);
+    		},function(){
+    			timerSlide();
+    		})
+    	})
+    </script>
+	</head>
+	<body>
+		 <div class="box">
+	        <ul>
+	            <li><img src="img/01.jpg" height="350" width="900" alt="" /></li>
+	            <li><img src="img/02.jpg" height="350" width="900" alt="" /></li>
+	            <li><img src="img/03.jpg" height="350" width="900" alt="" /></li>
+	            <li><img src="img/04.jpg" height="350" width="900" alt="" /></li>
+	            <li><img src="img/05.jpg" height="350" width="900" alt="" /></li>
+	        </ul>
+	        <ol>
+	            <li class="current">1</li>
+	            <li>2</li>
+	            <li>3</li>
+	            <li>4</li>
+	            <li>5</li>
+	        </ol>
+	        <a href="##" class="leftBtn"></a>
+	        <a href="##" class="rightBtn"></a>
+	    </div>
+	</body>
+</html>
