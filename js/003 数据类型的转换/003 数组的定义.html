@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+
+<script>
+    //    数组 定义     二维数组    三位数组    以及更深层次的嵌套
+//    typeof 数据类型的判断
+    var xuexiao = [
+        ['一班',['1小李','1小王','1小张']],
+        ['二班',['2小李','2小王','2小张']],
+        ['三班',['3小李','3小王','3小张']]
+    ];
+    console.log(xuexiao);
+    console.log(xuexiao[0][1][1]);
+//    循环打印多维数组
+    for(var i = 0; i < xuexiao.length; i++){
+        console.log('班级是'+ xuexiao[i][0]);
+        for(var j = 0; j < xuexiao[i][1].length; j++){
+            console.log('本班的学生是'+ xuexiao[i][1][j]);
+        }
+    }
+
+//    for(var i = 0; i< xuexiao.length; i++){
+//        document.write('班级是'+ xuexiao[i][0]);
+//        document.write('<br>');
+//        for(var j = 0; j<xuexiao[i][1].length; j++){
+//            document.write('名字是' + xuexiao[i][1][j]);
+//            document.write('<br>');
+//        }
+//    }
+
+</script>
+</body>
+</html>

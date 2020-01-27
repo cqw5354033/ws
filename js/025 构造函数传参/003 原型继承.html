@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+
+<script>
+//    访问顺序：    优先访问离自己近的
+    function animal(){
+        this.tz1='体温恒定';
+        this.tz2='胎生哺乳';
+    }
+    var animal1= new animal();
+
+    function dog(){
+        this.dog_tz1='稀罕吃屎';
+        this.dog_tz2='看家护院';
+    }
+
+
+//    用prototype实现继承  一个构造函数去继承对象
+    dog.prototype=animal1;
+
+//    通过原型属性实现继承  属性 或 方法
+    dog.prototype.tz3='有血';
+
+
+    var dog1= new dog();
+    console.log(dog1);
+//    for(var i in dog1){
+//        console.log(dog1[i]);
+//    }
+
+
+</script>
+</body>
+</html>

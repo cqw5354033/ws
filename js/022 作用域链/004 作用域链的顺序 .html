@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+
+    var str='全局的变量';
+    function func2(str){
+        var str='func2中的变量';
+        function func1(str){
+//            var str='函数局部的变量';
+            console.log(str);
+        }
+        func1(str);
+    }
+
+    func2('2的参数字符串');
+
+//    自己内部的局部变量     作用域链上的  参数  全局的
+
+</script>
+</body>
+</html>

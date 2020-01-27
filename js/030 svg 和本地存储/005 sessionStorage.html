@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+
+<script>
+    //sessionStorage  操作
+    sessionStorage.setItem('ceshi','这是session数据1');
+    sessionStorage.setItem('ceshi','这是session数据2'); //会覆盖第一个
+    sessionStorage.removeItem('ceshi');
+    alert(sessionStorage.getItem('ceshi'));
+
+//    sessionStorage 和localStorage 的区别：
+    //    sessionStorage生命周期到浏览器关闭结束
+    //    localState 生命周期 永存，只能手动删除
+
+
+//    sessionStorage.setItem('ceshi1','这是session数据1');
+//    localStorage.setItem('ceshi2','这是local数据2');
+    alert(sessionStorage.getItem('ceshi1'));
+    alert(localStorage.getItem('ceshi2'));
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+
+<script>
+    //当 普通函数 调用的时候 this指向的是window
+    var name = '小明';
+    var age=10;             //window.name='小明'
+    function a(){
+        console.log('普通函数：'+this.name);
+    }
+    a();
+
+
+    // new 构造新的对象   this 指向的是新对象
+    function a2(){
+        console.log('new 构造的新函数:'+this.name);
+    }
+
+    function func1(){
+        this.name='小红';
+        this.tezheng=a2;
+    }
+    var func2=new func1();
+    func2.tezheng();
+
+    //当属性是另外一个对象的属性的时候，this指向其他对象
+
+    var tom={name:'tom',age:30};
+    function func3(age1,age2,age3){
+        console.log(this.name);
+        console.log(this.age);
+        console.log(age1);
+        console.log(age2);
+        console.log(age3);
+    }
+    //    人为去改变this的指向
+//    call 方法第一个参数改变this的指向  其他参数为传的实参
+    func3.call(tom,'实参1','实参2','实参3');
+
+//    apply要求传递的参数是数组
+    func3.apply(tom,['实参1','实参2','实参3']);
+
+
+//    找到数组中的最小值
+    var arr=[12,2,3,65,32,6];
+
+//    math.min 只支持传单个元素  apply则支持传数组
+    console.log(Math.min.apply(null,arr));
+
+</script>
+</body>
+</html>

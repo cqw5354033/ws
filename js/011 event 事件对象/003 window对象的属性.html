@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .div1{
+            width: 100px;
+            height: 100px;
+            background-color: #000;
+        }
+
+    </style>
+</head>
+<body>
+<div class="div1"></div>
+
+<script>
+//    document  是  window 的属性   如果前边不加对象，默认就是window对象
+    var div1 = window.document.getElementsByClassName('div1')[0];
+
+
+    div1.onclick = function(){
+//        点击跳转页面（可以返回）
+        window.location.href = "https://www.baidu.com";
+
+//        刷新页面
+        window.location.reload();
+
+//        点击跳转页面（不可以返回）
+        window.location.replace("https://www.baidu.com");
+    };
+
+
+
+
+</script>
+</body>
+</html>

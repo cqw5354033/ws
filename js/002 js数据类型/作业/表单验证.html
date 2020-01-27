@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+用户名: <input type="text" class="username"/>
+<span class="red" id="err1"></span> <br/>
+密码： <input type="text" class="password"/>
+<span class="red" id="err2"></span>
+<br/>
+<button id="btn">提交</button>
+
+<script>
+    var username = document.getElementsByClassName('username')[0];
+    var password = document.getElementsByClassName('password')[0];
+    var err1 = document.getElementById('err1');
+    var err2 = document.getElementById('err2');
+    var btn = document.getElementById('btn');
+
+    btn.onclick = function(){
+        var uValue = username.value;
+        var pValue = password.value;
+        var tishi1 = '';
+        var tishi2 = '';
+
+        var result1 = uValue.match(/[a-z]{5,10}/);
+        if(result1 === null){
+            tishi1 = '用户名必须是5-10位的字母'
+        }
+        console.log(tishi1);
+        var result2 = pValue.match(/[0-9]{5,10}/);
+        if(result2 === null){
+            tishi1 = '密码必须是5-10位的字母'
+        }
+        console.log(tishi2);
+        err1.innerHTML = tishi1;
+        err2.innerHTML = tishi2;
+    };
+</script>
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+
+<pre>
+浏览器的对象模型
+    1、顶级对象：window;
+    2、document: 比如：document.write ;
+    3、history： 比如：history.back(); history.forward();
+    4、location: 比如：location.href:重订象
+</pre>
+<pre>
+js的内置对象
+    string ：处理字符串
+    Math:处理 数学运算
+    date：处理时间
+    Array：提供数组模型
+    event:提供js的各种处理信息
+    Ajax：提供 异步交互的方法和属性
+</pre>
+<pre>
+    alert();
+    confirm();  //确定
+    prompt();   //可以输入
+</pre>
+<pre>
+    200:服务器正常
+    304:从上次请求之后服务器就没有修改
+    403：没有访问资源的权限
+    404：资源不存在
+    405：要访问资源被禁止
+    500：服务器内部出错
+</pre>
+<pre>
+    josn字符串怎样转换为数据，两种方法的区别是什么？
+    1、eval
+    2、JSON.parse();         有安全机制的检测
+</pre>
+<pre>
+    闭包：子函数能被外层调用，里面的变量保存下来，创建了一个不受外部因素干扰的空间
+</pre>
+<pre>
+    阻止事件的冒泡：    evt.stopPropagation();
+    浏览器的默认事件：   evt.preventDefault();
+</pre>
+
+<canvas></canvas>
+<script>
+    function timer(){
+        var i=1;
+        function func1(){
+            if(i<=100){
+               document.write(i+'、');
+            }else{
+                clearInterval(tingzhi);
+            }
+            i++;
+        }
+        var tingzhi=setInterval(func1,100);
+    }
+//    timer();
+
+    function table(){
+        for(var i=1;i<10;i++){
+            for(var j=1;j<=i;j++){
+                document.write(j+'*'+i+'='+i*j);
+                document.write(' ');
+            }
+            document.write('<br>')
+        }
+    }
+//    table();
+
+    function click(){
+        window.onclick=function(evt){
+            var evt=evt?evt:event.window;
+            console.log(evt.clientX,evt.clientY);
+        }
+    }
+    click();
+
+
+//    0-9的随机整数：
+    console.log(Math.round(Math.random()*10));
+
+
+//    去除字符串第一个字符
+    var str='abcdefghijklmnopqrstuvwxyz';
+    console.log(str.substr(1,2));
+    console.log(str.substring(1));
+    console.log(str.slice(0,1));
+    console.log(str.replace(str.charAt(0),'1'));
+
+//    将字符串 'dcab'转换成'a-b-c-d'
+    var str2='dcab';
+    console.log(str2.split('').sort().join('-'));
+
+</script>
+</body>
+</html>

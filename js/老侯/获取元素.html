@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        body{
+            height: 100vh;
+
+        }
+    </style>
+</head>
+<body>
+<pre>
+    获取元素的方法：
+        1、通过标签获取。   document.getElementsByTagName()
+            （通过该方发获取的元素组成一个 数组（不管标签有几个））
+    cssText： 改变多个样式属性。
+        2、通过类名获取的元素组成一个数组（）
+            （通过该方发获取的元素组成一个 数组（不管标签有几个））
+        3、通过ID获取元素
+            （通过该方发获取的元素是唯一的（不管标签有几个））
+        4、通过name获取的元素组成一个数组（）
+            （通过该方发获取的元素组成一个 数组（不管标签有几个））
+</pre>
+
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+<div class="box"></div>
+
+<script>
+    var a = true;
+    var aBody = document.getElementsByTagName('body')[0];
+    aBody.style.backgroundColor = 'red';
+    aBody.style.color = 'white';
+    aBody.style.fontSize =  '20px';
+
+    var div = document.getElementsByClassName('box')[0];
+    var div2 = document.getElementsByClassName('box')[1];
+    var div3 = document.getElementsByClassName('box')[2];
+    div.style.cssText ='background-color:white; width:200px; height:200px';
+    div2.style.cssText ='background-color:yellow; width:200px; height:200px';
+    div3.style.cssText ='background-color:blue; width:200px; height:200px';
+    aBody.onclick = function () {
+        if(a){
+            aBody.style.cssText = 'background-color: blue; color:green; font-size:30px';
+            a = !a;
+        }else{
+            aBody.style.backgroundColor = 'red';
+            aBody.style.color = 'white';
+            aBody.style.fontSize =   '20px';
+            a = !a;
+        }
+    };
+
+
+</script>
+</body>
+</html>

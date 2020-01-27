@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="css/public.css"/>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <style>
+        ul{
+            list-style: none;
+        }
+        li{
+            float: left;
+            background-color: black;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 24px;
+            line-height: 34px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<ul class="cb">
+    <li class="cur">首页</li>
+    <li>网站模版</li>
+    <li>Flash素材</li>
+    <li>菜单导航</li>
+    <li>时间日期</li>
+    <li>焦点图</li>
+    <li>tab标签</li>
+    <li>jquery特效</li>
+    <li>在线教育</li>
+</ul>
+
+<script>
+    var li = document.getElementsByTagName('li');
+    var len= li.length;
+    for(var i=0;i<len;i++){
+        li[i].onclick=function(){
+
+//            清除所有li的cur
+            for(var j=0;j<len;j++){
+                li[j].className='';
+            }
+
+//            在事件中我们可以通过this当前操作的元素
+            this.className='cur';
+        };
+    }
+</script>
+</body>
+</html>

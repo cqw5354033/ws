@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+用户名：<input type="text"/><br/>
+密码：<input type="password"/><br/>
+爱好：
+    <input type="checkbox"/>篮球
+    <input type="checkbox"/>足球
+    <input type="checkbox"/>乒乓球
+<script>
+//    用js获取页面中所有的checkbox标签
+    var inputs=document.getElementsByTagName('input');
+    var arr=[];
+    for(var i=0;i<inputs.length;i++){
+//        判断是不是checkbox标签   获取元素：getAttribute
+        if(inputs[i].getAttribute('type')=='checkbox'){
+            arr.push(inputs[i]);
+        }
+    }
+    console.log(arr);
+
+</script>
+</body>
+</html>

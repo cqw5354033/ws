@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .red{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<script>
+    var str = 'Lorem <span class = "red"> 1</span>ipsum dolor sit amet, consectetur <span class = "red"> 2</span> adipisicing elit.' +
+            ' Eius facere harum repellat <span class = "red"> 3</span>voluptas! Aspernatur deleniti, dolor doloremque expedita' +
+            ' illo iusto saepe veniam! <span class = "red"> 4</span>Culpa dolore <span class = "red"> 5</span>mollitia perspiciatis, provident reprehenderit' +
+            ' tempora <span class = "red"> 6</span>voluptatem!';
+    var arr = ['ipsum','adipisicing','voluptas','Culpa','mollitia','voluptatem'];
+    for(var i = 0; i < arr.length; i++){
+        var weizhi = str.indexOf(arr[i]);
+        if(weizhi != -1){
+            console.log(arr[i]);
+            str = str.replace(arr[i] , '***');
+        }
+    }
+    document.write(str);
+</script>
+</body>
+</html>

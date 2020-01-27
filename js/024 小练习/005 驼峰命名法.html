@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+
+<script>
+//    驼峰命名法
+    var str='get-start-element-path';
+    var arr=str.split('-');
+console.log(arr);
+    for(var i=0;i<arr.length;i++){
+//        截取第一个大写字母，在串联上后面的字母
+        if(i){  //0 转换为false，不进判断
+            arr[i]=arr[i].toUpperCase().substr(0,1)+arr[i].substr(1);
+        }
+    }
+    var new_arr=arr.join('');
+    alert(new_arr);
+
+
+
+//    用alert输出 This is baidu.com
+    arr2=['This','is','baidu','.com'];
+    var arr3=arr2.join(' ');
+    alert(arr3);
+
+
+</script>
+</body>
+</html>

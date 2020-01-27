@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 100vm;
+            height: 100vh;
+            background: #c1e2b3;
+            position: relative;
+        }
+        .content{
+            width: 700px;
+            height: 200px;
+            border-radius: 10px;
+            background:darkgrey ;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-50%);
+            line-height: 200px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="content">
+        <input type="text" class="input1"/>
+        <select name="" id="sel">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="text" class="input2"/>
+        <button id="btn">开始计算</button>
+        <input type="text" class="result"/>
+    </div>
+</div>
+
+<script>
+    var input1 = document.getElementsByClassName('input1')[0];
+    var input2 = document.getElementsByClassName('input2')[0];
+    var sel = document.getElementById('sel');
+    var options = document.getElementsByTagName('option');
+    var btn = document.getElementById('btn');
+    var inputResult = document.getElementsByClassName('result')[0];
+
+    btn.onclick = function(){
+        var inp1val = input1.value;
+        var inp1va2 = input2.value;
+
+        inp1val = parseInt(inp1val);
+        inp1va2 = parseInt(inp1va2);
+
+        var selindex = sel.selectedIndex;
+        var curoption = options[selindex];
+        var tark = curoption.value;
+        var result;
+
+        if(tark == '+'){
+            result = inp1val + inp1va2;
+        }else if(tark == '-'){
+            result = inp1val - inp1va2;
+        }else if(tark == '*'){
+            result = inp1val * inp1va2;
+        }else if(tark == '/'){
+            result = inp1val / inp1va2;
+        }
+
+        inputResult.value = result;
+    }
+</script>
+</body>
+</html>

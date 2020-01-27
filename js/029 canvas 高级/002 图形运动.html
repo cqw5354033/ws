@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        canvas{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<canvas width="500" height="500" id="can1"></canvas>
+<script>
+    var can1=document.getElementById('can1');
+    var dx=can1.getContext('2d');
+
+//    圆形的移动
+    var cx=100;
+    var cy=100;
+
+    setInterval(function(){
+        dx.clearRect(0,0,500,500);
+        dx.beginPath();
+        dx.arc(cx++,cy,50,0,Math.PI*2);
+        dx.stroke();
+    },100);
+
+//    三角形的移动
+
+    /*var dian1=[50,50];
+    var dian2=[50,150];
+    var dian3=[150,150];
+
+    setInterval(function(){
+        dx.clearRect(0,0,500,500);
+        dx.beginPath();
+        dx.moveTo(50,dian1[1]++);
+        dx.lineTo(50,dian2[1]++);
+        dx.lineTo(150,dian3[1]++);
+        dx.closePath();
+        dx.stroke();
+    },100);
+*/
+
+
+</script>
+
+
+</body>
+</html>

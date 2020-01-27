@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+<script>
+    var arr = [
+        'tupian1.png',
+        'tupian2.jpg',
+        'tupian3.png',
+        'tupian4.gif',
+        'tupian5.jpg',
+        'tupian6.gif'
+    ];
+    function yanzheng(shuju){
+        for(var i = 0; i < shuju.length; i++){
+            var str = shuju[i].lastIndexOf('.');
+            var arr1 = shuju[i].substr(str+1, 3);
+            if(arr1 == 'png'){
+                console.log('合法' + shuju[i]);
+            }else{
+                console.log('不合法' + shuju[i]);
+            }
+        }
+    }
+    yanzheng(arr);
+
+</script>
+</body>
+</html>

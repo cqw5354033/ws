@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+
+<script>
+    //    多态：同一个函数  以不同的方式调用， 表现的结果不同
+    var name='小红';
+    var age=18;
+    function person(){
+        console.log(this.name);
+        console.log(this.age);
+    }
+    person();               //小红    18
+
+    var obj={name:'小明',age:20};
+    person.call(obj);       //小明    20
+
+    function person2(){
+        this.name='小强';
+        this.age='21';
+        this.func1=person;
+    }
+    var person_obj=new person2();
+    person_obj.func1();     //小强    21
+
+    
+</script>
+</body>
+</html>

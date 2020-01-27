@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        canvas{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<canvas width="500" height="500" id="can1"></canvas>
+<script>
+    var can1=document.getElementById('can1');
+    var dx=can1.getContext('2d');
+
+    function zhexian(zhongx,xw,yw,data){
+        this.zhongx=zhongx?zhongx:[20,480];
+        this.xWidth=xw?xw:450;
+        this.yWidth=yw?yw:450;
+
+
+        this.data=data?data:[10,20,30,40,200,30,400,40];
+        this.drawxy=function(){
+//            改变中心点
+            dx.translate(this.zhongx[0],this.zhongx[1]);
+//            X轴
+            dx.beginPath();
+            dx.moveTo(0,0);
+            dx.lineTo(this.xWidth,0);
+            dx.stroke();
+//            Y轴
+            dx.beginPath();
+            dx.moveTo(0,0);
+            dx.lineTo(0,-this.yWidth);
+            dx.stroke();
+        };
+        this.drawarc=function(){
+            var danwei=this.yWidth/this.data.length;
+            this.danwei=danwei;
+            for(var i=0;i<this.data.length;i++){
+                dx.beginPath();
+                dx.arc(danwei*i,-this.data[i],3,0,Math.PI*2);
+                dx.fill();
+            }
+        };
+        this.drawline=function(){
+            dx.moveTo(0,-this.data[0]);
+            for(var i=1;i<this.data.length;i++){
+                dx.lineTo(this.danwei*i,-this.data[i]);
+            }
+            dx.stroke();
+        }
+    }
+
+//    折线的中心点  x轴长度    y轴长度  数据
+    var zhexiano=new zhexian([10,490],400,400,[10,300,50,30,10,300,50,30,10,300,50,30]);
+    zhexiano.drawxy();          //绘制xy轴
+    zhexiano.drawarc();         //绘制关键点
+    zhexiano.drawline();        //绘制折线
+
+</script>
+</body>
+</html>

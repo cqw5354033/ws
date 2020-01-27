@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #form1{
+            color: red;
+        }
+        #form1 .error{
+            display: none;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+<h3>表单验证的基本原理</h3>
+<form action="1.php" method="post" id="form1">
+    <div>
+        <label for="username">用户名：</label>
+        <input type="text" id="username" name="username"/>
+        <span class="error"></span>
+        <br/>
+    </div>
+    <div>
+        <label for="password">密码：</label>
+        <input type="text" id="password" name="password"/>
+        <span class="error"></span>
+        <br/>
+    </div>
+    <input type="submit" value="登录"/>
+
+</form>
+
+<script>
+//    绑定事件  阻止表单的提交
+    var form1 = document.getElementById('form1');
+    var username = document.getElementById('username');
+    var password = document.getElementById('password');
+    var tijiaou=false;
+    var tijiaop=false;
+//    鼠标离开时判断
+    function cheakuname(){
+        var uname='';
+        var a=username.parentNode.getElementsByClassName('error')[0];
+        if(username.value==''){
+            uname='用户名不能为空';
+
+//            后面的红字
+            a.innerHTML=uname;
+//            让他显示出来
+            a.style.display='inline';
+        }else if(username.value.length < 5 || username.value.length>10){
+            uname='用户名在5-10位之间';
+            a.innerHTML=uname;
+            a.style.display='inline';
+        }
+        else{
+            a.innerHTML='';
+            a.style.display='none';
+            tijiaou=true;
+        }
+    }
+    username.onblur =cheakuname;
+
+        function cheakpassword(){
+        var passname = '';
+        var a=password.parentNode.getElementsByClassName('error')[0];
+        if(password.value==''){
+            passname='密码不能为空';
+            a.innerHTML=passname;
+            a.style.display='inline';
+        }else{
+            a.innerHTML='';
+            a.style.display='none';
+            tijiaop=true;
+        }
+    }
+    password.onblur=cheakpassword;
+
+//    提交表单的事件
+    form1.onsubmit=function(){
+        cheakuname();
+        cheakpassword();
+        return tijiaou && tijiaop;
+    }
+
+
+</script>
+</body>
+</html>

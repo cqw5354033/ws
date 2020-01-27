@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .div1{
+            width: 100px;
+            height: 100px;
+            background-color: #000;
+        }
+    </style>
+</head>
+<body>
+<div class="div1"></div>
+
+<script>
+    var div1 = document.getElementsByClassName('div1')[0];
+
+//    event 对象是js自动帮我们传入的，里边存储了大量常用的信息
+    div1.onclick = function(event){
+        console.log('鼠标的位置：'+event.clientX+':'+event.clientY);
+//        事件源   三元运算
+//        var shijiany = event.srcElement ? event.srcElement : event.target;
+    };
+
+    window.onkeypress=function(evt){
+        console.log('键值为'+evt.keyCode);
+//        事件源
+        console.log(evt.srcElement);
+    }
+
+
+
+
+</script>
+</body>
+</html>

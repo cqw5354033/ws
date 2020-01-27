@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+
+<script>
+//    1、字面量 的方式去创建对象
+    var cat={
+        color:'白色',
+        age:2,
+        features:'抓老鼠',
+        features2:function(){
+            alert('爱吃鱼');
+        }
+    };
+//    调用对象里边的数据
+    cat.color;
+//    cat.age;
+    console.log(cat.features2());
+
+
+//    2、通过 构造函数 的形式 创建对象
+
+//    相当于创建模版
+    function dog(){
+        this.color='黑色';
+        this.age=4;
+//        可以中断代码执行
+//        return 'hello';
+        this.features='睡觉';
+        this.features2=function(){
+            alert('请叫我dogKing');
+        };
+        alert('汪汪叫');
+    }
+
+//    创建对象
+    var dog2=new dog();
+    console.log(dog2.color);
+
+//    删除对象中的属性和方法   delete 关键字
+    delete dog2.color;
+    console.log(dog2);
+
+    var dog3=new dog();
+    console.log(dog3);
+
+</script>
+</body>
+</html>

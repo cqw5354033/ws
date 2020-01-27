@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        canvas{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<canvas width="300px" height="300px" id="cavn"></canvas>
+<script>
+    var canv=document.getElementById('cavn');
+    var ctx=canv.getContext('2d');
+
+    ctx.font='30px Arial';        //设置字体大小
+    ctx.textAlign='center';         //本内容的当前对齐方式
+    ctx.textBaseline='middle';      //设置文字的居中 对齐  （当前文本基线）
+    ctx.fillText('今天是个好日子',100,50);  //绘制文字  坐标
+    ctx.stroke();
+</script>
+
+
+
+</body>
+</html>

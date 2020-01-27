@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+
+
+<script>
+    //    1、小星星在页面上0-500px位置范围内随机出现
+    //    2、小星星的大小  是10-40 之间的大小
+    //    3、点击小星星的时候消失
+    //    4、有一个计数器来记录小星星的数量
+    //    5、如果页面上的小星星超过50，告诉用户游戏结束
+
+    var jishu = 0;
+    function fun1() {
+        var imgObj = document.createElement('img');
+        imgObj.src = 'img/1.jpg';
+        imgObj.style.position='absolute';
+
+//    设置星星的位置
+        imgObj.style.left = Math.round(Math.random()*500)+'px';
+        imgObj.style.top = Math.round(Math.random()*500)+'px';
+
+//    设置星星的大小
+        imgObj.style.width = Math.round(Math.random()*30)+30+'px';
+
+//        绑定点击事件:点击消失
+        imgObj.onclick = function(){
+            this.parentNode.removeChild(this);
+            jishu--;
+        };
+
+//        追加小星星
+        document.body.appendChild(imgObj);
+        jishu++;
+
+//        判断游戏是否结束
+        if(jishu==5){
+            clearInterval(timer);
+            alert('傻逼');
+
+        }
+
+    }
+    var timer = setInterval(fun1,500);
+</script>
+</body>
+</html>

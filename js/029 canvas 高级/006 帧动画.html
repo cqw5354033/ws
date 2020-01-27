@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        canvas{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<canvas width="500" height="500" id="can1"></canvas>
+<img src="001.png" alt="帧动画图片"/>
+<script>
+    var can1=document.getElementById('can1');
+    var dx=can1.getContext('2d');
+    var imgObj=document.getElementsByTagName('img')[0];
+    var x1=0;   //剪切的位置，用于切换小人
+    var x2=100; //用于移动小人的位置
+
+    imgObj.onload=function(){
+        setInterval(function(){
+            //        图片资源    剪切位置    剪切宽高    在画布上的位置   图片的宽高
+            x1+=40;
+            if(x1>120){
+                x1=0;
+            }
+            x2++;
+            if(x2>400){
+                x2=100;
+            }
+            dx.clearRect(0,0,500,500);
+            dx.beginPath();
+            dx.drawImage(imgObj,x1,130,40,65,x2,100,40,65);
+
+        },50);
+    }
+
+</script>
+</body>
+</html>

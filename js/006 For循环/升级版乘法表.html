@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+<script>
+    for(var i=1; i<=9; i++){
+//        内层循环是列数，从9递减到1
+        var baocun = i-1;
+        for(var j=1; j<=(9-i+1); j++){
+            var cs1=j;
+            baocun++;
+            var cs2=baocun;
+            document.write(j+'*'+i+'='+j*i);
+            document.write(' ')
+        }
+        document.write('<br>');
+    }
+
+
+</script>
+</body>
+</html>

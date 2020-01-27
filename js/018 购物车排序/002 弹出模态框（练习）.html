@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .aaa{
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: rgba(0,0,0,0.5);
+            width: 100%;
+            height: 100%;
+        }
+        .content{
+            width: 200px;
+            height: 150px;
+            background: white;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-top: -50px;
+            margin-left: -100px;
+        }
+    </style>
+</head>
+<body>
+<!--<div class="aaa">-->
+    <!--<div class="content">-->
+        <!--<h3>提示信息</h3>-->
+        <!--<p>您确定要移出购物车吗？</p>-->
+        <!--<button>确定</button>-->
+        <!--<button>取消</button>-->
+    <!--</div>-->
+<!--</div>-->
+
+
+<script>
+//    function get_time(timestr){
+//        var new_time = timestr.replace('年','-').replace('月','');
+//        var a= new Date(new_time);
+//        return a.getTime();
+//    }
+//    console.log(get_time('2003年5月'));
+
+    modal_my (1,'您的钱包余额不足');
+    function modal_my(type,text,fanhui1,fanhui2){
+//        警告型弹出框
+//        if(type===1){
+//            var str='';
+//            str= '<div class="aaa">'+
+//                    '<div class="content">'+
+//                        '<h3>提示信息</h3>'+
+//                        '<p>'+text+'</p>'+
+//                        '<button id="btn1">确定</button>'+
+//                    '</div>'+
+//                 '</div>';
+//            var div1 =document.createElement('div');
+//            div1.innerHTML=str;
+//            document.body.appendChild(div1);
+//
+////            点击确定关闭弹出层
+//            document.getElementById('btn1').onclick=function(){
+//                var tck_bg=document.getElementsByClassName('aaa')[0];
+//                tck_bg.parentNode.removeChild(tck_bg);
+//            }
+//        }
+
+//        确认型弹出框
+        if(type===2){
+            var str2='';
+            str2= '<div class="aaa">'+
+                    '<div class="content">'+
+                    '<h3>提示信息</h3>'+
+                    '<p>'+text+'</p>'+
+                    '<button id="btn1">确定</button>'+
+                    '<button id="btn2">取消</button>'+
+                    '</div>'+
+                    '</div>';
+            var div2 =document.createElement('div');
+            div2.innerHTML=str2;
+            document.body.appendChild(div2);
+
+//            点击确定关闭弹出层
+            var a = document.getElementById('btn1').onclick=function(){
+                var tck_bg=document.getElementsByClassName('aaa')[0];
+                tck_bg.parentNode.removeChild(tck_bg);
+                fanhui1();
+            };
+
+//            点击取消关闭弹出层
+            document.getElementById('btn2').onclick=function(){
+                var tck_bg=document.getElementsByClassName('aaa')[0];
+                tck_bg.parentNode.removeChild(tck_bg);
+                fanhui2();
+            }
+        }
+    }
+    console.log(modal_my(2,'确定要从购物车移出吗',
+    function(){
+        alert('发送ajax');
+    },function(){
+        alert('取消');
+    }));
+
+
+</script>
+</body>
+</html>

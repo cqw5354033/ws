@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+
+<script>
+    function func1(){
+//          获取当前时间
+        var dateObj = new Date();
+        return dateObj.getFullYear()+'年'+(dateObj.getMonth()+1)+'月'+dateObj.getDate()+'日';
+    }
+    document.write(func1());
+    document.write('<br>');
+
+
+//    函数里边或者外边执行时的不同，有一个条件不符合就停止
+    for(i=0, j=0;i<10,j<6; i++,j++){
+        k=i+j;
+        document.write(k);
+        document.write('<br>');
+    }
+    t=i+j;
+    document.write('<br>');
+    document.write(t);
+</script>
+</body>
+</html>

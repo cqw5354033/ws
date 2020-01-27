@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+<script>
+
+    var result = confirm('今天你干活了吗');
+    if(result){
+        var result2 = prompt('你今天干了什么');
+        if(result2 == '学习'){
+            var result3 = prompt('学了什么');
+            if(result3 == 'js'){
+                alert('好好学');
+            }else{
+                alert('先学好js吧');
+            }
+        }else if(result2 == '打工'){
+            var result4 = prompt('打了什么工');
+            if(result4 == '瞎打'){
+                alert('嗯，可以');
+            }else{
+                alert('不装能死啊');
+            }
+        }else{
+            var result5 = prompt('是不是求也没干');
+            if(result5){
+                alert('那也挺爽的')
+            }else{
+                var result6 = prompt('你是不是也不知道你干嘛了');
+                if(result6){
+                    alert('好吧，那你废了')
+                }else{
+                    alert('滚')
+                }
+            }
+        }
+    }else{
+        alert('好好回答问题');
+    }
+</script>
+</body>
+</html>

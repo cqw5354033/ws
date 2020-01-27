@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .div1, .div2{
+            width: 300px;
+            height: 200px;
+            border: 1px solid black;
+            float: left;
+            margin: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .div2{
+            display: none;
+        }
+        .div2 img{
+            position: absolute;
+        }
+
+        .div1 .jingtou{
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0,0,0,0.3);
+            top: 0;
+            left: 0;
+            cursor: pointer;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="div1">
+    <img src="img/ktm_small.jpg" alt=""/>
+    <span class="jingtou"></span>
+</div>
+<div class="div2">
+    <img src="img/ktm_big.jpg" alt=""/>
+</div>
+
+<script>
+    var small=document.getElementsByClassName('div1')[0];
+    var big=document.getElementsByClassName('div2')[0];
+    var jingtou=document.getElementsByClassName('jingtou')[0];
+    var big_img=big.getElementsByTagName('img')[0];
+    var small_img=small.getElementsByTagName('img')[0];
+
+    small.onmouseover=function(){
+        big.style.display='inline-block';
+        jingtou.style.display='inline-block';
+    };
+    small.onmouseout=function(){
+        big.style.display='none';
+        jingtou.style.display='none';
+    };
+
+//    让镜头跟随鼠标移动
+    small.onmousemove=function(evt){
+        var evt=evt?evt:window.event;
+
+        var top=evt.clientY-small.offsetTop-jingtou.clientHeight/2;
+        var left=evt.clientX-small.offsetLeft-jingtou.clientWidth/2;
+
+//        Y轴上位置的限制
+        top=top<0?0:top;
+        var max_top=small.clientHeight-jingtou.clientHeight;
+        top=top>max_top?max_top:top;
+
+//        X轴上位置的限制
+        left=left<0?0:left;
+        var max_left=small.clientWidth-jingtou.clientWidth;
+        left=left>max_left?max_left:left;
+
+
+        jingtou.style.top=top+'px';
+        jingtou.style.left=left+'px';
+
+//        让大图显示在相对应的位置
+//        把大图的div看作是小图里的镜头
+//        获取比例
+        var bili = big_img.clientWidth/small_img.clientWidth;
+        var big_top=top*bili;
+        var big_left=left*bili;
+
+//        以负数形式添加给大图
+        big_img.style.top=-big_top+'px';
+        big_img.style.left=-big_left+'px';
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+                    <!--以移动设备优先 视窗      宽度=设备宽度                             禁止缩放-->
+    <meta charset="UTF-8" name="viewport" content="width-device-width initial=1.0 user-scalable=no">
+    <title></title>
+
+</head>
+<body>
+<pre class="pre" id="pre">
+    js中的数据类型：
+    单一数据类型：number   string  boolean
+    组合数据类型：数组       对象
+    特殊数据类型：undefined    null
+</pre>
+<div class="div1" index="123"></div>
+<script>
+//    定义定时器，打印从1之后的阿拉伯数字，（每次加一） 到100停止
+//    var a=1;
+//    function func1(){
+//        if(a<=100){
+//            document.write(a+'<br>');
+//        }else{
+////            清除定时器
+//            clearInterval(tingzhi);
+//        }
+//        a++;
+//    }
+//    var tingzhi = setInterval('func1()',100);
+
+//    九九乘法表
+//    for(var i=1;i<=9;i++){
+//        for(var j=1;j<=i; j++){
+//            document.write(j+'*'+i+'='+j*i);
+//            document.write(' ');
+//        }
+//        document.write('<br>');
+//    }
+
+//    鼠标点击
+//    window.onclick=function(){
+//        console.log(event.clientX,event.clientY);
+//    };
+
+//    div1.style.cssText='width:200px;height:200px;background-color:black';
+
+
+//    给div1加一个span标签，span里写自己的名字，颜色为红
+    var a = document.getElementsByClassName('div1')[0];
+    var span = document.createElement('span');
+    console.log(a.attributes.index);
+    span.innerHTML='陈泉纬';
+    span.style.color = 'red';
+    a.appendChild(span);
+
+
+</script>
+</body>
+</html>

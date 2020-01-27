@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>手风琴</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        dl{
+            width: 350px;
+            line-height: 50px;
+            text-align: center;
+            border: 1px solid black;
+        }
+        dl dt{
+            cursor: pointer;
+            border: 1px solid black;
+        }
+        dl dd{
+            /*display: none;*/
+            transition: height 1s;
+            overflow: hidden;
+        }
+        dl dd p{
+            cursor: pointer;
+        }
+        dl dd p span{
+            background-color: red;
+            color: white;
+            font-size: 12px;
+            padding: 10px;
+            border-radius: 5px;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="sfq">
+    <dl>
+        <dt>山西</dt>
+        <dd style="height: 0">
+            <p>
+                太原
+                <span class="del1">删除</span>
+                <span class="del2">删除大分类</span>
+            </p>
+            <p>
+                晋中
+                <span class="del1">删除</span>
+                <span class="del2">删除大分类</span>
+            </p>
+            <p>
+                大同
+                <span class="del1">删除</span>
+                <span class="del2">删除大分类</span>
+            </p>
+            <p>
+                运城
+                <span class="del1">删除</span>
+                <span class="del2">删除大分类</span>
+            </p>
+        </dd>
+    </dl>
+    <dl>
+        <dt>河北</dt>
+        <dd style="height: 0">
+            <p>
+                保定
+                <span class="del1">删除</span>
+                <span class="del2">删除大分类</span>
+            </p>
+            <p>
+                石家庄
+                <span class="del1">删除</span>
+                <span class="del2">删除大分类</span>
+            </p>
+            <p>
+                张家界
+                <span class="del1">删除</span>
+                <span class="del2">删除大分类</span>
+            </p>
+        </dd>
+    </dl>
+    <dl>
+        <dt>北京</dt>
+        <dd style="height: 0">
+            <p>
+                海淀
+                <span class="del1">删除</span>
+                <span class="del2">删除大分类</span>
+            </p>
+            <p>
+                朝阳
+                <span class="del1">删除</span>
+                <span class="del2">删除大分类</span>
+            </p>
+            <p>
+                大兴
+                <span class="del1">删除</span>
+                <span class="del2">删除大分类</span>
+            </p>
+        </dd>
+    </dl>
+</div>
+
+<script>
+    var dt = document.getElementsByTagName('dt');
+    var sfq = document.getElementsByClassName('sfq')[0];
+    var p=sfq.getElementsByTagName('p');
+    var del1 = sfq.getElementsByClassName('del1');
+    var del2 = sfq.getElementsByClassName('del2');
+
+
+    var len = dt.length;
+    for(var i=0;i<len;i++){
+        dt[i].onclick=function(){
+            var dd = this.parentNode.getElementsByTagName('dd')[0];
+//            得到p标签（子分类的数量）
+            var p_len = dd.getElementsByTagName('p').length;
+            if(dd.style.height == '0px'){
+//                动态添加高度
+                dd.style.height=50*p_len+'px';
+            }else{
+                dd.style.height='0px';
+            }
+        }
+    }
+
+//    点击删除 p
+   var plen = p.length;
+//    for(var j=0;j<len;j++){
+//        p[j].onclick=function(){
+//            this.parentNode.removeChild(this);
+//        }
+//    }
+
+//    删除功能
+    var dlen = del1.length;
+    for(var s=0; s<dlen;s++){
+        del1[s].onclick=function(){
+
+            //截取出城市名字
+            var curp = this.parentNode;
+            var curdd=this.parentNode.parentNode;
+//            获取第一个 < 括号的位置
+            var kuohao = curp.innerHTML.indexOf('<');
+//            截取 < 之前的字符串
+            var jiequ = curp.innerHTML.substr(0,kuohao);
+
+//            判断
+            if(confirm('确定要删除'+jiequ+'吗？')){
+                curdd.removeChild(curp);
+
+                //            给dd的高度减去50px
+                curdd.style.height=parseInt(curdd.style.height)-50+'px';
+            }
+        }
+    }
+
+//    删除大的分类
+    var del2_len=del2.length;
+    for(var d=0; d<del2_len;d++){
+        del2[d].onclick=function(){
+            var dlzhi = this.parentNode.parentNode.parentNode;
+//            找到这个项目的名字并打印出来
+            var dayinname = dlzhi.getElementsByTagName('dt')[0];
+            if(confirm('确定要删除'+dayinname+'这个大分类吗？')){
+                sfq.removeChild(dlzhi);
+            }
+        }
+    }
+</script>
+</body>
+</html>

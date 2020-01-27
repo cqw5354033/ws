@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .div1{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<div class="div1"></div>
+<script>
+//    IE和标准模式下有哪些兼容性的写法
+    document.getElementsByClassName('div1')[0].onclick=function(){
+        var ev=ev||window.event;
+        var ele=ev.srcElement||ev.target;
+        console.log(ele);
+    };
+
+//    配置本地域名的文件
+//    C:\Windows\System32\drivers\etc\hosts
+
+</script>
+</body>
+</html>

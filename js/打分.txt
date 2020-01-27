@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box2{
+            overflow: hidden;
+            position: absolute;
+            width: 200px;
+        }
+        .box1{
+            width: 1000px;
+            position: relative;
+            left: 0px;
+            transition:left 1s;
+        }
+       .box1 .img{
+            float: left;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+<!--<div class="box">-->
+    <!--<img src="" alt="" class="img"/>-->
+<!--</div>-->
+<div class="box2">
+    <div class="box1">
+        <img src="img/a1.jpg" alt="" class="img"/>
+        <img src="img/a2.jpg" alt="" class="img"/>
+        <img src="img/a3.jpg" alt="" class="img"/>
+        <img src="img/a4.jpg" alt="" class="img"/>
+        <img src="img/a5.jpg" alt="" class="img"/>
+    </div>
+</div>
+<script>
+    var box1 = document.getElementsByClassName('box1')[0];
+    var img =document.getElementsByClassName('img');
+    var j = 0;
+    function func1(){
+        box1.style.left='-'+j+'px';
+        if(j<=7600){
+            j=j+200;
+        }else{
+            j=0;
+        }
+    }
+    setInterval('func1()',1000);
+</script>
+<!--<script>-->
+    <!--var box =document.getElementsByClassName('box')[0];-->
+    <!--var img1 =document.getElementsByClassName('img')[0];-->
+    <!--var arr =['img/a1.jpg','img/a2.jpg','img/a3.jpg','img/a4.jpg','img/a5.jpg']-->
+    <!--var i = 0;-->
+    <!--function func2(){-->
+    <!--img1.src=arr[i];-->
+        <!--if(i == arr.length-1){-->
+            <!--i=1;-->
+        <!--}else{-->
+        <!--i++;-->
+        <!--}-->
+
+    <!--}-->
+    <!--setInterval('func2()',1000);-->
+<!--//    ()提高我们的优先级-->
+<!--</script>-->
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+<div id="time"></div>
+<script>
+    countDown(5);
+    function countDown(t){
+        var oTime = document.getElementById('time');
+        var times = t;
+        inner();
+        function inner(){
+            if(times>=0){
+                oTime.innerHTML ='距离结束还有'+Math.floor(times/60)+'分'+Math.floor(times%60)+'秒';
+                times--;
+                timer=setTimeout(inner,1000);
+            }else{
+                clearTimeout(timer);
+                alert('时间到了');
+            }
+        }
+    }
+</script>
+</body>
+</html>

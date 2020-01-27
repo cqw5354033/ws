@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+<ul>
+    <li class="box">第一个</li>
+    <li class="box">第二个</li>
+    <li class="box">第三个</li>
+    <li class="box">第四个</li>
+    <li class="box">第五个</li>
+</ul>
+
+<script>
+//函数的封装和调用
+    function fun1(b1, b2){
+//        return a1 + a2;
+        return b1 + b2;
+    }
+    var a1 = 12;
+    var a2 = 23;
+    var fanhui = fun1(a1, a2);
+    console.log(fanhui);
+
+//数组的声明和调用
+//    var arr1= new Array();
+    var arr1 = [];
+    arr1 [0] = '第一个';
+    arr1 [1] = '第二个';
+    arr1 [2] = '第三个';
+    arr1 [3] = '第四个';
+    arr1 [4] = '第五个';
+    arr1 [5] = '第六个';
+    arr1 [6] = '第七个';
+    console.log(arr1[4]);
+
+//字符串和变量的串联
+    var string1 = '字符串';
+    document.write(string1 + '新增的内容');
+
+//    弹出框和流程控制
+    alert('警告型');
+    confirm('用户确认型');
+    prompt('可输入内容');
+
+//js抓取页面上的元素
+    var ul1 = document.getElementById('ul1');
+    ul1.style.display = 'block';
+
+    var boxs = document.getElementsByClassName('box')[1];
+    boxs.style.display = 'none';
+
+    var box1 = document.getElementsByTagName('li')[2];
+    box1.style.display = 'none';
+
+</script>
+</body>
+</html>

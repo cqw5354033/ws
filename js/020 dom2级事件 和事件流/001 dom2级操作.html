@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .ceshi{
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+        }
+    </style>
+</head>
+<body>
+<div class="ceshi" >这是一个测试</div>
+
+<script>
+    var ceshi=document.getElementsByClassName('ceshi')[0];
+
+    //    dom 1级 事件绑定方式     onclick之类的方式
+    ceshi.onclick=function(){
+        alert('一级第一次点击了测试');
+    };
+//    取消点击事件
+    ceshi.onclick=null;
+
+
+    //    dom 2级 事件绑定方式 addEventListener
+    function clk1(){
+        alert('第一次点击了测试');
+    }
+    function clk2(){
+        alert('第二次点击了测试');
+    }
+
+    //    dom2 方式的绑定  支持 一个事件绑定多个逻辑（事件）
+    ceshi.addEventListener('click',clk1);
+    ceshi.addEventListener('click',clk2);
+
+    //    取消效果
+        ceshi.removeEventListener('click',clk1);
+//    ceshi.removeEventListener('click',clk2);
+</script>
+</body>
+</html>

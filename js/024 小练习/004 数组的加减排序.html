@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+
+<script>
+
+//    两个数组相加 再删除第二个元素
+    var arr1=[1,2,3,4,5,6];
+    var arr2=['a','b','c'];
+
+    var arr3=(arr1.concat(arr2));
+    arr3.splice(1,1);
+    console.log(arr3);
+
+//    用js随机选择10-100 的10个数字 并存入数组中 排序
+    var list = [];
+    for(var i=0;i<10;i++){
+        list.push(Math.floor(Math.random()*90+10));
+    }
+    list.sort();
+    console.log(list);
+
+
+//    数组排序
+    var arr=[2,3,6,111,4,7];
+//    倒序（翻过来）
+    arr.reverse();
+
+//    正序
+    arr.sort();
+
+//    降序（先正序后倒序）
+    arr.sort();
+    arr.reverse();
+    console.log(arr);
+
+//    正确的
+    arr.sort(function(num1,num2){
+       return num1-num2;
+    });
+    arr.reverse();
+    console.log(arr);
+
+</script>
+</body>
+</html>

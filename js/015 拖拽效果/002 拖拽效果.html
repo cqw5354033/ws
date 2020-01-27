@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .div1{
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="div1"></div>
+
+<script>
+    //    拖拽效果
+    //    1、用户点击元素，给元素绑定鼠标移动事件
+    //    2、把鼠标的位置赋值给元素
+    //    3、调整偏移量
+    //    4、拖拽的对象不能超出浏览器的显示范围
+    var div1 = document.getElementsByClassName('div1')[0];
+
+//        鼠标按下的时候开始拖动
+    div1.onmousedown = function(a){
+        var offX = a.clientX-div1.offsetLeft;   //X轴的偏移量
+        var offY = a.clientY-div1.offsetTop;   //Y轴的偏移量
+
+//            让div跟着鼠标移动（onmousemove）
+        window.onmousemove = function(b){
+            var locaX = b.clientX-offX;
+            var locaY = b.clientY-offY;
+
+//            不让div超出范围
+            if(locaX<0){
+                locaX=0;
+            }
+            if(locaY<0){
+                locaY=0;
+            }
+            var maxX=document.documentElement.clientWidth-div1.clientWidth;
+            var maxY=document.documentElement.clientHeight-div1.clientHeight;
+            if(locaX>maxX){
+                locaX=maxX;
+            }
+            if(locaY>maxY){
+                locaY=maxY;
+            }
+
+            div1.style.left = locaX+'px';
+            div1.style.top = locaY+'px';
+        }
+    };
+//    鼠标抬起的时候解除拖动
+    div1.onmouseup = function(){
+        window.onmousemove = null;
+    }
+</script>
+</body>
+</html>

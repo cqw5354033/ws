@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+
+<script>
+
+    //给构造函数传参
+    function dog(arg1){
+        this.name='白狗';
+        this.age=8;
+        this.like=arg1;
+    }
+    var dog1=new dog('喜欢跟我玩');
+    var dogs=new dog('喜欢咬我');
+
+    console.log(dog1.like);
+    console.log(dogs.like);
+
+
+
+//    封装性：私有属性    公有属性
+    function dog2(){
+        this.name='黄狗';         //public   公有属性
+        this.like='喜欢咬我';
+        var age=12;              //私有属性     内部可以访问
+        this.say_age=function(){
+            alert('它今年'+age+'岁了');
+        }
+    }
+    var dog2_1=new dog2();
+    dog2_1.say_age();
+
+    console.log(dog2_1.name);       //    . 属性名
+    console.log(dog2_1['name']);    //    []访问里面是字符串
+
+    for(var i in dog2_1){         //for  in 循环出来的属性名是字符串
+        console.log( dog2_1[i]);
+    }
+
+
+//    静态成员： 直接声明在构造函数上的属性
+    function cat(){
+        this.name='小猫';
+        this.age=1;
+        cat.num++;      //静态成员的使用
+    }
+    cat.num=0;          //静态成员的声明
+
+    var cat1=new cat();
+    var cat2=new cat();
+    var cat3=new cat();
+
+    console.log(cat.num);   //静态成员的访问
+
+
+</script>
+</body>
+</html>

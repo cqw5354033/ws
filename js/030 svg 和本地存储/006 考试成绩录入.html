@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>考试成绩录入与查询</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        .content{
+            width: 600px;
+            margin: 0px auto;
+            background-color: #ddd;
+            padding-bottom: 20px;
+        }
+        .content h3{
+            line-height: 60px;
+            text-align: center;
+            background-color: #00f;
+        }
+        .content p{
+            line-height: 60px;
+            text-align: center;
+        }
+        .content button{
+            display: block;
+            width:120px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background-color: #0f0;
+            border: 0px;
+            border-radius: 10px;
+            color: #fff;
+            cursor: pointer;
+            margin: 0px auto;
+            outline: none;
+        }
+
+    </style>
+</head>
+<body>
+<div class="content luru">
+    <h3>考试成绩录入</h3>
+    <p>请输入姓名：<input type="text"></p>
+    <p>请输入成绩：<input type="text"></p>
+    <p>请输入学科：<input type="text"></p>
+    <p>请输入性别：<input type="text"></p>
+    <button>提交</button>
+</div>
+<div class="content chaxun">
+    <h3>考试成绩查询</h3>
+    <p>请输入姓名：<input type="text"></p>
+    <button>查询</button>
+    <p id="result">
+
+    </p>
+</div>
+<script>
+    var luru=document.getElementsByClassName('luru')[0];
+    var inputs=luru.getElementsByTagName('input');
+    var button=luru.getElementsByTagName('button')[0];
+    button.onclick=function(){
+        var name=inputs[0].value;
+        var fenshu=inputs[1].value;
+        if(typeof(Storage)!=='undefined'){
+            // 分数  '100' '90'
+            // json  '{分数：90，性别：男，学科：h5}';
+             var str = JSON.stringify(site);
+//            有安全检测的功能
+             site = JSON.parse(str);
+
+
+            localStorage.setItem(name,fenshu);
+            alert('录入成功！');
+        }else{
+            alert('版本过旧，请升级浏览器！');
+        }
+    };
+
+    var chaxun=document.getElementsByClassName('chaxun')[0];
+    var inputs_2=chaxun.getElementsByTagName('input');
+    var button_2=chaxun.getElementsByTagName('button')[0];
+    var result2=document.getElementById('result');
+    button_2.onclick=function(){
+        var name2=inputs_2[0].value;
+        if(typeof(Storage)!=='undefined'){
+            var result=localStorage.getItem(name2);
+            console.log(typeof(result));
+            if(typeof(result)!=='string'){
+                result2.innerHTML='成绩未录入';
+            }else{
+                result2.innerHTML='查询结果：'+name2+':'+result;
+            }
+
+        }else{
+            alert('版本过旧，请升级浏览器！');
+        }
+    }
+</script>
+</body>
+</html>

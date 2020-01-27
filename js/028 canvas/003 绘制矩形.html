@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        canvas{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<canvas width="300px" height="300px" id="cavn"></canvas>
+<script>
+    var canv=document.getElementById('cavn');
+    var ctx=canv.getContext('2d');
+
+//    规划矩形的轨迹
+    ctx.rect(10,10,50,50);
+    ctx.stroke();
+
+    ctx.fillStyle="red";        //改变填充颜色
+    ctx.fillRect(80,80,80,80);  //填充颜色
+    ctx.stroke();
+
+    ctx.strokeRect(140,140,50,50);//集合了stroke();
+
+    ctx.clearRect(130,130,10,10);//清除了一个矩形区域
+
+
+</script>
+</body>
+</html>

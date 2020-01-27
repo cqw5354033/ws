@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+
+<script>
+    var arr=[1,2,4,6,7,3,2,4,6,3,2,5,3,6,3];
+//    编写一个函数去除重复的元素
+//    循环判断  判断后边的元素有没有和自己相同的
+//    如果有就不放新数组里 没有就放在新数组里
+//    最后返回新数组
+
+    function arr_qc(arr){
+        var new_arr=[];
+        for(var i=0; i<arr.length;i++){
+            var biaoji=false;   //声明一个标记
+            //循环当前元素后边的元素
+            for(var j=i+1;j<arr.length;j++){
+                if(arr[i]==arr[j]){
+                    biaoji=true;    //说明后边还有和当前重复的元素
+                    break;
+                }
+            }
+            if(!biaoji){
+                new_arr.push(arr[i]);
+            }
+        }
+        return new_arr;
+    }
+    console.log(arr_qc(arr));
+
+
+
+
+</script>
+</body>
+</html>

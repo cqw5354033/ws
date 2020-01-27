@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+
+<script>
+//    冒充继承：事例中，我们用cat 冒充 animal，
+//      相当于把 animal的属性声明在cat中执行了一遍
+//          这样就实现了cat对animal的继承
+    function animal(){
+        this.tz='体温恒定';
+        this.tz1='特征1';
+        this.tz2='特征2';
+        this.tz3='特征3';
+    }
+    function cat(){
+        animal.call(this);          //相当于：this.tz='体温恒定'
+        this.cat_tz='喜欢吃鱼';
+    }
+
+    var cat1=new cat();
+    console.log(cat1);
+
+</script>
+</body>
+</html>

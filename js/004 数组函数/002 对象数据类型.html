@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+<script>
+//    对象的定义方法  和 调用方法
+    var obj = {
+        shuxing1 :'可爱',
+        shuxing2 :'吃肉',
+        shuxing3 :'黄色',
+        shuxing4 :'会叫',
+        age:1,
+        year:function(){
+            this.age++;
+        }
+    };
+    console.log(obj);
+    //对象里边数据的调用
+    alert(obj.shuxing4);
+    obj.year();
+    console.log(obj);
+
+//    打印对象
+    var obj2 = {
+        shuxing1 :'可爱',
+        shuxing2 :'吃肉',
+        shuxing3 :'黄色',
+        shuxing4 :'会叫',
+        age:1
+    };
+//    访问属性的两种形式
+    alert(obj2.shuxing2);
+    alert(obj2['shuxing2']);
+//  js  for  in 循环 用来打印对象
+    for(var arr in obj2){
+        console.log(obj2[arr]);
+    }
+
+</script>
+</body>
+</html>

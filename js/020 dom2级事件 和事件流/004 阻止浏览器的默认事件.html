@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+<form action="1.php" method="get" id="form">
+    姓名：<input type="text"/><br/>
+    密码<input type="password"/><br/>
+    <input type="submit" value="登录"/>
+</form>
+
+<script>
+    var forms=document.getElementById('form');
+    forms.submit=function(evt){
+            //用户名不正确 密码不正确 return false
+            var evt=evt?evt:window.event;
+            evt.preventDefault();
+    }
+</script>
+</body>
+</html>

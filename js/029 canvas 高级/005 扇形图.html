@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        canvas{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<canvas width="500" height="500" id="can1"></canvas>
+<script>
+    var can1=document.getElementById('can1');
+    var dx=can1.getContext('2d');
+
+    var data=[['30%','#f00'],['20%','black'],['10%','yellow'],['30%','green'],['10%','blue']];
+    var banjing=100;
+
+    function leijia(num){
+        var result=0;
+        for(var j=0;j<num;j++){
+            result+=parseInt(data[j][0]);
+        }
+        return result;
+    }
+
+    for(var i=0;i<data.length;i++){
+        dx.beginPath();
+        dx.moveTo(200,200);
+//        开始绘制的位置
+        var kaishi=parseInt(leijia(i))/100*2*Math.PI;
+//        结束时的位置
+        var jieshu=kaishi+parseInt(data[i][0])/100*2*Math.PI;
+
+        dx.arc(200,200,banjing,kaishi,jieshu);         //开始的位置 应该是前边几个数值的累加
+        dx.fillStyle=data[i][1];
+        dx.fill();
+    }
+</script>
+</body>
+</html>

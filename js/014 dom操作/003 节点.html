@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+<input type="text" value="用户名" width="100" height="100" index2='2' id="input1"/>
+<ul id="ul1">
+    <li>张飞</li>
+    <li>关羽</li>
+    <li>刘备</li>
+    <li>赵云</li>
+</ul>
+
+<div class="div1"></div>
+<div class="div1">456</div>
+
+<ul id="ul2">
+    <li>一个人</li>
+</ul>
+<button id="btn">克隆</button>
+
+<script>
+    var input1= document.getElementById('input1');
+//    attributes 这个方法比我们直接通过  .属性名  的方法操作属性功能要强大，
+        // 它不仅能操作 为 w3c 定义的属性，也可以操作 自定义 的属性。
+    console.log(input1.attributes.index2);
+
+    var ul1 = document.getElementById('ul1');
+//    childNodes   获取所有的子节点元素
+    console.log(ul1.childNodes);
+
+//    通过数组下标访问子节点元素
+    console.log(ul1.childNodes[1]);
+//    通过 item() 访问子节点元素
+    console.log(ul1.childNodes.item(1));
+
+//    获取 和 设置 具体的属性节点
+    console.log(input1.getAttribute('index2'));
+    input1.setAttribute('index2','new');
+    console.log(input1.getAttribute('index2'));
+
+
+//    通过函数来判断节点的类型
+    function pdType(obj){
+        if(obj.nodeType == 1){
+            alert('这是一个元素节点');
+            return;
+        }else if(obj.nodeType == 2){
+            alert('这是一属性节点')
+        }else if(obj.nodeType == 3){
+            alert('这是一文本节点')
+        } else if(obj.nodeType == 9){
+            alert('这是一文档节点')
+        }else{
+            alert('我也不知道是什么')
+        }
+    }
+//    实参传值：
+    pdType(input1.attributes.value);
+    pdType(ul1.childNodes[1].firstChild);
+
+
+//    div1[0].innerHTML = "<span></span>";    //仅仅是一个字符串
+
+    var div1 = document.getElementsByClassName('div1');
+//    创建节点
+    var span=document.createElement('span');    //是一个真正的元素节点对象
+//    设置节点
+    span.setAttribute('class','red');
+//    追加节点
+    div1[0].appendChild(span);
+    console.log(div1);
+
+//    replaceChild    节点替换
+    var newli = document.createElement('li');
+    newli.innerHTML='吕布';
+    newli.style.color='red';
+    var lis = ul1.getElementsByTagName('li')[2];
+//    先写新的对象，再写要替换的对象
+    ul1.replaceChild(newli,lis);
+
+//    克隆：   cloneNode
+    var ul2 = document.getElementById('ul2');
+    var btn = document.getElementById('btn');
+    var ul_li=ul2.getElementsByTagName('li')[0];
+
+    btn.onclick=function(){
+        var newlis = ul_li.cloneNode(true);
+        ul2.appendChild(newlis);
+    }
+
+
+</script>
+</body>
+</html>

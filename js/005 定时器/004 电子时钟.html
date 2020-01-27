@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .time{
+            width: 200px;
+            height: 200px;
+            background: black;
+            color: white;
+            font-size: 36px;
+            text-align: center;
+            line-height: 200px;
+        }
+    </style>
+</head>
+<body>
+<div class="time"></div>
+
+<script>
+    var time = document.getElementsByClassName('time')[0];
+    fun1();
+    function fun1(){
+        var dObj = new Date();
+        var str = dObj.getHours() +':'+ dObj.getMinutes() +':'+ dObj.getSeconds();
+        time.innerHTML = str;
+    }
+    setInterval("fun1()",1000);
+
+//    a();
+//    function a(){
+//        var b = new Date();
+//        var c = b.getFullYear()+'/'+ b.getMonth()+'/'+ b.getDay();
+//        time.innerHTML = c;
+//    }
+//    setInterval("a()",1000);
+</script>
+</body>
+</html>

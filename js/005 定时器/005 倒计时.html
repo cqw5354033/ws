@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+<div class="time"></div>
+<script>
+//    倒计时效果
+    var time = document.getElementsByClassName('time')[0];
+    fun1();
+    function fun1(){
+        var newObj = new Date();
+        var gqObj = new Date("2017/10/01 00:00:00");
+        var cha = gqObj - newObj;   //相差的毫秒数
+        var chaM = Math.floor(cha/1000);        //相差的秒数     Math.floor(); 取整
+        var chaD = Math.floor(chaM/(3600*24));
+        var chaDM = chaD*3600*24;
+        var chaH = Math.floor((chaM - chaDM)/3600);
+        var chaHM = chaH*3600;
+        var chaF = Math.floor((chaM-chaDM-chaHM)/60);
+        var chaFM = chaF*60;
+        var chaS = chaM - chaDM -chaHM - chaFM;
+        time.innerHTML = '居国庆还有'+ chaD +'天，'+ chaH+'小时，'+ chaF+'分，'+ chaS+'秒';
+    }
+    setInterval("fun1()",1000);
+
+
+</script>
+</body>
+</html>

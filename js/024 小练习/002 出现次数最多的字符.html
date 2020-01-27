@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+
+<script>
+//    用js找出出现次数最多的字符和次数
+    var str='iaeaiauack';
+
+    var obj1={};
+    //{a:5,b:3,c:10}
+    for(var i=0;i<str.length;i++){
+//        当前字符：str.charAt(i);
+//        console.log(str.charAt(i));
+        if(!obj1[str.charAt(i)]){
+//            属性没有创建属性
+            obj1[str.charAt(i)]=1;
+        }else{
+//            属性存在就自加 1
+            obj1[str.charAt(i)]++;
+        }
+    }
+    console.log(obj1);
+
+//    找到对象中的最大属性值
+    var max=0;
+    var max_zhi='';
+    for(var j in obj1){
+        if(max<obj1[j]){
+            max=obj1[j];
+            max_zhi=j;
+        }
+    }
+    console.log('出现的次数最多的字符是'+max_zhi+'出现的次数是'+max);
+
+</script>
+</body>
+</html>

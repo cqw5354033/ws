@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .lunbo{
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        .lunbo_content{
+            transition: all 1s;
+        }
+        .lunbo img{
+            display: block;
+            float: left;
+        }
+        #lb_left{
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            background: url(img/icons.png) no-repeat 0 -172px;
+            position: absolute;
+            top: 200px;
+            left: 50px;
+            cursor: pointer;
+        }
+        #lb_right{
+            display: inline-block;
+            width: 22px;
+            height: 22px;
+            background: url(img/icons.png) no-repeat 0 -209px;
+            position: absolute;
+            top: 200px;
+            right: 50px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="lunbo">
+    <div class="lunbo_content">
+        <img src="img/banner.jpg" alt="banner1" title="banner1"/>
+        <img src="img/banner.jpg" alt="banner2" title="banner2"/>
+        <img src="img/banner.jpg" alt="banner3" title="banner3"/>
+        <img src="img/banner.jpg" alt="banner4" title="banner4"/>
+    </div>
+    <span id='lb_left'></span>
+    <span id="lb_right"></span>
+</div>
+
+<script>
+window.onload=function(){
+    var c_width=document.body.clientWidth?document.body.clientWidth:document.documentElement.clientWidth;
+    var lb_content=document.getElementsByClassName('lunbo_content')[0];
+    var img_ele=lb_content.getElementsByTagName('img');
+    var img_len=img_ele.length;
+    lb_content.style.width=c_width*img_len+'px';
+
+    for(var i=0;i<img_len;i++){
+        img_ele[i].style.width=c_width+'px';
+    }
+
+    var curindex=0;
+    function gundong(){
+        if(curindex>=img_len){
+            curindex=0;
+        }
+        lb_content.style.marginLeft=-curindex*c_width+'px';
+        curindex++;
+    }
+
+    var timer=null;
+    function kaiqi(){
+        if(timer===null){
+            timer=setInterval(gundong,2000);
+        }
+    }
+    kaiqi();
+
+    var lb_left=document.getElementById('lb_left');
+    var lb_right=document.getElementById('lb_right');
+    lb_right.onclick=function(){
+        gundong();
+    };
+
+    lb_left.onclick=function(){
+        clearInterval(timer);
+        timer=null;
+        if (curindex<=1) {
+            return;
+        }
+        curindex=curindex-2;
+        gundong();
+    };
+    lb_left.onmouseout=function(){
+        kaiqi();
+    }
+
+};
+</script>
+</body>
+</html>

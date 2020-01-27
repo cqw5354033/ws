@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .out{
+            width: 200px;
+            height: 200px;
+            border: 2px solid black;
+            overflow: hidden;
+            position: relative;
+        }
+        .content{
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .out ul{
+            font-size: 18px;
+            line-height: 28px;
+            padding: 0 20px;
+        }
+    </style>
+</head>
+<body>
+<div class="out">
+    <div class="content">
+        <ul id="ul1">
+            <li>最新新闻消息1</li>
+            <li>最新消息2</li>
+            <li>最新新闻消息3</li>
+            <li>最新消息4</li>
+            <li>最新报道消息5</li>
+            <li>最新的消息6</li>
+            <li>新消息7</li>
+            <li>新新报消息8</li>
+            <li>新新报de消息9</li>
+            <li>新消你好的啊息10</li>
+        </ul>
+    </div>
+</div>
+<script>
+    var content=document.getElementsByClassName('content')[0];
+    var ul1=document.getElementById('ul1');
+
+    var kelong = ul1.cloneNode(true);
+    content.appendChild(kelong);
+
+//    初始的top定位
+    var startTop = 0;
+    function gunDong(){
+//        获取div的高度  clientHeight
+         if(ul1.clientHeight ==(-startTop)){
+             console.log(content.clientHeight);
+             startTop = 0;
+         }
+        startTop--;
+        content.style.top =startTop+'px';
+    }
+    setInterval('gunDong();',10);
+</script>
+</body>
+</html>

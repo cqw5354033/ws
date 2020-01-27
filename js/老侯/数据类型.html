@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+七种数据类型：
+数字       number
+字符串     string
+布尔       boolean
+对象       object
+数组       object
+null       object
+undefined  undefined
+
+检测数据类型：alert(typeof a);
+逻辑运算符：
+等于 ==   不等于！=   并且&&    或者||
+小于等于<=  小于<     大于>     求反!       等于===   %取余或求模
+
+=   ==  === 的区别：
+=：判断的是存储位置是否相等
+==：判断值是否相等
+===：不光判断值是否相等，还判断数据类型是否相等
+
+输入框：prompt()    （获取到的数据是字符串类型）
+<script>
+//    var a = 0;
+//    var b = '';
+//    alert(typeof b);
+
+//    if(如果符合小括号里的条件){
+//        那么就执行这里
+//    }else{
+//        否则就执行这里
+//    }
+//    alert()页面弹窗
+
+//    if(a === b){
+//        alert(1)
+//    }else{
+//        alert(2)
+//    }
+
+//    var c = prompt('请输入数字:'); //传参
+//    if(c * 1 >0 || c * 1<= 0){
+//        alert('内容是'+ c);
+//    }else{
+//        alert('错误');
+//    }
+
+//    var c = prompt('请输入数字');
+//     if(c * 1 >0 || c * 1<= 0){
+//         if((c*1)%2 ==1){
+//             alert('奇数');
+//         }else{
+//             alert('偶数');
+//         }
+//    }
+//    else{
+//        alert('错误');
+//    }
+    var i = prompt('请输入数字');
+    if(i* 1 >0 || i * 1<= 0){
+        if(i>=90 ){
+            alert('a')
+        }else if(i>=80){
+            alert('b')
+        }else if(i>=70){
+            alert('c')
+        }else{
+            alert('d')
+        }
+    }
+    else{
+        alert('错误');
+    }
+
+    if(i<90){
+        if(i<80){
+            if(i<70){
+
+            }
+            else{
+                alert('c')
+            }
+        }
+        else{
+            alert('b')
+        }
+    }else{
+        alert('a')
+    }
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+<script>
+    var arr = ['小明','小张','小李'];
+    var str = '小红';
+    //通过数组下标的方式添加
+    arr[3] = str;
+    console.log(arr);
+
+//    函数赋值增加元素
+//    push    追加元素到队列的末尾
+    var str2 = '小赵';
+    arr.push(str2);
+    console.log(arr);
+//    unshift 追加元素到队列的前边
+    var str3 = '小白';
+    arr.unshift(str3);
+    console.log(arr);
+
+//    函数赋值删除元素
+//    删除数组末尾的元素     pop
+    arr.pop();
+    console.log(arr);
+//    删除数组开头的元素     shift
+    arr.shift();
+    console.log(arr);
+
+//    数组串联成字符串
+    var arr1 = ['小明','小张','小李','小红','小白'];
+    var str4 = arr1.join('-');
+    console.log(str4);
+//    字符串拆分成数组
+    var arr2 = str4.split('-');
+    console.log(arr2);
+
+//    数组的排序
+    var arr3 = [1,3,6,8,21,24,532,0,5,3,2];
+//    从小到大排列    sort
+    arr3.sort();
+    console.log(arr3);
+//    从大到小排列    reverse
+    arr3.reverse();
+    console.log(arr3);
+//    排序机制的问题   先比较第一位数，大的放后边，小的放前边
+//    后边的位数依次进行对比
+
+//    问题的解决
+    arr3.sort(
+            function(a,b){
+                return a-b;   //从大到小
+//                return b-a;   //从小到大
+            }
+    );
+    console.log(arr3);
+
+//    数组的串联     concat
+    var arr4 = [1,2,3,4,5];
+    var arr5 = [6,7,8];
+    var arr7 = [9,10,11];
+    var arr6 = arr4.concat(arr5,arr7);
+    console.log(arr6);
+
+//    数组的截取     slice
+    var arr8 = [1,2,3,4,5,6,7,8,9];
+    var arr9 = arr8.slice(3,6);
+    console.log(arr9);
+//    结束位置不传值，就代表一直截取到最后
+    var arr10 = arr8.slice(3);
+    console.log(arr10);
+//    当我们传负值时，就会倒过来截取
+    var arr11 = arr8.slice(-3,-1);
+    console.log(arr11);
+
+//    检测数组元素的位置
+    var arr12 = [1,2,4,2,5,7];
+    var index = arr12.indexOf(3);
+    console.log(index);
+    var lindex = arr12.lastIndexOf(2);
+    console.log(lindex);
+
+//    删除元素    插入元素    替换元素
+    var arr13 =[0,5,3,6,8,1,2,3,4];
+//    删除
+    arr13.splice(2,3);      //第一个参数为开始位置      第二个参数为想要删除的个数
+    console.log(arr13);
+//    插入数据
+    arr13.splice(2,0,100);     //开始位置   0代表不删除      3 4 5 代表插入的内容
+    console.log(arr13);
+//    替换
+    arr13.splice(2,1,150,123,12);   //开始位置   要替换几个      3 4 5 代表替换的内容
+    console.log(arr13);
+
+
+</script>
+</body>
+</html>

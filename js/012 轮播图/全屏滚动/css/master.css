@@ -1,0 +1,84 @@
+.m1100{
+	margin: 0 auto;
+	width: 1100px;
+}
+header{
+	padding-top:23px;
+	height: 80px;
+}
+header .hd_l{
+	float: left;
+	height: 55px;
+	width: 460px;
+	position: relative;
+}
+header .hd_l h3{
+	position: absolute;
+	top:0;
+	left: 230px;
+	line-height: 29px;
+	font-size: 20px;
+	color: #333;
+
+}
+header .hd_r{
+	float: right;
+	line-height: 58px;
+	font-size: 16px;
+	color: #626262;
+}
+header .hd_r a{
+	color: #626262;
+}
+header .hd_r a:hover{
+	color: #a7a7a7;
+}
+.menu_out{
+	width:100%;
+	background-color: #24ae44;
+}
+.menu a{
+	display: inline-block;
+	width: 104px;
+	height: 68px;
+	text-align: center;
+	line-height: 68px;
+	font-size: 16px;
+	color: #fff;
+}
+.menu a.cur{
+	background-color: #bee7c7;
+	color: #ff5400;
+}
+.lunbo{
+	width: 100%;
+	overflow: hidden;
+	position:relative;
+}
+.lunbo .lunbo_content{
+	transition: all 1s;
+}
+.lunbo img{
+	display: block;
+	float: left;
+}
+#lb_left{
+	display: inline-block;
+	width: 22px; 
+	height: 22px;
+	background: url(../images/icons.png) no-repeat 0 -172px;
+	position: absolute;
+	top: 200px;
+	left: 50px;
+	cursor: pointer;
+}
+#lb_right{
+	display: inline-block;
+	width: 22px; 
+	height: 22px;
+	background: url(../images/icons.png) no-repeat 0 -209px;
+	position: absolute;
+	top: 200px;
+	right: 50px;
+	cursor: pointer;
+}

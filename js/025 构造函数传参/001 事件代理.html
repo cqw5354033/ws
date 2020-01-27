@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #ul1 li{
+            line-height: 20px;
+            margin-bottom: 10px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<ul id="ul1">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+</ul>
+<script>
+
+
+
+//    事件代理：利用冒泡机制给父元素绑定事件，实现之前给每个子元素绑定事件的效果
+//    频繁操作dom会影响性能
+
+//    给ul绑定事件
+    var ul1=document.getElementById('ul1');
+//    由于冒泡机制会触发 ul上的事件
+    ul1.onclick=function(evt){
+        var evt = evt?evt:window.event;
+        console.log(evt);
+//        判断用户点击的是否是li
+        if(evt.target&&evt.target.nodeName=='LI'){
+//            用事件源来操作
+            evt.target.style.backgroundColor='black';
+        }
+    }
+
+
+
+</script>
+</body>
+</html>

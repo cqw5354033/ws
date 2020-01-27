@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+
+<script>
+//    内部获取参数：    arguments
+    function func1(a,b){
+//        console.log(a);
+//        console.log(b);
+
+//        参数不固定，内部去获取:   arguments
+        for(var i=0;i<arguments.length;i++){
+            console.log(arguments[i]);
+        }
+
+    }
+    func1(10,20,30,40,50);
+
+
+//    callee  语法：
+//    封装一个阶乘的函数     强耦合
+    function func2(num){
+        if(num==1){
+            return 1;
+        }else{
+//            递归回调的思路
+//            本身函数的引用：  callee 变量名代替函数名
+            return num*arguments.callee(num-1);
+//            5的阶乘：5*4*3*2*1
+//            5*func2(4);
+//            4*func2(3);
+//            3*func2(2);
+//            2*func2(1);
+//            return 1;
+        }
+    }
+    console.log(func2(5));
+
+
+//caller 语法
+    function f1(){
+//        到底是谁在调用f1 谁调用我，我指向谁
+        console.log(f1.caller.name);
+    }
+    function f2(){
+        f1();
+    }
+    f2();
+    function f3(){
+        f1();
+    }
+    f3();
+
+
+//    数组的遍历
+    var arr=['张飞','赵云','关羽','吕布'];
+    for(var i=0;i<arr.length;i++){
+        console.log(arr[i]);
+    }
+
+//    for in 也可以打印数组（本质上是直接移动指针）
+    for(j in arr){
+        console.log(arr[j]);
+    }
+</script>
+</body>
+</html>

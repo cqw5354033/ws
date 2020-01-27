@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .img{
+            width: 200px;
+            height: 150px;
+            border: 1px solid black;
+        }
+        .img img{
+            width: 200px;
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+<div class="img">
+    <img src="" alt="对应图片"/>
+</div>
+
+<select name="" id="select">
+    <option value="-1">请选择</option>
+    <option value="0">大家</option>
+    <option value="1">乔巴</option>
+    <option value="2">梦想</option>
+</select>
+
+<script>
+//    绑定什么事件，给谁绑定事件
+    var img=document.getElementsByClassName('img')[0].getElementsByTagName('img')[0];
+    var select=document.getElementById('select');
+//    img.src='./img/100.jpg';
+    var arr=['./img/100.jpg','./img/102.jpg','./img/103.jpg'];
+
+    select.onchange=function(){
+
+//        用户选择项的value值      0大家     1乔巴  2梦想
+//        alert(select.value);
+        img.src=arr[parseInt(select.value)]
+
+    }
+
+
+</script>
+</body>
+</html>

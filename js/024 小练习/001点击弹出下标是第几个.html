@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>代码演示</title>
+
+</head>
+<body>
+<ul>
+    <li>这是一个li</li>     <!--0-->
+    <li>这是一个li</li>     <!--1-->
+    <li>这是一个li</li>     <!--2-->
+    <li>这是一个li</li>     <!--3-->
+    <li>这是一个li</li>     <!--4-->
+</ul>
+<script>
+//    给 一组 标签绑定事件
+    var ul=document.getElementsByTagName('ul')[0];
+    var li=ul.getElementsByTagName('li');
+
+//    循环中操作绑定事件
+    index=0;
+
+    for(var i=0;i<li.length;i++){
+
+//        提前把i的值保存下来
+        li[i].xiabiao=i;
+        li[i].onclick=function(){
+          alert(this.xiabiao);
+        };
+
+//        闭包保存外边的数据
+        li[i].xiabiao=i;
+        li[i].onclick=(function(t){
+            return function(){
+                alert(t);
+            }
+
+        })(i);
+
+    }
+
+
+</script>
+</body>
+</html>

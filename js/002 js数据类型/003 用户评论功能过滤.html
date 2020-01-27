@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .red{
+          color: red;
+        }
+    </style>
+</head>
+<body>
+应用场景：
+    前台 需要过滤掉 一些敏感的词汇和 一些有攻击性的代码
+    设计思路：如果敏感词汇中的每一个词 是否在用户评论中存在，如果存在，就把这个词过滤掉
+<br/>
+<br/>
+<script>
+    var str = 'Lorem ipsum dolor sit amet, consectetur <span class = "red"> 2</span> adipisicing elit.' +
+            ' Eius facere harum repellat voluptas! Aspernatur deleniti, dolor doloremque expedita' +
+            ' illo iusto saepe veniam! Culpa dolore mollitia perspiciatis, provident reprehenderit' +
+            ' tempora voluptatem!';
+//    document.write(str);
+    //敏感词汇数据库
+    var arr = ['Lorem','iusto','2','voluptatem'];
+//    var str2 = 'abc';
+//    var index = str2.indexOf('r');
+//    console.log(index);
+    for(var i = 0; i < arr.length; i++){
+        //开始验证
+        var curIndex = str.indexOf(arr[i]);
+        if(curIndex != -1){
+            //敏感词出现，处理
+//            console.log(curIndex);
+            str = str.replace(arr[i], '***');
+        }
+    }
+    document.write(str);
+</script>
+</body>
+</html>

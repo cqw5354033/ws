@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        #form1{
+            width: 600px;
+            height: 400px;
+            background: yellowgreen;
+            text-align: center;
+            margin: 150px auto;
+        }
+
+    </style>
+</head>
+<body>
+<form action="" id="form1">
+    <div class="div1">
+        用户名：<input type="text" id="1"/> <span></span> <br/>
+        密码：<input type="password" id="2"/> <span>密码为8-20 位的数字</span><br/>
+        确认密码：<input type="password" id="3"/><span>密码不一致</span><br/>
+        邮箱：<input type="text" id="4"/> <span>不符合邮箱规则</span><br/>
+        QQ号码：<input type="text" id="5"/>   <span>6-11位的数字</span><br/>
+        邮政编码：<input type="text" id="6"/>   <span>不符合邮政编码</span>
+    </div>
+
+</form>
+<script>
+//    注册新用户的表单，提示文字为对应的文字
+//    用户名     4-16位的字母数字  都不能为空
+//    密码      8-20的数字
+//    确认密码     和第一次填写的一样
+//    邮箱          符合邮箱规则
+//    QQ号码        6-11位的数字，不能以0开头
+//    邮政编码
+//    用户填写正确     用图表或者输入蓝色
+//    用户填写不正确     用图表或者输入红色
+//    有任意错误，表单不能提交
+    var form1=document.getElementById('form1');
+    var id1=document.getElementById('1');
+    var id2=document.getElementById('2');
+    var id3=document.getElementById('3');
+    var id4=document.getElementById('4');
+    var id5=document.getElementById('5');
+    var id6=document.getElementById('6');
+
+    var tijio1 = false;
+
+    id1.onblur=function(){
+        var use='';
+        var a=id1.parentNode.getElementsByTagName('span')[0];
+        if(id1.value==''){
+            use='用户名不能为空';
+            a.innerHTML=use;
+//            a.style.display='inline';
+            a.style.color='red';
+        }else if(/^(\w){4,16}/){
+            use='用户名在4-16位之间';
+            a.innerHTML=use;
+            a.style.color='red';
+        }else{
+            use='用户名符合要求';
+            a.innerHTML=use;
+            a.style.color='blue';
+            tijiao1=true;
+        }
+    }
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

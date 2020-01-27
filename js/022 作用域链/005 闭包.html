@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>闭包</title>
+</head>
+<body>
+
+<script>
+
+//    闭包的结构就是一个函数嵌套的结构
+    function func1() {
+        var shuju='这是一个数据';
+        function func2(){
+            console.log(shuju);
+            console.log('我是func2');
+        }
+        return func2();
+    }
+
+//    外层函数执行完毕， 里边的所有的变量都会被销毁   作用域链被销毁
+//    内部的闭包结构  能在销毁前，把外部的数据保存在自己的活动对象中
+//    var func=func1();
+//    console.log(func);
+func1();
+
+
+
+</script>
+</body>
+</html>

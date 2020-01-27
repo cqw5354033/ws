@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .tabs span{
+            display: inline-block;
+            width: 72px;
+            height: 30px;
+            line-height: 30px;
+            text-align: center;
+            background-color: yellow;
+            color: red;
+            cursor: pointer;
+        }
+        .tabs .cur{
+            background-color: black;
+        }
+        .contents{
+            width: 300px;
+            height: 200px;
+            border: 2px solid black;
+        }
+        .contents .content{
+            width: 300px;
+            height: 200px;
+            display: none;
+        }
+        .contents .content:first-of-type{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="tabs">
+    <span class="cur">历史1</span>
+    <span>历史2</span>
+    <span>历史3</span>
+    <span>历史4</span>
+    <div class="contents">
+        <div class="content">
+            历史1的内容。。。。。。。。
+        </div>
+        <div class="content">
+            历史2的内容。。。。。。。。
+        </div>
+        <div class="content">
+            历史3的内容。。。。。。。。
+        </div>
+        <div class="content">
+            历史4的内容。。。。。。。。
+        </div>
+    </div>
+</div>
+
+<script>
+    var spans = document.getElementsByClassName('tabs')[0].
+            getElementsByTagName('span');
+    var content = document.getElementsByClassName('content');
+
+    var len= spans.length;
+    for(var i=0;i<len;i++){
+
+//        保存下标（索引）
+        spans[i].index = i;
+
+        spans[i].onclick=function(){
+            for(var t=0; t<len; t++){
+                spans[t].className='';
+
+                content[t].style.display='none';
+            }
+            this.className='cur';
+
+//            显示当前的content
+            content[this.index].style.display='block';
+
+        }
+    }
+</script>
+</body>
+</html>

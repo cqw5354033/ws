@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .div2{
+            width: 100px;
+            height: 100px;
+            background-color: #f00;
+        }
+    </style>
+</head>
+<body>
+<div class="div2"></div>
+<script>
+    var div2 = window.document.getElementsByClassName('div2')[0];
+
+    div2.onclick = function(){
+
+        history.go(1);
+//        back("https://www.baidu.com");
+
+    };
+    console.log(screen.availWidth);
+    console.log(screen.availHeight);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .in{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+        .middle{
+            padding: 30px;
+            display: inline-block;
+            background-color: greenyellow;
+        }
+        .out{
+            padding: 30px;
+            display: inline-block;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <input/>
+</div>
+<div class="out">
+    <div class="middle">
+        <div class="in"></div>
+    </div>
+</div>
+<script>
+    var in1=document.getElementsByClassName('in')[0];
+    var middle=document.getElementsByClassName('middle')[0];
+    var out=document.getElementsByClassName('out')[0];
+
+//    in1.onclick=function(){
+//        alert('点击了in');
+//    };
+//    middle.onclick=function(){
+//        alert('点击了middle');
+//    };
+//    out.onclick=function(){
+//        alert('点击了out');
+//    }
+
+    function func1(evt){
+        var evt=evt?evt:window.event;
+//        阻止事件冒泡
+        evt.stopPropagation();
+        alert('点击了in');
+    }
+    function func2(evt){
+        var evt=evt?evt:window.event;
+        evt.stopPropagation();
+        alert('点击了middle');
+    }
+    function func3(evt){
+        var evt=evt?evt:window.event;
+        evt.stopPropagation();
+        alert('点击了out');
+    }
+
+//    false 定义冒泡型事件流（从内到外）， true 定义捕获型事件流（从外到内）
+    in1.addEventListener('click',func1,false);
+    middle.addEventListener('click',func2,false);
+    out.addEventListener('click',func3,false);
+
+
+//     封装一个兼容姓的函数 ename是事件的名字，ele是绑定事件的元素，fuc事件执行函数
+    function a(ename,ele,fuc){
+        if(ele.addEventListener){
+//        非ie绑定事件的方式
+            ele.addEventListener(ename,fuc);
+        }else{
+//            ie低版本绑定事件
+            ele.attachEvent('on'+ename,fuc);
+        }
+    }
+    a('click',in1,func1);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+逐级向内部渗透，（向下渗透，不能向上）
+<script>
+    var allbl='这是全局变量';
+    function func1(){
+        var func1bl='这是func1里边的变量';
+        function func2(){
+            var func2bl='这是func2里边的变量';
+            function func3(){
+                var func3bl='这是func3里边的变量';
+                console.log(func3bl);
+                console.log(func2bl);
+                console.log(func1bl);
+                console.log(allbl);
+            }
+            func3();
+        }
+        func2();
+    }
+    func1();
+
+
+
+    var age=30;
+//    函数内部的作用域是在声明的时候形成的
+    function func4(){
+        console.log(age);
+    }
+    function func5(){
+        var age=50;
+        func4();
+    }
+    func5();
+</script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>js实例代码</title>
+
+</head>
+<body>
+
+<script>
+//    函数的封装和调用
+
+    function fun1 (b1 , b2){ //形参
+//        document.write('大家好，我叫小莫');
+        return b1 + b2;
+    }
+    var a1 = 12;
+    var a2 = 20;
+    var fanhui = fun1(a1, a2); //实参
+    console.log(fanhui);
+
+//    数组的声明和调用
+//    var arr1= new Array();    //定义一个新的空数组
+    var arr1 = [];
+    arr1[0] = '小明';
+    arr1[1] = '小张';
+    arr1[2] = '小陈';
+//    调用
+    console.log(arr1[2]);
+
+//    字符串和变量的串联  +
+    var str = '字符串';
+    document.write(str + '新追加的内容');
+
+//    弹出框的三种形式
+    alert('警告型');
+    confirm('用户确认');
+    prompt('可输入内容');
+
+//    弹出框和流程控制
+    var result = confirm('今天吃了吗');
+    if(result){
+        var result2 = prompt('早饭吃了啥');
+        if(result2 =='馒头'){
+            alert('你可能是北方人')
+        }else if(result2 =='米饭'){
+            alert('你可能是南方人')
+        }else {
+            alert('有钱人')
+        }
+    }else{
+        alert('不吃早饭很好')
+    }
+    console.log(result);
+
+
+</script>
+</body>
+</html>

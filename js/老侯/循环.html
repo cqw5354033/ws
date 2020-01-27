@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+document.write()
+for循环： 1、有个变量（初始化的值） 2、跳出循环的条件  3、变量的变化方式  4、循环的内容
+<div class="box"></div>
+<br/>
+<div class="box"></div>
+<br/>
+<div class="box"></div>
+<br/>
+<div class="box"></div>
+<script>
+//    document.write(1);
+//    document.write(2);
+//    document.write(3);
+//    document.write(4);
+
+//    for(var i = 0; i <= 100; i++){
+//        if( i % 2 == 1){
+//            document.write(i);
+//        }
+//    }
+//    for(var z = 1; z <= 100; z = z + 2){
+//        if( z % 2 == 1){
+//            document.write(z);
+//        }
+//    }
+//    for (var x = 1; x <= 100; x++){
+//        if(x % 3 == 0 && x % 5 != 0){
+//            document.write(x);
+//        }
+//    }
+
+//    var arrBox = document.getElementsByClassName('box');
+//    for(var x = 0; x < arrBox.length; x++){
+//        arrBox[x].style.cssText = 'width:100px; height:100px; background-color:red'
+//    }
+
+    var sum = 0;
+    for(var i = 450; i <= 550; i++){
+        if(i % 2 == 1){
+//            sum = sum + i;
+            sum += i;
+        }
+    }
+    document.write(sum);
+
+    var sum2 = 0;
+    var a = prompt('请输入数字:');
+    var b = prompt('请输入符号:');
+    var c = prompt('请输入数字:');
+    if( b == '+'){
+        sum2 = a *1 + c * 1;
+        document.write(sum2);
+    }
+    if(b == '-'){
+        sum2 = a *1 - c * 1;
+        document.write(sum2);
+    }
+    if(b == '*'){
+        sum2 = (a *1) * (c * 1);
+        document.write(sum2);
+    }
+    if(b == '/'){
+        sum2 = (a *1) / (c * 1);
+        document.write(sum2);
+    }
+</script>
+</body>
+</html>

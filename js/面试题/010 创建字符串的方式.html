@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+
+<script>
+//    截取字符串的三种方式
+    //    substr  substring   slice
+    var str='123456';
+    console.log(str.substr(2,3));       //开始的位置，截取的数量
+    console.log(str.substring(2,3));    //开始，结束
+    console.log(str.slice(2,-2));        //开始，结束    支持传两个负数，负数就是倒数的位置
+
+
+    //    创建对象的方式
+    var obj1={name:'第一个'};  //字面量方式
+    console.log(obj1);
+
+    function obj2(){            //构造函数方式
+        this.name='第二种';
+    }
+    var obj2_1=new obj2();
+    console.log(obj2_1);
+
+    var obj3=new Object();
+    obj3.name='第三种';
+    console.log(obj3);          //new 一个空对象
+
+</script>
+</body>
+</html>

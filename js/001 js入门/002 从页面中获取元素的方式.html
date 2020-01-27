@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+<ul id="ul1">
+    <li class="box">第一个</li>
+    <li class="box">第二个</li>
+    <li class="box">第三个</li>
+    <li class="box">第四个</li>
+    <li class="box">第五个</li>
+</ul>
+<script>
+    //js抓取页面上的元素
+    var ul1 = document.getElementById('ul1');  //通过 ID 获取
+//    console.log(ul1);
+    ul1.style.display = 'block';
+    var boxs = document.getElementsByClassName('box')[2];   //通过 类名 获取
+    boxs.style.display = 'none';
+
+    var box1 = document.getElementsByTagName('li')[0];         //通过 元素名 获取
+    box1.style.display = 'none';
+
+
+</script>
+</body>
+</html>

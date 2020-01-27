@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+    <link rel="stylesheet" href="font-awesome.css"/>
+    <style>
+        *{
+            padding:0;
+            margin: 0;;
+        }
+        .lunbotu{
+            width: 400px;
+            height: 330px;
+            border: 2px solid black;
+            background: #ddd;
+            position: relative;
+        }
+        .lunbotu span{
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            font-size: 30px;
+            background: rgba(0,0,0,0.5);
+            position: absolute;
+            top: 120px;
+            cursor: pointer;
+            color: white;
+        }
+        .lunbotu .left{
+            left: 20px;
+        }
+        .lunbotu .right{
+            right: 20px;
+        }
+        .lunbotu img{
+            width: 400px;
+            height: 300px;
+        }
+        .jiaodian{
+            width: 100%;
+            height: 20px;
+            text-align: center;
+        }
+        .jiaodian li{
+            display: inline-block;
+            width: 18px;
+            height: 18px;
+            border: 1px solid black;
+            line-height: 18px;
+            text-align: center;
+            margin-right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="lunbotu">
+    <img src="" alt=""/>
+    <span class="left"> < </span>
+    <span class="right"> > </span>
+    <ul class="jiaodian">
+        <li>1</li>
+    </ul>
+</div>
+<script>
+//    元素的获取
+    var lunbotu = document.getElementsByClassName('lunbotu')[0];
+    var img = lunbotu.getElementsByTagName('img')[0];
+    var ul = document.getElementsByClassName('jiaodian')[0];
+    var arr=["img/1.jpg","img/2.jpg","img/3.jpg","img/4.jpg"];
+    var left = lunbotu.getElementsByClassName('left')[0];
+    var right = lunbotu.getElementsByClassName('right')[0];
+
+//    图片数组的长度
+    var len=arr.length;
+
+//    动态追加li
+    var li_str = '';
+    for(var i=0; i<len; i++){
+        li_str += '<li>'+(i+1)+'</li>';
+    }
+
+//    把li塞给ul
+    ul.innerHTML = li_str;
+
+//    获取li
+    var lis = ul.getElementsByTagName('li');
+
+//    当前图片的索引
+    var suoyin = 0;
+
+//    轮播的方法
+    function lunbo(){
+        if(suoyin ==len){
+            suoyin=0;
+        }
+
+//        清除所有的 li背景
+        for(var j=0;j<len;j++){
+            lis[j].style.backgroundColor='';
+        }
+
+//        给当前的li加背景
+        lis[suoyin].style.backgroundColor='#f00';
+        img.src = arr[suoyin];
+        suoyin++;
+    }
+
+
+//    先执行一次，用来解决 延时的问题
+    lunbo();
+
+    var dsq = setInterval('lunbo()',1000);
+
+//     鼠标放上暂停定时器
+    img.onmouseover=function(){
+//        清除定时器
+        clearInterval(dsq);
+    };
+
+//    鼠标离开 运行定时器
+    img.onmouseout = function(){
+        dsq = setInterval('lunbo()',1000);
+    };
+
+//    点击相应的焦点，切换到指定的图片上
+    for(var t=0; t<len;t++){
+//        先保存  t
+        lis[t].index = t;
+        lis[t].onclick = function(){
+            clearInterval(dsq);
+//            三秒之后在开启定时器 （相当于延迟执行）
+            setTimeout("dsq = setInterval('lunbo()',2000);",3000);
+            suoyin = this.index;
+            lunbo();
+        }
+    }
+
+//    点击向下 轮播一个图片
+    right.onclick = function(){
+        lunbo();
+    };
+
+//    点击向上 轮播个图片
+    left.onclick = function(){
+        clearInterval(dsq);
+        dsq='';
+        if(suoyin==1){
+            suoyin=len-1;
+        }else{
+            suoyin = suoyin-2;
+        }
+        lunbo();
+    };
+
+
+</script>
+</body>
+</html>

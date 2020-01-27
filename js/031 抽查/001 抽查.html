@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>实训一班</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .out{
+            width: 1000px;
+            height: auto;
+            background-color: #ddd;
+            text-align: center;
+            margin: 0 auto;
+            padding-bottom: 20px;
+        }
+        .out h3{
+            height: 60px;
+            line-height: 60px;
+            background-color: #0f0;
+            box-shadow: 5px 5px 10px #333;
+            border-radius: 10px;
+            margin-bottom: 30px;
+        }
+        .content span{
+            display: inline-block;
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            background-color: #666;
+            border-radius: 50%;
+            font-weight: bold;
+            color: white;
+            margin: 25px;
+        }
+        button{
+            display: block;
+            width: 200px;
+            line-height: 80px;
+            margin: 20px auto;
+            border-radius: 10px;
+            background-color: deepskyblue;
+            cursor: pointer;
+
+        }
+    </style>
+</head>
+<body>
+<div class="out">
+    <h3>实训一班</h3>
+    <div class="content">
+        <span>陈泉纬</span>
+        <span>李虎</span>
+        <span>严嘉辉</span>
+    </div>
+    <button>开始</button>
+</div>
+<script>
+    var arr=['单文娟','王云迪','闫嘉辉','任麒辑','李虎','陈泉纬','吴艳明','王尧立','闫晨','程磊鹏','吕鑫治','陈翔','贺淑青','郝林涛'];
+    var count=document.getElementsByClassName('content')[0];
+    var btn=document.getElementsByTagName('button')[0];
+    var str='';
+
+    for(var i=0;i<arr.length;i++){
+        str+='<span>'+arr[i]+'</span>'
+    }
+
+    count.innerHTML=str;
+
+    var len=arr.length;
+    var spans=count.getElementsByTagName('span');
+    var last_suiji=0;
+    var timer=null;
+
+    btn.onclick=function(){
+        timer = setInterval(function(){
+            var suiji=Math.floor(Math.random()*len);
+            if(suiji!=last_suiji){
+                spans[last_suiji].style.backgroundColor='#666';
+            }
+            spans[suiji].style.backgroundColor='yellow';
+            last_suiji=suiji;
+        },100);
+
+
+        var shijian=Math.floor(Math.random()*5)+3;
+        shijian =shijian*1000;
+        setTimeout(function(){
+            clearInterval(timer);
+        },shijian);
+    }
+
+</script>
+</body>
+</html>

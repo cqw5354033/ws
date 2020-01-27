@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<!--<ul id="ul">-->
+    <!--<li>第一个</li>-->
+<!--</ul>-->
+<script>
+//    var ul=document.getElementById('ul');
+//    var li=document.createElement('li');
+//    var li_con=document.createTextNode('第二个');
+//
+//    li.appendChild(li_con);
+//    ul.appendChild(li);
+
+    var ul2=document.createElement('ul');
+    for(var i=1;i<=8;i++){
+        var li2=document.createElement('li');
+        li2.innerHTML=i;
+        ul2.appendChild(li2);
+    }
+    document.body.appendChild(ul2);
+//    ul虽然追加了，但在js中还是存在这个对象的
+    var lis=ul2.getElementsByTagName('li');
+
+    for(var j=0;j<lis.length;j++){
+
+        lis[j].onmousemove=function(a){
+            return function(){
+                lis[a].style.backgroundColor='#f00';
+        }
+        }(j);
+    }
+</script>
+</body>
+</html>

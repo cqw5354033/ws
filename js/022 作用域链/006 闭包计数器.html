@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+
+<script>
+    //    闭包记数器
+    function fanhuiadd(){
+        //    传统计数器
+        var num=0;
+        function add(){
+            return ++num;
+        }
+        return add;
+    }
+    var add=fanhuiadd();
+
+    console.log(add());
+    console.log(add());
+
+//    和他同名的就不会干扰了
+    var num=100;
+    console.log(add());
+
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+<script>
+    //一次性定时器
+    // 传一个函数调用 同样支持
+    function fun1(){
+        alert('这是一次性定时器函数中的调用')
+    }
+    //第一个参数是要执行的代码      第二个参数是毫秒数
+    setTimeout("fun1()",2000);
+
+//    反复型定时器
+    function fun2(){
+        alert('这是反复型定时器函数中的调用')
+    }
+//    第一个参数是要执行的代码        第二个是每隔2000毫秒  为我们执行一次
+    setInterval("console.log('1')",10000);
+
+//    取消定时器的执行
+    var times = setInterval("console.log('1')",10000);
+    clearInterval(times);
+
+
+</script>
+</body>
+</html>

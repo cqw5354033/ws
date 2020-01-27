@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+
+
+<script>
+    var arr=[2,3,15,7,2,6,9];
+    arr.sort(function(a,b){        //给数组进行正向排序  sort
+        return a-b;                 //如果a-b>0  从小到大排列
+    });
+    console.log(arr);
+
+    arr.reverse();              //数组的倒序     reverse
+    console.log(arr);
+
+    var arr2=[              //二维数组的排序
+        [12,34,4],
+        [21,43,23],
+        [23,34,2]
+    ];
+    function sort_arr(arr_obj,index){
+        arr_obj.sort(function(x,y){
+            return x[index]-y[index];
+        });
+        return arr_obj;
+    }
+    console.log(sort_arr(arr2,0));
+
+//    容错语法
+    try{
+
+    }catch(ex){
+        console.log(ex);
+    }finally{
+        console.log('最终执行的代码')
+    }
+
+</script>
+</body>
+</html>

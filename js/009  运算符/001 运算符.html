@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+<script>
+//    + 表示 加号
+    var a=4;
+    var b=2;
+    var c=a+b;
+    console.log(c);
+
+//    + 同样表示字符串
+    var str ='acb';
+    var str2 ='ABC';
+    var str3 =str+str2;
+    console.log(str3);
+
+//    取余运算
+    var num1 = 12;
+    var num2 = 5;
+    var res = num1%num2;
+    console.log(res);
+
+//    判断100以内的数，那些是奇数，哪些是偶数？
+
+    var str4 = '';  //偶数的容器
+    var str5 = '';  //奇数的容器
+    for(var i=0; i<=100; i++){
+        if(i%2==0){
+            str4 +=i +',';
+        }else{
+            str5 += i +',';
+        }
+    }
+    document.write('偶数'+str4);
+    document.write('<br>');
+    document.write('奇数'+str5);
+
+//    字符串怎样比较大小   两个字符串比较时， 会比较字符串的 ascii 值（阿斯科马）
+//      字符串进行比较的时候，会由第一个字符依次进行比较
+    var str6 = 'abc'; //a码值是97
+    var str7 = 'b'; //b码值是98
+    if(str6 > str7){
+        console.log('第一个大');
+    }else{
+        console.log('第二个大')
+    }
+
+//    字符串和数字比较，字符串转化为数字（用数字转化的字符串可以化为数字）
+    var str8 = '123';
+    var num3 = 122;
+    console.log(str8>num3);
+
+//    比较两方其中一个是数字类型，另外一个会自动转换成数字类型进行比较
+
+//     赋值运算符： =   +=  -=  *=    /=  %=
+
+
+
+</script>
+</body>
+</html>

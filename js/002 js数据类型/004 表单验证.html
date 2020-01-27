@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .red{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+用户名: <input type="text" class="username"/>
+        <span class="red" id="err1"></span> <br/>
+密码： <input type="text" class="password"/>
+        <span class="red" id="err2"></span>
+<br/>
+        <button id="btn">提交</button>
+<script>
+    var username = document.getElementsByClassName('username')[0];
+    var password = document.getElementsByClassName('password')[0];
+    var err1 = document.getElementById('err1');
+    var err2 = document.getElementById('err2');
+    var btn = document.getElementById('btn');
+    //绑定点击事件
+    btn.onclick = function(){
+//        获得input框的内容
+        var uValue = username.value;
+        var pValue = password.value;
+//        保存提示消息的变量
+        var err1msg = '';
+        var err2msg = '';
+
+//        用户名的规则：要求是 5-10 的字母
+        var result1 = uValue.match(/[a-z]{5,10}/);
+//        匹配失败，给用户提示
+        if(result1 === null){
+            err1msg = '用户名必须是5-10位的数字';
+        }
+        console.log(result1);
+
+//        密码必须是5-10位事的数字
+        var result2 = pValue.match(/[0-9]{5,10}/);
+//        匹配失败，提示
+        if(result2 === null){
+            err2msg = '密码必须是5-10位的数字';
+        }
+        console.log(result2);
+
+//        最后把信息打印到页面中    innerHTML
+        err1.innerHTML = err1msg;
+        err2.innerHTML = err2msg;
+    }
+</script>
+</body>
+</html>

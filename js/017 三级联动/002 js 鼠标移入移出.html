@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .div1{
+            height: 200px;
+            background-color: red;
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="div1"></div>
+<!--js实现动画效果的优势：-->
+<!--1、兼容性好-->
+<!--2、实现css3无法实现的效果。比如： 点击回滚-->
+<!--3、流程控制-->
+<!--4、体验手动封装的过程，学习知识点-->
+
+<script>
+//    1、绑定鼠标移入移出事件
+//    2、执行自加或自减运算
+//    3、放在定时器内
+
+    var div1=document.getElementsByClassName('div1')[0];
+    var timer='';
+    div1.onmouseover=function(){
+        clearInterval(timer);
+        timer = setInterval(function(){
+            if(div1.clientWidth>=700){
+                clearInterval(timer);
+                return;
+            }
+            div1.style.width = div1.clientWidth+1+'px';
+        },10)
+    };
+    div1.onmouseout=function(){
+        clearInterval(timer);
+        timer = setInterval(function(){
+            if(div1.clientWidth=0){
+                clearInterval(timer);
+                return;
+            }
+            div1.style.width = div1.clientWidth-1+'px';
+        },10)
+    }
+
+
+</script>
+</body>
+</html>

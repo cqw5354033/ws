@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+
+    </style>
+</head>
+<body>
+<h3>商品列表</h3>
+<div class="list">
+        <dl class="clearfix">
+            <dt>
+                <img src="images/1.jpg" alt=""/>
+            </dt>
+            <dd>
+                <p class="p1">大家好</p>
+                <p class="p2">￥229</p>
+                <p class="p3">运费：10   125人付款   杭州</p>
+            </dd>
+        </dl>
+</div>
+<script>
+    var data = [
+        ['https://gw3.alicdn.com/bao/uploaded/i1/TB1wrhaRFXXXXbrXFXXXXXXXXXX_!!0-item_pic.jpg_210x210.jpg','Amii[极简主义]2017秋装纯棉宽松中长款小立领水袖衬衫式连衣裙女','200','10','112','北京'],
+        ['https://gw1.alicdn.com/bao/uploaded/i2/TB1yY9ESpXXXXblaXXXXXXXXXXX_!!0-item_pic.jpg_210x210.jpg','买2送1Amii2017夏装新款大码衬衫翻领半襟开衩连衣裙11732751','300','20','200','上海'],
+        ['https://gw1.alicdn.com/bao/uploaded/i3/TB1vW1vSpXXXXaAapXXXXXXXXXX_!!0-item_pic.jpg_210x210.jpg','女装 法兰绒衬衫式连衣裙(长袖) 400548 优衣库UNIQLO','400','10','80','广州'],
+        ["https://gw3.alicdn.com/bao/uploaded/i4/2880132427/TB12BDcagoSMeJjSspaXXbMOFXa_!!0-item_pic.jpg_210x210.jpg",'Miss Sixty2017新女夏装纯棉条纹露肩翻领衬衫连衣裙672DJ4220000','500','20','200','深圳']
+    ];
+    console.log(data);
+    var str = '';
+    for(var i =0; i<data.length; i++){
+        str += '<dl class="clearfix">'+
+                    '<dt>'+
+                        '<img src="'+ data[i][0]+'" alt=""/>'+
+                    '</dt>'+
+                    '<dd>'+
+                        '<p class="p1">'+ data[i][1]+'</p>'+
+                        '<p class="p2">'+ data[i][2]+'</p>'+
+                        '<p class="p3">运费：'+ data[i][3] + '&nbsp;&nbsp;'+data[i][4] +
+                            '人付款&nbsp;&nbsp;' +data[i][5] + '</p>'+
+                    '</dd>'+
+                '</dl>';
+    }
+    var list = document.getElementsByClassName('list')[0];
+    list.innerHTML = str;
+
+</script>
+</body>
+</html>

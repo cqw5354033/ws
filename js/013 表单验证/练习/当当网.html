@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--让bootstrap兼容最新版本的ie-->
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <!--以移动设备优先  视窗              宽度=设备宽度              缩放=1         最大缩放=1      禁止用户缩放      -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+</head>
+<body>
+<!--header start-->
+<header class="header">
+    <div class="container">
+        <h1>当当网</h1>
+        <div class="clearfix">
+            <i class="pull-left">dangdangwang</i>
+            <span class="pull-left">我的生活享当当</span>
+            <ul class="pull-right">
+                <li class="navbar-left"><a href="">首页</a> &nbsp;|</li>
+                <li class="navbar-left">&nbsp;<a href="">商品展示页</a>&nbsp;|</li>
+                <li class="navbar-left">&nbsp;<a href="">购物车</a>&nbsp;|</li>
+                <li class="navbar-left">&nbsp;<a href="">注册</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+<!--header end-->
+
+<!--banner start-->
+<section class="banner">
+    <div class="container">
+        <div class="row clearfix">
+            <img src="images/1.jpg" alt="" class="pull-left col-md-7"/>
+            <div class="col-md-4">
+                <h2>请登录当当网</h2>
+                <form action="1.php" method="post" id="form1">
+                    <div>
+                        <label for="username">Email地址：</label>
+                        <input type="text" id="username" name="username"/>
+                        <span class="error">Email地址不能为空</span>
+                        <br/>
+                    </div>
+                    <div>
+                        <label for="password">密码：</label>
+                        <input type="text" id="password" name="password"/>
+                        <span class="error">密码不能为空</span>
+                        <br/>
+                    </div>
+                    <input type="submit" value="登录"/>
+                </form>
+            </div>
+            <img src="images/2.jpg" alt="" class="pull-right col-md-1"/>
+        </div>
+    </div>
+</section>
+<!--banner end-->
+
+<script>
+    var form1 = document.getElementById('form1');
+    var username = document.getElementById('username');
+    var password = document.getElementById('password');
+    var tijiaou=false;
+    var tijiaop=false;
+    //    鼠标离开时判断
+    username.onblur = function(){
+        var uname='';
+        var a=this.parentNode.getElementsByClassName('error')[0];
+        if(username.value==''){
+            uname='Email地址不能为空';
+
+//            后面的红字
+            a.innerHTML=uname;
+//            让他显示出来
+            a.style.display='inline';
+        }else if(username.value.length < 5 || username.value.length>10){
+            uname='用户名在5-10位之间';
+            a.innerHTML=uname;
+            a.style.display='inline';
+        }
+        else{
+            a.innerHTML='';
+            a.style.display='none';
+            tijiaou=true;
+        }
+    };
+
+    password.onblur=function(){
+        var passname = '';
+        var a=this.parentNode.getElementsByClassName('error')[0];
+        if(password.value==''){
+            passname='密码不能为空';
+            a.innerHTML=passname;
+            a.style.display='inline';
+        }else{
+            a.innerHTML='';
+            a.style.display='none';
+            tijiaop=true;
+        }
+    };
+
+    //    提交表单的事件
+    form1.onsubmit=function(){
+        return tijiaou && tijiaop;
+    }
+</script>
+</body>
+</html>

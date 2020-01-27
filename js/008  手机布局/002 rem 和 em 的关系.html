@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        html{
+            font-size: 50px;
+        }
+    </style>
+</head>
+<body>
+<pre>
+    <!--默认的 1em 和 1rem 是 16px 单位。-->
+    <!--可以继承父级标签的单位。-->
+    <!--rem 只会继承 最顶级的 字体的 px值；-->
+    <!--em  继承的是离自己最近的 父级标签 字体的 px值；-->
+</pre>
+
+<div class="content" style="font-size: 12px">
+    <div class="div1" style="font-size: 1rem">显示文字大小</div>
+    <div class="div2" style="font-size: 1em">显示文字大小</div>
+    <div class="div3" style="font-size: 16px">显示文字大小</div>
+</div>
+
+<script>
+    window.onload = function(){
+        var html = document.getElementsByTagName('html')[0];
+        html.style.fontsize = document.documentElement.clientWidth/10;
+
+    };
+
+</script>
+</body>
+</html>

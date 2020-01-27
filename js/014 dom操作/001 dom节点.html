@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #li2{
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+<ul>
+    <li>1</li>
+    <li id="li2">2</li>
+    <li>3</li>
+    <li>4</li>
+</ul>
+
+<script>
+    var li2 = document.getElementById('li2');
+    console.log(li2.parentNode);    //父节点
+
+    console.log(li2.parentNode.childNodes);     //所有子节点，是一个集合
+
+    console.log(li2.attributes.id);         //用id 找
+
+    console.log(li2.parentNode.childNodes[1]);  //用子节点的下标找
+
+    console.log(li2.nextSibling);   //下一个兄弟节点
+
+    console.log(li2.previousSibling);   //上一个兄弟节点
+
+    li2.onclick=function(){
+        this.parentNode.removeChild(li2.nextSibling);   //删除他的下一个节点
+        this.parentNode.removeChild(this);   //删除自身
+    }
+
+
+</script>
+</body>
+</html>

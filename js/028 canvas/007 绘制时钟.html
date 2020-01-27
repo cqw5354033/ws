@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>绘制时钟</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        canvas{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+<canvas width="300px" height="300px" id="cavn"></canvas>
+
+<script>
+    var canv=document.getElementById('cavn');
+    var ctx=canv.getContext('2d');
+
+    //    绘制表盘
+    function biaopan(){
+        ctx.clearRect(0,0,300,300);
+        ctx.save();         //保存环境
+        ctx.translate(150,150);         //配置基准点
+        ctx.beginPath();            //开始新的绘制路径
+        ctx.arc(0,0,120,0,Math.PI*2);
+        ctx.lineWidth=10;
+        ctx.stroke();
+        ctx.restore();      //还原环境
+    }
+
+
+//    绘制数字
+    function drawnum(){
+        ctx.save();         //保存环境
+        ctx.translate(150,150);         //配置基准点
+        var arr=[3,4,5,6,7,8,9,10,11,12,1,2];
+        for(var i=0;i<arr.length;i++){
+            var danwei=Math.PI*2/12;
+            var x=Math.cos(danwei*i)*100;
+            var y=Math.sin(danwei*i)*100;
+            ctx.font='25px Arial';
+            ctx.textAlign='center';
+            ctx.textBaseline='middle';
+            ctx.fillText(arr[i],x,y);
+        }
+        ctx.restore();      //还原环境
+    }
+
+
+    function shizhen(num){
+        ctx.save();         //保存环境
+        ctx.translate(150,150);         //配置基准点
+        var danwei=Math.PI*2/60;
+        ctx.rotate(danwei*(num-15));
+        ctx.lineWidth=10;
+        ctx.moveTo(-10,0);
+        ctx.lineTo(50,0);
+        ctx.stroke();
+        ctx.restore();      //还原环境
+    }
+
+
+    function fenzhen(num){
+        ctx.save();
+        ctx.translate(150,150);         //配置基准点
+        var danwei=Math.PI*2/60;
+        ctx.rotate(danwei*(num-15));
+        ctx.lineWidth=7;
+        ctx.moveTo(-10,0);
+        ctx.lineTo(70,0);
+        ctx.stroke();
+        ctx.restore();
+    }
+
+
+    function miaozhen(num){
+        ctx.save();
+        ctx.translate(150,150);         //配置基准点
+        var danwei=Math.PI*2/60;
+        ctx.rotate(danwei*(num-15));
+        ctx.lineWidth=4;
+        ctx.moveTo(-10,0);
+        ctx.lineTo(90,0);
+        ctx.stroke();
+        ctx.restore();
+    }
+
+
+    setInterval(function(){
+        var dateObj=new Date();
+        var shi=dateObj.getHours();
+        var fen=dateObj.getMinutes();
+        var miao=dateObj.getSeconds();
+
+        biaopan();          //绘制表盘
+        drawnum();          //绘制数字
+        shizhen(shi);         //时针的绘制
+        fenzhen(fen);        //分针的绘制
+        miaozhen(miao);        //秒针的绘制
+    },100);
+
+
+</script>
+</body>
+</html>

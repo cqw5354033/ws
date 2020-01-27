@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--让bootstrap兼容最新版本的ie-->
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <!--以移动设备优先  视窗              宽度=设备宽度              缩放=1         最大缩放=1      禁止用户缩放      -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <style>
+        .container{
+            font-size: 16px;
+            background: #f3f7f6;
+            padding-bottom: 100px;
+        }
+        .header{
+            padding: 20px 0;
+        }
+        .header span{
+            font-size: 12px;
+            display: block;
+            width: 30px;
+            height: 20px;
+            border: 1px solid #00C357;
+            padding: 2px;
+            color: #00C357;
+            font-weight: bolder;
+            margin-right: 10px;
+        }
+        .p2{
+            border-top: 1px solid #ECF0EF;
+            padding: 10px 0;
+            margin: 0;
+        }
+        .p2 span{
+            display: block;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            border: 1px solid black;
+            text-align: center;
+            float: left;
+            margin-right: 10px;
+        }
+        .error1{
+            color: red;
+        }
+        .right1{
+            color: green;
+        }
+    </style>
+</head>
+<body>
+<img src="images/1.jpg" alt="" class="img-responsive"/>
+<div class="container">
+    <div class="header clearfix">
+        <span class="pull-left">1、</span>
+        <p class="p1">机动车驾驶人违法驾驶造成重大交通事故构成犯罪的，依法追究什么责任?</p>
+    </div>
+    <p class="p2 clearfix"><span>A</span>  刑事责任</p>
+    <p class="p2 clearfix"><span>B</span>  民事责任</p>
+    <p class="p2 clearfix"><span>C</span>  经济责任</p>
+    <p class="p2 clearfix"><span>D</span>  直接责任</p>
+    <input type="search" class="input"/>
+    <span class="error1"></span>
+    <span class="right1"></span>
+
+    <div class="header clearfix">
+        <span class="pull-left">2、</span>
+        <p class="p1">大家好</p>
+    </div>
+    <p class="p2 clearfix"><span>A</span>  你好</p>
+    <p class="p2 clearfix"><span>B</span>  我好</p>
+    <p class="p2 clearfix"><span>C</span>  他好</p>
+    <p class="p2 clearfix"><span>D</span>  大家好</p>
+    <input type="search" class="input2"/>
+    <span class="error2"></span>
+    <span class="right2"></span>
+
+    <div class="header clearfix">
+        <span class="pull-left">3、</span>
+        <p class="p1">大家好</p>
+    </div>
+    <p class="p2 clearfix"><span>A</span>  你好</p>
+    <p class="p2 clearfix"><span>B</span>  我好</p>
+    <p class="p2 clearfix"><span>C</span>  他好</p>
+    <p class="p2 clearfix"><span>D</span>  大家好</p>
+    <input type="search" class="input2"/>
+    <span class="error2"></span>
+    <span class="right2"></span>
+
+    <div class="header clearfix">
+        <span class="pull-left">4、</span>
+        <p class="p1">大家好</p>
+    </div>
+    <p class="p2 clearfix"><span>A</span>  你好</p>
+    <p class="p2 clearfix"><span>B</span>  我好</p>
+    <p class="p2 clearfix"><span>C</span>  他好</p>
+    <p class="p2 clearfix"><span>D</span>  大家好</p>
+    <input type="search" class="input2"/>
+    <span class="error2"></span>
+    <span class="right2"></span>
+
+    <div class="header clearfix">
+        <span class="pull-left">5、</span>
+        <p class="p1">大家好</p>
+    </div>
+    <p class="p2 clearfix"><span>A</span>  你好</p>
+    <p class="p2 clearfix"><span>B</span>  我好</p>
+    <p class="p2 clearfix"><span>C</span>  他好</p>
+    <p class="p2 clearfix"><span>D</span>  大家好</p>
+    <input type="search" class="input2"/>
+    <span class="error2"></span>
+    <span class="right2"></span> <br/>
+    <button class="button">按钮</button>
+</div>
+<img src="images/2.jpg" alt="" class="img-responsive"/>
+
+
+<script>
+    //正确答案
+    var data = ['A','B','C','D','A'];
+    var input = document.getElementsByClassName('input');
+    var button = document.getElementsByClassName('button')[0];
+    var timu = document.getElementsByClassName('p1');
+    var fenshu = 0;
+    button.onclick = function(){
+        for( var i =0; i<data.length; i++){
+            if(input.value == data[i]){
+                fenshu += 20;
+                timu[i].style.backgroundColor = '#00C455';
+
+            }else{
+                timu[i].style.backgroundColor = '#E21918';
+            }
+        }
+        alert(fenshu);
+        fenshu =0;
+    };
+</script>
+</body>
+</html>

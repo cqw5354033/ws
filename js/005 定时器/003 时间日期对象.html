@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+<script>
+//    获取：
+//    时间日期对象
+    var dObj = new Date();
+    document.write(dObj);
+    document.write('<br>');
+
+//    查询出当前对象的日期    getDate();
+    document.write('今天的日期是：'+ dObj.getDate());
+    document.write('<br>');
+
+//  查询出当前对象的星期    getDay();
+    document.write('今天的星期是：'+ dObj.getDay());
+    document.write('<br>');
+
+//  查询出当前对象的小时   getHours();
+    document.write('现在的小时是：'+ dObj.getHours());
+    document.write('<br>');
+
+    //  查询出当前对象的分钟   getMinutes();
+    document.write('现在的分钟是：'+ dObj.getMinutes());
+    document.write('<br>');
+
+    //  查询出当前对象的秒   getSeconds();
+    document.write('现在的秒是：'+ dObj.getSeconds());
+    document.write('<br>');
+
+    //  查询出当前对象的年份   getFullYear();
+    document.write('现在的年份是：'+ dObj.getFullYear());
+    document.write('<br>');
+
+    //  查询出当前对象的年份   getMonth();    从0-11   获取到的值加一，是当前月
+    var a = dObj.getMonth()+ 1;
+    document.write('现在的月份是：'+ a);
+    document.write('<br>');
+
+//    返回完整的时间戳    getTime();    时间戳：从1970年1月1日 到现在所经过的毫秒数   方便计算
+    document.write('当前的时间戳是'+ dObj.getTime());
+    document.write('<br>');
+    document.write('<br>');
+
+//    设置：
+    dObj.setDate(10);
+    document.write('今天的日期是：'+ dObj.getDate());
+    document.write('<br>');
+    document.write('<br>');
+
+//    实例化任意的时间日期
+    var dObj2 = new Date("2014/05/18 20:03:56");
+    document.write(dObj2);
+    document.write('<br>');
+
+//    把时间日期对象格式化成字符串的方法
+    var str = dObj2.toLocaleString();
+    document.write(str);
+    document.write('<br>');
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+== 和 === 的区别：
+===  代表数据值和数据类型都相等。
+==   仅仅代表  值相等，数据类型不等  也是能成立的。
+<script>
+//    for 循环的基本语法：
+    for(var i = 0; i<10; i++){
+        document.write(i);
+        document.write('<br>');
+    }
+
+//    == 和 === 的区别
+    if('5' == 5){
+        document.write('值相等');
+    }else{
+        document.write('值不想等');
+    }
+    document.write('<br>');
+    if('5' === 5){
+        document.write('值相等');
+    }else{
+        document.write('值不想等');
+    }
+    document.write('<br>');
+
+//    break 终止循环语法
+    for( var j = 0 ; j < 10; j++){
+        if(j == 5){
+            break;
+        }
+        document.write(j);
+    }
+    document.write('<br>');
+
+//    有一张0.0001 的纸，对折多少次可以达到珠穆朗玛峰的高度8848？
+    var zhi = 0.0001;
+    var cishu = 0;
+    for( a = 0; a<=10; ){
+        zhi = zhi*2;
+        cishu++;
+        if(zhi>8848){
+            break;
+        }
+    }
+    document.write('需要折叠：'+cishu+'次');
+
+
+</script>
+</body>
+</html>

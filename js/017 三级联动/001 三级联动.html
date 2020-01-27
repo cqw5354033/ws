@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>三级联动效果</title>
+    <script src="ku.js"></script>
+</head>
+<body>
+<select name="" id="pro_e">
+    <option value="">请选择</option>
+</select>
+<select name="" id="cit_e">
+
+</select>
+<select name="" id="are_e">
+
+</select>
+
+<script>
+//    1、把所有的省级的单位循环出来，放到对应的select里边
+//    2、当用户选择一个省的时候，把对应省下的所有市级单位放到select里边
+//    3、当用户选择一个具体的市的时候，添加一个对应的地区到select里边
+
+    var pro_e=document.getElementById('pro_e');
+    var cit_e=document.getElementById('cit_e');
+    var are_e=document.getElementById('are_e');
+
+    var pro_len =  provinceList.length;
+
+//    把省级单位追加给select
+    for(var i=0; i<pro_len; i++){
+        var option_p = document.createElement('option');
+        option_p.innerHTML=provinceList[i].name;
+        option_p.value=provinceList[i].name;
+        pro_e.appendChild(option_p);
+    }
+
+//    选择了省，把对应的市级单位追加给select
+//        当数据变化时        onchange
+    pro_e.onchange=function(){
+//        清除之前的市
+        cit_e.innerHTML='';
+        for(var i=0;i<pro_len;i++){
+//            找到用户选择的那个省
+            if(provinceList[i].name==pro_e.value){
+//                循环市级单位
+                cit_len=provinceList[i].cityList.length;
+                for(var c=0;c<cit_len;c++){
+//                    创建option
+                    var option_c=document.createElement('option');
+//                    市级单位的名字
+                    var city_name=provinceList[i].cityList[c].name;
+//                    在option里打印市名字
+                    option_c.innerHTML=city_name;
+//                    option里面的值就是市的名字
+                    option_c.value=city_name;
+//                    追加节点
+                    cit_e.appendChild(option_c);
+                }
+                return;
+            }
+        }
+    };
+
+//    选择了省和市，把对应的县级单位追加给select
+    cit_e.onchange=function(){
+//        清除之前的地区
+        are_e.innerHTML='';
+        for(var i=0;i<pro_len;i++){
+//            找到省
+            if(provinceList[i].name==pro_e.value){
+//                找到市
+                for(var c=0;c<cit_len;c++){
+                    if(provinceList[i].cityList[c].name == cit_e.value){
+//                        循环市里边所有的地区
+                        var are_list = provinceList[i].cityList[c].areaList;
+                        for(var a=0; a<are_list.length; a++){
+                            var option_a=document.createElement('option');
+                            option_a.innerHTML = are_list[a];
+                            option_a.value = are_list[a];
+                            are_e.appendChild(option_a);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+</script>
+</body>
+</html>

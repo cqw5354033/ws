@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+<div class="divimg">
+    <img src="img/1.jpg" alt="" class="img1"/>
+</div>
+
+<script>
+    var img1 = document.getElementsByClassName('img1')[0];
+    var index = 1;
+    var arr=[
+        "img/1.jpg",
+        "img/2.jpg",
+        "img/3.jpg",
+        "img/4.jpg"
+    ];
+
+//    用数组实现
+    var len = arr.length;
+    function func1(){
+        img1.src = arr[index];
+        if(index ==len-1){
+            index=0;
+        }else{
+            index++;
+        }
+    }
+    setInterval("func1()",1000);
+
+
+//    用找图片名的规律实现
+
+//    function func2(){
+//        img1.src = 'img/'+ index+'.jpg';
+//        if(index==4){
+//            index=1;
+//        }else{
+//            index++;
+//        }
+//    }
+//    setInterval("func2()",2000);
+
+</script>
+</body>
+</html>

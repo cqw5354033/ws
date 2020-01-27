@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>js实现计算器</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 100vm;
+            height: 100vh;
+            background: #c1e2b3;
+            position: relative;
+        }
+        .content{
+            width: 700px;
+            height: 200px;
+            border-radius: 10px;
+            background:darkgrey ;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            /*transform: translateX(-50%) translateY(-50%);*/
+            margin: -100px 0 0 -350px;
+            line-height: 200px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="content">
+        <input type="text" class="input1"/>
+        <select name="" id="sel">
+            <option value="+">+</option>
+            <option value="-">-</option>
+            <option value="*">*</option>
+            <option value="/">/</option>
+        </select>
+        <input type="text" class="input2"/>
+        <button id="btn">开始计算</button>
+        <input type="text" class="result"/>
+    </div>
+</div>
+<pre>
+    1、现获取页面元素
+    2、js获取用户点击的符号
+    3、点击按钮进行计算
+    4、判断流程控制
+    5、放到页面中去
+</pre>
+<script>
+    //获取页面元素
+    var input1 = document.getElementsByClassName('input1')[0];
+    var input2 = document.getElementsByClassName('input2')[0];
+    var sel = document.getElementById('sel');
+    var options = document.getElementsByTagName('option');
+    var btn = document.getElementById('btn');
+    var inputResult = document.getElementsByClassName('result')[0];
+//    console.log(input1);
+//    console.log(input2);
+//    console.log(sel);
+//    console.log(options);
+//    console.log(btn);
+//    console.log(inputResult);
+
+    //给按钮绑定点击事件
+    //匿名函数绑定给点击事件，当事件执行时，匿名函数就会调用
+    btn.onclick = function(){
+        var inp1val = input1.value;
+        var inp1va2 = input2.value;
+
+        //数据类型的转换
+        inp1val = parseInt(inp1val);
+        inp1va2 = parseInt(inp1va2);
+//        console.log(typeof inp1val);
+//        console.log(typeof inp1va2);
+
+        //获取用户点击的那个 option
+//        console.log(sel);
+        var selindex = sel.selectedIndex;   //指出sel中选出来的东西（个人理解）
+        var curoption = options[selindex];  //选择上面的东西（数组）
+        var tark = curoption.value;
+        var result;
+
+        //开始根据符号计算
+        if(tark == '+'){
+            result = inp1val + inp1va2;
+        }else if(tark == '-'){
+            result = inp1val - inp1va2;
+        }else if(tark == '*'){
+            result = inp1val * inp1va2;
+        }else if(tark == '/'){
+            result = inp1val / inp1va2;
+        }
+        //把结果加到input中
+        inputResult.value = result;
+    }
+</script>
+</body>
+</html>

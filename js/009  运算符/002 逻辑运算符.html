@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+
+<script>
+    //&&与    ||或     !非
+
+    var bool1=true;
+    var bool2=false;
+//    与运算：两边的值都为true，运算 结算 才为true。
+    console.log(bool1&&bool2);
+
+//    或运算：两边的值有一个为true， 运算结果就为true。
+    console.log(bool1||bool2);
+
+//    非运算：原来的值取返。
+    console.log(!bool1);
+
+//    , 号的作用
+    var a=10, b=20, c=30;
+
+//    () 提高我们的优先级
+    console.log((a>b) == true);
+
+//    三元运算符：
+    var result;
+    if(a>b){
+        console.log(result = 'a是大于b的');
+    }else{
+        console.log(result='b是大于a的');
+    }
+
+    result = a>b? 'a是大于b的':'b是大于a的';
+    console.log(result);
+
+//    switch  分支循环
+    var bb = 10;
+    switch (bb){
+        case 1:
+            alert('b等于1');
+            break;
+        case 10:
+            alert('b等于10');
+            break;
+        default :
+            alert('b不等于1也不等于10');
+    }
+
+//    函数：   就是一大段代码的封装
+    function func1(){
+        console.log(1);
+        console.log(2);
+        console.log(3);
+    }
+    func1();
+//    匿名函数：
+    var fun2 = function(){
+        console.log(4);
+        console.log(5);
+        console.log(6);
+    };
+//    两种调用方式：
+//    1、直接调用
+    fun2();
+//    2、匿名函数自调用
+    (function(){
+        console.log(7);
+        console.log(8);
+        console.log(9);
+    })();
+
+//    函数的声明和调用
+    function fun3(){
+        alert('函数5');
+    }
+//    函数的声明有个预处理的机制，可以先调用后声明
+    fun3();
+
+
+    var str10 =10;
+    alert(str10);
+
+//    函数的实参和形参：
+//    形参是函数声明位置的参数
+//    实参是函数调用位置传的参数
+
+//    函数的返回值
+//    return的两个作用：1、返回值  2、终止代码
+
+</script>
+</body>
+</html>

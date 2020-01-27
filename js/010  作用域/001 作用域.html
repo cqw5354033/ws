@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+
+<script>
+    var bianliang1 = '123';
+    function func1(){
+        var bianliang2 = '456';
+//        1、在函数中是可以访问外部声明的变量的
+        console.log(bianliang1);
+
+//        3、函数内部声明全局变量的语法
+        bianliang3 = '789';
+    }
+    func1();
+
+//    2、函数外部是不能访问函数内部的局部变量的
+//    console.log(bianliang2);
+
+    console.log(bianliang3);
+
+
+</script>
+</body>
+</html>

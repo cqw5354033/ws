@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        canvas{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<canvas width="500" height="500" id="can1"></canvas>
+<script>
+    var can1=document.getElementById('can1');
+    var dx=can1.getContext('2d');
+
+    dx.moveTo(50,50);
+    dx.lineTo(50,150);
+    dx.lineTo(150,150);
+
+    dx.lineWidth=10;
+
+    dx.closePath();     //    闭合路径  可以防止出现缺口的问题
+
+    dx.fill();          //    填充内部区域
+
+    dx.stroke();        //    绘制规划的轨迹
+
+</script>
+</body>
+</html>

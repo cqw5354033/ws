@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+<script>
+    var str = '字符串';
+    var str2 = "也是字符串串";
+    var str3 = '你好 \'我也好\' ';
+    document.write(str3[4]);
+    document.write('<br>');
+
+//    字符串的串联
+    var str4 = str.concat(str2);
+    document.write(str4);
+    document.write('<br>');
+
+//    字符串截取
+//    substr
+    var str5 = str2.substr(2,3);    //包含他自己的三个
+    document.write(str5);
+    document.write('<br>');
+//    substring
+    var str6 = str2.substring(2,3);  //包头不包尾
+    document.write(str6);
+    document.write('<br>');
+//    slice
+    var str7 = str2.slice(2,4);     //同上，第一个下标和最后一个下标
+    document.write(str7);
+    document.write('<br>');
+
+//    字符串替代函数   replace
+    var str8 = str2.replace('串','chuan');
+    document.write(str8);
+    document.write('<br>');
+
+//    字符在字符串中位置的确定
+//    indexOf
+    var str9 = str2.indexOf('串');
+    document.write(str9);
+    document.write('<br>');
+//    lastIndexOf
+    var str10 = str2.lastIndexOf('串');
+    document.write(str10);
+    document.write('<br>');
+
+//    返回指定的字符    charAt
+    var str11 = str2.charAt(0);
+    document.write(str11);
+    document.write('<br>');
+
+//    大小写互换方法
+    var arr = 'saioOWEIofelkx';
+    var arr1 = arr.toLowerCase();
+    var arr2 = arr.toUpperCase();
+    document.write(arr1);
+    document.write(arr2);
+    document.write('<br>');
+
+//    字符串切割成数组      split
+    var wangzhi = 'www.aoaolu.com.cn';
+    var arr3 = wangzhi.split('.');
+    document.write(arr3);
+    document.write('<br>');
+//    数组串联成字符串
+    var wangzhi2 = arr3.join('.');
+    document.write(wangzhi2);
+    document.write('<br>');
+
+</script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .table{
+            width: 100%;
+            height: 600px;
+            background: yellow;
+            background-size: 100% 600px;
+        }
+        .tr{
+            margin-bottom: 3px;
+            height: 30px;
+        }
+        .tr .td{
+            display: inline-block;
+            width: 80px;
+            height: 30px;
+            background-color: white;
+            opacity: .5;
+            float: left;
+            margin-right: 3px;
+            line-height: 30px;
+            text-align: center;
+            font-weight: bolder;
+        }
+
+    </style>
+</head>
+<body>
+    <!--相当于一个模版-->
+
+
+<script>
+//    基本实现
+//    外层 循环的是行号     内层循环的是列数
+    var str='<div class="table">';
+    for(var i=1; i<=9;i++){
+        str+='<p class="tr">';
+//        列数和行号是相等的，所以j<=i
+        for(var j=1; j<=i; j++){
+//            document.write(j+'*'+i+'='+j*i);
+//            document.write(' ');
+            str+='<span class="td ">'+j+'*'+i+'='+j*i+ '</span>';
+        }
+//        document.write('<br>');
+        str+='</p>';
+    }
+    str+='</div>';
+    document.write(str);
+
+//基本实现  练习
+    for(a=1; a<=9;a++){
+        for(b=1; b<=a; b++){
+            document.write(b+'*'+a+'='+b*a);
+            document.write(' ')
+        }
+        document.write('<br>')
+    }
+
+
+</script>
+</body>
+</html>
