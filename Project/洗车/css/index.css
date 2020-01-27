@@ -1,0 +1,393 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    background: #f1f2f6;
+}
+i{font-style: normal;}
+img{width: calc(100%*0.75);}
+ul, ol { list-style: none; }
+a { text-decoration: none; }
+.cb:after{
+    content: '';
+    height: 0;
+    clear: both;
+    display: block;
+}
+header{
+    height: 1.335rem;
+    line-height: 1.335rem;
+    padding: 0 5%;
+    background: white;
+    text-align: center;
+}
+header h1{
+    font-size: 18.5px;
+    font-weight: 400;
+}
+header div{
+    float: left;
+}
+.banner{
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 1rem 3rem;
+    background: white;
+}
+.banner div p{
+    font-size: 15.5px;
+    font-weight: bold;
+}
+.banner div span{
+    font-size: 10px;
+    color: #6a6a6a;
+}
+main .contents{
+    background: white;
+}
+main .list{
+    border-top: 1px solid #ccc;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 1.45rem;
+    background: white;
+}
+main .list li{
+    width: 20%;
+    height: 100%;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+main .list li.active{
+    background: #e60012;
+    color: white;
+}
+main .list li span{
+    font-size:0.35rem;
+}
+main .list li .list_img{
+    width: 22px;
+    height: 22px;
+    margin: 0 auto;
+
+}
+main .list li .list_img img{
+    width: 100%;
+}
+main .list li .list_img img.one{
+    display: block;
+}
+main .list li .list_img img.tow{
+    display: none;
+}
+main .content{
+    display: none;
+}
+.content .personal{
+    border-top: 7.5px solid #f1f2f6;
+    padding: 0 3%;
+}
+main .count{
+    border-radius: 5px;
+    box-shadow: 0 1px #ccc;
+    margin: 0.2rem;
+    padding: 0 3%;
+    background: white;
+}
+main .count li{
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 10px 0;
+    font-size: 12.5px;
+    line-height: 20px;
+    color: #6b6b6b;
+    border-top: 1px solid #f3f4f7;
+}
+main .count li h3{
+    color: black;
+    font-size: 18px;
+}
+main .count li button{
+    width: 75px;
+    height: 28px;
+    border: none;
+    color: white;
+    border-radius: 20px;
+    background: #e60012;
+    outline: none;
+}
+main .count li p{
+    color: black;
+}
+main .count li span i{
+    color: #e60012;
+    font-weight: bold;
+}
+main .count li .count_img{
+    width: 1.5rem;
+    height: 1.5rem;
+}
+main .count li .count_img img{
+    width: 100%;
+    height: 100%;
+}
+main .count li .count_text{
+    width: calc(100% - 1.8rem);
+}
+.content .order{
+    display: -webkit-flex;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: center;
+    height: 1.1rem;
+    line-height: 1.1rem;
+    box-sizing: border-box;
+    font-size: 0.4rem;
+    border-top: 1px solid #e5e9ee;
+}
+.content .order li{
+    width: 50%;
+    margin: 0 15px;
+    height: 100%;
+    color: #666666;
+    border-bottom: 3px solid transparent;
+    box-sizing: border-box;
+}
+.content .order li.active{
+    color: #e60012;
+    border-bottom: 3px solid #e60012;
+}
+.content .order_cont{
+    display: none;
+    background: #f1f2f6;
+    overflow: hidden;
+}
+
+.content .personal li{
+    padding: 20px 0;
+    font-size: 15px;
+    color: black;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #e5e9ee;
+}
+.content .personal li img{
+    width: 8px;
+}
+
+/*------------------------------payment------------------------------------*/
+#payment main, #order_detail main{
+    padding: 0 2%;
+
+}
+#payment main .payment_count h4,
+#invoice main .payment_count h4{
+    padding: 10px 0;
+    font-size: 15px;
+    font-weight: 400;
+    color: #333;
+}
+#payment main .payment_count .count_details,
+#invoice main .payment_count .count_details{
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    line-height: 25px;
+    font-size: 14px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 1px #ccc;
+    padding: 15px 20px;
+    margin-bottom: 5px;
+}
+#payment main .payment_count .count_details i,
+#order_detail main .payment_count .count_details i{
+    color: #e60012;
+}
+#payment main .payment_count .count_details .img_left img{
+    width: 25px;
+    display: inline-block;
+    vertical-align: middle;
+}
+#payment main .payment_count .count_details .img_left span{
+    margin-left: 10px;
+}
+#payment main .payment_count .count_details .img_right{
+    width: 15px;
+    height: 15px;
+    background: url("../images/unchecked.png")no-repeat;
+    background-size: cover;
+}
+#payment main .payment_count .count_details .img_right.active{
+    background: url("../images/checked.png")no-repeat;
+    background-size: cover;
+}
+footer{
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    color: white;
+    line-height: 50px;
+    bottom: 0;
+    left: 0;
+}
+footer input[type=button]{
+    width: 100%;
+    height: 100%;
+    outline: none;
+    color: white;
+    background: #e60012;
+    border: none;
+    font-size: 15px;
+    font-weight: 700;
+}
+/*------------------------------payment_end------------------------------------*/
+#error .error_cont{
+    padding: 100px 0 0 0;
+    text-align: center;
+    font-size: 15px;
+    color: #000;
+}
+#error .error_cont img{
+    width: 50px;
+    height: 50px;
+    margin-bottom: 20px;
+}
+
+/*------------------------------------pay_result------------------------------------*/
+#pay_result main{
+    padding: 100px 0 0 0;
+    text-align: center;
+    font-size: 15px;
+}
+#pay_result main section:nth-of-type(2){
+    margin: 20px 0 30px;
+}
+#pay_result main section img{
+    width: 42px;
+    height: 42px;
+}
+#pay_result main section button{
+    padding: 0;
+    width: 100px;
+    margin: 0 auto;
+    background: transparent;
+    font-size: 12px;
+    line-height: 30px;
+    text-shadow: none;
+    color: #000000;
+    font-weight: normal;
+    border-radius: 3px;
+    display: inline-block;
+    box-shadow: none;
+    outline: none;
+    border: 1px solid #ddd;
+}
+#pay_result main section button.ui-btn{
+    border: 1px solid #e60012;
+    background: #e60012;
+    color: white;
+}
+#pay_result main section .hint{
+    font-size: 12.5px;
+}
+/*------------------------------------pay_result_end------------------------------------*/
+
+/*------------------------------------order_detail------------------------------------*/
+#order_detail .payment_count .count_details{
+    margin: 15px 0;
+    line-height: 25px;
+    font-size: 14px;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0 1px #ccc;
+    padding: 13px 20px;
+}
+#order_detail .payment_count .count_details p{
+    display: flex;
+    display: -webkit-flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12.5px;
+    color: #2d2d2d;
+    padding: 10px 0;
+    line-height: 17px;
+}
+/*------------------------------------order_detail_end------------------------------------*/
+
+/*------------------------------------content_active------------------------------------*/
+.content_active{
+    width: 100%;
+    height: 100%;
+    margin-top: 0.3rem;
+}
+.content_active img{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+/*------------------------------------content_active_end------------------------------------*/
+
+/*------------------------------------address_list------------------------------------*/
+#addressList header{
+    background: #e60012;
+    font-size: 0.4rem;
+    text-align: center;
+    color: white;
+}
+#addressList ul{
+    margin-bottom: .5rem;
+}
+#addressList ul li{
+    background-color: #fff;
+    margin-top: 10px;
+    border-top: 1px dashed #dfdfdf;
+    border-bottom: 1px dashed #dfdfdf;
+    padding: .1rem .15rem;
+    font-size: .35rem;
+    line-height: .5rem;
+}
+#addressList ul li .name{
+    font-size: .4rem;
+    font-weight: bold;
+    line-height: .85rem;
+}
+#addressList ul li .branch-call{
+    padding-left: .6rem;
+    background: url(../images/call.png) no-repeat left 0;
+    background-size: .4rem;
+    padding-bottom: .1rem;
+}
+#addressList ul li .branch-address{
+    padding-left: .6rem;
+    background: url(../images/address.png) no-repeat left 0;
+    background-size: .4rem;
+    padding-bottom: .1rem;
+    color: #6a6a6a;
+}
+#addressList ul li .branch-call a{
+    color: #0894ec;
+}
+#addressList .search-input{
+    
+}
+/*------------------------------------address_list_end------------------------------------*/

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>待支付订单</title>
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body>
+    <!-- 待支付 -->
+    <div id="order" class="order nav" data-role="page">
+        <div data-role="header" data-position="fixed" data-tap-toggle="false">
+            <header>
+                <h3>订单</h3>
+            </header>
+        </div>
+        <div id="" data-role='main' class="ui-content">
+            <div data-role="navbar">
+                <ul>
+                    <li class="ui-btn-active"><a href="##">全部</a></li>
+                    <li><a href="##">待支付</a></li>
+                    <li><a href="##">已支付</a></li>
+                </ul>
+            </div>
+            <!-- 有待支付订单 -->
+            <div class="content" style="display: block">
+                <div class="order_one">
+                    <div class="order_two">
+                        <section class="con">
+                            <div class="order_one_right">
+                                <label><span>100M/3个月车载流量包</span><span>已支付</span></label>
+                                <label><span>￥15.00</span><span>X1</span></label>
+                            </div>
+                        </section>
+                        <section class="button">
+                            <button data-role="none">查看订单</button>
+                        </section>
+                    </div>
+                </div>
+                <div class="order_one">
+                    <div class="order_two">
+                        <section class="con">
+                            <div class="order_one_right">
+                                <label><span>100M/3个月车载流量包</span><span>待支付</span></label>
+                                <label ><span>￥15.00</span><span>X1</span></label>
+                            </div>
+                        </section>
+                        <section class="button"><button data-role="none">查看订单</button><button data-role="none">立即支付</button></section>
+                    </div>
+                </div>
+                <div class="order_one">
+                    <div class="order_two">
+                        <section class="con">
+                            <div class="order_one_right">
+                                <label><span>100M/3个月车载流量包</span><span>已支付</span></label>
+                                <label><span>￥15.00</span><span>X1</span></label>
+                            </div>
+                        </section>
+                        <section class="button">
+                            <button data-role="none">查看订单</button>
+                        </section>
+                    </div>
+                </div>
+            </div>
+             <!--无待支付订单 -->
+             <div class="content none" style="display: none">
+                <img src="images/pic17.jpg" alt="">
+                <label>没有已支付订单信息，请前去购买商品</label>
+            </div>
+
+        </div>
+    </div>
+    <script>
+        $(function(){
+            $('.ui-content .content .order_one:gt(0)').hide();
+
+            $('.ui-content .ui-navbar li').click(function(){
+                $(this).addClass('ui-btn-active').siblings().removeClass('ui-btn-active');
+
+                $('.ui-content .content .order_one').eq($(this).index()).show().siblings().hide();
+            });
+        })
+    </script>
+</body>
+
+</html>

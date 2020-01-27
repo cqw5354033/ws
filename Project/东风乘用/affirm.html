@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>订单确认</title>
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div data-role="page" id="affirm">
+    <div data-role="header" class="ui-header">
+        <h3><span><img src="images/but01.jpg" alt=""></span>订单确认</h3>
+    </div>
+    <div data-role="main">
+        <div class="licence cb">
+            <p>车牌号</p>
+            <span>京A5024D2</span>
+        </div>
+        <div class="goods cb">
+            <img src="images/goods.jpg" alt="">
+            <div class="goodsCount">
+                <p>补充包：<span>100M</span></p>
+                <p>充值号码：<span>17600053338</span></p>
+            </div>
+            <div class="goods_price">
+                ￥<span>134.00</span>
+            </div>
+        </div>
+        <div class="payment">
+            <div>
+                <section class="payment_w cb">
+                    <img src="images/weChat.jpg" alt="">
+                    <span>微信支付</span>
+                    <img src="images/unchecked.jpg" alt="">
+                </section>
+            </div>
+            <div>
+                <section class="payment_z cb">
+                    <img src="images/alipay.jpg" alt="">
+                    <span>支付宝支付</span>
+                    <img src="images/checked.jpg" alt="" class="active">
+                </section>
+            </div>
+        </div>
+        <div class="account cb">
+            <div class="account_total">
+                金额合计： ￥<span>135.55</span>
+            </div>
+            <button data-role="none" class="account_pay">去付款</button>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/jquery.mobile-1.4.5.min.js"></script>
+</body>
+</html>

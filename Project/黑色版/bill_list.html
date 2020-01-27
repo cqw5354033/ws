@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>发票信息管理</title>
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body id="billList">
+    <div data-role="page" id="bill">
+        <div data-role="header" data-position="fixed" data-tap-toggle="false">
+            <header>
+                <h3>发票信息管理</h3>
+            </header>
+        </div>
+        <div data-role="main" class="ui-content">
+            <div class="bill_one">
+                <div class="bill_content">
+                    <section><span>手机号</span><span>15656565656</span></section>
+                	<section><span>邮箱</span><span>0377-66665555@163.com</span></section>
+                    <section><span>单位名称</span><span>ASDNIJADAKDNSAJD</span></section>
+                    <section><span>纳税人识别码</span><span>156SADSADASD56S4DSA65</span></section>
+                </div>
+                <div class="set_default">
+                    <div>
+                        <input type="radio"  checked name="default1" id="one"><label for="one">默认发票</label>
+                    </div>
+                    <div>
+                        <label><img src="images/edit.png" alt="">编辑</label>
+                    </div>
+                    <div>
+                        <label><img src="images/del.png" alt="">删除</label>
+                    </div>
+                </div>
+            </div>
+            <div class="bill_one">
+                <div class="bill_content">
+                	<section><span>手机号</span><span>15656565656</span></section>
+                	<section><span>邮箱</span><span>0377-66665555@163.com</span></section>
+                    <section><span>单位名称</span><span>ASDNIJADAKDNSAJD</span></section>
+                    <section><span>纳税人识别码</span><span>156SADSADASD56S4DSA65</span></section>
+                </div>
+                <div class="set_default">
+                    <div>
+                        <input type="radio"  name="default1" id="two"><label for="two">设为默认</label>
+                    </div>
+                    <div>
+                        <label><img src="images/edit.png" alt="">编辑</label>
+                    </div>
+                    <div>
+                        <label><img src="images/del.png" alt="">删除</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+            <footer>
+                <a href="#addBill">新增发票信息</a>
+            </footer>
+        </div>
+    </div>
+
+
+    <div data-role="page" id="addBill">
+        <div data-role="header" data-position="fixed" data-tap-toggle="false">
+            <header>
+                <h3>新增发票信息</h3>
+            </header>
+        </div>
+        <div data-role="main" class="ui-content">
+            <div class="bill_info">
+				<section class="special"><label for="edit_phone">手机号</label><input type="text" name="edit_phone" id="edit_phone" placeholder="请填写开户行名称"></section>
+                <section class="special"><label for="edit_email">邮箱</label><input type="text" name="edit_email" id="edit_email" placeholder="请填写开户行账号"></section>
+                <section class="com"><label for="edit_name">单位名称</label><input type="text" name="edit_name" id="edit_name" placeholder="请填写单位名称"></section>
+                <section class="com"><label for="edit_number">纳税人识别号</label><input type="text" name="edit_number" id="edit_number" placeholder="请填写纳税人识别码"></section>       
+            </div>
+            <div class="set">
+            	<section>
+            		<p>设为默认发票</p>
+            		<p>注:每次下单时会使用该发票信息</p>
+            	</section>
+            	<section>
+            		<label for="switch"></label>
+    				<input type="checkbox" data-role="flipswitch" data-on-text=" " data-off-text=" " name="switch" id="switch">
+            	</section>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+            <footer>
+                <button>保存</button>
+            </footer>
+        </div>
+    </div>
+
+    <div data-role="page" id="editBill">
+        <div data-role="header" data-position="fixed" data-tap-toggle="false">
+            <header>
+                <h3>修改发票信息</h3>
+            </header>
+        </div>
+        <div data-role="main" class="ui-content">
+           
+            <div class="bill_info">
+    			<section class="special"><label for="edit_phone">手机号</label><input type="text" name="edit_phone" id="edit_phone" placeholder="请填写开户行名称"></section>
+                <section class="special"><label for="edit_email">邮箱</label><input type="text" name="edit_email" id="edit_email" placeholder="请填写开户行账号"></section>
+                <section class="com"><label for="edit_name">单位名称</label><input type="text" name="edit_name" id="edit_name" placeholder="请填写单位名称"></section>
+                <section class="com"><label for="edit_number">纳税人识别号</label><input type="text" name="edit_number" id="edit_number" placeholder="请填写纳税人识别码"></section>       
+            </div>
+            <div class="set">
+            	<section>
+            		<p>设为默认发票</p>
+            		<p>注:每次下单时会使用该发票信息</p>
+            	</section>
+            	<section>
+            		<label for="switch"></label>
+    				<input type="checkbox" data-role="flipswitch" data-on-text=" " data-off-text=" " name="switch" id="switch">
+            	</section>
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+            <footer>
+                <button>保存</button>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>

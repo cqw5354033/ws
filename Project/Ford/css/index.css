@@ -1,0 +1,537 @@
+@charset "UTF-8";
+* {
+    margin: 0;
+    padding: 0;
+}
+html,body{
+    height: 100%;
+}
+body{
+    background: #333b45;
+}
+.cb {
+    *zoom: 1;
+}
+.cb:after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+}
+.fl {
+    float: left;
+}
+.fr {
+    float: right;
+}
+.pr{
+    position: relative;
+}
+.pa{
+    position: absolute;
+}
+.pf{
+    position: fixed;
+}
+ul, ol {
+    list-style: none;
+}
+a {
+    text-decoration: none;
+}
+
+header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    height: 50px;
+    z-index: 9999;
+    overflow: hidden;
+    box-sizing: border-box;
+    background: #333b45;
+}
+header .top{
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+header h1{
+    text-align: center;
+    font-size: 17px;
+    color: #fff;
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    font-weight: 400;
+}
+header .back{
+    position: absolute;
+    left: 17px;
+    top: 17px;
+    width: 10px;
+    height: 17px;
+}
+header .close{
+    width: 17px;
+    height: 17px;
+    position: absolute;
+    right: 17px;
+    top: 17px;
+}
+body>section:first-of-type{
+    overflow: hidden;
+    min-height: calc(100% - 50px);
+}
+main{
+    margin-top: 50px;
+    padding: 0 6.53%;
+    margin-bottom: 50px;
+    min-height: calc(100% - 50px);
+    box-sizing: border-box;
+}
+footer{
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 999;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 -5px 5px #333b45;
+    background: #333b45;
+}
+footer img{
+    width: 17px;
+    height: 17px;
+}
+footer span{
+    font-size: 13px;
+    color: #d5d8da;
+    margin-left: 10px;
+}
+footer span a{
+    color: #00d4ff;
+}
+#realName, #realName main, #order, #order main{
+    height: calc(100% - 50px);
+}
+/*------------------------------------realName------------------------------------*/
+#realName main .content{
+    text-align: center;
+    padding: 90px 0 0 0;
+    min-height: 70%;
+}
+#realName main .content img{
+    width: 57px;
+    height: auto;
+}
+#realName main .content p{
+    font-size: 14px;
+    color: white;
+    line-height: 30px;
+    padding: 10px;
+    text-align: left;
+}
+#realName main .btn{
+    height: 50px;
+}
+#realName main .btn button{
+    width: 100%;
+    outline: none;
+    border: none;
+    height: 50px;
+    background: #00d4ff;
+    color: black;
+    border-radius: 4px;
+    font-size: 16px;
+}
+#realName main .btn button:focus{
+    background: rgba(0,212,255,0.20);
+}
+/*------------------------------------realName_end------------------------------------*/
+
+/*------------------------------------flowDetails------------------------------------*/
+.flowDetails main .content{
+    padding:15px 10px 0 20px;
+    color: white;
+    font-size: 13px;
+    line-height: 27px;
+    box-sizing: border-box;
+}
+
+.flowDetails main .content .progress{
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+    overflow: hidden;
+    line-height: 0;
+    background: #70757c;
+    margin-top: 10px;
+}
+.flowDetails main .content .progress span {
+    display: inline-block;
+    width: 70%;
+    height: 100%;
+    background: #0adfff;
+    background-size: 60px 30px;
+    text-align: center;
+    color:#fff;
+    -webkit-animation:load 3s ease-in;
+}
+.flowDetails main .content .progress .orange{
+    background: #ffa200;
+    width: 50%;
+}
+.flowDetails main .content .progress .red{
+    background: #ff2b2b;
+    width: 30%;
+}
+.flowDetails main .content .progress .cyan{
+    background: #1e8da2;
+    width: 100%;
+}
+@-webkit-keyframes load{
+    0%{
+        width: 0%;
+    }
+    100%{
+        width:70%;
+    }
+}
+.flowDetails main .content .content_box .content_right{
+    padding: 3px 10px;
+    border-radius: 3px;
+    background: #484f58;
+    margin-top: 10px;
+}
+.flowDetails main .content .hint{
+    color: #adb1b5;
+    font-size: 12px;
+    margin-top: 3px;
+}
+.flowDetails main .hints{
+    bottom: 0;
+    left: 30px;
+    text-align: left;
+    color: #adb1b5;
+    font-size: 12px;
+    width: 85%;
+    line-height: 27px;
+}
+.flowDetails main .hints img{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    margin-top: 5px;
+}
+.flowDetails main .hints span{
+    width: calc(100% - 30px);
+}
+/*------------------------------------flowDetails_end------------------------------------*/
+
+/*------------------------------------flow------------------------------------*/
+.flow .flow_title{
+    height: 40px;
+    border-bottom: 1px solid #979797;
+    line-height: 40px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.flow .flow_title li{
+    float: left;
+    font-size: 14px;
+    width: 20%;
+    margin: 0 6.6666666%;
+    box-sizing: border-box;
+}
+.flow .flow_title li.cur{
+    border-bottom: 2px solid #00d4ff;
+    height: 40px;
+}
+.flow .flow_title li a{
+    color: #a4a8ac;
+    height: 100%;
+}
+.flow .flow_title li.cur a{
+    color: white;
+}
+.flow .content .tabs{
+    margin-top: 10px;
+    display: none;
+}
+.flow .content .tabs img{
+    width: 20px;
+    margin: 2px 10px 0 5px;
+    float: left;
+}
+.flow .content .tabs .tabs_nav{
+    min-height: 25px;
+}
+.flow .content .tabs .tabs_nav span{
+    width: calc(100% - 35px);
+    color: #d5d8da;
+    font-size: 12px;
+    padding-right: 10px;
+    box-sizing: border-box;
+    float: left;
+    line-height: 20px;
+}
+.flow .content .tabs .flowList{
+    width: 100%;
+    box-sizing: border-box;
+}
+.flow .content .tabs .flowList>p:first-of-type{
+    font-size: 15px;
+    line-height: 20px;
+    padding-bottom:10px;
+    color: white;
+    border-bottom: 1px solid #979797;
+}
+.flow .content .tabs .flowList>p:first-of-type span{
+    color: #00d4ff;
+}
+.flow .content .tabs .flowList .flowListBox{
+    padding: 10px 3px;
+    border-bottom: 1px dashed #5c626a;
+}
+.flow .content .tabs .flowList .flowListBox .listLeft{
+    width: 70px;
+    height: 70px;
+    box-shadow: 0 0 10px 5px #3f4750 inset;
+    border-radius: 50%;
+    color: white;
+    font-size: 13px;
+    text-align: center;
+    line-height: 70px;
+}
+.flow .content .tabs .flowList .flowListBox .listCenter{
+    width: calc(100% - 160px);
+    margin: 0 10px;
+}
+.flow .content .tabs .flowList .flowListBox .listCenter .center_one{
+    font-size: 15px;
+    color: #ffc600;
+    line-height: 27px;
+}
+.flow .content .tabs .flowList .flowListBox .listCenter .center_one span{
+    font-size: 18px;
+}
+.flow .content .tabs .flowList .flowListBox .listCenter .center_two{
+    color: #d5d8da;
+    font-size: 12px;
+    line-height: 15px;
+}
+.flow .content .tabs .flowList .flowListBox .listRight{
+    width: 70px;
+    border: 1px solid #02d4ff;
+    outline: none;
+    padding: 5px 20px;
+    color: #02d4ff;
+    background: transparent;
+    border-radius: 15px;
+    margin-top: 20px;
+    line-height: 20px;
+}
+.flow .content .tabs .flowList .flowListBox .listRight:focus{
+    background: rgba(0,212,255,0.20);
+}
+.flow .flow_title.order_title li{
+    margin: 0 3%;
+}
+.flow .content .tabs .flowList .flowListBox .listCenter .center_three{
+    font-size: 15px;
+    color: white;
+    line-height: 27px;
+}
+.flow .content .tabs .flowList .flowListBox .listCenter .center_four{
+    font-size: 13px;
+    color: #d5d8da;
+    line-height: 20px;
+}
+.flow .content .tabs .flowList .flowListBox .center_five{
+    font-size: 14px;
+    color: #d5d8da;
+    line-height: 25px;
+}
+.flow .content .tabs .flowList .flowListBox .listRight.center_six{
+    margin-top: 10px;
+}
+/*------------------------------------flow_end------------------------------------*/
+/*------------------------------------boll------------------------------------*/
+@-webkit-keyframes move_wave {
+    0% { background-position:0 0 }
+    to { background-position:532px 0 }
+}
+
+@keyframes move_wave {
+    0% { background-position:0 0 }
+    to { background-position:532px 0 }
+}
+.flow .content .bolls{
+    width: 170px;
+    height: 170px;
+    border: 1px solid #2d505d;
+    box-shadow: 0 0 7px 2px #2d505d inset;
+    border-radius: 50%;
+    margin: 30px auto 16px;
+}
+.flow .content .bolls .boll {
+    height: 153px;
+    width: 153px;
+    border-radius: 50%;
+    border: 1px solid #13bbd7;
+    box-shadow: 0 5px 5px 2px #2b5665 inset;
+    position: relative;
+    font-size: 14px;
+    overflow: hidden;
+    margin: 8px auto 0;
+    padding: 1px;
+    box-sizing: border-box;
+}
+
+.flow .content .bolls .boll .text {
+    text-align: center;
+    margin-top: 35px;
+    color: #fff;
+}
+.flow .content .bolls .boll .text .num {
+    font-size: 14px;
+    color: #c4c4c4;
+    line-height: 20px;
+}
+.flow .content .bolls .boll .text .num samp{
+    color: white;
+}
+.flow .content .bolls .boll .text .num2{
+    font-size: 13px;
+    color: #c4c4c4;
+    margin-bottom: 7px;
+}
+.flow .content .bolls .boll .text .num2 samp{
+    font-size: 40px;
+    color: #fff;
+    letter-spacing: 3px;
+}
+.flow .content .bolls .boll .text input{
+    font-size: 14px;
+    color: white;
+    border: 1px solid #89dbe9;
+    padding: 5px 15px;
+    background: transparent;
+    border-radius: 20px;
+    outline: none;
+}
+.flow .content .bolls .boll .water {
+    height: 50%;
+    background: url(../images/water.png) repeat-x;
+    position: absolute;
+    width: 100%;
+    top: 53%;
+    left: 0;
+    -webkit-animation: move_wave 4s linear infinite;
+    animation: move_wave 5s linear infinite;
+    z-index: -1;
+}
+
+.flow .content .bolls .boll .w1 {
+    opacity: .5;
+    background-position: 120px 0;
+    -webkit-animation: move_wave 10s linear infinite;
+    animation: move_wave 10s linear infinite;
+}
+
+.flow .content .bolls .boll .w2 {
+    opacity: .3;
+    background-position: 60px 0;
+    -webkit-animation: move_wave 8s linear infinite;
+    animation: move_wave 8s linear infinite;
+}
+.flow .content .validity{
+    background: #414852;
+    line-height: 30px;
+    border-radius: 6px;
+    font-size: 12px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+    width: 210px;
+    height: 30px;
+    margin: 0 auto 16px;
+}
+
+/*------------------------------------boll_end------------------------------------*/
+
+/*------------------------------------order------------------------------------*/
+#order .orders_top{
+    border-bottom: 1px solid #979797;
+}
+#order .orders_top p{
+    font-size: 14px;
+    color: #d5d8da;
+    line-height: 27px;
+}
+#order .orders_top h3{
+    font-size: 22px;
+    color: #ffc600;
+    line-height: 30px;
+    font-weight: 400;
+    margin-bottom: 5px;
+}
+#order .orders_top h3 span{
+    font-size: 20px;
+}
+#order .content ul li{
+    font-size: 15px;
+    line-height: 20px;
+    padding: 20px 0;
+    color: #d6d7d9;
+    border-bottom: 1px solid #5a5f65;
+}
+#order .content ul li span{
+    float: right;
+    color: white;
+}
+#order .btn{
+    text-align: center;
+    bottom: 0;
+    left: calc((100% - 250px)/2);
+}
+#order .btn button{
+    background: transparent;
+    border-radius: 20px;
+    height: 40px;
+    border: 2px solid #999da2;
+    line-height: 40px;
+    outline: none;
+    color: white;
+    width: 250px;
+    margin: 0 auto;
+}
+#order .btn button:focus{
+    background: rgba(159,159,159,0.20);
+}
+#order .orders_top_two{
+    text-align: center;
+    padding: 75px 0 34px;
+}
+#order .orders_top_two img{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    margin-bottom: -5px;
+}
+#order .orders_top_two span{
+    font-size: 29px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+}
+/*------------------------------------order_end------------------------------------*/

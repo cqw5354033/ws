@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/swiper.min.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/swiper.min.js"></script>
+</head>
+<body id="commodity">
+<header>
+    <div><img src="images/u435.png" alt=""></div>
+    <h1>选择美味和小食</h1>
+</header>
+<main>
+    <section class="banner">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/u259.png" alt=""></div>
+                <div class="swiper-slide"><img src="images/u266.png" alt=""></div>
+                <div class="swiper-slide"><img src="images/u273.png" alt=""></div>
+                <div class="swiper-slide"><img src="images/u280.png" alt=""></div>
+                <div class="swiper-slide"><img src="images/u287.png" alt=""></div>
+                <div class="swiper-slide"><img src="images/u294.png" alt=""></div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+    <section class="box">
+        <ul>
+            <li class="cur">精选热卖</li>
+            <li>店长推荐</li>
+            <li>甜点蛋糕</li>
+            <li>咖啡饮品</li>
+            <li>健康轻食</li>
+            <li>其他</li>
+        </ul>
+        <div class="contents">
+            <ul class="content">
+                <li>
+                    <div><img src="images/u1621.png" alt=""></div>
+                    <div>
+                        <h4>热卖套餐名字</h4>
+                        <p>月售666</p>
+                        <div>
+                            <span>￥125</span>
+                            <div>
+                                <img src="images/u696.png" alt="">
+                                <input type="text" value="1" disabled>
+                                <img src="images/u690.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+</main>
+
+
+<script>
+    let mySwiper = new Swiper(".swiper-container",{
+        loop: true, // 循环模式选项
+        preventInteractionOnTransition:true,    //一次滑动一张
+        pagination:{
+            el:".swiper-pagination",
+        },
+        autoplay: {
+            disableOnInteraction: false,//手指触屏滑动之后，重新开启自动轮播
+        },
+    });
+</script>
+</body>
+</html>

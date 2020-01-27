@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="../css/indexPc.css">
+    <script src="../js/jquery-3.3.1.min.js"></script>
+    <title>Title</title>
+</head>
+<body id="payment">
+<div class="header">
+    <header>
+        <a href=""><div><img src="../images/left.png" alt=""></div></a>
+        <h1>选择支付渠道</h1>
+    </header>
+</div>
+
+<main>
+    <div class="padding_content">
+        <div class="payment_count">
+            <h4>订单详情</h4>
+            <div class="count_details">
+                <span>5G半年包</span> <i>￥15.00</i>
+            </div>
+        </div>
+        <div class="payment_count">
+            <h4>支付选择</h4>
+            <div class="count_details">
+                <div class="img_left">
+                    <img src="../images/wechat.jpg" alt="">
+                    <span>微信支付</span>
+                </div>
+                <div class="img_right active"></div>
+            </div>
+            <div class="count_details">
+                <div class="img_left">
+                    <img src="../images/alipay.jpg" alt="">
+                    <span>支付宝支付</span>
+                </div>
+                <div class="img_right"></div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer>
+    <a href="pay_result.html"><input type="button" value="确定支付" class="footer_btn"></a>
+</footer>
+
+<script>
+    $(function () {
+        $('.count_details').click(function(){
+            $(this).children('.img_right').addClass('active').parents('.count_details').siblings().children('.img_right').removeClass('active');
+        });
+    })
+</script>
+</body>
+</html>

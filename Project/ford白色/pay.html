@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>选择支付渠道</title>
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.3.1.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<body>
+<div id="pay" data-role="page">
+    <div data-role="header" data-position="fixed" data-tap-toggle="false">
+        <header>
+            <h3>选择支付渠道</h3>
+        </header>
+    </div>
+    <div data-role="main" class="ui-content ">
+        <div>
+            <h4>订单详情</h4>
+        </div>
+        <div class="two content discount">
+            <section class="con1">
+                <div class="order_one_right">
+                    <label><span>100M/3个月车载流量包</span><span>￥15.00</span></label>
+                    <label>
+                        <span>有效期 90天</span><span>￥88.00</span>
+                    </label>
+                </div>
+            </section>
+        </div>
+        <div class="three">
+            <section><h4>支付选择</h4></section>
+            <div class="three_cont">
+                <section class="sec"><img src="images/wechat.jpg" alt=""><label for="weixin">微信支付</label><input type="radio" name="type" id="weixin"></section>
+                <section class="sec"><img src="images/alipay.jpg" alt=""><label for="zhifubao">支付宝支付</label><input type="radio" name="type" id="zhifubao"></section>
+            </div>
+        </div>
+        <div class="bill">
+            <section><h4>发票信息</h4></section>
+            <section>开具发票&#x3000;<span>不开发票</span></section>
+        </div>
+    </div>
+    <div data-role="footer" data-position="fixed" data-tap-toggle="false">
+        <div>
+            <span>总计：<b>￥50.00</b></span>
+        </div>
+        <button>确定支付</button>
+    </div>
+</div>
+</body>
+<script>
+
+</script>
+</html>

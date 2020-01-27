@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/jquery-3.3.1.js"></script>
+</head>
+<body>
+<header>
+    <div class="top">
+        <img src="images/DataPlan_UI_25.png" alt="" class="back">
+        <h1>订单中心</h1>
+        <img src="images/DataPlan_UI_03.png" alt="" class="close">
+    </div>
+</header>
+<section id="orderList" class="flow">
+    <main class="main">
+        <ul class="flow_title order_title cb">
+            <li class="cur"><a href="##">全部订单</a></li>
+            <li><a href="##">待支付</a></li>
+        </ul>
+        <div class="content">
+            <section class="tabs cb" style="display: block">
+                <div class="flowList">
+                    <div class="flowListBox cb">
+                        <div class="listLeft fl">500M</div>
+                        <div class="listCenter fl">
+                            <p class="center_three">Wi-Fi热点 500M流量包</p>
+                            <p class="center_four">30.00元</p>
+                            <p class="center_four">2019.01.01 13:20</p>
+                        </div>
+                        <span class="fr center_five">待支付</span>
+                        <input type="button" class="listRight center_six fr" value="购买">
+                    </div>
+                    <div class="flowListBox cb">
+                        <div class="listLeft fl">1G</div>
+                        <div class="listCenter fl">
+                            <p class="center_three">娱乐流量 1G流量包</p>
+                            <p class="center_four">50.00元</p>
+                            <p class="center_four">2018.10.23 19:08</p>
+                        </div>
+                        <span class="fr center_five">已取消</span>
+                    </div>
+                    <div class="flowListBox cb">
+                        <div class="listLeft fl">不限</div>
+                        <div class="listCenter fl">
+                            <p class="center_three">娱乐流量 不限流量包</p>
+                            <p class="center_four">40.00元</p>
+                            <p class="center_four">2018.09.09 19:45</p>
+                        </div>
+                        <span class="fr center_five">支付成功</span>
+                    </div>
+                    <div class="flowListBox cb">
+                        <div class="listLeft fl">800M</div>
+                        <div class="listCenter fl">
+                            <p class="center_three">Wi-Fi热点 800M流量包</p>
+                            <p class="center_four">20.00元</p>
+                            <p class="center_four">2017.03.30 10:12</p>
+                        </div>
+                        <span class="fr center_five">已失效</span>
+                    </div>
+                </div>
+            </section>
+            <section class="tabs">
+                <div class="flowList">
+                    <div class="flowListBox cb">
+                        <div class="listLeft fl">500M</div>
+                        <div class="listCenter fl">
+                            <p class="center_three">Wi-Fi热点 500M流量包</p>
+                            <p class="center_four">30.00元</p>
+                            <p class="center_four">2019.01.01 13:20</p>
+                        </div>
+                        <span class="fr center_five">待支付</span>
+                        <input type="button" class="listRight center_six fr" value="购买">
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+</section>
+<script>
+    $(function () {
+        $('.flow_title li').click(function(){
+            $(this).addClass('cur').siblings().removeClass();
+
+            $('.content .tabs').eq($(this).index()).show().siblings().hide();
+        });
+    })
+</script>
+</body>
+</html>
