@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    /*var :只有全局变量和局部变量
+    let：还增加了块级作用域
+    const：常量，上面两个是变量*/
+
+    // var:
+    function varTest() {
+        var a = 10;
+        if(true){
+            var a = 20;
+            console.log(a)
+        }
+        console.log(a)
+    }
+    varTest();
+
+    // let:
+    function letTest() {
+        let b = 10;
+        if(true){
+            let b = 20;
+            console.log(b)
+        }
+        console.log(b)
+    }
+    letTest();
+
+    // const:
+    /*const a = 10;
+    a = 12;       报错*/
+    const array = [];   /*可以向数组中push数据，其他的都不可以改变*/
+    array.push("red");
+    array.push("green");
+
+    console.log(array);
+
+
+</script>
+</body>
+</html>

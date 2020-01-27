@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+数据结构:map
+键值对:与对象不同的是 键和值可以是任何类型
+<script>
+    const map1 = new Map();
+    // 设置key值:
+    const key1 = "some string",
+          key2 = {},
+          key3 = function () {};
+    // 为key 设置value值:
+    map1.set(key1,"他的key是一个字符串");
+    map1.set(key2,"他的key是一个对象");
+    map1.set(key3,"他的key是一个方法");
+
+    console.log(map1.get(key1),map1.get(key2),map1.get(key3));
+    // 获取对应的value数量
+    console.log(map1.size);
+
+    // for...of 遍历map1中的key 和 value
+    for(let [key,value]of map1){
+        console.log(`${key} = ${value}`);
+    }
+    // only key:
+    for(let key of map1.keys()){
+        console.log(key)
+    }
+    // only value:
+    for (let value of map1.values()){
+        console.log(value)
+    }
+
+    // forEach循环key,value值
+    map1.forEach((value, key)=>{
+        console.log(`${key} : ${value}`)
+    });
+
+    // 将map1转化为正常的数组:
+    const newArray = Array.from(map1); //将对象转化为数组
+    console.log(newArray);
+    // 将map1中的key转化为数组
+    const newKeyArray = Array.from(map1.keys());
+    console.log(newKeyArray);
+    // 将map1中的value转化为数组
+    const newValueArray = Array.from(map1.values());
+    console.log(newValueArray);
+</script>
+</body>
+</html>

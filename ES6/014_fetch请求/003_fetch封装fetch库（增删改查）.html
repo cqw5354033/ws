@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<!--封装fetch，更快更简单的请求数据-->
+<script src="EasyHttp.js"></script>
+<script>
+    // 请求数据：
+    const newHttp = new EasyHttp;
+    newHttp.get("http://jsonplaceholder.typicode.com/users")
+        .then(data => console.log(data))
+        .catch(err => console.log(err));
+
+    // 传输数据：
+    const data={
+        name:"悟空",
+        email:"wukong12345@qq.com",
+        username:"孙悟空三打白骨精"
+    };
+    newHttp.post("http://jsonplaceholder.typicode.com/users",data)
+        .then(data => console.log(data))
+        .catch(err => console.log(err));
+
+    // 更新数据：
+    newHttp.put("http://jsonplaceholder.typicode.com/users/2",data)
+        .then(data => console.log(data))
+        .catch(err => console.log(err));
+
+    // 删除数据：
+    newHttp.delete("http://jsonplaceholder.typicode.com/users/2")
+        .then(data => console.log(data))
+        .catch(err => console.log(err));
+</script>
+</body>
+</html>

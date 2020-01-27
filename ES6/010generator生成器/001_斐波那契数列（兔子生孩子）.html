@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+generator生成器：可以 返回多次 的函数
+<script>
+    function* gen() {   //function后面加了一个 *
+        yield;          //这是一个固定语法 （相当于return一样可以返回值）
+    }
+    const pbnq = gen();
+    console.log(pbnq);
+    console.log(pbnq.next());
+    console.log(pbnq.next());
+
+    // 斐波那契数列
+    // [0,1,1,2,3,5,8,13]   前两个数相加等于第三个数 刚开始的两个数是 0，1 这是定好的
+    // es5:
+    function fib(max) {
+        var a = 0, b = 1,arr = [0,1];
+        while(arr.length<max) {
+            [a,b] = [b,a+b];
+            arr.push(b)
+        }
+        return arr;
+    }
+    console.log(fib(5));    //打印5个数字
+
+    // es6:
+    function* fib2(max) {
+        var a=0,b=1,n=0;
+        while(n<max){
+            yield a;
+            [a,b] = [b,a+b];
+            n++;
+        }
+        return;
+    }
+    for(var x of fib2(10)){
+        console.log(x);
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // 算出一个数组的总和
+    var arrays = [10,20,30];
+    sum = 0;
+    // es5:
+    for(var i=0;i<arrays.length;i++){
+        sum += arrays[i];
+    }
+    console.log(sum);
+    // forEach:
+    var sum2 = 0;
+    arrays.forEach(function (array) {
+        return sum2 += array;
+    });
+    console.log(sum2);
+
+    // reduce:
+    var array = arrays.reduce(function (sum, number) {
+        return sum + number;
+    },0);/*初始化sum*/
+    console.log(array);
+
+
+    // 将数组中对象的某个属性抽离到另一个数组中
+    var primaryColors = [
+        {color:"red",id:1},
+        {color:"yellow",id:2},
+        {color:"green",id:3},
+    ];
+    var colors = primaryColors.reduce(function (previous, primaryColor) {
+                                                // previous:之前的 primary:主要的
+        previous.push(primaryColor.color);
+        return previous;
+    },[]);
+    console.log(colors);
+
+    // 判断字符串中括号是否对称
+    function balancedParenthesis(string) {
+        // balanced:均衡的    Parenthesis：括号
+        return !string.split("").reduce(function (previous, char) {
+            // !取反就是返回的布尔值，及 true、false
+            if(previous<0){return previous}         /*如果有 ")" 在"("前面的话，直接返回false*/
+            if(char =="("){return ++previous}
+            if(char ==")"){return --previous}
+        },0);
+    }
+    console.log(balancedParenthesis("()((())))("))
+</script>
+</body>
+</html>

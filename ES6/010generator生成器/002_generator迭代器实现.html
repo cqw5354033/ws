@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    function* gen() {
+        yield;      //用.next后，这个地方有东西得话就返回false，如果没有的话就返回true
+    }
+    const number = gen();
+    console.log(number.next());
+    console.log(number.next());
+
+    // id自增 es6生成器
+    function* createId() {
+        let index = 1;
+        while (true){
+            yield index++;
+        }
+    }
+    const gen2 = createId();
+    console.log(gen2.next().value);
+    for(var i=0;i<10;i++){
+        console.log(gen2.next().value);
+    }
+
+
+</script>
+</body>
+</html>

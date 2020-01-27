@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // es5中的面向对象：
+    function Car(content) {
+        this.title = content.title;
+    }
+    Car.prototype.drive = function () {
+        return "卡卡就是开"
+    };
+    const car = new Car({title:"汽车",name:"宝马"});  //这就是面向对象
+    console.log(car);
+    console.log(car.drive());
+
+    // es5中的继承：
+    function Benz(content) {
+        this.color = content.color;     //只有color，没有title，要从Car里继承
+        Car.call(this,content);         //call: 从Car对象中 调用 方法;
+    }
+    const benz = new Benz({title:"奔驰",color:"black"});
+    console.log(benz);
+
+    // es6: class面向对象
+    class People{
+        constructor(option){
+            this.name = option.name;
+        }
+        drive(){
+            return "这是自定义的一个方法";
+        }
+    }
+    const people = new People({name:"悟空",age:90});
+    console.log(people);
+    console.log(people.drive());
+
+    // es6继承：
+    class BMW extends People{   //extends：子集继承 父级
+        constructor(option){
+            super(option);      //super(里面是构造函数的参数)
+            this.title = option.title;
+        }
+    }
+    const bmw = new BMW({name:"宝马",title:"汽车"});
+    console.log(bmw);
+</script>
+</body>
+</html>

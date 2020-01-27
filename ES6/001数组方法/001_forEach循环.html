@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+    var colors = ["red","green","yellow","purple"];
+    // es5:
+    for(var i=0;i<colors.length;i++){
+        console.log(colors[i])
+    }
+    // es6:
+    colors.forEach(function(color){
+        console.log(color)
+    });
+
+    // 循环数字并算出总和：
+    var numbers = [1,2,3,4,5,6];
+    var sum=0;
+    function adder(number) {
+        sum+=number;
+    }
+    numbers.forEach(adder);
+    console.log(sum);
+    // 可以将迭代器函数拿到外面，也可以在里面（上下两种）
+    var sums=0;
+    numbers.forEach(function(number) {
+        sums+=number;
+    });
+    console.log(sums)
+</script>
+</body>
+</html>

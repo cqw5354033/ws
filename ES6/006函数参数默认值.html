@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+作用：优化代码
+<script>
+    function makeAjaxRequest(url,method = "get") {
+        return method;
+    }
+
+    console.log(makeAjaxRequest("www.baidu.com"));
+    console.log(makeAjaxRequest("www.baidu.com","post"));
+
+    function User(id) {
+        this.id = id
+    }
+    // console.log(new User(3));
+
+    // 创建随机函数
+    function random() {
+        return Math.random()*10000000000;
+    }
+    console.log(new User(random()));
+
+    // 创建admin用户
+    function createAdminUser(user = new User(random())) {
+        user.admin = "张三";
+        return user;
+    }
+    const user = new User(2);  //也可以手动输入id
+    // console.log(createAdminUser(new User(random())));   //把条件放到参数那里，作为默认值
+    console.log(createAdminUser(user));
+</script>
+</body>
+</html>

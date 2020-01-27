@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+every:一假及假（&&）并且
+some：一真及真（||）或者
+
+<script>
+    /*场景1
+        计算对象数组中每个电脑的操作系统是否可用
+        大于16位表示可用，否则不可用*/
+    var computers = [
+        {name:"Apple",rem:32},
+        {name:"Lenovo",rem:64},
+        {name:"ThinkPad",rem:16 },
+        {name:"IBM",rem:8},
+    ];
+    // es5:
+    var everyComputersCanRunProgram = true;
+    var someComputersCanRunProgram = false;
+    for(var i = 0; i< computers.length; i++){
+        if(computers[i].rem > 16){
+            everyComputersCanRunProgram = false;
+        }else{
+            someComputersCanRunProgram = true;
+        }
+    }
+    console.log(everyComputersCanRunProgram);
+    console.log(someComputersCanRunProgram);
+
+    // es6:
+    var every = computers.every(function (computer) {
+        return computer.rem > 16;
+    });
+    console.log(every);
+    var some = computers.some(function (computer) {
+        return computer.rem > 16;
+    });
+    console.log(some);
+    console.log("===============");
+
+    /*场景二：
+    假定有一个注册页面，判断所有input长度是否大于0*/
+    function Field(value) {
+        this.value = value;
+    }
+    Field.prototype.validate = function () {
+        return this.value.length > 0;
+    };
+    var username = new Field("悟空");
+    var password = new Field("123456");
+    var telephone = new Field("17600053398");
+
+    // es5:
+    console.log(username.validate()&&telephone.validate()&&password.validate());
+
+    var fields = [username,password,telephone];
+
+    // es6:
+    var formIsValid = fields.every(function (field) {
+        return field.validate()
+    });
+    console.log(formIsValid);
+
+    if(formIsValid){
+        console.log("注册成功")
+    }else{
+        console.log("内容不能为空")
+    }
+
+</script>
+</body>
+</html>

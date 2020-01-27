@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // 场景一：在一个对象数组（A）中找到符合条件的对象
+    var users = [
+        {name:"路飞",id:1},
+        {name:"悟空",id:2},
+        {name:"大雄",id:3},
+        {name:"路飞",id:4},
+    ];
+    // es5: 找到第一个的时候不会停下，会找完，并且显示找到的最后一个不是第一个（除非加break）
+    var user;
+    for(var i=0;i<users.length;i++){
+        if(users[i].name === "路飞"){
+            user = users[i];
+            // break;
+        }
+    }
+    console.log(user);
+
+    // es6:找到第一个后不会再往下查找
+    var user2 = users.find(function (user) {
+        return user.name === "路飞";
+    });
+    console.log(user2);
+
+
+    // 场景二：假定有一个数组A，根据 指定对象的条件 找到数组中 符合条件的对象
+    var posts = [
+        {id:1,title:"Node.js"},
+        {id:2,title:"Vue.js"}
+    ];
+    var comment = {postId:1, content:"Hello World"};
+    function postForComment(posts, comment) {
+        return posts.find(function (post) {
+            return post.id === comment.postId;
+        })
+    }
+    console.log(postForComment(posts,comment));
+
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+spread operator 展开运算符
+更快，更便捷的操作数组
+<br>
+<div></div>
+<script>
+    // 第一种场景：数字在一个数组中，直接数组中的数字相加
+    function addNumbers(numbers) {
+        return numbers.reduce((sum,number)=>{
+            return sum+number
+        },0);
+    }
+    const numbers = [1,2,3,4,5,6,7,8];
+    var showPage = document.getElementsByTagName("div")[0];
+    showPage.innerHTML = addNumbers(numbers);
+    // console.log(addNumbers(numbers));
+
+    // 第二种方法：数字不在数组中，在函数中把他变成一个数组
+    function addNumbers2(a,b,c,d,e) {
+        var numbers = [a,b,c,d,e];
+        return numbers.reduce((sum,number)=>{
+            return sum+number
+        },0);
+    }
+    console.log(addNumbers2(1,2,3,4,5));
+
+    // 第三种场景：使用展开运算符：前面三个点 ... 后面一个参数
+    function addNumbers3(...numbers) {
+        return numbers.reduce((sum,number)=>{
+            return sum+number
+        },0);
+    }
+    console.log(addNumbers3(1,2,3,4,5,6));
+
+    // 可以替代掉concat、push等
+    let defaultColors = ["red","green"];
+    let favoriteColors = ["blue","yellow"];
+    // 数组相加：
+    defaultColors = defaultColors.concat(favoriteColors);
+    console.log(defaultColors);
+
+    console.log(["Fire red","fall orange",...defaultColors,...favoriteColors]);
+
+    // 场景：查看商品列表中是否有该商品，若是没有，则添加该商品
+    function shopList(...item) {
+        if(item.indexOf('milk')<0){
+            return ['milk',...item]
+        }
+        return item;
+    }
+    console.log(shopList("apple","pear","car","milk"))
+</script>
+</body>
+</html>

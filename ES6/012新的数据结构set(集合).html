@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+数据结构:set
+集合:可以存储任何数据类型,并且是唯一的(不重复的值)
+<script>
+    const set1 = new Set();
+    set1.add(100);
+    set1.add("string");
+    set1.add({name:"leaf"});
+    // set1.add(100);  //重复添加无作用
+    console.log(set1);
+
+    const lenghts = set1.size;
+    console.log(lenghts);
+
+    const set2 = new Set([100,2,true,"string"]);
+    console.log(set2);
+
+    // 检查set中是否有对应的值
+    console.log(set2.has(100));         // has代表有没有,true代表有,false代表没有
+    console.log(set2.has(50*2));        // 也可以进行计算
+
+    console.log({name:"zhangsan"}==={name:"zhangsan"}); //对象匹配的是地址,是唯一的,所以对象都不相同
+
+    // 删除set中的内容:
+    set2.delete(2);
+    console.log(set2);
+
+    // for ... of 循环 set1
+    for(let item of set1){
+        console.log(item);
+    }
+    // forEach 循环set2
+    set2.forEach(function (value) {
+        console.log(value)
+    });
+
+    // 将set1变成数组
+    const set1Array = Array.from(set1);
+    console.log(set1Array);
+</script>
+
+</body>
+</html>

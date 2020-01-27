@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery2/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+
+<script>
+    /*增强对象字面量
+    解决问题：缩减代码*/
+    // new Object()    {}
+    // new Array()     []
+
+    function createBookShop(inventory) {
+        // 返回一个对象，返回 属性和方法
+        return{
+            // 对象字面量：将对象里面的属性和方法进行一个简写
+            // inventory:inventory,
+            inventory,
+            // 算出价格总和：
+            inventoryValue:function () {
+                return this.inventory.reduce((init,book)=>init+book.price,0);
+            },
+            // 打印对应参数的price
+            inventoryPrice:function (title) {
+                return this.inventory.find(book=>book.title ===title).price;
+            }
+        }
+    }
+    const inventory = [
+        {title:'vue',price:20},
+        {title:'angular',price:10},
+    ];
+    const bookShop = createBookShop(inventory);
+    console.log(bookShop.inventoryValue());
+    console.log(bookShop.inventoryPrice('angular'));
+
+    // 案例：调用Ajax
+    function saveFile() {
+        $.ajax({
+            method:'POST',
+            data,   //data:data
+            url,    //url:url
+        })
+    }
+    const url = "www.baidu.com";
+    const data = {color:"red"};
+    console.log(saveFile());
+
+</script>
+
+</body>
+</html>

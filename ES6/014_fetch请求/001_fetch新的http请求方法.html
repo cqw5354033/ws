@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+new http:fetch
+一个基于promise的请求方法，更简单，快捷
+<script>
+    let url = "http://jsonplaceholder.typicode.com/posts";
+    console.log(fetch(url));    //这时接收的 还没有完成
+
+    fetch(url)
+        .then(response=>response.json())    //解析成可读的数据流
+        .then(data=>console.log(data))     //这时候成功了
+        .catch(err=>console.log(err))       //这是失败
+</script>
+</body>
+</html>

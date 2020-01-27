@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+请求数据时使用：
+三种状态：unresolved（未执行时,等待你当前的任务完成）     resolved（执行成功）    rejected（执行失败）
+<script>
+    let promise = new Promise(function (resolved,rejected) {
+        // resolved();     //成功 调用.then方法
+        // rejected();     //失败 条用.catch方法
+        setTimeout(function () {
+            resolved();
+        },3000)
+    });
+    console.log(promise);
+
+    promise.then(function () {
+        console.log("成功,这是第一次回调,用function写的")
+    }).then(()=> console.log("成功,可以无限次回调函数,是用箭头函数写的"))
+        .catch(()=>console.log("失败了,会执行第二个参数的方法"));
+
+</script>
+</body>
+</html>

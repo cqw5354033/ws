@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    const names = ["leaf","foliage","fallen leaves"];
+    // 解构：
+    const [name1,name2,name3] = names;
+    console.log(name1,name2,name3);
+    // 返回数组个数：
+    const {length} =names;      //用 {} 去接收时显示的是数组的长度
+    console.log(length);
+    // 结合展开运算符：
+    const [name4,...rest] = names;
+    console.log(name4,...rest);
+
+    // 对象数组解构：
+    const translate = [
+        {English:"leaf",Chinese:"叶子"},
+        {English:"foliage",Chinese:"植物"},
+        {English:"fallen leaves",Chinese:"落叶"},
+    ];
+    // es5:
+    var Chinese2 = translate[0].Chinese;
+    console.log(Chinese2);
+    // es6:
+    // var [Chinese] = translate;   //第一次解构是 解构到了数组中的第一个对象， 用 []
+    var [{Chinese}] = translate;    //第二次解构 对象中的属性 ，所以用 {}
+    console.log(Chinese);
+
+    //  使用场景：将数组转化为对象
+    const points = [     //point：指向，得分
+        [1,2],
+        [2,4],
+        [3,6],
+    ];
+    // 期望数据格式
+    /*const point = [
+        {x:1,y:2},
+        {x:2,y:4},
+        {x:3,y:6}
+    ]*/
+
+    let newPoints = points.map(point=>{
+        // es5:
+        /*const x = point[0];
+        const y = point[1];*/
+        // 解构：
+        const [x,y] = point;
+        return {x,y};
+    });
+    console.log(newPoints);
+
+    // 可以把参数也用结构函数替代掉
+    let newPoints2 = points.map(([x,y])=>{
+        // es5:
+        /*const x = point[0];
+        const y = point[1];*/
+        // 解构放到了上面
+        return {x,y};
+    });
+    console.log(newPoints2);
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+作用：更加清晰的知道数组中对应的内容
+
+<script>
+    var expense = {     //expense：开销
+        type:"es6",
+        amount:"45"     //amount：数量，金额
+    };
+    var type2 = expense.type;
+    var amount2 = expense.amount;
+    console.log(type2);
+    console.log(amount2);
+
+    // 解构赋值：
+    const {type,amount,aaa} = expense;   //这里面的值必须跟对象中的名字一致，要不解构不出来
+    console.log(type,amount,aaa);
+
+    // 调取对象内的属性：
+    var fileSave = {
+        name:"图片名称",
+        extension:".jpg",
+        size:"100k"
+    };
+    // es5:
+    function fileSummary(file) {
+        return `这是es5的正常效果，需要对象.属性：${file.name}的类型是${file.extension},它的大小是${file.size}`
+    }
+    console.log(fileSummary(fileSave));
+
+    // es6:
+    function fileSummary2({name,extension,size}) {
+        return `这是es6的解构赋值效果，直接找属性：${name}的类型是${extension}，它的大小是${size}`
+    }
+    console.log(fileSummary2(fileSave))
+</script>
+</body>
+</html>

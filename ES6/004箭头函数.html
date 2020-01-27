@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+箭头函数的作用：
+    1、简化代码
+    2、改变this指向
+<script>
+    // 1、简化代码：
+    // es5:
+    const count = function (number) {
+        return number*2;
+    };
+    console.log(count(10));
+
+    // 当函数只有一个参数时可以将()去掉，当函数只是直接返回return时也可以将 {}去掉；
+    const count2 = number=>number*2;
+    console.log(count2(3));
+
+    const count3 = (number,number2)=>{
+        sum = number + number2;
+        return sum;
+    };
+    console.log(count3(6,5));
+
+    // 2、改变this指向：
+    // es5:第一种：在方法外面 另外存储 this
+    const team = {
+        members:["健身会员","游戏会员"],
+        teamName:"会员",
+        teamSummary:function () {
+            let this_value = this;
+            return this.members.map(function (summary) {
+                // this 到这里就会不知道指向哪里
+                return `${summary}隶属于${this_value.teamName}小组`
+            })
+        }
+    };
+    console.log(team.teamSummary());
+
+    // es5:第二种：在map方法那里加 .bind(this)
+    const team2 = {
+        members:["健身会员","游戏会员"],
+        teamName:"会员",
+        teamSummary:function () {
+            return this.members.map(function (summary) {
+                // this 到这里就会不知道指向哪里
+                return `${summary}隶属于${this.teamName}小组`
+            }.bind(this))
+        }
+    };
+    console.log(team2.teamSummary());
+
+    // es6:使用箭头函数，this指向就不会有问题 （指向它的父级）
+    const team3={
+        members:["足疗会员","电视会员"],
+        teamName:"会员",
+        teamSummary:function () {
+            // this指向teamName对象
+            return this.members.map((member)=>`${member}属于${this.teamName}`)
+        }
+    };
+    console.log(team3.teamSummary());
+</script>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+1、map 需要返回值，如果不给 return，将会返回undefined
+2、map 返回的是一个新的数组
+<script>
+    // 将A数组的值以双倍的形式放到B数组中   :拷贝的过程当中改变一些东西
+    var numbers = [1,2,3];
+    var doubledNumbers = [];
+    // es5:
+    for(var i=0;i<numbers.length;i++){
+        doubledNumbers.push(numbers[i] * 2)
+    }
+    console.log(doubledNumbers);
+
+    // es6：
+    var doubled = numbers.map(function (number) {
+        return number*2;
+    });
+    doubled.forEach(function (number) {
+        console.log(number)
+    });
+
+    // 将A对象数组中的某一属性放到B数组中     ：在一个数组当中拿到一些固定的属性
+    var cars = [
+        {model:"奔驰",price:"100万"},
+        {model:"吉利",price:"10万"}
+    ];
+    var prices = cars.map(function (car) {
+        return car.price;
+    });
+    console.log(prices);
+
+    // 将获取到的属性做操作（这里是相加）
+    var sum="";
+    prices.forEach(function (pricese) {
+        sum+=pricese;
+    });
+    console.log(sum)
+
+</script>
+</body>
+</html>

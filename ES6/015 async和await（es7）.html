@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    // 前面加一个async 就可以将一个函数变成promise形式的构造函数：
+    async function myFun() {
+        // return "hello world";
+        const promise = new Promise(function (resolve, reject) {
+            setTimeout(function () {
+                return resolve("hello world")
+            },2000)
+        });
+
+        // 错误信息：
+        const error = false;
+        if(!error){
+            // 等待resolve执行完毕后，才会执行
+            const res = await promise;
+            return res;
+        }else{
+            await Promise.reject(new Error("error:错误，报错了"));
+        }
+    }
+    // console.log(myFun());
+    myFun().then(data=>console.log(data))
+        .catch(err => console.log(err));
+
+
+    /*await 一般在请求时使用，因为请求一般是花时间的
+        await的作用就是 当请求执行完后 才能执行下面的东西，一般是异步操作*/
+    // 请求数据：
+    async function getUsers() {
+        const response = await fetch("http://jsonplaceholder.typicode.com/users");  //response:响应
+        const data = await response.json();
+        return data;
+    }
+    getUsers().then(user => console.log(user))
+
+</script>
+</body>
+</html>
