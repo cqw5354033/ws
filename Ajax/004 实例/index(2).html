@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			* {
+				margin: 0;
+				padding: 0;
+			}
+			
+			.list figure {
+				float: left;
+				width: 25%;
+				padding: 10px;
+				box-sizing: border-box;
+				border: 2px solid transparent;
+				border-radius: 5px;
+				transition: .5s;
+			}
+			
+			.list figure:hover {
+				border-color: #000;
+			}
+			
+			.list figure div {
+				width: 100%;
+				height: 150px;
+				overflow: hidden;
+				background: red;
+				position: relative;
+			}
+			
+			.list figure img {
+				width: 100%;
+				position: absolute;
+				top: 50%;
+				/*left: 50%;*/
+				transform: translateY(-50%);
+			}
+			
+			.list figure h3 {
+				text-overflow: ellipsis;
+				overflow: hidden;
+				white-space: nowrap;
+				/*强制文本在一行*/
+			}
+			
+			.list figure p {
+				height: 80px;
+				line-height: 20px;
+				text-overflow: ellipsis;
+				overflow: hidden;
+				display: -webkit-box;
+				-webkit-line-clamp: 4;
+				-webkit-box-orient: vertical;
+				display: -moz-box;
+				-moz-line-clamp: 4;
+				-moz-box-orient: vertical;
+				position: relative;
+			}
+			/*.list figure p:after{
+				content: "...";
+				position: absolute;
+				bottom: 0;
+				right: 15px;
+			}*/
+		</style>
+	</head>
+
+	<body>
+
+		<pre>
+			
+	打开浏览器输入地址到显示页面都发生了哪些事情？ 
+		1、域名的解析-->解析成IP地址 
+		2、三次握手 ：
+			a、向服务器发送请求，b、服务器返回数据，c、向服务器发送应答
+		3、数据渲染：
+			a、创建DOM对象，b、创建CSSOM对象，c、执行JS脚本， 
+			d、DOM对象和CSSOM对象合并成渲染树，e、布局，f、数据渲染 
+		
+	JSON:轻量级数据交换格式 
+	状态值: 0：未初始化 1：初始化 2：准备请求 3：加载 4：加载完成 
+	状态码: 200加载成功 404未找到 
+	
+	ajax:只能进行本地服务器请求（跨域）
+	1、创建XMLHttpRequest对象 
+	2、请求的方式，接口，传参，是否异步 
+	3、发送请求
+	4、业务逻辑 
+	
+	请求方式： 
+		get：在url的后边用？加键值对的形式连接，每个键值对之间用&连接 
+			请求的内容较少（有限），存在缓存 
+		post：通过请求头向服务器发送请求，理论上没有大小限制，
+			不存在缓存 
+			
+	异步：同时做不同的事情 
+	同步：同时做同一件事情
+	
+	代码优化：
+		1、重复代码的复用（函数的封装）
+		2、变量的命名空间，尽可能的减少全局变量，名字一定要有语义化
+		3、语句的精简（能省则省）
+		4、低耦合高内聚（函数之间减少联系，函数内部的彼此紧密结合）
+		</pre>
+
+		<section class="list"></section>
+
+		<script src="ajax.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+			//			ajax异步请求服务器
+			ajax('get', 'list.json', '', true, function(data) {
+				//将服务器返回的数据存储到本地
+				localStorage.setItem('listJson', data);
+				creatEle(data, 0, 8); //创建元素，渲染数据
+			});
+			var count = 1; //计数器初始值
+			window.onscroll = function() { //滚动条滚动时触发
+				//	初始化
+				var obj = {
+					winClientHeight: document.documentElement.clientHeight || document.body.clientHeight, //窗口可视区域高度
+					winScrollTop: document.documentElement.scrollTop || document.body.scrollTop, //滚动条距离顶部的高度
+					winScrollHeight: document.documentElement.scrollHeight || document.body.scrollHeight, //整个文档的高度
+					listJson: localStorage.getItem('listJson'), //获取本地存储
+					data: null,
+					page: 0,
+					len: 8 * count + 8
+				};
+				obj.data = JSON.parse(obj.listJson); //数据转换成JSON格式
+				obj.page = Math.ceil(obj.data.length / 8); //分页的页数
+				//				判断滚动条是否到底
+				if (obj.winClientHeight + obj.winScrollTop + 1 >= obj.winScrollHeight) {
+					//如果大于最后一页，则返回，if后面只有一个语句时可以省略大括号
+					if (count >= obj.page) return;
+
+					//如果是最后一页，重新赋值len，学会用三目运算的方式优化代码
+					count + 1 == obj.page ? obj.len = obj.data.length : obj.len;
+					creatEle(obj.listJson, 8 * count, obj.len);
+					count++;
+				}
+				}
+
+			//			创建元素          数据    循环变量初始化  跳出循环条件
+			function creatEle(data, num, len) {
+				var oList = document.getElementsByClassName('list')[0];
+				var html = '';
+				var data = JSON.parse(data); //数据转换成JSON格式
+				for (var i = num; i < len; i++) {
+					html += '<figure><div><img src="' + data[i].url + '" alt=""/></div><figcaption><h3>' + i + data[i].title + '</h3><p>' + data[i].content + '</p><a href="">' + data[i].more + '</a></figcaption></figure>'
+				}
+				oList.innerHTML += html;
+			}
+		</script>
+
+	</body>
+
+</html>

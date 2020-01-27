@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>代码演示</title>
+</head>
+<body>
+	<a href="https://www.baidu.com/" target="_blank">跳转到百度</a>
+	<a href="https://www.baidu.com/" target="_self">跳转到百度</a>
+	<script>
+	function createAXObj(){
+		var ajaxObj=null;//装载ajax对象
+		if(window.XMLHttpRequest){
+			//主流浏览器和高版本的ie浏览器声明ajax对象
+			ajaxObj=new XMLHttpRequest();
+		}else{
+			//低版本的ie浏览器声明ajax对象
+			ajaxObj=new ActiveXObject('Microsoft.XMLHTTP');
+		}
+		return ajaxObj;	
+	}
+	//生成ajax对象
+	var ajaxObj=createAXObj();
+	//get请求相当于打开浏览器并在地址栏中填好地址
+	ajaxObj.open('post','http://127.0.0.1/js/001.php');
+	ajaxObj.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+
+	//send方法相当于点回车发送请求
+	ajaxObj.send('id=101&page=1');
+
+	//监听	请求的状态
+	ajaxObj.onreadystatechange=function(){
+		//0刚建立对象 1初始化没有发送请求 2刚刚发送请求 3相应过程中 4请求数据完成
+		//报错是由于 请求流程虽然完成 但是请求的结果是没有找到文件404
+		//所以去处理数据肯定会报错  
+		//加上服务器http请求状态码的判断
+		if(ajaxObj.readyState==4&&ajaxObj.status==200){
+			var div=document.createElement('div');
+			//从服务器端返回的json格式数据 本质是一个字符串
+			//alert(typeof(ajaxObj.responseText));
+			//把字符串当成代码来运行
+			console.log(ajaxObj.responseText);
+			eval('var arr='+ajaxObj.responseText);
+			alert(arr[0]);			
+			div.innerHTML=ajaxObj.responseText[0];
+			document.documentElement.appendChild(div);
+		}
+	}
+	</script>
+	<!--<img src="./ceshi.png" alt="">-->
+</body>
+</html>

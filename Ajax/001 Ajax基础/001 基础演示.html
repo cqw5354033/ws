@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>代码演示</title>
+</head>
+<body>
+	<a href="https://www.baidu.com/" target="_blank">跳转到百度</a>
+	<a href="https://www.baidu.com/" target="_self">跳转到百度</a>
+	<script>
+
+//	封装ajax对象
+	function createAXObj(){
+		var ajaxObj=null;//装载ajax对象
+//		创建ajax对象
+		if(window.XMLHttpRequest){
+			//主流浏览器和高版本的ie浏览器声明ajax对象
+			ajaxObj=new XMLHttpRequest();
+		}else{
+			//低版本的ie浏览器声明ajax对象
+			ajaxObj=new ActiveXObject('Microsoft.XMLHTTP');
+		}
+		return ajaxObj;	
+	}
+	//生成ajax对象
+	var ajaxObj=createAXObj();
+	//get请求相当于打开浏览器并在地址栏中填好地址
+	ajaxObj.open('get','03.php?id=101&page=1');
+	ajaxObj.open('post','03.php');
+	//send方法相当于点回车发送请求
+	ajaxObj.send(null);				//get
+	ajaxObj.send('id=101&page=1');	//post
+	//监听	请求的状态
+	ajaxObj.onreadystatechange=function(){
+		//0刚建立对象 1初始化没有发送请求 2刚刚发送请求 3相应过程中 4请求数据完成
+		if(ajaxObj.readyState==4){			//如果当前状态为4
+			alert(ajaxObj.responseText);	//以字符串形式弹出
+		}
+	}
+	</script>
+</body>
+</html>

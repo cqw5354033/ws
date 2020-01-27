@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery实现Ajax获取元素</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .list figure {
+            float: left;
+            width: 25%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            transition: .5s;
+        }
+
+        .list figure:hover {
+            border-color: #000;
+        }
+
+        .list figure div {
+            width: 100%;
+            height: 150px;
+            overflow: hidden;
+            background: red;
+            position: relative;
+        }
+
+        .list figure img {
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            /*left: 50%;*/
+            transform: translateY(-50%);
+        }
+
+        .list figure h3 {
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            /*强制文本在一行*/
+        }
+
+        .list figure p {
+            height: 80px;
+            line-height: 20px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            display: -moz-box;
+            -moz-line-clamp: 4;
+            -moz-box-orient: vertical;
+            position: relative;
+        }
+        /*.list figure p:after{
+            content: "...";
+            position: absolute;
+            bottom: 0;
+            right: 15px;
+        }*/
+    </style>
+    <script src="jquery-1.11.3.min.js"></script>
+</head>
+<body>
+<section class="list"></section>
+<script>
+    $.ajax({
+        url:'list.json',
+        type:'get',
+        data:'name=张三',     //js获取的用户名输入框里面的数据
+        dateType:'json',
+        success:function(data){
+            console.log(data);
+            var oList = $('.list')[0];
+                var html = '';
+               // var data = JSON.parse(data); //数据转换成JSON格式
+                for (var i = 0; i < data.length; i++) {
+                    html += '<figure><div><img src="' + data[i].url + '" alt=""/></div><figcaption><h3>' + i + data[i].title + '</h3><p>' + data[i].content + '</p><a href="">' + data[i].more + '</a></figcaption></figure>'
+                }
+                oList.innerHTML += html;
+
+
+        },
+        error:function(error){
+            document.write('请求错误：错误的状态码是:'+error.readyState+ '，错误的提示信息是：'
+                +error.statusText+'http请求的错误码：'+error.status)
+        }
+    })
+</script>
+</body>
+</html>
