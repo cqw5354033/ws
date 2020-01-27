@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular.js"></script>
+</head>
+<body>
+<pre>
+    ng-repeat:  循环、重复
+    track by： 以。。作为追踪的依据   $index（以下标追踪）
+</pre>
+
+angular中数据和视图是对应的，所以有重复的数字时，会显示不出来
+<ul ng-init="arr=[1,2,3,4,5,1]">
+               要给他唯一的下标才会显示出来
+    <li ng-repeat="a in arr track by $index">{{a}}</li>
+</ul>
+
+<ul ng-init="arr1=[{user:'张三',age:12},{user:'李四',age:18},
+                        {user:'王五',age:21},{user:'王五',age:21}]">
+    可以循环一样的东西，应为在数组或对象中，这是两个不同的东西
+    <li ng-repeat="json in arr1">姓名：{{json.user}},年龄：{{json.age}}</li>
+</ul>
+
+<ul ng-init="duixiang={a:12,b:23,c:21}">
+    光循环值，不循环下标
+    <li ng-repeat="aaa in duixiang">{{aaa}}</li>
+    下标和值都输出（用自己写的调出来）
+    <li ng-repeat="(xiabiao,zhi) in duixiang">{{xiabiao}},{{zhi}}</li>
+    下标和值都出来（调用人家原有的下标）
+    <li ng-repeat="bbb in duixiang">{{$index}},{{bbb}}</li>
+</ul>
+
+
+</body>
+</html>

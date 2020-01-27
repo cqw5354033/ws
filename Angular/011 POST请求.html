@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html ng-app="test">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular.js"></script>
+    <script>
+        var mod = angular.module('test',[]);
+//    专门用来配置某一个依赖项。    是$http的厂商（父级）
+        mod.config(function($httpProvider){
+            $httpProvider.defaults.transformRequest=function(obj){
+                var arr=[];
+                for(var name in obj){
+                    arr.push(`${name}=${obj[name]}`);
+                }
+
+                return arr.join('&');    //要传输的字符串
+            };
+            $httpProvider.default.headers.post['Content-Type']='application/x-www-form-urlencoded';
+        });
+
+        mod.controller('main',function($scope,$http){
+                $scope.calc=function (){
+                    $http.post('1.php', {a: $scope.a, b: $scope.b}).then(res=>{
+                        alert(res.data);
+                }, ()=>{
+                    alert('错了');
+                });
+            };
+        });
+    </script>
+</head>
+<body ng-controller="main">
+<input type="text" name="a"/>
+<input type="text" name="b"/>
+<input type="button" value="计算" ng-click="calc()"/>
+</body>
+</html>

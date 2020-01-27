@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html ng-app="test">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular.js"></script>
+    <script>
+        let mol = angular.module('test',[]);
+        mol.controller('main',function($scope,$http,$interval,$timeout,$q){
+            $scope.a=0;
+
+            $interval(function(){
+                $scope.a++;
+//                $scope.$apply();
+            },1000);
+
+            $timeout(function(){
+                $scope.a++;
+            },2000);
+
+            $q.all([]);
+            $q.race([]);
+        });
+    </script>
+</head>
+<body ng-controller="main">
+a:{{a}}
+
+异步：
+$interval
+$timeout
+
+Promise：
+$q.all([])
+$q.race([])
+
+另两种方式：
+$http.get
+$http.post
+$http.jsonp
+
+依赖项：
+$scope: 作用域对象：所有的 数据 都在他身上
+    $scope.apply()  强制检查
+$http:  数据交互
+$interval
+$timeout
+
+</body>
+</html>

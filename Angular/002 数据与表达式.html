@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>{{a}}</title>
+    <script src="angular.js"></script>
+</head>
+<body ng-init="a=0;b=0;">
+<pre>
+    angular.js表达式：  {{表达式}}
+    angular 的核心是 数据。
+
+    ng-init:    初始值
+
+    指令：
+    1、系统
+    2、自定义
+
+    Angular——增强html的功能
+
+</pre>
+<input type="text" ng-model="a"/>
+<div style="width: 100px;height: 100px;background: {{a}}"></div>
+
+<input type="text" ng-model="b"/>
+<input type="text" ng-model="c"/>
+{{b*c}}
+
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular.js"></script>
+    <script>
+//        设置js值，用Angular调用时没用
+        var a=1200;
+    </script>
+
+</head>
+<body ng-init="a=12">
+<pre>
+    只能是Angular设置自己的，js设置自己的，
+    因为两个不再同一空间内，不互通。（不能直接访问）
+</pre>
+<input type="text" ng-model="a"/> <br/>
+
+<input type="button" onclick="alert(a)" value="按钮"/>
+
+</body>
+</html>

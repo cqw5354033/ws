@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="tab_switch">
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="angular.js"></script>
+		<style>
+			.box input{background-color: #ccc;}
+			.box input.active{background-color: yellow;}
+			.box div{background-color: #ccc; border: 1px solid black; width: 200px; height: 200px;display: none;}
+			.box div.cur{display: block;}		
+			
+		</style>
+		<script>
+			let mod=angular.module('tab_switch',[]);
+			
+			mod.controller('test',function ($scope){
+				$scope.now=0;
+				$scope.items={
+					'按钮1':'aslkhiuhsdf111111',
+					'按钮2':'aslkhiuhsdf222222',
+					'按钮3':'aslkhiuhsdf333333'
+				};
+				$scope.setNow=function (num) {
+					$scope.now=num;
+				}
+			});
+		</script>
+
+	</head>
+	<body ng-controller="test">
+		事件、赋值、循环 三个不能在一起
+		ng-click\=\ng-repeat
+		<div class="box">
+			<input type="button" ng-repeat="(k,v) in items" value="{{k}}" 
+				class="{{$index==now?'active':''}}" ng-click="setNow($index)"/>
+			
+			<div class="{{$index==now?'cur':''}}" ng-repeat="v in items">{{v}}</div>
+		
+		</div>
+		
+		
+		
+		
+	</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="test">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>模块</title>
+    <script src="angular.js"></script>
+    <script>
+//          写模块             名字，[依赖]
+        let mol = angular.module('test',[]);
+
+//        写 controller
+        mol.controller('ctrl1',function(){
+//            代码
+        });
+    </script>
+</head>
+<body ng-controller="ctrl1">
+<pre>
+    模块化：重用
+
+1、写模块：
+angular.module(名字,[依赖]);
+
+2、用模块：
+ng-app="名字";
+</pre>
+
+
+</body>
+</html>

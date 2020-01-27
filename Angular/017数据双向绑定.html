@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript">
+			window.onload=function(){
+				let a='';
+				let oTxt=document.getElementById('txt1');
+				
+				let $scope={};
+				let oTxt1=document.getElementById('oTxt1');
+				let oTxt2=document.getElementById('oTxt2');
+				
+//				数据——>input
+				function apply () {
+					oTxt.value=a;
+					
+				}
+				setInterval(function () {
+//					a+='|'; 
+					apply();	
+				},100);
+				
+
+//				input——>数据
+				oTxt1.oninput=function () {
+					a=this.value;
+					apply();
+				};
+				oTxt2.oninput=function(){
+					a=this.value;
+					apply();
+				}
+
+			}
+			
+		</script>
+	</head>
+	<body>
+		数据和ui之间的转换
+		<input type="text" id="txt1" />
+		<br/><br/><br/><br/><br/>
+		<input id="oTxt1" ng-model="a" />
+		<input id="oTxt2" ng-model="b" />
+		
+		
+	</body>
+</html>

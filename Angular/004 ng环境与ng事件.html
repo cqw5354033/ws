@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>留言板</title>
+    <script src="angular.js"></script>
+
+</head>
+<body ng-init="arr=[{name:'陈泉纬',age:21,content:'努力学习'},
+{name:'严嘉辉',age:21,content:'傻逼'},{name:'李虎',age:20,content:'我要打职业赛'}]">
+    名字：<input type="text" ng-model="mingzi"/><br/>
+    年龄：<input type="text" ng-model="nianling"/><br/>
+    内容：<input type="text" ng-model="neirong"/><br/>
+    <input type="button" value="提交"
+                ng-click="arr.unshift({name:mingzi,age:nianling,content:neirong})"/><br/>
+
+     <ul>
+         <li ng-repeat="json in arr">
+             <h4>{{json.name}}</h4>
+             <p>{{json.age}}</p>
+             <a href="">{{json.content}}</a>
+         </li>
+     </ul>
+
+</body>
+</html>

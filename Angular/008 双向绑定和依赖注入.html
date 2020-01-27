@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html ng-app="test">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>函数</title>
+    <script src="angular.js"></script>
+    <script>
+        var mol = angular.module('test',[]);
+//                                        依赖项
+        mol.controller('ctrl1',function($scope){
+
+        });
+    </script>
+</head>
+<body ng-controller="">
+
+<pre>
+    angular特性：
+    1、双向绑定
+        ng-model
+        数据 <-> UI
+        $scope <-> HTML
+
+    2、依赖注入（依赖反转）
+        有函数来决定需要什么参数（要什么参数，就能得到什么参数）。
+        一个依赖，就是一个功能。
+
+    3、名词：
+    属性---指令     ng-
+    参数---依赖     $
+</pre>
+</body>
+</html>

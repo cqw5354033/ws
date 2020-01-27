@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="test">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="angular.js"></script>
+    <script src="common.js"></script>
+    <script>
+        var mod = angular.module('test',['common']);
+
+        mod.controller('main',function($scope,$http){
+            $scope.arr=[];
+            $scope.word='';
+
+//            数据发生变化时执行
+            $scope.$watch('word',function(){
+                $http.jsonp(`https://sp0.baidu.com/5a1Fazu8AA54nxGko9WTAnF6hhy/su?wd=${$scope.word}&cb=JSON_CALLBACK`).then(res=>{
+                    $scope.arr=res.data.s;
+                },()=>{
+                    alert('错了');
+                })
+            });
+        });
+    </script>
+</head>
+<body ng-controller="main">
+<input type="text" ng-model="word"/>
+<ul>
+    <li ng-repeat="str in arr">{{str}}</li>
+</ul>
+</body>
+</html>

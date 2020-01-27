@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="test">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>数据交互</title>
+    <script src="angular.js"></script>
+    <!--<script src="jquery-2.0.2.js"></script>-->
+    <script>
+        var mod = angular.module('test',[]);
+        mod.controller('main',function($scope,$http){
+        /*
+            setTimeout(function(){
+                $scope.arr = [12,23];
+                $scope.$apply();
+            },10);
+         */
+            $http.get('arr.txt').then((res)=>{
+                $scope.arr=res.data;
+            },
+                    (err)=>{
+                        alert('错了');
+                    });
+
+        });
+
+    </script>
+</head>
+<body ng-controller="main">
+<ul>
+    <li ng-repeat="a in arr">{{a}}</li>
+</ul>
+
+
+
+</body>
+</html>

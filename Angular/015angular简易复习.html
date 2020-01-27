@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>简单复习一下</title>
+		<script src="angular.js"></script>
+		<script src="common.js"></script>
+	</head>
+	<body>
+		基础知识：
+			angular是什么——mvvm
+				MVC ——经典:	数据（ajax、jsonp、数组、ng-model）、
+				视图（HTML、CSS、动画、用户操作）、控制器;   缺点：m和v高耦合度，c复杂。
+				
+				MVP ——c->p:  M和V不耦合
+				
+				MVVM——分担一部分v和c的压力
+				
+			指令：（*常用的）
+				*ng-model 				双向绑定
+				ng-bind 				单项绑定（只输出）
+				ng-init 				数据初始化	
+				*ng-repeat 				循环
+					ng-repeat="item in arr/json" $index
+					ng-repeat="(key,value)in arr/json"
+				*ng-click/mouseover 	事件	
+				*ng-controller 			控制器
+				*ng-app 				引入模块
+				
+			controller——功能、大段代码
+				发挥作用主要是靠各种依赖：$
+				$scope 				作用域：angular中所有的数据都在scope中
+					$scope.$apply()
+				$http 				数据请求
+					$http.get
+					$http.post 		头、transform
+					$http.jsonp 	版本
+					
+				$interval
+				$timeout
+				$q.all
+				$q.race
+				
+			数据，接口
+				
+				
+			
+	</body>
+</html>

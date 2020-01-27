@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="jquery-1.6.4.min.js"></script>
+    <script>
+        Promise.all([
+            $.ajax({url:'1.txt',dataType:'jsonp'}),
+            $.ajax({url:'2.txt',dataType:'jsonp'})
+        ]).then(arr=>{
+            console.log(arr);
+        }, ()=>{
+            alert('失败了');
+        });
+    </script>
+</head>
+<body>
+
+</body>
+</html>
