@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>按钮和按钮图标</title>
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<div data-role="page" id="page1">
+    <div data-role="header">
+        <h1>页面一</h1>
+    </div>
+    <div data-role="main">
+        <a href="#page2" data-role="button">点击跳到第二页</a><!--导航按钮-->
+        <!--组合按钮-->
+        <div data-role="controlgroup" data-type="horizontal"><!--横向排列-->
+            <a href="" data-role="button">按钮1</a>
+            <a href="" data-role="button">按钮2</a>
+            <a href="" data-role="button">按钮3</a>
+        </div>
+        <div data-role="controlgroup" data-type="vertical"><!--垂直排列-->
+            <a href="" data-role="button">按钮1</a>
+            <a href="" data-role="button">按钮2</a>
+            <a href="" data-role="button">按钮3</a>
+        </div>
+    </div>
+</div>
+
+<div data-role="page" id="page2">
+    <div data-role="header">
+        <h1>页面二</h1>
+    </div>
+    <div data-role="main">
+        <a href="#page1" data-role="button" data-inline="true">点击跳到第一页</a><!--内联按钮-->
+        <a href="" data-role="button" data-rel="back" class="ui-btn ui-btn-b  ui-btn-inline ui-btn-corner-all">返回</a><!--返回按钮-->
+                                                                                        <!--ui-btn-corner-all：圆角-->
+        <!--按钮图标-->
+        <a href="" class="ui-btn  ui-icon-search ui-btn-icon-right  ui-btn-inline">搜索</a>
+                                    <!--图标名称        图标位置-->
+
+        <a href="" class="ui-btn ui-icon-search ui-btn-icon-notext">搜索（只显示图标）</a>
+                                                 <!--只显示图标，不显示字（代替图标位置）-->
+
+        <a href="" class="ui-btn ui-icon-search ui-btn-icon-right ui-nodisc-icon">搜索</a>
+                                                                    <!--去除背景圆圈-->
+
+        <a href="" class="ui-btn ui-icon-search ui-btn-icon-right ui-nodisc-icon ui-alt-icon ">黑色</a>
+                                                                                <!--改变图标颜色为黑色-->
+    </div>
+</div>
+
+
+
+</body>
+</html>

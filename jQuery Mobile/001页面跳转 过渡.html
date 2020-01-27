@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQueryMobile页面跳转和过渡效果</title>
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<div data-role="page" id="page1"><!--在浏览器中要显示的页面-->
+    <div data-role="header">
+        <h1>这是头部（第一页）</h1>
+    </div>
+    <div data-role="main" class="ui-content"><!--在页面添加内边距和外边距-->
+        <a href="#page2" data-transition="flip">点击跳到第二页</a><!--过渡-->
+        <br>
+        <a href="002按钮和按钮图标.html">访问外部文件</a>
+    </div>
+    <div data-role="footer">
+        <h1>底部文字</h1>
+    </div>
+</div>
+<div data-role="page" id="page2" data-dialog="true">
+    <div data-role="header">
+        <h1>这是头部（第二页）</h1>
+    </div>
+    <div data-role="main" class="ui-content">
+        <p>对话框与普通页面不同，它显示在当期页面上, 但又不会填充完整的页面，顶部图标 "X" 用于关闭对话框。</p>
+        <a href="#page1">点击跳到第一页</a>
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>弹出框</title>
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<div data-role="page" id="page1">
+    <a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all" data-position-to="window">显示弹窗</a><!--popup就是弹窗-->
+                                                                                           <!--定位弹窗-->
+    <div id="myPopup" data-role="popup" class="ui-content">
+        <a href="" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-icon-notext ui-icon-delete ui-btn-right">关闭</a>
+        <!--关闭弹窗的按钮-->
+
+        <p>这是一个弹窗</p>
+    </div>
+    <a href="#page2" data-role="button" data-inline="true">跳转到第二页面</a>
+    <a href="#page3" data-role="button" data-inline="true">跳转到第三页面</a>
+</div>
+
+<!--弹窗对话框-->
+<div data-role="page" id="page2">
+    <div data-role="header">
+        <h1>头部</h1>
+    </div>
+    <div data-role="main" class="ui-content">
+        <a href="#myPopup2" data-role="button" data-inline="true" data-rel="popup" data-position-to="window" data-transition="fade">打开对话框弹窗</a>
+        <div id="myPopup2" data-role="popup">
+            <div data-role="header">
+                <h1>对话框头部</h1>
+            </div>
+            <div data-role="main" class="ui-content">
+                <p>欢迎访问弹窗对话框</p>
+                <a href="" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b ui-icon-back ui-btn-icon-left">返回</a>
+            </div>
+            <div data-role="footer">
+                <h1>对话框尾部</h1>
+            </div>
+        </div>
+        <a href="#page1" class="ui-btn ui-btn-inline">返回第一页</a>
+    </div>
+    <div data-role="footer">
+        <h1>尾部</h1>
+    </div>
+</div>
+
+<!--图片弹窗（背景覆盖）-->
+<div id="page3" data-role="page">
+    <a href="#page1" class="ui-btn ui-btn-inline ui-btn-corner-all ui-shadow">返回第一页</a>
+    <a href="#mypopup3" data-rel="popup" data-position-to="window">
+        <img src="img/005.jpg" alt="" style="width: 200px">
+    </a>
+    <div data-role="popup" id="mypopup3" data-overlay-theme="b"><!--弹窗背景覆盖-->
+        <img src="img/005.jpg" alt="" style="width: 350px">
+    </div>
+</div>
+
+
+
+</body>
+</html>

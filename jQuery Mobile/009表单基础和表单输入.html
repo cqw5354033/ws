@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>表单基础</title>
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+<body>
+<!--表单基础-->
+<div data-role="page" id="page1">
+    <div data-role="main" class="ui-content">
+        <form action="1.php" method="post" id="form1">
+            <!--ui-field-contain:当页面宽度大于 480px 时，它会自动将 label 与表单控件放置于同一行。当小于 480px 时，label 会被放置于表单元素之上。-->
+            <div class="ui-field-contain">
+                <label for="fname" class="ui-hidden-accessible" >姓名：</label><!--每个表单必须有一个标签来存放 for-->
+                <input type="text" id="fname" placeholder="姓名..." data-clear-btn="true"><!--添加清除输入框内容的按钮 (一个在输入框右侧的 X 图标)-->
+                <input type="submit" data-inline="true" value="提交" data-icon="check" data-iconpos="right">
+            </div>
+        </form>
+        <a href="#page2" class="ui-btn ui-btn-inline">进入表单输入页</a>
+    </div>
+</div>
+
+<!--表单输入-->
+<div data-role="page" id="page2">
+    <div data-role="header">
+        <h1>文本输入</h1>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <form method="post" action="2.php">
+            <div class="ui-field-contain">
+                <label for="fullname">全名：</label>
+                    <input type="text" name="fullname" id="fullname">
+                <label for="bday">生日：</label>
+                        <input type="date" name="bday" id="bday"><!--生日-->
+                <label for="email">E-mail:</label>
+                        <input type="email" name="email" id="email" placeholder="你的电子邮箱.."><!--Email-->
+                <label for="info">文本域：</label>
+                    <textarea name="info" id="info" placeholder="附加信息："></textarea>
+                <!--单选按钮-->
+                <fieldset data-role="controlgroup"><!--把按钮包裹在内-->
+                    <legend>性别：</legend> <!--定义fieldset的标题-->
+                    <label for="male">男性</label>
+                    <input type="radio" name="gender" id="male" value="male"><!--单选框-->
+                    <label for="female">女性</label>
+                    <input type="radio" name="gender" id="female" value="female">
+                </fieldset>
+
+                <!--复选按钮-->
+                <fieldset data-role="controlgroup" data-type="horizontal"><!--水平组合-->
+                    <legend>喜欢色：</legend>
+                    <label for="red">红色</label>
+                    <input type="checkbox" name="color" id="red" value="red" checked><!--默认选中-->
+                    <label for="yellow">黄色</label>
+                    <input type="checkbox" name="color" id="yellow" value="yellow">
+                    <label for="blue">蓝色</label>
+                    <input type="checkbox" name="color" id="blue" value="blue">
+                </fieldset>
+            </div>
+            <input type="submit" data-inline="true" value="提交">
+        </form>
+        <a href="#page1" class="ui-btn ui-btn-inline">进入表单基础页</a>
+    </div>
+</div>
+</body>
+</html>

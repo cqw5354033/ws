@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>触摸和滚屏事件</title>
+    <link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<div data-role="page" id="page1">
+    <div data-role="header">
+        <h1><a href="#page2" class="ui-btn">去滚屏页</a></h1>
+    </div>
+    <div data-role="main" class="ui-content">
+        <div class="p1">点击消失</div>
+        <div class="p2">长按消失（大约一秒）</div>
+        <div class="p3">
+            滑动事件是在用户一秒内水平拖拽大于30PX，或者纵向拖曳小于20px的事件发生时触发的事件：
+            <p style="width: 50px; height: 50px; border: 1px solid black">检测滑动</p>
+            <span style="color: red"></span>
+        </div>
+        <div class="p4">
+            <p style="width: 50px; height: 50px; border: 1px solid black">检测向左滑动</p>
+            <span style="color: green"></span>
+        </div>
+        <div class="p5">
+            <p style="width: 50px; height: 50px; border: 1px solid black">检测向右滑动</p>
+            <span style="color: blue"></span>
+        </div>
+
+    </div>
+</div>
+<div data-role="page" id="page2">
+    <div data-role="header">
+        <h1><a href="#page1" class="ui-btn">去滑动页</a></h1>
+    </div>
+    <div data-role="main" style="width: 80%; height: 1200px; border: 1px solid black; margin: 0 auto">
+        滚屏事件
+    </div>
+</div>
+<script>
+    $(document).on('pagecreate','#page1',function () {
+        // 点击
+        $('.p1').on('tap',function () {
+            $(this).hide()
+        });
+        // 长按
+        $('.p2').on('taphold',function () {
+            $(this).hide()
+        });
+        // 滑动
+        $('.p3').on('swipe',function () {
+            $('.p3 span').text('滑动了')
+        });
+        // 左滑
+        $('.p4').on('swipeleft',function () {
+            $('.p4 span').text('向左滑动了')
+        });
+        // 右滑
+        $('.p5').on('swiperight',function () {
+            $('.p5 span').text('向右滑动了')
+        });
+
+    });
+
+    // 滚屏
+    $(document).on('pagecreate','#page2',function () {
+        $(document).on('scrollstart',function () {
+            alert('开始滚屏弹出')
+        });
+        $(document).on('scrollstop',function () {
+            alert('结束滚屏弹出')
+        })
+    })
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<!--工具栏-->
+<div data-role="page" id="page1">
+    <div data-role="header" data-position="fixed" data-fullscreen="true"><!--全屏定位-->
+        <h1>Fixed 和 Fullscreen 页眉</h1>
+    </div>
+
+    <div data-role="main" class="ui-content"><br><br>
+        <p><b>提示:</b> T如果要看到效果，则需要调整窗口大小使滚动条可用。</p>
+
+        <p><b>提示:</b> 敲击屏幕会隐藏或显示页眉和页脚。</p>
+
+        <p>可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.可滚动的文本.</p>
+
+        <a href="#page2">去导航栏</a>
+    </div>
+
+    <div data-role="footer" data-position="fixed" data-fullscreen="true">
+        <h1>Fixed 和 Fullscreen 页脚</h1>
+    </div>
+</div>
+
+
+<!--导航栏-->
+<div data-role="page" id="page2">
+    <div data-role="header">
+        <div data-role="navbar" data-iconpos="right">
+            <!--定义导航栏-->       <!--定位图标-->
+            <ul>
+                <li><a href="" data-icon="home" class="ui-btn-active ui-state-persist">首页</a></li>  <!--导航按钮图标-->
+                <li><a href="#page3" data-icon="arrow-r" >页面二</a></li>
+                <li><a href="" data-icon="search">搜索</a></li>
+            </ul>
+        </div>
+    </div>
+    <div data-role="main" class="ui-content">
+        <a href="#page1">去工具栏</a>
+        <p>这是首页</p>
+    </div>
+</div>
+<div data-role="page" id="page3">
+    <div data-role="header">
+        <div data-role="navbar" data-iconpos="right">
+            <!--定义导航栏-->       <!--定位图标-->
+            <ul>
+                <li><a href="#page2" data-icon="home">首页</a></li>  <!--导航按钮图标-->
+                <li><a href="" data-icon="arrow-r" class="ui-btn-active ui-state-persist">页面二</a></li>
+                <!--激活按钮-->
+                <li><a href="" data-icon="search">搜索</a></li>
+            </ul>
+        </div>
+    </div>
+    <div data-role="main" class="ui-content">
+        <a href="#page1">去工具栏</a>
+        <p>这是页面二</p>
+    </div>
+</div>
+</body>
+</html>

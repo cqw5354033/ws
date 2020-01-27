@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>列表视图、内容</title>
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css">
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<div data-role="page" id="page1">
+    <div data-role="main" class="ui-content">
+        <h2>有序列表：</h2>
+        <ol data-role="listview"><!--添加列表视图-->
+            <li><a href="#">默认图标</a></li>
+            <li data-icon="delete"><a href="#">修改图标</a></li><!--修改图标-->
+            <li data-icon="false"><a href="#">删除图标</a></li><!--删除图标-->
+        </ol>
+        <h2>无序列表：</h2>
+        <ul data-role="listview" data-inset="true"><!--列表样式的圆角和边缘-->
+            <li data-role="list-divider"><a href="#">欧洲</a></li>
+            <li><a href="#"><img src="img/timg.jpg" alt="" class="ui-li-icon"> 英国</a></li><!--自动成为宽度为16 的图片-->
+            <li><a href="#"><img src="img/timg%20(1).jpg" alt="">德国</a></li><!--不加ui-li-icon的话自动变为宽度80 的图片-->
+            <li data-role="list-divider"><a href="#">亚洲</a></li><!--列表分割，使列表成组-->
+            <li><a href="#">中国</a><a href="">提示内容（相当于title）</a></li>
+            <li><a href="#">日本 <span class="ui-li-count">12</span><!--气泡数字（必须添加行内元素）--></a></li>
+            <li data-role="list-divider"><a href="#">非洲</a></li>
+            <li><a href="#">巴塞罗那</a></li>
+            <li><a href="#">南非</a></li>
+        </ul>
+
+        <h2>我的通讯录</h2>
+        <ul data-role="listview" data-inset="true" data-autodividers="true"> <!--自动生成的项目的分离-->
+            <li><a href="#">Adele</a></li>
+            <li><a href="#">Agnes</a></li>
+            <li><a href="#">Albert</a></li>
+            <li><a href="#">Billy</a></li>
+            <li><a href="#">Bob</a></li>
+            <li><a href="#">Calvin</a></li>
+            <li><a href="#">Cameron</a></li>
+            <li><a href="#">Chloe</a></li>
+            <li><a href="#">Christina</a></li>
+            <li><a href="#">Diana</a></li>
+            <li><a href="#">Gabriel</a></li>
+            <li><a href="#">Glen</a></li>
+            <li><a href="#">Ralph</a></li>
+            <li><a href="#">Valarie</a></li>
+        </ul>
+        <p>data-autodividers="true" 属性通过 对列表项文本的首字母进行大写来创建分隔符。</p>
+    </div>
+</div>
+</body>
+</html>

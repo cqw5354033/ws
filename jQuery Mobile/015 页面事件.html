@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>页面事件</title>
+    <link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<div data-role="page" id="pageone">
+    <div data-role="header">
+        <h1>头部文本</h1>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <a href="#pagetwo">跳转到二页面</a> <br>
+        <a href="011主题.html">外部页面</a>
+        <p>页面初始化触发 <span style="color:red">unknown</span> 事件。</p>
+    </div>
+
+    <div data-role="footer">
+        <h1>底部文本</h1>
+    </div>
+</div>
+<div data-role="page" id="pagetwo">
+    <div data-role="header">
+        <h1>头部文本</h1>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <a href="#pageone">跳转到一页面</a>
+    </div>
+
+    <div data-role="footer">
+        <h1>底部文本</h1>
+    </div>
+</div>
+<script>
+
+    // pagebeforecreate：在页面初始化及jQuery Mobile在开始增强页面之前触发。
+    $(document).on('pagebeforecreate','#pageone',function (event) {
+        $('span').text(event.type); /*使用 event.type 属性返回触发的事件类型。*/
+    });
+    // pagecreate:页面创建成功后，jQuery Mobile在开始增强页面之前触发。
+    $(document).on('pagecreate','#pageone',function () {
+        alert("pagecreate 事件触发!")
+    });
+
+    // pagecontainerload:在页面成功插入并插入到dom时触发
+    $(document).on('pagecontainerload',function () {
+        alert('pagecontainerload事件触发，');
+    });
+
+    // pagebeforeload：在任何加载之前触发的事件
+    $(document).on("pagebeforeload",function(event,data){
+        alert("pagebeforeload 事件触发!\nURL 即将载入: " + data.url);
+    });
+
+    // pageshow: 在页面切换后，显示之后  触发的事件
+    $(document).on('pageshow','#pagetwo',function () {
+        alert('pageshow 事件触发 - 展示页面二');
+    });
+
+    // pagehide 是在页面切换后,老页面隐藏之后，触发的事件。
+    $(document).on('pagehide','#pagetwo',function () {
+        alert('pagehide 事件触发 - 页面二隐藏');
+    });
+
+    // pagechange：页面切换成功后触发的事件
+    $(document).on('pagechange','#pagetwo',function () {
+        alert('pagechange事件触发 - 成功切换到页面二');
+    })
+</script>
+
+</body>
+</html>

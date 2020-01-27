@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>屏幕方向改变事件</title>
+    <link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+<div data-role="page">
+    <div data-role="header">
+        <h1>orientationchange 事件</h1>
+    </div>
+
+    <div data-role="main" class="ui-content">
+        <p>请试着旋转您的设备！</p>
+        <p><b>注释：</b>您必须使用移动设备或者移动模拟器来查看该事件的效果。</p>
+    </div>
+
+    <div data-role="footer">
+        <h1>页脚文本</h1>
+    </div>
+</div>
+<script>
+    $(document).on('pagecreate',function () {
+        $(window).on('orientationchange',function (event) { /*使用方向改变事件，要附加到window对象上*/
+            alert('方向改变为：'+event.orientation); // 回调函数可有一个参数，event对象，返回移动端设备方向
+            if(event.orientation == 'portrait'){
+                $('p').text('方向以变为portrait(纵向)！').css({"background-color":"yellow","font-size":"20px"})
+            }else{
+                $('p').text('方向以变为Landscape(横向)！').css({"background-color":"pink","font-size":"30px"})
+            }
+            // window.orientation 属性针对纵向视图返回 0，针对横向视图返回 90 或 -90。
+        })
+    })
+</script>
+</body>
+</html>

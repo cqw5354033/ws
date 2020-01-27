@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>主题</title>
+    <link rel="stylesheet" href="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://apps.bdimg.com/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://apps.bdimg.com/libs/jquerymobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        .ui-page-theme-f{
+            background-color: red;
+        }
+        .ui-bar-f{
+            background-color: yellow;
+
+        }
+        .ui-body-f{
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+<div data-role="page" id="page1" data-theme="a">
+    <div data-role="header" data-theme="f">
+        <h1>头部</h1>
+    </div>
+    <div data-role="main" class="ui-content">
+        <a href="#page2" class="ui-btn ui-btn-inline ui-btn-b">链接按钮（黑夜版）</a>
+        <p>列表：</p>
+        <ul data-role="listview" data-inset="true" data-autodividers="true">
+            <li><a href="">Adele</a></li>
+            <li><a href="">Billy</a></li>
+        </ul>
+    </div>
+    <div data-role="footer">
+        <h1>尾部</h1>
+    </div>
+</div>
+<div data-role="page" id="page2" data-theme="b">
+    <div data-role="header">
+        <h1>头部</h1>
+    </div>
+    <div data-role="main" class="ui-content ui-body-f">
+        <a href="#page1" class="ui-btn ui-btn-inline ui-btn-a">链接按钮（黑夜版）</a>
+        <label for="formName">表单</label>
+        <input type="text" id="formName" name="forName" placeholder="姓名：">
+        <label for="switch">开关</label>
+        <select name="" id="switch" data-role="slider">
+            <option value="off">off</option>
+            <option value="on">on</option>
+        </select>
+    </div>
+    <div data-role="footer" data-theme="f">
+        <h1>尾部</h1>
+    </div>
+</div>
+</body>
+</html>
