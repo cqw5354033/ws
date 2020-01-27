@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .ul1 li{
+            line-height: 20px;
+            margin-bottom: 10px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+<pre>
+    事件代理：利用冒泡机制给父元素绑定事件，实现之前给每个子元素绑定事件的效果
+    频繁操作dom会影响性能
+</pre>
+<ul class="ul1">
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+<script>
+    var ul1=document.getElementsByClassName('ul1')[0];
+    ul1.onclick=function(evt){
+        if(evt.target&&evt.target.nodeName=='LI'){
+            evt.target.style.backgroundColor='black';
+        }
+    }
+</script>
+
+</body>
+</html>

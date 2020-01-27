@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>奥迪标志</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        canvas{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+<canvas width="500" height="500" id="can1"></canvas>
+<script>
+    var can1=document.getElementById('can1');
+    var dx=can1.getContext('2d');
+
+    dx.arc(100,100,30,0,Math.PI*2);
+    dx.translate(40,0);
+    dx.stroke();
+
+    dx.beginPath();
+    dx.arc(100,100,30,0,Math.PI*2);
+    dx.translate(40,0);
+    dx.stroke();
+
+    dx.beginPath();
+    dx.arc(100,100,30,0,Math.PI*2);
+    dx.translate(40,0);
+    dx.stroke();
+
+    dx.beginPath();
+    dx.arc(100,100,30,0,Math.PI*2);
+    dx.stroke();
+
+
+</script>
+</body>
+</html>

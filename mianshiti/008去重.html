@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>去重</title>
+</head>
+<body>
+<script>
+    var arr1 = [1,2,3,2,3,4,7,8,8,9,9,4,5,6];
+    function qc(arr){
+        var arr_new = [];
+        for(var x = 0;x<arr.length;x++){
+            var fanhui = false;
+            for(var y = x + 1;y < arr.length;y++){
+                if(arr[x] == arr[y]){
+                    fanhui = true;
+                    break;
+                }
+            }
+            if(!fanhui){
+                arr_new.push(arr[x]);
+            }
+        }
+        return arr_new;
+    }
+    console.log(qc(arr1));
+</script>
+</body>
+</html>

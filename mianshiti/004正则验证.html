@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>正则验证</title>
+
+</head>
+<body>
+
+<script>
+    var str1=17600053398;
+    var reg=/^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0,5-9])|(17[0-9]))\d{8}$/;
+    if(reg.test(str1)){
+        alert('正确');
+    }else{
+        alert('错误');
+    }
+</script>
+</body>
+</html>
