@@ -1,0 +1,38 @@
+/*#12d5b5 18 0.5 绿色*/
+
+/*列表部分*/
+.plist dl{
+	padding: 0.27rem;
+	border-bottom: 1px solid #eaeaea;
+	overflow: hidden;
+	background: #fff;
+}
+.plist dl dt{
+	width:1.75rem;
+	height: 1.75rem;
+	float: left;
+	margin-right: 0.27rem;
+}
+.plist dl dt img{
+	display: block;
+	width:1.75rem;
+	height:1.75rem;
+}
+.plist dl dd{
+	width:6.5rem;
+	line-height: 0.54rem;
+	float: left;
+}
+.plist dl dd .p1{
+    font-size: 0.42rem;
+    color: #000;
+}
+.plist dl dd .p2{
+    font-size: 0.38rem;
+    color: #f00;
+}
+.plist dl dd .p3{
+    font-size: 0.38rem;
+    color: #000;
+}
+

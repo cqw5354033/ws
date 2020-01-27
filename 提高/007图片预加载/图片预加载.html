@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .loading{
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            background: #ccc;
+            top: 0;
+            left: 0;
+        }
+        .loading span{
+            color: white;
+            font-size: 30px;
+            position: absolute;
+            display: inline-block;
+            width: 200px;
+            height: 50px;
+            top: 50%;
+            left: 50%;
+            margin: -100px 0 0 -25px;
+            text-align: center;
+            line-height: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<img src="http://pic2.ooopic.com/12/22/94/30b1OOOPIC5c.jpg" alt=""/>
+<img src="http://pic19.photophoto.cn/20110417/0019032477335591_b.jpg" alt=""/>
+<img src="http://pic2.ooopic.com/12/22/94/37bOOOPICc7_1024.jpg" alt=""/>
+<img src="http://img05.tooopen.com/images/20140328/sy_57865838889.jpg" alt=""/>
+
+
+<div class="loading">
+    <span></span>
+</div>
+
+<script>
+//    图片预加载 并不是用代码实现预加载，而是图片在浏览器内存中加载完成后，会触发一个onload事件，
+//    让我们知道图片加载完成了，可以进行后续的操作
+
+    var imgs = document.getElementsByTagName('img');
+    var loading = document.getElementsByClassName('loading')[0];
+    var span = loading.getElementsByTagName('span')[0];
+    for(var i=0;i<imgs.length;i++){
+        var imgObj=new Image();     //图片相关的对象
+
+        var num=0;              //记录图片加载完成的数量
+//        图片加载完成会触发onload事件
+        imgObj.onload=function(){
+            num++;
+            span.innerHTML = '图片加载中'+Math.ceil(num/imgs.length*100)+'%';
+            if(num==imgs.length){
+                loading.style.display='none';
+            }
+        };
+        imgObj.src=imgs[i].src;
+    }
+
+</script>
+</body>
+</html>

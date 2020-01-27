@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文件上传</title>
+    <script src="../jquery-1.11.3.min.js"></script>
+</head>
+<body>
+<form action="" id="upload" enctype="multipart/form-data" method="post">
+    <input type="file" name="file" id="pic">
+    <input type="button" value="提交" onclick="upLoad()">
+    <span class="showUrl"></span>
+    <img src="" alt="" class="showPic">
+</form>
+
+<script>
+    function upLoad() {
+        var form = document.getElementById('upload'),
+            formData =  new FormData(form);
+        $.ajax({
+            url:"https://sscpre.boe.com/v1/medical-console/medical/file/upload",
+            type:'post',
+            data:formData,
+            processData:false,
+            contentType:false,
+
+            success:function (res) {
+                if(res){
+                    alert('上传成功');
+                }
+                console.log(res);
+                $("#pic").val('');
+                $(".showUrl").html(res);
+                $(".showPic").attr('src',res);
+
+            },
+            error:function (err) {
+                alert('上传失败，请重新上传',err);
+            }
+        })
+
+    }
+</script>
+
+</body>
+</html>

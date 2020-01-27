@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>三级联动效果</title>
+	<script src='./ku.js'></script>
+</head>
+<body>
+	<select name="" id="pro_e">
+		<option value="">请选择</option>
+		<option value="北京">北京</option>
+	</select>
+	<select name="" id="cit_e">
+		
+	</select>
+	<select name="" id="are_e">
+		
+	</select>
+	<script>
+		//1 把所有的省级单位循环出来 放到对应的select 在循环中创建和追加元素option
+		//2 当用户选择一个省的时候把对应省下边所有的市放到select
+		//3 当选择一个市 追加对应的地区到select
+		var pro_e=document.getElementById('pro_e');
+		var cit_e=document.getElementById('cit_e');
+		var are_e=document.getElementById('are_e');
+		var pro_len=provinceList.length;
+		//把省级单位追加给select
+		for(var p=0;p<pro_len;p++){			
+			var option_e=document.createElement('option');
+			option_e.innerHTML=provinceList[p].name;
+			option_e.value=provinceList[p].name;
+			pro_e.appendChild(option_e);
+		}
+		//当选择了省 把对应的市级单位给select
+		pro_e.onchange=function(){
+			//清除之前的市
+			cit_e.innerHTML='';
+			for(var p=0;p<pro_len;p++){
+				//找到用户选择的那个省
+				if(provinceList[p].name==pro_e.value){
+					//循环市级单位
+					for(var c=0;c<provinceList[p].cityList.length;c++){
+						//创建option
+						var option_c=document.createElement('option');
+						//市级单位的名字
+						var city_name=provinceList[p].cityList[c].name;
+						option_c.innerHTML=city_name;
+						option_c.value=city_name;
+						cit_e.appendChild(option_c);
+					}
+					return;
+				}
+			}
+		};
+		//根据用户选择的省和市找到对应的地区
+		cit_e.onchange=function(){
+			//清除之前的地区
+			are_e.innerHTML='';
+			for(var p=0;p<pro_len;p++){
+				//找到省
+				if(provinceList[p].name==pro_e.value){
+					//找到市
+					for(var c=0;c<provinceList[p].cityList.length;c++){
+						if(provinceList[p].cityList[c].name==cit_e.value){
+							//循环市里边所有的地区
+							var are_list=provinceList[p].cityList[c].areaList;
+							for(var a=0;a<are_list.length;a++){
+								var option_a=document.createElement('option');
+								option_a.innerHTML=are_list[a];
+								option_a.value=are_list[a];
+								are_e.appendChild(option_a);
+							}
+						}
+					}
+				}
+			}
+		}
+	</script>
+</body>
+</html>

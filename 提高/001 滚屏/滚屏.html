@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            height: 100%;
+        }
+        div{
+            width: 100%;
+            -webkit-transition: 1s;
+            -moz-transition: 1s;
+            -o-transition: 1s;
+            transition: 1s;
+            opacity: .9;
+        }
+        #wrap{
+            overflow: hidden;
+        }
+        #main{
+            position: relative;
+            top: 0;
+        }
+        #page1{
+            background: red;
+        }
+        #page2{
+            background: greenyellow;
+        }
+        #page3{
+            background: blue;
+        }
+        #page4{
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div id="main">
+        <div id="page1"></div>
+        <div id="page2"></div>
+        <div id="page3"></div>
+        <div id="page4"></div>
+    </div>
+
+    <script>
+        var divArr = document.getElementsByTagName("div"); //获取所有的div
+        var hei = document.body.clientHeight; //可见区域的高度
+        for(var i = 0; i<divArr.length; i++){
+            divArr[i].style.height = hei+"px"
+        }
+//        开始时间        结束时间    main-top的高度
+        var sTime = 0, eTime = 0, now = 0;
+//        火狐浏览器滚轮事件
+        document.addEventListener("DOMMouseScroll", gunDong) ||
+//                其他浏览器滚轮事件
+                document.addEventListener("mousewheel",gunDong);
+
+//        mousewheel 事件中， event.wheelDelta 属性，如果是正直，说明向上滚动， 反之向下滚动
+//        DOMMouseScroll 事件中， event.detail属性来判断滚轮方向，如果是负值，向上滚动，反之向下
+        function gunDong(){
+            sTime = new Date().getTime();   //获取当前开始时间--毫秒
+            var x = event.wheelDelta || (-event.detail); //使滚动方向一致
+            if((eTime-sTime)< -1000){   //在滚屏的一秒内滚轮无法使用
+//                向下滚动
+                if(x < 0 &&(main.offsetTop) > -(hei*3)){
+                    now = now - hei;
+                    main.style.top = now +"px";
+                }
+//                向上滚动
+                if(x > 0 &&(main.offsetTop) < 0){
+                    now = now + hei;
+                    main.style.top = now +"px";
+                }
+                eTime = new Date().getTime(); //获取当前结束时间--毫秒
+            }
+        else{
+                event.preventDefault(); //移出if 里的事件
+            }
+            main.style.top = now +"px"
+        }
+    </script>
+</div>
+
+
+
+</body>
+</html>

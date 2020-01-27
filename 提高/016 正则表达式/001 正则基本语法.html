@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>正则表达式基本语法</title>
+</head>
+<body>
+
+<script>
+    // 在js中，引用正则表达式需要：/.../
+    // 普通匹配符：能够匹配已知对应的字符
+    // 默认正则区分大小写
+    var str = "Word 2018";
+    var zz = str.match(/D/i);
+    console.log(zz);
+
+    var z2=str.match(/\w.\d/g);
+    console.log(z2);
+
+
+
+    // 能够自定义规则的匹配符 []
+    // 用来修饰匹配次数的修饰符 {}
+    // 手机号码
+    var str1="~17600053398~";
+    var z3 = str1.match(/1[^24]\d{9}/);
+    console.log(z3);
+
+    // 正则表达式的完整匹配
+    // ^ 表示从第一个开始匹配         $：表示持续匹配到结束
+    var str2="17600053398";
+    var z4 = str2.match(/^1[^24]\d{9}$/);
+    console.log(z4);
+
+
+    // 特殊符号在正则匹配中需要加转义符（\）
+
+    // 条件分支  |   和 ()
+    var strs = "123.jpeg";
+    r=strs.match(/\.(png|gif|jep?g)$/);
+    console.log(strs);
+</script>
+</body>
+</html>

@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Title</title>
+    <script src="../../jquery/jquery-3.3.1/jquery-3.3.1.js"></script>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            height: 100%;
+        }
+        body{
+            background: #FAFAFA;
+        }
+        .cb{
+            *zoom: 1;
+        }
+        .cb:after{
+            content: "";
+            display: block;
+            height: 0;
+            clear: both;
+        }
+        .top {
+            width: 100%;
+            height: 50px;
+            line-height: 30px;
+            background: #FAFAFA;
+            padding: 10px 5.5%;
+            box-sizing: border-box;
+            text-align: center;
+            color: black;
+        }
+        .banner{
+            width: 100%;
+        }
+        .banner img{
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .login{
+            padding: 0 5.5%;
+            margin-top: 30px;
+            box-sizing: border-box;
+        }
+        .login input{
+            width: 100%;
+            height: 50px;
+            color: black;
+            border-radius: 5px;
+            font-size: 14px;
+            padding-left: 5%;
+            box-sizing: border-box;
+            outline: none;
+            border: 1px solid #ccc;
+        }
+        .login .password input{
+            border-radius: 5px 0 0 5px;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        .login .password div{
+            width: 50%;
+            box-sizing: border-box;
+        }
+        .login .password div input{
+            border-radius: 0 5px 5px 0;
+            width: 100%;
+            color: #000;
+        }
+        .login form>div{
+            margin-bottom: 10px;
+        }
+        .login .btn_login input{
+            width: 100%;
+            border-radius: 5px;
+            background: #ed9600;
+            height: 50px;
+            font-size: 16px;
+            color: #fff;
+            border: none;
+            outline: none;
+            padding: 0;
+        }
+        .login .chkTer {
+            text-align: center;
+            width: 100%;
+            background: transparent;
+            height: 32px;
+            line-height: 32px;
+            font-size: 13px;
+            color: #000;
+            cursor: pointer;
+            -webkit-tap-highlight-color:rgba(255,0,0,0);
+        }
+        .login .chkTer #chkTer{
+            width: 12px;
+            height: 12px;
+        }
+        .login .chkTer span a{
+            color: #000;
+        }
+        #exceptions{
+            position: absolute;
+            width: 90%;
+            height: 93%;
+            top: 5%;
+            left: 5%;
+            background: rgb(255, 255, 255);
+        }
+        #exceptions .title{
+            height: 32px;
+            line-height: 32px;
+            color: #fff;
+            font-size: 14px;
+            padding-left: 2%;
+            background: #ed9600;
+        }
+        .modal{
+            width: 100%;
+            height: 100%;
+            background: #ccc;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        #exceptions .information{
+            width: 90%;
+            margin: 0 auto;
+            font-size: 14px;
+            line-height: 24px;
+            max-height: 84%;
+            overflow: scroll;
+        }
+        #exceptions .mask_btn{
+            width: 89%;
+            height: 32px;
+            line-height: 32px;
+            margin: 12px auto 12px;
+        }
+        #exceptions .mask_btn input{
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            border-radius: 4px;
+            border: none;
+            background: #ed9600;
+            font-size: 13px;
+            color: #fff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="top">登录</div>
+
+<div class="banner">
+    <img src="AA.png" alt="">
+</div>
+
+<div class="login">
+    <form action="">
+        <div class="user">
+            <input name="mobileNo" type="text" placeholder="实名登记手机号" maxlength="11">
+        </div>
+        <div class="password cb">
+            <input name="smsCode" style=" float: left;" type="text" maxlength="6" placeholder="验证码">
+            <div id="sendSmsCode" style=" float: right;">
+                <input class="but" type="button" onclick="" id="sscId" value="获取短信验证码">
+            </div>
+        </div>
+        <div class="btn_login">
+            <input type="button" value="登录">
+        </div>
+        <div class="chkTer">
+            <input type="checkbox" name="chkTer" checked="checked" id="chkTer">
+            <span>免责声明<a href="javascript:;">(详见)</a></span>
+        </div>
+    </form>
+</div>
+
+<div class="modal" style="display: none;">
+    <div id="exceptions" class="mask_ter">
+        <p class="title">免责条款</p>
+        <p class="information">
+            提醒：在使用东风裕隆商店支付服务前，请您务必仔细阅读并透彻理解本条款。如果您使用东风裕隆商店支付服务，
+            您的使用行为将被视为对本条款全部内容的认可。“东风裕隆商店”指由东风裕隆汽车有限公司（简称“东风裕隆”）
+            与联通智网科技有限公司（简称“联通智网”）合作推出的供您订购、管理和定制东风裕隆服务产品及其它相关服
+            务的自服务网络平台，域名为mall.cu-sc.com以及东风裕隆商店启用的其它域名。“东风裕隆商店支付服务”指联通智网及其
+            关联方和其它第三方公司合作提供的东风裕隆商店在线支付服务及相关支付服务网站。<br>
+            本条款仅适用于您对东风裕隆商店支付服务的使用，不适用于您自东风裕隆商店网站服务及网站服务所订购的东风裕隆服
+            务产品的提供和使用。东风裕隆服务产品的提供和使用将适用东风裕隆服务产品相关的条款和条件。<br>
+            一、知识产权声明<br>
+            联通智网或其关联方拥有东风裕隆商店支付网站内其它信息内容（除东风裕隆发布的服务产品信息，包括但不限于文
+            字、图片、软件、音频、视频）的版权。<br>
+            任何对属于东风裕隆商店支付网站内的信息内容所进行的被授权的浏览、复制、打印和传播都不得用于商业目的，
+            且所有信息内容及其任何部分的使用都必须遵守本条款并包括此版权声明。<br>
+            东风裕隆商店所有的产品及其相关服务产品信息属于东风裕隆或其关联方的知识产权；东风裕隆商店所有涉及支付与用户
+            自服务流程的技术与所有程序属于联通智网或其关联方的知识产权。<br>
+            “东风裕隆”以及东风裕隆其它产品服务名称及相关图形、标识等为东风裕隆或其关联方的注册商标。未经东风裕隆事先书面许
+            可，任何人不得擅自使用（包括但不限于：以非法的方式复制、传播、展示、镜像、上载、下载），否则，
+            东风裕隆将依法追究其法律责任。<br>
+            “ChinaUnicom”以及联通智网其它产品服务名称及相关图形、标识等为联通智网的注册商标。未经联通智网
+            事先书面许可，任何人不得擅自使用（包括但不限于：以非法的方式复制、传播、展示、镜像、上载、下载）
+            ，否则，联通智网将依法追究其法律责任。<br>
+            二、隐私权政策<br>
+            联通智网仅为提供东风裕隆商店支付服务之目的获取您的个人信息，且尊重并保护所有使用东风裕隆商店支付服务用
+            户的个人隐私权。为了给您提供更准确、更有个性化的服务，联通智网会按照本隐私权政策的规定使用和披
+            露您的个人信息。但联通智网将以高度的勤勉、审慎义务对待这些信息。除本隐私权政策及法律另有规定外，
+            在未征得您事先许可的情况下，联通智网不会将这些信息对外披露或向第三方提供。如果您拒绝在使用东风裕隆
+            商店支付过程中提供您的个人信息或相关数据，东风裕隆商店支付服务整体或其中某些需要这些个人信息或相关
+            数据的相应功能将无法正常使用。联通智网会不时更新本隐私权政策。<br>
+            1. 适用范围<br>
+            a）在您注册或激活可以登录东风裕隆商店的支付服务相关账户时，您在东风裕隆商店提供的个人注册信息（应法律法
+            规要求需公示的企业名称等相关工商注册信息以及自然人经营者的信息除外）；<br>
+            b）在您使用东风裕隆商店支付服务，或访问东风裕隆商店支付网站时，东风裕隆商店自动接收并记录的您的浏览器和计算
+            机上的信息，包括但不限于您的IP地址、浏览器的类型、使用的语言、访问日期和时间、软硬件特征信息及
+            您需求的网页记录等数据；若您下载或使用东风裕隆商店或其相关的移动客户端软件，或访问移动网页使用东风裕隆
+            商店支付服务时，东风裕隆商店可能会读取与您所在的位置和移动设备相关的信息，包括但不限于设备型号、设
+            备识别码、操作系统、分辨率、电信运营商等。<br>
+            c）联通智网为提供东风裕隆商店支付服务之目的,通过合法途径从东风裕隆等商业伙伴处取得的用户个人数据。<br>
+            d）除以上信息外，其它您所提供的或与您使用东风裕隆商店支付服务相关的个人信息。<br>
+            e）东风裕隆商店支付服务收集到的您在东风裕隆商店上进行交易的有关数据，包括但不限于产品价格、成交信息等内容。<br>
+            f)您所订购的产品实际使用信息。<br>
+            您了解并同意，以下信息不适用本隐私权政策：<br>
+            a）您在使用东风裕隆商店提供的搜索服务时输入的关键字信息。<br>
+            b）违反法律规定或违反东风裕隆商店支付服务规则行为及联通智网已对您采取的措施。<br>
+            2. 信息使用<br>
+            a)联通智网不会向第三方(与提供东风裕隆商店及服务产品的联通智网关联方除外)提供、分享您的个人信息，除非
+            事先得到您的许可，或基于您的请求，该第三方单独或与联通智网（含联通智网关联方）共同为您提供您所请
+            求的服务，且在该服务结束后，该第三方将被禁止访问包括其以前能够访问的所有相关资料。<br>
+            b)联通智网亦不允许任何第三方以任何手段收集、编辑、出售或者无偿传播您的个人信息。任何东风裕隆商店用户
+            如从事上述活动，一经发现，联通智网有权采取相关措施，并立即终止为该用户提供支付相关服务。<br>
+            c)联通智网可以使用您的个人信息以预防、发现、调查欺诈、危害安全、非法或违反与联通智网或其关联方协
+            议、政策或规则的行为，以保护您、其他东风裕隆商店用户，或联通智网或其关联方合法权益。<br>
+            d)联通智网可以应东风裕隆的要求，向东风裕隆提供您的个人业务使用数据（不含可识别单个用户信息的内容），用于
+            大数据分析，从而了解用户使用习惯，提升服务品质等相关内容。<br>
+            3. 信息披露<br>
+            在如下情况下，联通智网将依据您的个人意愿或法律的规定全部或部分地披露您的个人信息：<br>
+            a) 经您事先同意，向第三方披露；<br>
+            b) 根据法律的有关规定，或者行政或司法机构的要求，向第三方或者行政、司法机构披露；<br>
+            c) 如您出现违反中国有关法律、法规或者本条款、东风裕隆商店服务协议或相关规则的情况，需要向第三方披露；<br>
+            d) 基于您的请求，为提供您所要求的产品和服务，而必须和第三方分享您的个人信息；<br>
+            e) 在东风裕隆商店上创建的某一交易中，如交易任何一方履行或部分履行了交易义务并提出信息披露请求的，联通
+            智网有权决定向该用户提供其交易对方的联络方式等必要信息，以促成交易的完成或纠纷的解决。<br>
+            f) 其它联通智网根据法律、法规或者网站政策认为合适的披露。<br>
+            4. 信息存储和交换<br>
+            您同意，联通智网收集的有关您的信息和资料将保存在联通智网及（或）其关联方的位于中国大陆地区的服务器
+            上并被访问、存储和展示。<br>
+            5. Cookies的使用<br>
+            a) 在您未拒绝接受cookies的情况下，联通智网会在您的计算机上设定或取用cookies，以便您能登录或使用依
+            赖于cookies的东风裕隆商店支付服务或功能。联通智网使用cookies可为您提供更加周到的个性化支付服务。<br>
+            b) 您有权选择接受或拒绝接受cookies。您可以通过修改浏览器设置的方式拒绝接受cookies。但如果您选择拒
+            绝接受cookies，则您可能无法登录或使用依赖于cookies的东风裕隆商店支付服务或功能。<br>
+            c) 通过联通智网所设cookies所取得的有关支付服务信息，将适用本政策。<br>
+            6. 信息安全<br>
+            a) 您的账户均有安全保护功能，请妥善保管您的账户及密码信息。联通智网将通过向其它服务器备份、对用户密
+            码进行加密等安全措施确保您的信息不丢失，不被滥用和变造。尽管有前述安全措施，但同时也请您注意在信息
+            网络上不存在“完善的安全措施”，因此，在联通智网采取合理的安全措施情况下，联通智网并不对您非因联通智网
+            过错而遭受信息丢失、滥用或变造的损失承担任何责任。<br>
+            b) 在使用东风裕隆商店支付服务进行网上交易时，您不可避免地要向交易对方或潜在的交易对方披露自己的个人信息，
+            如联络方式或者邮政地址。请您妥善保护自己的个人信息，仅在必要的情形下向他人提供。如您发现自己的个人信
+            息泄密，尤其是您的东风裕隆商店支付服务账户及密码发生泄露，请您立即联络东风裕隆商店支付服务客服，以便联通智网
+            采取相应措施。<br>
+            7.特别注意事项<br>
+            如果您不是具备完全民事权利能力和完全民事行为能力的自然人，您无权使用东风裕隆商店支付服务，因此联通智网希
+            望您不要向我们提供任何个人信息。<br>
+            8. 个人信息保护投诉处理<br>
+            如果您有任何关于支付服务相关的个人信息收集和使用方面的投诉，请通过电子邮件或电话方式联系东风裕隆商店支付
+            服务客服，客服将在接到投诉之日起十五工作日内作出答复。<br>
+            9. 账户注销<br>
+            若您不再希望使用东风裕隆商店的相关支付服务，联通智网可根据您的请求为您提供注销支付服务账户的服务。请注意，
+            在您注销支付服务账户后，您将无法使用东风裕隆商店支付服务，并且您此前使用东风裕隆商店的相关支付服务信息有可能
+            不会被继续保存或恢复。<br>
+            三、退款政策<br>
+            1. 价格变化和缺货<br>
+            产品的价格和可获性都在东风裕隆商店网站上指明。这类信息将随时更改且不发送任何更改通知。产品的价格都包含了
+            增值税，快递费将另外结算，费用根据您选择的快递方式的不同而异。如果发生了意外情况，在确认了您的订单后，
+            由于东风裕隆提价、税额变化引起的价格变化，或是由于网站的错误等造成产品价格变化，您有权取消您的订单，并希
+            望您能及时通过电子邮件或电话通知东风裕隆商店客服。<br>
+            您所订购的产品，如果发生缺货，您有权取消订单。<br>
+            2.退款须知<br>
+            东风裕隆商店发生的任何退款均适用于以下内容：<br>
+            产品总价中已包含东风裕隆商店一次性开通调测服务费用，此项费用在发生退款时将不予退还，即：七天以内发生的退
+            款，除上述一次性开通调测服务费用外，其他费用可退还用户；七天以外发生的退款，除上述一次性开通调测服务
+            费用和按照用户实际使用收取的一定使用费外，其他费用可退还用户。用户提出的退款申请，需由东风裕隆和联通智网
+            共同审核，核准后方能予以退款。退款返回周期为退款申请批准通过后的二十五个工作日左右，具体以相关财务结
+            算及银行处理款项返还的实际时间为准。<br>
+            3. 退款提交的材料说明<br>
+            在产品订购成功时开具的发票，是将作为退订产品的唯一凭证。该发票一旦开具不能补开，且针对发票所产生的相
+            关投诉及其他相关事项，我们会针对实际情况酌情处理。<br>
+            四、其他条款<br>
+            1.用户手机换号需要及时更新，如果未更新，因无法联系用户等情况而产生的相关后果东风裕隆商店及其关联服务将不
+            承担任何责任。<br>
+            2. 您所订购的服务仅限于使用在订购时认证的车辆上,以订购时您所确认的车辆的VIN码为准。<br>
+            3. 您所订购的服务由该车辆所有人拥有，与支付手机的所有人无关。<br>
+            4.邮件/短信服务<br>
+            当您访问东风裕隆商店网站或给我们发送电子邮件时，您与我们用电子方式进行联系。您同意以电子方式接受我们的信
+            息。我们将用电子邮件或通过在东风裕隆商店网站上发布通知的方式与您进行联系。您同意我们用电子方式提供给您的
+            所有协议、通知、披露和其他信息是符合此类通讯必须是书面形式的法定要求的。如果东风裕隆和联通智网能够证明电
+            子形式的信息已经发送给您或者东风裕隆和联通智网立即在东风裕隆商店网站上张贴这样的通知，将被视为您已收到所有协
+            议、声明、披露和其他信息。<br>
+            东风裕隆商店支付网站保留通过邮件和短信的形式，对本网站注册、购物用户发送订单信息等告知服务的权利。如果您
+            在东风裕隆商店网站注册、购物，表明您已同意接受此项服务。<br>
+            5. 寄送发票<br>
+            东风裕隆商店支付网站将会把发票寄送到您所指定的寄送地址。请清楚准确地填写您的真实姓名、寄送地址及联系方式。
+            因如下情况造成发票寄送延迟或无法发送等，东风裕隆商店支付网站将不对此承担任何的责任：<br>
+            a) 您提供的信息错误或不够详细；<br>
+            b) 发票送达无人签收，及由此造成的重复配送所产生的费用及后果；<br>
+            c) 不可抗力，例如：自然灾害、交通戒严、罢工、骚乱、政府行为、突发战争等。<br>
+            6. 责任限制和不可抗力<br>
+            不论在任何情况下，联通智网均不对由于互联网正常的设备维护，互联网络连接故障，电脑、通讯或其他系统的故障，
+            电力故障，罢工，暴乱，骚乱，火灾、洪水、风暴，爆炸，战争，政府行为，司法行政机关的命令或第三方的不作为
+            而造成的不能履行或延迟履行承担责任。<br>
+            7. 条款的修订<br>
+            联通智网有权根据需要不时地制定、修改或更新本条款及/或各类适用于东风裕隆商店支付服务的其他特殊条款（包括但不
+            限于隐私权政策），并以网站公示的方式在实施前的合理时间内进行公告，不再单独通知您。各类适用于东风裕隆商店支
+            付服务的特殊条款构成本条款不可分割的一部分，与本条款具有同等法律效力如您不同意相关变更，应当立即停止福
+            特商店支付网站的使用服务。您继续使用东风裕隆商店支付网站服务的，即表示您接受届时适用的经修订或更新的本条款。<br>
+            8. 条款的可执行性<br>
+            如果出于任何原因，本条款的部分不能得以执行，本条款其他部分的有效性将不受影响。<br>
+            9. 适用的法律和管辖权<br>
+            您和东风裕隆商店支付网站之间的关系将适用中华人民共和国的法律，双方出现的任何纠纷应当友好协商，协商不成任何
+            一方都有权利将争议提交北京市西城区人民法院诉讼。
+        </p>
+        <div class="mask_btn">
+            <div class="btn_blue"><input name="" value="关闭"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+    /*//发送短信验证码
+    function sendSmsCode(){
+        var reg = /^[1][3-8]{1}[0-9]{9}$/;
+        var number =  $("[name=mobileNo]").val();
+        if(!reg.test(number)){
+            $("#pagefours").OpenDiv();
+            $("#pagefours").css('top','40%');
+            $("#pagefours").css('left','15%');
+        }else{
+            $("#sscId").attr("disabled", true);
+            $.ajax( {
+                type : "POST",
+                url : basePath+"/mobile/sendSmsCode.ihtml",
+                data : {
+                    "mobilePhoneNo" :number
+                },
+                success : function(data) {
+                    $("#sscId").attr("disabled", false);
+                    if(data=='success'){
+                        $("#sendSmsCode").css('display','none');
+                        $("#sendSmsCodeAsh").css('display','block');
+                        var start = new Date();//开始时间
+                        start =Date.parse(start)/1000;
+                        secondsDown(start);
+                    }else if(data=='fail'){
+                        $("#sendFail").OpenDiv();
+                        $("#sendFail").css('top','40%');
+                        $("#sendFail").css('left','15%');
+                    }else if(data=='no_mobile'){
+                        $("#pagefours").OpenDiv();
+                        $("#pagefours").css('top','40%');
+                        $("#pagefours").css('left','15%');
+                    }
+                }
+            });
+        }
+    }
+
+    //验证码定时
+    function secondsDown(start){
+        var seconds = 60; //60秒可发送
+        var end =new Date();//当前结束时间
+        end =Date.parse(end)/1000;
+        var surplus =parseInt(seconds-(end-start),10);
+        $("#codetime").html(surplus);
+        if(surplus>0){
+            timerID=setTimeout("secondsDown("+start+")", 100);
+        }else{
+            $("#sendSmsCode").css('display','block');
+            $("#sendSmsCodeAsh").css('display','none');
+        }
+    }*/
+    $('.login .chkTer span').on('click',function () {
+        $('.modal').css('display','block');
+    });
+    $(' #exceptions .mask_btn .btn_blue').on("click",function () {
+        $('.modal').css('display','none');
+    })
+</script>
+</body>
+</html>

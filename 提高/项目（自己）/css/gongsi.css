@@ -1,0 +1,102 @@
+@charset "UTF-8";
+
+body{
+    font-size: 62.5%;
+    background-color: #eeeeee;
+}
+body h1,h2,h3,h4,h5,h6{
+    margin: 0;
+    padding: 0;
+}
+a:hover{
+    text-decoration: none;
+}
+/*--------------------header start-----------------*/
+.header{
+    height: 5rem;
+    background-color: #12d5b5;
+    text-align: center;
+}
+.header a{
+    line-height: 5rem;
+    width: 2rem;
+    color: white;
+    font-size: 1.8rem;
+}
+.header h2{
+    font-size: 1.8rem;
+    color: white;
+    line-height: 5rem;
+}
+/*--------------------header end-----------------*/
+
+/*--------------------content start--------------------*/
+.container{
+    background-color: white;
+}
+.container .muke img{
+    height: 8rem;
+    margin: 0 1rem;
+}
+.muke h3, .muke p{
+    font-size: 1.8rem;
+    line-height: 4rem;
+    font-weight: bolder;
+    margin: 0;
+}
+
+.container .work{
+    height: 8rem;
+    border-top: 2px solid #e9e9e9;
+    border-bottom: 2px solid #e9e9e9;
+}
+.work h3{
+    font-size: 1.6rem;
+    line-height: 4rem;
+    font-weight: bold;
+}
+.work a{
+    display: inline-block;
+    height: 3.5rem;
+    width: 7rem;
+    border-radius: 30px;
+    background-color: #12d5b5;
+    color: white;
+    text-align: center;
+    line-height: 3.5rem;
+}
+.work .active{
+    background-color: #def8f5;
+    color: black;
+}
+
+.container .qian{
+    height: 8rem;
+}
+.qian h3{
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 4rem;
+}
+.qian p{
+    font-size: 1.4rem;
+    line-height: 3rem;
+}
+.qian a{
+    font-size: 1.6rem;
+    line-height: 2rem;
+    color: red;
+}
+/*--------------------content end--------------------*/
+
+
+
+
+
+
+
+
+
+
+
+

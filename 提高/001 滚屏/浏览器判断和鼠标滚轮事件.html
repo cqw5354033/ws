@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #div2{
+            width: 100px;
+            height: 1000px;
+            background: red;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+<div id="div2"></div>
+<script>
+//      大多数浏览器鼠标滚轮事件    mousewheel
+//      火狐浏览器鼠标滚轮事件      dommousescroll
+    var body = document.body;
+    body.addEventListener("mousewheel",aaa);
+    function aaa(){
+        alert("滚动弹出");
+    }
+    body.addEventListener("DOMMouseScroll");
+
+
+//    判断浏览器是哪一个浏览器
+    if(navigator.userAgent.indexOf("Firefox")>0){
+        alert("火狐浏览器")
+    }else if(navigator.userAgent.indexOf("Chrome")>0){
+        alert("谷歌浏览器")
+    }
+</script>
+</body>
+</html>

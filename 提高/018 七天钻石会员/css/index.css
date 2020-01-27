@@ -1,0 +1,152 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+}
+ul,li{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+.content{
+    width: 100%;
+    box-sizing: border-box;
+    height:0;
+    position:relative;
+    /*z-index: -10;*/
+    padding-top:7.2rem;
+    background-image: url(../img/bg_0.jpg);
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-size: 100% 100%;
+}
+
+/**********************************************************************item1*/
+.item{
+    width: 5.91rem;
+    /*border: 1px solid red;*/
+    box-sizing: border-box;
+    margin:0 auto;
+    height: 3.3rem;
+}
+.color_box{
+    height: 0.8rem;
+    border-radius:0.4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: -webkit-linear-gradient(left top,#f53bf7,#019af7); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(bottom right,#f53bf7,#019af7); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(bottom right,#f53bf7,#019af7); /* Firefox 3.6 - 15 */
+    background: linear-gradient(to bottom right,#f53bf7,#019af7); /* 标准的语法（必须放在最后） */
+}
+.color_content{
+    height: 0.7rem;
+    background: #8401ed;
+    font-size: 0.29rem;
+    border: none;
+    padding-left: 0.5rem;
+    box-sizing: border-box;
+    color:white;
+    outline: none;
+    border-radius:0.4rem;
+}
+.get_code_group{
+    width:5.9rem;
+    height: 0.8rem;
+    margin: 0.3rem 0 0.6rem;
+    box-sizing: border-box;
+    /*border: 1px solid red;*/
+    overflow: hidden;
+}
+.get_num{
+    width: 5.8rem;
+}
+.get_num_box{
+    width: 5.9rem;
+}
+#code{
+    width:3.18rem;
+}
+.content #get_code{
+    text-align: center;
+    padding-left: 0;
+    width:2.3rem;
+}
+.content .get_code_box{
+    width:2.4rem;
+    float: right;
+    text-align: center;
+}
+.content .code_box{
+    width:3.28rem;
+    float: left;
+}
+.content .btn_code,.btn_select,.btn_copy,.btn_change{
+    width:5.8rem;
+    padding-left: 0;
+    font-size: 0.36rem;
+}
+.content .btn_code,.btn_copy,.btn_change{
+    font-family: "HYZhuZiChaoRanTiW";
+}
+/***************************************************************************item2*/
+.item_box{
+    /*display:none;*/
+}
+.item_box2{
+    padding-top: 0.2rem;
+    display: none;
+}
+.tit_box{
+    width: 80%;
+    text-align: center;
+    border-top:0.07rem solid white;
+    margin: 0 auto;
+}
+.tit{
+    font-size: 0.29rem;
+    color:white;
+    height: 0.4rem;
+    width:50%;
+    background:#7714f7;
+    font-weight:bold;
+    line-height: 0.4rem;
+    margin:-0.2rem auto 0;
+    letter-spacing: 3px;
+    font-family:"HYZhuZiChaoRanTiW";
+}
+.btn_select_box{
+    margin:0.26rem 0 0.7rem
+}
+.btn_select{
+    letter-spacing:4px;
+}
+/********************************************************************item3*/
+.item_box3{
+    display:none;
+}
+.act{
+    width: 85%;
+    color:white;
+    font-size: 0.27rem;
+    box-sizing: border-box;
+    padding-left: 0.07rem;
+    line-height:0.5rem;
+    letter-spacing: 4px;
+    margin:0.34rem auto 0.34rem;
+}
+/********************************************************************place兼容*/
+::-webkit-input-placeholder{  /* Chrome/Opera/Safari */
+    color:#fff;
+}
+::-moz-placeholder { /* Firefox 19+ */
+    color:#fff;
+}
+:-ms-input-placeholder { /* IE 10+ */
+    color:#fff;
+}
+:-moz-placeholder { /* Firefox 18- */
+    color:#fff;
+}

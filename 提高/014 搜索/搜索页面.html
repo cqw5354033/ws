@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style type="text/css">
+        table tr th,table tr td{
+            padding: 10px;
+        }
+        table{
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+<table border="1" cellspacing="0" cellpadding="0" id="table">
+    <tr>
+        <th>学号</th>
+        <th>姓名</th>
+        <th>性别</th>
+        <th>年龄</th>
+    </tr>
+    <tr>
+        <td>2014213840</td>
+        <td>张三</td>
+        <td>男</td>
+        <td>20</td>
+    </tr>
+    <tr>
+        <td>2014213841</td>
+        <td>李四</td>
+        <td>男</td>
+        <td>20</td>
+    </tr>
+    <tr>
+        <td>2014213842</td>
+        <td>王三</td>
+        <td>女</td>
+        <td>30</td>
+    </tr>
+</table>
+<input type="text" name="" id="input" value="" placeholder="请输入查询关键字" />
+<input type="button" name="" id="search" value="搜索" />
+</body>
+</html>
+<script src="../jquery-1.11.3.min.js" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript">
+    //第一种没有按钮
+    //实时筛选，不用点击按钮
+    //  var text = "";
+    //  setInterval(function(){
+    //      text = $('#input').val();//获取文本框输入
+    //      if($.trim(text) != ""){
+    //              $("#table tr:not('#theader')").hide().filter(":contains('"+text+"')").show();
+    //      }else{
+    //          $('#table tr').show();//当删除文本框的内容时，又重新显示表格所有内容
+    //      }
+    //  },100);
+
+
+
+    //第二种多个按钮
+    //通过点击按钮开始筛选
+    $(function() {
+        $('#search').click(function() {
+            var text = $('#input').val(); //获取文本框输入
+            if($.trim(text) != "") {
+                $("#table tr:not('#theader')").hide().filter(":contains('" + text + "')").show();
+            }
+        })
+    });
+</script>
+
+

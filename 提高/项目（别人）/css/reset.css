@@ -1,0 +1,31 @@
+body {font:12px/1.5 Microsoft YaHei,SimSun,Arial,Tahoma,Helvetica,sans-serif;color:#525050;background:#fff;font-family:Microsoft YaHei;}
+table{ font-size:inherit;*border-collapse:collapse;*empty-cells:show; }
+td,th{word-break:break-all;word-wrap:break-word; overflow:hidden;font-size:inherit;text-align:left;}
+html,body,div,form,p,h3,h4,ol,ul,li,a,b,span,input,textarea,label,img,i,h1,h2,h3,h4,h5,h6,dl,dt,dd,iframe,pre,fieldset,legend,object,embed{margin: 0; padding: 0;}
+input,select,option,textarea,button,fieldset,legend {font-size:12px;}
+a{outline:none;cursor:pointer;text-decoration:none;}
+a:active {star:expression(this.onFocus=this.blur());}
+a:focus { outline:0; }
+input,button{ outline:none; -moz-outside:none;}
+button::-moz-focus-inner,input::-moz-focus-inner{ border:0px;}
+.pt10{padding-top:10px;}
+/*去除点击按钮时的虚线*/
+input {blr:e­xpression(this.onFocus=this.blur())}
+input {outline:none;}
+img{border:none;}
+.clearfix:after{content: "."; display: block;height: 0; clear: both; visibility: hidden;}
+.clearfix{zoom:1;}
+.fl,.p-item,.topr-area li,.v2-item,.zy-w568{float:left;display:inline;}
+.fr{float:right;display:inline;}
+.vmiddle{vertical-align:middle;}
+img,object{vertical-align:top;}
+ul,li{list-style:none;}
+.z-container{margin-left:auto;margin-right:auto;}
+.relative{position:relative;}
+.clear{clear:both;}
+.clearfix:after{content: "."; display: block;height: 0; clear: both; visibility: hidden;}
+.cle{clear:both;}
+.block{width:950px; margin:26px auto;}
+.mt20{margin-top:20px;}
+.cle{clear:both;}
+/*<meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no'/>*/

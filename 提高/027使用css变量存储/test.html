@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Title</title>
+    <style>
+        /*设置全局变量*/
+        :root{
+            --bg-color:#333;
+            --border-color:#999;
+            --white:white;
+            --pink:pink;
+        }
+        /*设置局部变量*/
+        .box{
+            --box-border-color:#f00;
+            --box-yellow:yellow;
+            --pad20:20px;
+        }
+        body{
+            /* 变量方法：var   变量名：--bg-color  */
+            background: var(--bg-color);
+        }
+        h1{
+            color: var(--white);
+            /*局部变量外的元素调用变量时没用   就像现在一样  */
+            border: 1px solid var(--box-border-color);
+            background: var(--pink);
+        }
+        .grid{
+            --gap:20;
+        }
+        .grid{
+            display: grid;
+            /*网格列宽设置*/
+            grid-template-columns:1fr 50% 1fr 150px;
+            /*网格高度设置*/
+            grid-template-rows: 1fr 1fr;
+            /*间隔 上下10px 左右20px*/
+            grid-gap: 10px 20px;
+            align-items: center;
+            border: 1px solid var(--border-color);
+            padding:calc( var(--gap) * 2px);
+        }
+        .box{
+            border: 1px solid var(--white);
+            color: var(--box-yellow);
+            padding: var(--pad20);
+            background: var(--box-border-color);
+        }
+        
+        .mylist{
+            /*c:#0*/
+            /*c:rgba*/
+            color: rgba(0, 0, 0, 0.5);
+            /*p:r*/
+            position: relative;
+
+            float: left;
+
+            /*cl:n*/
+            clear: none;
+
+            /*ov*/
+            overflow: hidden;
+            /*ova*/
+            overflow: auto;
+
+            /*pb*/
+            padding-bottom:100px;
+
+            /*w100*/
+            width: 100px;
+            /*w2r*/
+            width: 2rem;
+            /*w2e*/
+            width: 2em;
+            /*w50p*/
+            width: 50%;
+            /*ha*/
+            height: auto;
+
+            /*ta*/
+            text-align: left;
+            /*td*/
+            text-decoration: none;
+            /*td:u*/
+            text-decoration: underline;
+
+            font-weight: bold;
+
+            /*组合写法*/
+            padding: 20px;
+            margin: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<h1>CSS Variables  （css变量）</h1>
+<div class="grid">
+    <div class="box">这是内容</div>
+    <div class="box">这是内容</div>
+    <div class="box">这是内容</div>
+    <div class="box">这是内容</div>
+    <div class="box">这是内容</div>
+    <div class="box">这是内容</div>
+    <div class="box">这是内容</div>
+    <div class="box">这是内容</div>
+    <div class="box">这是内容</div>
+    <div class="box">这是内容</div>
+    <div class="box">这是内容</div>
+    <div class="box">这是内容</div>
+    <div class="box">这是内容</div>
+    <div class="box">这是内容</div>
+    <div class="box">这是内容</div>
+    <div class="box">这是内容</div>
+</div>
+
+简写：
+<blockquote>bq 快捷打出</blockquote>
+<header>hdr 快捷打出</header>
+<footer>ftr 快捷打出</footer>
+
+<h1 class="className"> h1.className  </h1>
+<div id="myid" class="myclass">  #myid.myclass   </div>
+
+<!--添加内容：h1{ hedding one }-->
+<h1> hedding one </h1>
+<!--h1.haha{hedding two}-->
+<h1 class="haha"> hedding two </h1>
+
+<!--让内容得数字++-->
+<!--   ul#navigation>li*5>{list item $}  -->
+<ul id="navigation">
+    <li>list item 1</li>
+    <li>list item 2</li>
+    <li>list item 3</li>
+    <li>list item 4</li>
+    <li>list item 5</li>
+</ul>
+
+<!--同级使用 +-->
+<div class="box">
+    <h1></h1>
+    <p class="box-cont"></p>
+</div>
+
+<!--成组得结构-->
+<!--   div>(header>ul>li*2>{item $})+(footer>p>{这是p里得内容})   -->
+<div>
+    <header>
+        <ul>
+            <li>item 1</li>
+            <li>item 2</li>
+        </ul>
+    </header>
+    <footer>
+        <p>这是p里得内容</p>
+    </footer>
+</div>
+<!--input:s-->
+<input type="submit" value="">
+
+<!--select+-->
+<select name="" id="">
+    <option value=""></option>
+</select>
+
+<!--table+-->
+<table>
+    <tr>
+        <td></td>
+    </tr>
+</table>
+
+<!--ul+-->
+<ul>
+    <li></li>
+</ul>
+
+<!--  lorem10  -->
+<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur, dignissimos?</p>
+
+<!--   ul.mylist>lorem10.item*4  -->
+<ul class="mylist">
+    <li class="item">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem, perferendis.</li>
+    <li class="item">Consequatur eius eveniet magnam non nostrum officia voluptas? Sapiente, tempora.</li>
+    <li class="item">Facere facilis inventore laborum magnam natus officiis quidem reiciendis suscipit.</li>
+    <li class="item">Asperiores enim harum illo itaque optio possimus reiciendis sit voluptatem.</li>
+</ul>
+
+
+<script>
+    // js引用css变量
+
+    // 获取到对应的东西
+    const box = document.querySelector('.box');
+    // 获取box下面的所有属性
+    const boxStyle = getComputedStyle(box);
+    // 获取到对应的属性值
+    const boxColor = boxStyle.getPropertyValue('--box-border-color');
+    console.log(boxColor);
+    // 设置属性
+    const header = document.querySelector('h1');
+    header.style.setProperty('--pink',boxColor);
+</script>
+</body>
+</html>

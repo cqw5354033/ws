@@ -1,0 +1,28 @@
+@charset "UTF-8";
+
+.header .modal-dialog{
+  width: 300px;
+  margin: 0;
+  animation: slideInRight .5s forwards;
+}
+.header .modal-content{
+  height: 100vh;
+  border-radius: 0;
+}
+@keyframes slideInRight {
+  0%{transform: translateX(300px)}
+  100%{transform: translateX(0)}
+}
+.header .container > ul{
+  margin: 0;
+}
+.popover{
+  background: black;
+}
+.popover.bottom > .arrow:after{
+  border-bottom-color: black;
+}
+.popover-content{
+  color: white;
+  padding: 3px;
+}

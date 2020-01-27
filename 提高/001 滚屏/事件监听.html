@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #div1{
+            width: 100px;
+            height: 100px;
+            background: red;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+
+<div id="div1"></div>
+
+<script>
+    var div1 = document.getElementById("div1");//获取id
+//  通过on 绑定一个事件     匿名函数
+//    div1.onclick = function(){
+//        alert(1)
+//    }
+
+//    有名函数
+//    div1.onclick = aaa;
+//    function aaa(){
+//        alert(1)
+//    }
+
+//    事件监听        有名函数
+    div1.addEventListener("click",aaa);
+    function aaa(){
+        alert(1)
+    }
+    div1.addEventListener("click",bbb);
+    function bbb(){
+        alert(2)
+    }
+//通过事件监听 ，能实现同时执行多个相同的事件，后面的事件不会覆盖前面的事件
+    div1.addEventListener("click", function(){
+        alert("点第一下")
+    });
+    div1.addEventListener("click", function(){
+        alert("点第二下")
+    })
+</script>
+</body>
+</html>

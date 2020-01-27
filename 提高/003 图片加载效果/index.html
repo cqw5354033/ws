@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        .box img{
+            display: block;
+            width: 400px;/*必写*/
+            height: 400px;
+            background: url("img/5.jpg")no-repeat center;
+            background-size: 100px;
+        }
+    </style>
+
+</head>
+<body>
+<div class="box">
+    <img src="img/blank.gif" data-echo="img/103.jpg" />
+    <img src="" data-echo="img/103.jpg" />
+    <img src="" data-echo="img/103.jpg" />
+    <img src="img/blank.gif" data-echo="img/103.jpg" />
+</div>
+
+<script src="echo.min.js"></script>
+<script>
+    Echo.init({
+        offset: 0,
+        throttle: 2000
+    });
+</script>
+
+</body>
+</html>

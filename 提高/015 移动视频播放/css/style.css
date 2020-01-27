@@ -1,0 +1,51 @@
+@charset "UTF-8";
+* {
+    margin: 0;
+    padding: 0
+}
+
+/*内容页面的设置*/
+li {
+    list-style: none;
+}
+
+.tabPic {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden
+}
+
+.pic {
+    width: 100%;
+    height: 400%;
+    position: absolute;
+    padding: 0;
+    overflow: hidden
+}
+
+.pic li {
+    width: 100%;
+    height: 25%;
+}
+
+.pic li video {
+    width: 100%;
+    height: 90%;
+    object-fit: fill;
+    display: block
+}
+
+.pic li input[type="button"] {
+    background: url("../img/timg.jpg") no-repeat -45px -17px;
+    background-size: cover;
+    outline: none;
+    min-width: 20%;
+    height: 10%;
+    border: none;
+    float: right;
+    padding-left: 50px;
+    padding-right: 10px;
+}
+
+/*.pic li img{width: auto;height: 100%}*/

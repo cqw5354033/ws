@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+    <style>
+        video{
+            margin-top: 70vh;
+            margin-bottom: 200vh;
+        }
+    </style>
+</head>
+<body>
+<video class="videoOne" src="1.mp4"  controls width="100%"  poster="1.gif"></video>
+<video class="videoTwo" controls  preload="auto" muted width="100%" height="300px" loop="1">
+    <source src="2.mp4" type="video/mp4" />
+</video>
+<button>点击添加</button>
+<script>
+    var video1 = document.getElementsByClassName("videoOne")[0];
+    // var video1 = $(".videoOne");
+    $(window).scroll(function(){
+        // 滚动条距离顶部的距离 大于 200px时
+        /*if($(window).scrollTop() >= 100 && $(window).scrollTop() <= 400 ){
+            $(".videoOne").attr("autoplay","true"); //添加自动播放
+        } else{
+            $(".videoOne").removeAttr("autoplay"); // 删除自动播放
+        }*/
+        if($(window).scrollTop() >= 100 && $(window).scrollTop() <= 400 ){
+            video1.play();
+        } else{
+            video1.load();
+        }
+    });
+</script>
+</body>
+</html>

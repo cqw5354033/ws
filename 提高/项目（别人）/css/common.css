@@ -1,0 +1,70 @@
+body{
+	background: #eee;
+}
+header{
+	width:100%;
+	background-color:#12d5b5;
+	height: 1rem;
+	font-size:0.45rem;
+	color: #fff;
+	font-weight: normal;
+	line-height: 1rem; 
+	padding: 0px 10px;
+	box-sizing: border-box;
+}
+header a{
+	display: inline-block;
+	width:1.9rem;
+	height: 0.55rem;
+	background-color:#feae11;
+	font-size: 0.4rem;
+	line-height: 0.55rem;
+	position: absolute;
+	top:0.2rem;
+	right: 0.3rem;
+	color: #fff;
+	text-align: center;
+}
+/*nav导航的部分*/
+nav{
+	width: 100%;
+	height: 1.15rem;
+	border-top:1px solid #e5e5e5;
+	border-buttom:1px solid #e5e5e5;
+	background: #fff;
+	display: flex;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+}
+nav a{
+	display: block;
+	flex: 1;
+	line-height: 1.15rem;
+	text-align: center;
+	color:#a09f9e;
+	font-size: 0.5rem;
+}
+nav a.cur{
+	background-color: #dbf9f4;
+	color: #04c3a4;
+}
+nav a:nth-of-type(1) span{	
+	background: url(../image/document.png) no-repeat;
+	background-position: left center;
+	background-size:0.62rem 0.62rem;
+}
+nav a:nth-of-type(2) span{	
+	background: url(../image/search.png) no-repeat;
+	background-position: left center;
+	background-size:0.62rem 0.62rem;
+}
+nav a:nth-of-type(3) span{	
+	background: url(../image/my.png) no-repeat;
+	background-position: left center;
+	background-size:0.62rem 0.62rem;
+}
+nav a span{
+	padding:0.13rem 0.13rem 0.13rem 0.8rem;	
+	
+}

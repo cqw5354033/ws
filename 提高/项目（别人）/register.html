@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	 <meta name='viewport' content='width=device-width, initial-scale=1.0, user-scalable=no'/>
+	<title>登录</title>	
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/register.css">
+    <script src="./js/jquery-2.0.2.min.js"></script>
+    <!-- 验证插件 -->
+    <script src="./js/jquery-validation.js"></script>
+    <script src="./js/jquery-validation-zh.js"></script>
+
+     <script src='./js/common.js'></script>
+    <script src='./js/register.js'></script>
+</head>
+<body>
+   <!-- 背景div -->
+   <div class="backb">
+     <form class="formc" action="./data/regist.json" id='registForm'>
+       <dl>
+         <dt></dt>
+         <dd><input type="text" placeholder="输入手机号" name="phone"></dd>
+       </dl>
+       <dl>
+         <dt></dt>
+         <dd><input type="text" placeholder="设置六位以上密码" name="password"></dd>
+       </dl>
+       <div class="yzm"><input type="text" name="code" placeholder="短信验证码"><span>发送短信</span></div>
+       <input type="submit" class="big_btn1" value="登录">
+       <a href='./register.html' class="big_btn2">注册</a>
+     </form>
+   </div> 
+</body>
+
+</html>

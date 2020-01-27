@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			padding: 0px;
+			margin: 0px;
+		}
+	    div{
+	    	width:300px;
+	    	height: 300px;
+	    	border: 1px solid #000;
+	    	position: relative;
+	    }
+	    div .inner{
+	    	display: inline-block;
+	    	width:200px;
+	    	height: 200px;
+	    	border: 1px solid #0f0;
+	    	background-color: #000;
+	    	position: absolute;
+	    	
+
+	    }
+	</style>
+</head>
+<body>
+	<div class="div1">
+		<div class="inner"></div>
+	</div>
+	<div class="div2">
+		<div class="inner"></div>
+	</div>
+	<script>
+		//鼠标移出 背景变黑
+		var div1=document.getElementsByClassName('div1')[0];
+		var div2=document.getElementsByClassName('div2')[0];
+		div1.onmouseover=function(){
+			// this.style.backgroundColor='#f00';
+			console.log('over');
+		}
+		//移入子元素时 父元素的移出会触发 
+		div1.onmouseout=function(){
+			this.style.backgroundColor='#000';
+			console.log('out');
+		}
+		div2.onmouseenter=function(){
+			// this.style.backgroundColor='#f00';
+			console.log('enter');
+		}
+		//移入子元素时  父元素的移出 不会触发
+		div2.onmouseleave=function(){
+			this.style.backgroundColor='#000';
+			console.log('leave');
+		}
+	</script>
+</body>
+</html>

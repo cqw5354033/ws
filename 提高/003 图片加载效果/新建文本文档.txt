@@ -1,0 +1,11 @@
+1/ css：给图片设置宽高，设置背景图 loading 动态图，定位到中间  不重复
+2/ 给图片的src引入一个1*1的透明图
+3/ data-echo属性引入真实的图片路径
+4/ 引入<script src="js/echo.min.js"></script>
+5/ 初始化   
+<script>
+	Echo.init({
+   		 offset: 0,
+    		throttle: 0
+	});
+</script>

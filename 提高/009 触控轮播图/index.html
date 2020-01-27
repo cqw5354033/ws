@@ -1,0 +1,131 @@
+<html><head>
+	<title></title>
+	<meta charset="utf-8">
+	<meta content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no" name="viewport">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src='../jquery-1.11.3.min.js'></script>
+	<script src='./js/index.js'></script>
+</head>
+<body style="height: 667px;">
+	<!-- 欢迎页面 -->
+	<div id="welcome" class="page">
+		<!-- 大树 -->
+		<div class="tree">
+			<img src="img/tree.jpg">
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+		<!-- 标题 -->
+		<div class="title">
+			<img src="img/title.png">
+			<span class="shake"></span>
+		</div>
+		<!-- 底部 -->
+		<div class="footer">
+			<img src="img/logo.png">
+		</div>
+	</div>
+	
+	<!-- 内容页面 -->
+	<div id="content" class="page show">
+		<!-- 图片轮播图 -->
+		<div class="tabPic">
+			<!-- 图片列表 -->
+			<ul class="pic">
+				<li><img src="img/1.jpg"></li>
+				<li><img src="img/2.jpg"></li>
+				<li><img src="img/3.jpg"></li>
+				<li><img src="img/4.jpg"></li>
+				<li><img src="img/5.jpg"></li>
+			</ul>
+			<!-- 描述 -->
+			<div class="desc">
+				<p>唐家岭一日游</p>
+				<ul>
+					<li class="active"></li>
+					<li class=""></li>
+					<li class=""></li>
+					<li class=""></li>
+					<li class=""></li>
+				</ul>
+			</div>
+		</div>
+		<!-- 评分 -->
+		<div class="score">
+			<h2>请给景区评分</h2>
+			<ul>
+				<li>
+					<span>综合印象</span>
+					<ul class="star">
+						<li class="active"></li>
+						<li class="active"></li>
+						<li class="active"></li>
+						<li class="active"></li>
+						<li class=""></li>
+						<input type="hidden" name="score" value="比较满意">
+					</ul>
+					
+				</li>
+				<li>
+					<span>服务指数</span>
+					<ul class="star">
+						<li class="active"></li>
+						<li class="active"></li>
+						<li class="active"></li>
+						<li class="active"></li>
+						<li class=""></li>
+						<input type="hidden" name="score" value="比较满意">
+					</ul>					
+				</li>
+				<li>
+					<span>消费指数</span>
+					<ul class="star">
+						<li class="active"></li>
+						<li class="active"></li>
+						<li class="active"></li>
+						<li class="active"></li>
+						<li class="active"></li>
+						<input type="hidden" name="score" value="very good">
+					</ul>
+					
+				</li>
+			</ul>
+		</div>
+		<!-- 添加标签 -->
+		<div class="tags">
+			<h2>给景区添加标签</h2>
+			<label>
+				<input type="radio" name="tag" value="服务好">
+				<span>服务好</span>
+			</label>
+			<label>
+				<input type="radio" name="tag" value="景色赞">
+				<span>景色赞</span>
+			</label>
+			<label>
+				<input type="radio" name="tag" value="千篇一律">
+				<span>千篇一律</span>
+			</label>
+			<label>
+				<input type="radio" name="tag" value="看人海">
+				<span>看人海</span>
+			</label>
+			<label>
+				<input type="radio" name="tag" value="挤爆了">
+				<span>挤爆了</span>
+			</label>
+		</div>
+		<!-- 提交按钮 -->
+		<div class="submit">
+			<p class="info">这是测试信息</p>
+			<input type="submit" value="提交" class="btn">
+		</div>
+	</div>
+	<!-- 感谢页面 -->
+	<div id="thank" class="page">
+		感谢参与
+	</div>
+	
+
+</body></html>

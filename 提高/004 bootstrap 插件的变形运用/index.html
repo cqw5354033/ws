@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--让bootstrap兼容最新版本的ie-->
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <!--以移动设备优先  视窗              宽度=设备宽度              缩放=1         最大缩放=1      禁止用户缩放      -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet/less" href="css/index.less"/>
+</head>
+<body>
+<!--header start-->
+<header class="header navbar navbar-default">
+    <div class="container">
+        <button class="navbar-toggle visible-xs visible-sm navbar-btn navbar-right  " data-toggle="modal" data-target=".aaa">
+            <i class="glyphicon glyphicon-list"></i>
+        </button>
+        <div class="modal aaa slideInRight " tabindex="-1">
+            <div class="modal-dialog navbar-right">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <span class="close" data-dismiss="modal">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <ul class="nav">
+                            <li><a href="">1111</a></li>
+                            <li><a href="">2222</a></li>
+                            <li><a href="">3333</a></li>
+                            <li><a href="">4444</a></li>
+                            <li><a href="">5555</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ul class="nav nav-pills navbar visible-md visible-lg navbar-right ">
+            <li><a href="">1111</a></li>
+            <li><a href="">2222</a></li>
+            <li><a href="">3333</a></li>
+            <li><a href="">4444</a></li>
+            <li class="visible-lg"><a href="">5555</a></li>
+            <li class="visible-md ">
+                <a data-toggle="dropdown" class="glyphicon glyphicon-list "></a>
+                <ul class="dropdown-menu">
+                    <li><a href="">5555</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</header>
+<!--header end-->
+<div data-toggle="popover" data-content="弹出框" data-html="true" data-placement="bottom"
+     data-trigger="hover" class="popoVer navbar-left">
+    一段话
+</div>
+
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/less.min.js"></script>
+
+<script>
+    $(function(){
+        $("[data-toggle='popover']").popover();
+    })
+</script>
+</body>
+</html>

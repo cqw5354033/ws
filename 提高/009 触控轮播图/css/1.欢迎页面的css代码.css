@@ -1,0 +1,91 @@
+*{margin:0;padding: 0}
+.page{width:100%;height:100%;display: none;}
+.show{display: block;}
+img{width:100%;}
+@keyframes tree{
+	100%{transform:translateY(0);opacity: 1}
+}
+@keyframes cloud{
+	100%{transform:translateX(0);}
+}
+.tree img{
+	
+}
+@keyframes footer{
+	100%{transform:translateY(0);opacity: 1}
+}
+.title img{position: absolute;top:56%;}
+.footer img{position: absolute;bottom:20px;transform:translateY(50px);opacity: 0;animation:footer 1s linear 2s;
+	animation-fill-mode:forwards;
+}
+
+/*云朵*/
+.tree{
+	position: absolute;
+	top:15%;
+	opacity: 0;
+	transform:translateY(120px);
+	animation:tree 1s;
+	animation-fill-mode:forwards;
+}
+.tree span{
+	background:url(../img/cloud.png);
+	background-repeat: no-repeat;
+	background-size: 100%;
+	position: absolute;	
+	transform:translateX(60px);
+	animation:cloud 0.5s linear 1s infinite alternate;
+}
+.tree span:nth-of-type(1){
+	width:90px;
+	height:84px;
+	left:90px;
+	top:28px;
+}
+.tree span:nth-of-type(2){
+	width:70px;
+	height:50px;
+	left:190px;
+	top:70px;
+}
+.tree span:nth-of-type(3){
+	width: 54px;
+    height: 39px;
+    top: 15px;
+    left: 270px;
+}
+
+/*标题*/
+@keyframes shake{
+	0%{transform:rotate(30deg);opacity: 0}
+	20%{transform:rotate(-30deg);opacity: 1}
+	40%{transform:rotate(30deg);opacity: 1}
+	60%{transform:rotate(-30deg);opacity: 1}
+	80%{transform:rotate(30deg);opacity: 1}
+	100%{transform:rotate(-30deg);opacity: 1}
+}
+@keyframes title{
+	100%{transform:translateY(0);opacity: 1}
+}
+.title{
+	position: relative;
+	top:60%;
+	opacity: 0;
+	transform:translateY(60px);
+	animation:title 1s linear 1s;
+	animation-fill-mode:forwards;
+}
+.title .shake{
+	background:url(../img/shake.png);
+	width:28px;
+	height: 31px;
+	position: absolute;
+	right: 40px;
+    top: -20px;
+	transform-origin:left bottom;
+	animation:shake 1s linear 2s;
+}
+
+/*内容页面的设置*/
+
+

@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .div1{
+            width: 100px;
+            height: 100px;
+            background: black;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+        }
+        #out{
+            width: 15px;
+            height: 400px;
+            border: 1px solid #000;
+            border-radius: 10px;
+            position: relative;
+            float: left;
+        }
+        #in{
+            width: 15px;
+            height: 40px;
+            border-radius: 10px;
+            background: red;
+            position: absolute;
+        }
+        .c_out{
+            width: 300px;
+            height: 400px;
+            border: 1px solid #000;
+            float: left;
+            /*overflow: scroll;*/
+            overflow: hidden;
+        }
+        .content{
+            line-height: 50px;
+
+        }
+    </style>
+</head>
+<body>
+<div class="c_out">
+    <div class="content">
+        哈哈 <br/>
+        哈哈 <br/>
+        哈哈 <br/>
+        哈哈 <br/>
+        哈哈 <br/>
+        哈哈 <br/>
+        哈哈 <br/>
+        哈哈 <br/>
+        哈哈 <br/>
+        哈哈 <br/>
+        哈哈 <br/>
+        哈哈 <br/>
+        哈哈 <br/>
+        哈哈 <br/>
+    </div>
+</div>
+
+<div id="out">
+    <div id="in"></div>
+</div>
+
+<script>
+    function zhuai(indiv,outdiv,c_in,c_out){
+        var div1 = indiv;
+        var win_h=outdiv.clientHeight;
+        var win_w=outdiv.clientWidth;
+
+        div1.onmousedown = function(){
+            var evt = evt?evt:window.event;
+            //记录鼠标的点击位置
+            var dianx=evt.clientX;
+            var diany=evt.clientY;
+            var chax=dianx-div1.offsetLeft;     //偏移量
+            var chay=diany-div1.offsetTop;
+            window.onmousemove=function(evt){
+                var evt = evt?evt:window.event;
+                var ry = evt.clientY-chay;
+                var rx = evt.clientX-chax;
+                if(ry<=0){
+                    ry=0
+                }
+                if(rx<=0){
+                    rx=0
+                }
+                if(ry>=(win_h-div1.clientHeight)){
+                    ry=win_h-div1.clientHeight;
+                }
+                if(rx>=(win_w-div1.clientWidth)){
+                    rx=win_w-div1.clientWidth;
+                }
+
+
+                div1.style.top = ry+'px';
+                div1.style.left = rx+'px';
+
+                //滚动过程中让内容发生变化  scrollTop（相当于向上滚动了的值）
+                //滚动块Y/(滚动条的高度-滚动块的高度)=scrollTop/(内容高-外层高)
+
+                var scrollT = ry/(outdiv.clientHeight-indiv.clientHeight)*
+                                        (c_in.clientHeight-c_out.clientHeight);
+                c_out.scrollTop = scrollT;
+
+            }
+        };
+
+        //                滚轮滚动 内容和 滚动块 都滚动
+            c_out.onmousewheel = function(evt){
+                var evt = evt?evt:window.event;
+                var rect=evt.detail?evt.detail:evt.wheelDelta;
+                if(rect<0){
+                    //向下滚动
+                    div1.style.top=div1.offsetTop+5+'px';
+
+                    var scrollT = div1.offsetTop/(outdiv.clientHeight-indiv.clientHeight)*
+                            (c_in.clientHeight-c_out.clientHeight);
+                    c_out.scrollTop = scrollT;
+                }
+                if(rect>0){
+                    //向上滚动
+                    div1.style.top=div1.offsetTop-5+'px';
+
+                    var scrollT = div1.offsetTop/(outdiv.clientHeight-indiv.clientHeight)*
+                            (c_in.clientHeight-c_out.clientHeight);
+                    c_out.scrollTop = scrollT;
+                }
+            };
+
+
+        div1.onmouseup=function(){
+//        取消绑定
+            window.onmousemove=null;
+        }
+    }
+
+    var out = document.getElementById('out');
+    var in1 = document.getElementById('in');
+
+    var c_out = document.getElementsByClassName('c_out')[0];
+    var content = document.getElementsByClassName('content')[0];
+    zhuai(in1,out,content, c_out);
+
+//    onscroll 只有内容实际发生滚动的时候 才会触发
+//    c_out.onscroll=function(){
+//        console.log('触发');
+//    };
+
+//    onmousewhell  只要硬件滚轮滚动，就会触发
+//    c_out.onmousewheel = function(){
+//        console.log('触发');
+//    }
+</script>
+</body>
+</html>
