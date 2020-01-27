@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="element-ui/lib/theme-chalk/index.css">
+    <script src="vue.js"></script>
+    <script src="jquery-3.3.1.js"></script>
+    <script src="element-ui/lib/index.js"></script>
+    <style>
+        .el-carousel__item h3 {
+            color: #475669;
+            font-size: 14px;
+            opacity: 0.75;
+            line-height: 150px;
+            margin: 0;
+        }
+
+        .el-carousel__item:nth-child(2n) {
+            background-color: #99a9bf;
+        }
+
+        .el-carousel__item:nth-child(2n+1) {
+            background-color: #d3dce6;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <el-carousel indicator-position="outside" height="500px">
+            <el-carousel-item>
+                <img src="../resources/images/home/banner.jpg" alt="">
+            </el-carousel-item>
+            <el-carousel-item>
+                <img src="../resources/images/home/img1.jpg" alt="">
+            </el-carousel-item>
+            <el-carousel-item>
+                <img src="../resources/images/home/img1.jpg" alt="">
+            </el-carousel-item>
+            <el-carousel-item>
+                <img src="../resources/images/home/img1.jpg" alt="">
+            </el-carousel-item>
+        </el-carousel>
+    </div>
+
+
+    <script>
+        var vue = new Vue({
+            el: '#app',
+
+        })
+    </script>
+</body>
+
+</html>

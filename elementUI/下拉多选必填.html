@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="element-ui/lib/theme-chalk/index.css">
+    <script src="vue.js"></script>
+    <script src="jquery-3.3.1.js"></script>
+    <script src="element-ui/lib/index.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <el-form :model="ruleForm" :rules="rules" ref="ruleForm" label-width="100px" class="demo-ruleForm">
+
+            <el-form-item label="活动区域" prop="value1">
+                <el-select v-model="ruleForm.value1" multiple placeholder="请选择活动区域">
+                    <el-option v-for="item in ruleForm.options" :key="item.value" :label="item.label"
+                        :value="item.value">
+                    </el-option>
+                </el-select>
+            </el-form-item>
+
+            <el-form-item>
+                <el-button type="primary" @click="submitForm('ruleForm')">立即创建</el-button>
+                <el-button @click="resetForm('ruleForm')">重置</el-button>
+            </el-form-item>
+        </el-form>
+    </div>
+
+    <script>
+        var vue = new Vue({
+            el: '#app',
+            data() {
+                var checkIdType = (rule, value, callback) => {
+                    console.log(value);
+                    if (value == "") {
+                        callback(new Error("证照（文件）类型不能为空"));
+                    } else {
+                        callback();
+                    }
+                };
+                return {
+                    ruleForm: {
+                        options: [{
+                            value: '选项1',
+                            label: '黄金糕'
+                        }, {
+                            value: '选项2',
+                            label: '双皮奶'
+                        }, {
+                            value: '选项3',
+                            label: '蚵仔煎'
+                        }, {
+                            value: '选项4',
+                            label: '龙须面'
+                        }, {
+                            value: '选项5',
+                            label: '北京烤鸭'
+                        }],
+                        value1: [],
+                    },
+                    rules: {
+                        value1: [
+                            { required: true, mvalidator: checkIdType, trigger: 'change' }
+                        ],
+                    }
+                };
+            },
+            methods: {
+                submitForm(formName) {
+                    this.$refs[formName].validate((valid) => {
+                        if (valid) {
+                            alert('submit!');
+                        } else {
+                            console.log('error submit!!');
+                            return false;
+                        }
+                    });
+                },
+                resetForm(formName) {
+                    this.$refs[formName].resetFields();
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>
