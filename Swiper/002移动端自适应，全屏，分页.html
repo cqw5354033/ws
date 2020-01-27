@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta name="viewport" content="width=device-width"><!--移动端-->
+    <link rel="stylesheet" href="swiper-4.4.2/dist/css/swiper.min.css">
+    <style>
+        body,html{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .swiper-container{
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-slide{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f2aa31;
+        }
+        .swiper-pagination .swiper-pagination-bullet{  /*或者直接 span 都可以选中*/
+            color: red;
+            background-color: white;
+            border: 1px solid #000;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            overflow: hidden;
+        }
+        .swiper-pagination span img{
+            width: 100%;
+            height: auto;
+        }
+        /*.swiper-slide:nth-child(2n){*/
+            /*width: 60%;*/
+        /*}*/
+        /*.swiper-slide:nth-child(3n){*/
+            /*width: 40%;*/
+        /*}*/
+    </style>
+</head>
+<body>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">第1页</div>
+        <div class="swiper-slide">第2页</div>
+        <div class="swiper-slide">第3页</div>
+        <div class="swiper-slide">第4页</div>
+        <div class="swiper-slide">第5页</div>
+    </div>
+    <div class="swiper-pagination"></div>
+</div>
+<script src="swiper-4.4.2/dist/js/swiper.min.js"></script>
+<script>
+    let mySwiper = new Swiper(".swiper-container",{
+        // direction: 'vertical', // 垂直切换选项
+        preventInteractionOnTransition:true,    //一次滑动一张
+        loop: true, // 循环模式选项
+        pagination:{
+            el:".swiper-pagination",
+            type:"bullets",//分页器样式类型
+            // dynamicBullets: true,//动态分页器，当你的slide很多时，开启后，分页器小点的数量会部分隐藏。
+            // dynamicMainBullets: 2,//动态分页器的主指示点的数量
+            clickable:true,//点击分页器的 指示点 分页器会控制Swiper切换
+            renderBullet: function (index, className) {
+                return '<span class="' + className + '"><image src="../资料一/img/' + ( index  + 1 ) + '.gif"></span>';
+            },
+        },
+        parallax : true,//视察位移变化
+        slidesPerView : "auto",//一行显示几个
+        // slidesPerColumn:3,//显示几行
+        spaceBetween : 20,//滑块之间的距离
+        centeredSlides:true, //设定为true时，active slide会居中，而不是默认状态下的居左。
+        freeMode:true, // 自由滑动内容，也不会自动靠边
+
+    });
+
+
+
+</script>
+</body>
+</html>

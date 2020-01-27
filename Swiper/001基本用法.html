@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="swiper-4.4.2/dist/css/swiper.min.css">
+    <style>
+        .swiper-container{
+            width: 500px;
+            height: 500px;
+            border: 1px solid #000;
+        }
+        .swiper-slide{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f00;
+        }
+    </style>
+</head>
+<body>
+<!--.swiper-container>.swiper-wrapper>.swiper-slide{第$页}*5-->
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">第1页</div>
+        <div class="swiper-slide">第2页</div>
+        <div class="swiper-slide">第3页</div>
+        <div class="swiper-slide">第4页</div>
+        <div class="swiper-slide">第5页</div>
+    </div>
+</div>
+<script src="swiper-4.4.2/dist/js/swiper.min.js"></script>
+<script>
+    let mySwiper = new Swiper(".swiper-container",{
+        // direction: 'vertical', // 垂直切换选项
+        loop: true, // 循环模式选项
+
+    });
+</script>
+</body>
+</html>

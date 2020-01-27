@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>循环模式+图片切换</title>
+    <link rel="stylesheet" href="swiper-4.4.2/dist/css/swiper.min.css">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .swiper-container{
+            width: 100%;
+            height: 500px;
+        }
+        .swiper-slide{
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-size: cover!important;
+        }
+    </style>
+</head>
+<body>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" style="background: url('../资料一/img/43.jpg')">第1页</div>
+        <div class="swiper-slide" style="background: url('../资料一/img/44.jpg')">第2页</div>
+        <div class="swiper-slide" style="background: url('../资料一/img/45.jpg')">第3页</div>
+        <div class="swiper-slide" style="background: url('../资料一/img/46.jpg')">第4页</div>
+        <div class="swiper-slide" style="background: url('../资料一/img/47.jpg')">第5页</div>
+    </div>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-prev swiper-button-black"></div><!--左箭头-->
+    <div class="swiper-button-next swiper-button-black"></div><!--右箭头-->
+</div>
+<script src="swiper-4.4.2/dist/js/swiper.min.js"></script>
+<script>
+    let mySwiper = new Swiper(".swiper-container",{
+        loop:true,
+        pagination:{
+            el:".swiper-pagination",
+        },
+        navigation:{
+            nextEl: '.swiper-button-next',
+            // prevEl: '.swiper-button-prev',
+        },
+        autoplay: {
+            disableOnInteraction: false,//手指触屏滑动之后，重新开启自动轮播
+        },
+        effect:'slide',
+        slidesPerView:4,
+        // centeredSlides:true,
+
+    })
+</script>
+</body>
+</html>

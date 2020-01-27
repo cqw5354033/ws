@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>滚动条</title>
+    <link rel="stylesheet" href="swiper-4.4.2/dist/css/swiper.min.css">
+    <style>
+        body,html{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .swiper-container{
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-slide{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f2aa31;
+        }
+    </style>
+</head>
+<body>
+<div class="swiper-container">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">第1页</div>
+        <div class="swiper-slide">第2页</div>
+        <div class="swiper-slide">第3页</div>
+        <div class="swiper-slide">第4页</div>
+        <div class="swiper-slide">第5页</div>
+    </div>
+    <div class="swiper-scrollbar"></div>
+    <div class="swiper-button-prev swiper-button-white"></div><!--左箭头-->
+    <div class="swiper-button-next swiper-button-black"></div><!--右箭头-->
+</div>
+
+<script src="swiper-4.4.2/dist/js/swiper.min.js"></script>
+<script>
+    let newSwiperh= new Swiper(".swiper-container",{
+        grabCursor:true,
+        spaceBetween:10,
+        loop:true,
+        scrollbar:{ //滚动条
+            el:".swiper-scrollbar",
+            hide:true,//滚动条是否自动隐藏
+            draggable:false,//允许拖动滚动条
+            dragSize:30,//设置滚动条指示的尺寸
+
+        },
+        navigation:{
+            prevEl:".swiper-button-prev",
+            nextEl:".swiper-button-next",
+            hideOnClick: true,//点击时左右箭头显示/隐藏
+
+        }
+    });
+    newSwiperh.scrollbar.$el.css('height','15px');  //获取 滚动条 的HTML元素
+    newSwiperh.scrollbar.$dragEl.css('background','#ff6600');//获取 滚动条 指示条 的HTML元素
+</script>
+</body>
+</html>

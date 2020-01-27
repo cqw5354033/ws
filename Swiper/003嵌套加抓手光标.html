@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="swiper-4.4.2/dist/css/swiper.min.css">
+    <style>
+        body,html{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .swiper-container{
+            width: 100%;
+            height: 100%;
+        }
+        .swiper-slide{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f2aa31;
+        }
+    </style>
+</head>
+<body>
+<div class="swiper-container swiper-container-h">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide">第1页</div>
+        <div class="swiper-slide">
+            <div class="swiper-container swiper-container-v">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">第二页中的第1页</div>
+                    <div class="swiper-slide">第二页中的第2页</div>
+                    <div class="swiper-slide">第二页中的第3页</div>
+                    <div class="swiper-slide">第二页中的第4页</div>
+                    <div class="swiper-slide">第二页中的第5页</div>
+                </div>
+                <div class="swiper-pagination swiper-pagination-v"></div>
+            </div>
+        </div>
+        <div class="swiper-slide">第3页</div>
+        <div class="swiper-slide">第4页</div>
+        <div class="swiper-slide">第5页</div>
+    </div>
+    <div class="swiper-pagination swiper-pagination-h"></div>
+</div>
+<script src="swiper-4.4.2/dist/js/swiper.min.js"></script>
+<script>
+    let newSwiperh= new Swiper(".swiper-container-h",{
+        grabCursor:true,
+        spaceBetween:10,
+        pagination:{
+            el:".swiper-pagination-h",
+            clickable:true,
+            type:"bullets",
+        }
+    });
+    let newSwiperv = new Swiper(".swiper-container-v",{
+        grabCursor:true,
+        direction:"vertical",
+        spaceBetween:10,
+        pagination:{
+            el:".swiper-pagination-v",
+            clickable:true,
+            type:"bullets",
+        }
+    });
+</script>
+</body>
+</html>
