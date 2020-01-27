@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--让bootstrap兼容最新版本的ie-->
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <!--以移动设备优先  视窗              宽度=设备宽度              缩放=1         最大缩放=1      禁止用户缩放      -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <style>
+        .carousel .item img{
+            width: 100vw;
+            height: 100vh;
+        }
+    </style>
+</head>
+<body>
+
+<div class="carousel slide" id="banner">
+            <!--放轮播的内容-->
+    <div class="carousel-inner">
+        <div class="item active">
+            <img src="../img/77.jpg" alt=""/>
+            <div class="carousel-caption">
+                <h2>这是第一块的标题</h2>
+                <p>这就是文字描述</p>
+                <p>这就是文字描述这就是文字描述</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="../img/78.jpg" alt=""/>
+            <div class="carousel-caption">
+                <h2>这是第一块的标题</h2>
+                <p>这就是文字描述</p>
+                <p>这就是文字描述这就是文字描述</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="../img/73.jpg" alt=""/>
+            <div class="carousel-caption">
+                <h2>这是第一块的标题</h2>
+                <p>这就是文字描述</p>
+                <p>这就是文字描述这就是文字描述</p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="../img/75.jpg" alt=""/>
+            <div class="carousel-caption">
+                <h2>这是第一块的标题</h2>
+                <p>这就是文字描述</p>
+                <p>这就是文字描述这就是文字描述</p>
+            </div>
+        </div>
+    </div>
+    <ol class="carousel-indicators">
+        <li data-target="#banner" data-slide-to="0" class="active"></li>
+        <li data-target="#banner" data-slide-to="1"></li>
+        <li data-target="#banner" data-slide-to="2"></li>
+        <li data-target="#banner" data-slide-to="3"></li>
+    </ol>
+    <a href="#banner" data-slide="prev" class="carousel-control left">
+        <i class="glyphicon glyphicon-chevron-left"></i>
+    </a>
+    <a href="#banner" data-slide="next" class="carousel-control right">
+        <i class="glyphicon glyphicon-chevron-right"></i>
+    </a>
+</div>
+
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/bootstrap.js"></script>
+<!--初始化-->
+<script>
+    $( function(){
+        $(' #banner ').carousel({
+            interval : 1000
+        });
+    })
+</script>
+轮播图：类名：carouse  slide
+        轮播的内容部分：carouse-inner   item  active  carouse-caption
+        小圆点：carouse-indicators  绑定目标：data-target="" 绑定项目：data-slide-to=""
+        左右按钮： href="锚链接"  绑定功能：data-slide="" 上一个：prev 下一个：next
+                    类名：.carousel-control left, .carousel-control right
+                    字体图标：glyphicon glyphicon-chevron-left  glyphicon glyphicon-chevron-right
+</body>
+</html>

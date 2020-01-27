@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--让bootstrap兼容最新版本的ie-->
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <!--以移动设备优先  视窗              宽度=设备宽度              缩放=1         最大缩放=1      禁止用户缩放      -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <style>
+        .a{
+            width: 200px;
+        }
+        .b input:focus{
+            background: red;
+        }
+
+    </style>
+</head>
+<body>
+
+<!--按钮大小-->
+<a href="" class="btn btn-sm">按钮</a>
+<a href="" class="btn btn-lg">按钮</a>
+<a href="" class="btn btn-xs">按钮</a>
+<a href="" class="btn btn-md">按钮</a>
+
+<!--按钮宽全屏-->
+<a href="" class="btn btn-block bg-danger">按钮</a>
+<button class="btn btn-link bg-success">按钮</button> ？
+
+            <!--按钮组件     按钮大小      垂直按钮组-->
+<div class="btn-group btn-group-lg btn-group-vertical">
+    <!--按钮颜色-->
+    <a href="" class="btn btn-warning">按钮</a>
+    <a href="" class="btn btn-danger">按钮</a>
+    <a href="" class="btn btn-info">按钮</a>
+    <a href="" class="btn btn-primary">按钮</a>
+    <a href="" class="btn btn-success">按钮</a>
+    <a href="" class="btn btn-default">按钮 默认样式</a> <br/>
+</div>
+<br/>
+            <!--表单组件-->
+<div class="input-group">
+                                   <!--表单控制-->
+    <input type="search" class="form-control"/>
+                <!--表单组中的按钮-->
+    <span class="input-group-btn">
+        <button class="btn btn-default" type="submit">
+            <i class="glyphicon glyphicon-search"></i>
+        </button>
+    </span>
+</div>
+
+<div class="input-group">
+    <label for="username" class="input-group-addon">姓名</label>
+    <input type="text" id="username" class="form-control"/>
+</div>
+
+<div class="input-group a">
+    <span class="input-group-addon">
+        <input type="checkbox"/>
+    </span>
+    <input type="text" class="form-control"/>
+</div>
+
+<div class="input-group">
+    <span class="input-group-addon">
+        <i class="glyphicon glyphicon-save"></i>
+    </span>
+    <input type="text" class="form-control"/>
+</div>
+
+<div class="btn-group">
+    <button class="btn btn-default">
+        <i class="glyphicon glyphicon-save"></i>
+        按钮
+    </button>
+    <span class="btn btn-default">
+        <i class="glyphicon glyphicon-save"></i>
+    </span>
+</div>
+
+<div class="btn-group btn-group-justified">
+    <div class="btn-group">
+        <button class="btn btn-danger">按钮</button>
+    </div>
+    <div class="btn-group">
+        <button class="btn btn-danger">按钮</button>
+    </div>
+    <div class="btn-group">
+        <button class="btn btn-danger">按钮</button>
+    </div>
+</div>
+
+<!--向下小三角-->
+<span class="caret"></span>
+
+<form action="" class="input-group b">
+    <span class="input-group-btn">
+        <button class="btn btn-default" type="submit">
+            The shite
+        </button>
+    </span>
+    <input type="search" class="form-control" placeholder="search..."/>
+</form>
+
+
+
+
+
+
+
+<br/>
+xs:max-width:768                    移动端
+sm:min-width:768  max-width:992     pad端
+md:min-width:992  max-width:1200    pc端
+lg:min-width:1200                   pc宽屏
+
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/bootstrap.js"></script>
+
+</body>
+</html>

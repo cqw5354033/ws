@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--让bootstrap兼容最新版本的ie-->
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <!--以移动设备优先  视窗              宽度=设备宽度              缩放=1         最大缩放=1      禁止用户缩放      -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/animate.css"/>
+    <link rel="stylesheet/less" href="css/header.less"/>
+    <link rel="stylesheet/less" href="css/subject.less"/>
+    <link rel="stylesheet/less" href="css/top.less"/>
+</head>
+<body data-spy="scroll" data-target=".header" data-offset="50">
+<!--header start-->
+<header class="navbar header" data-spy="affix">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2 navbar-header">
+                <a href="index.html" class="navbar-brand" title="百度" data-toggle="tooltip"  data-placement="bottom">
+                    <img src="img/logo.png" alt="">
+                </a>
+                <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <i class="glyphicon glyphicon-list"></i>
+                </button>
+            </div>
+            <div class="col-sm-8 col-md-6">
+                <ul class="collapse navbar-collapse nav navbar-nav navbar-pills">
+                    <li class="active"><a href="index.html">关于百度</a></li>
+                    <li><a href="about.html">关于产品</a></li>
+                    <li><a href="Join-us.html">加入我们</a></li>
+                    <li><a href="contact-us.html">联系我们</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-2 col-md-4 navbar-btn">
+                <div class="navbar-left hidden-xs hidden-sm">
+                    <span>中文</span> |
+                    <a href="">EN</a>
+                </div>
+                <div class="visible-sm">
+                    <a data-toggle="dropdown" class="glyphicon glyphicon-list "></a>
+                    <div class="dropdown-menu">
+                        <span>中文</span> |
+                        <a href="">EN</a>
+                    </div>
+                </div>
+                <form action="" class="visible-lg visible-md navbar-right">
+                    <input type="search" placeholder="站内搜索" />
+                    <input type="submit" value="百度一下"/>
+                </form>
+            </div>
+        </div>
+    </div>
+</header>
+<!--header end-->
+
+<!--main start-->
+<main class="main">
+    <div class="content">
+        <div class="row">
+            <h1>DuerOS</h1>
+            <a href="" class="col-xs-10 col-xs-offset-3 col-sm-offset-4 col-md-6 col-md-offset-5" title="百度" data-toggle="tooltip" data-placement="right">
+                <img src="img/100.png" alt="" class="img-responsive"/>
+            </a>
+            <p class="col-md-6 col-md-offset-3">
+                百度集团总裁兼首席运营官陆奇表示，人工智能技术在推动社会发展方面拥有巨大的潜力，而智能汽车是其中最大的产业机会之一。此次，百度将把自己所拥有的最强、最成熟、最安全的自动驾驶技术开放给业界，旨在建立一个以合作为中心的生态体系
+            </p>
+            <p class="col-md-6 col-md-offset-3 hidden-xs">
+                而将这个计划命名为“Apollo”计划，就是借用了阿波罗登月计划，意指具备开创性，又需要汇聚众多参与者的力量，能为社会发展带来巨大推动力的超级工程。百度相信自动驾驶和智能汽车也是这样的事业。
+            </p>
+            <a href="" class="col-xs-12 col-md-6 col-md-offset-3" title="百度" data-toggle="tooltip" data-placement="right">
+                <img src="img/101.jpg" alt="" class="img-responsive"/>
+            </a>
+        </div>
+    </div>
+</main>
+<!--main end-->
+
+<!--footer start-->
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="section">
+                <div class="footer-top">
+                    <span>实时资讯请关注：</span>
+                    <div class="top-wechat hidden-xs">
+                        <img src="img/11.png" alt="" />
+                    </div>
+                    <a href=""><img src="img/13.png" alt=""/></a>
+                    <a href=""><img src="img/14.png" alt=""/></a>
+                    <a href=""><img src="img/15.png" alt=""/></a>
+                </div>
+                <div class="footer-center clearfix">
+                    <div class="footer-more">
+                        <h4>更多信息</h4>
+                        <a href="">社会责任</a>
+                        <a href="">联系我们</a>
+                    </div>
+                    <div class="footer-more">
+                        <h4>商业合作</h4>
+                        <a href="">百度联盟</a>
+                        <a href="">百度推广</a>
+                        <a href="">营销中心</a>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    © Baidu <a href="">使用百度前必读</a>  京ICP证030173号
+                </div>
+            </div>
+
+        </div>
+    </div>
+</footer>
+<!--footer end-->
+
+<div id="top">
+    <img src="img/up.png" alt=""/>
+</div>
+
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/less.min.js"></script>
+<script src="js/top.js"></script>
+<script>
+    //    初始化
+    $(function(){
+        $("[data-toggle='tooltip']").tooltip();
+    })
+</script>
+<!--[if lt ie 9]>
+<script>
+    window.onload = function(){
+        var aBody =  document.getElementsByTagName('body')[0];
+        aBody.innerHTML = '你的浏览器版本太低，<a href="https://www.baidu.com">点击此处升级</a>'
+    }
+</script>
+
+<![endif]-->
+</body>
+</html>

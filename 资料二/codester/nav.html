@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--让bootstrap兼容最新版本的ie-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--以移动设备优先 视窗                  宽度=设备宽度        缩放=1            最大缩放=1        禁止用户缩放-->
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <style>
+        .header{
+            background: #1C2B36;
+            margin-bottom: 0;
+            z-index: 1111111;
+            width: 100%;
+            border-radius: 0;
+            border: 0;
+        }
+        .header img{
+            max-height: 22px;
+        }
+        .header .mainNav li:hover,.header .mainNav .active a,.header .mainNav .active a:focus,.header .mainNav .active a:hover,.header .Login:hover,.header .navbar-collapse li:hover{
+            background: #16232D;
+        }
+        .header .mainNav li a,.header .navbar-collapse li a:hover{
+            color: #869FB1 !important;
+        }
+        .header .mainNav li a:hover{
+            color: white !important;
+        }
+        .header .Login{
+            background: none;
+            color: #fff;
+        }
+        .header .navbar-toggle{
+            border: 0;
+        }
+        .header .navbar-toggle:hover,.header .navbar-toggle:focus{
+            background: none;
+            outline: 0;
+        }
+        .header .navbar-toggle:hover i{
+            background: #2A6496;
+        }
+        .header .navbar-collapse .open a{
+            background: #16232D !important;
+        }
+        .header .navbar-collapse .dropdown-menu li a{
+            background: white !important;
+        }
+        .header .navbar-collapse .dropdown-menu li a:hover{
+            color: #000 !important;
+            background: #f5f5f5 !important;
+        }
+        .header .navbar-collapse .dropdown-menu{
+            position: relative;
+            animation: inDown .5s linear both;
+        }
+        @keyframes inDown {
+            0%{top:-30px}
+            100%{top:0}
+        }
+        .header #login h2{
+            margin: 0;
+        }
+        nav.navbar{
+            background: white;
+            border-radius: 0;
+            margin-bottom: 0;
+        }
+        .header .navbar-form input,.header .navbar-form button{
+            background: #EDF1F2;
+            border: 0;
+            outline: 0;
+            box-shadow: none;
+            height: 32px;
+        }
+        #banner .imgBg{
+            height: calc(100vh - 100px);
+        }
+        #banner a{
+            line-height: calc(100vh - 100px);
+        }
+        @media (max-width: 768px) {
+            #banner .imgBg{
+                height: calc(100vh - 50px);
+            }
+            #banner a{
+                line-height: calc(100vh - 50px);
+            }
+        }
+        #banner .imgBg{
+            background: no-repeat center;
+            background-size: cover;
+        }
+        #banner .item:first-of-type .imgBg{
+            background-image: url("img/banner01.jpg") ;
+        }
+        #banner .item:nth-of-type(2) .imgBg{
+            background-image: url("img/banner02.jpg") ;
+        }
+        #banner .item:nth-of-type(3) .imgBg{
+            background-image: url("img/banner03.jpg") ;
+        }
+        #banner .item:last-of-type .imgBg{
+            background-image: url("img/banner04.jpg") ;
+        }
+        #sec1,#sec2,#sec3,#sec4,#sec5{
+            height: 100vh;
+        }
+        #sec1{
+            background: red;
+        }
+        #sec2{
+            background: blue;
+        }
+        #sec3{
+            background: black;
+        }
+        #sec4{
+            background: yellow;
+        }
+        #sec5{
+            background: green;
+        }
+    </style>
+</head>
+<body data-spy="scroll" data-target=".header" data-offset="100">
+<header class="navbar navbar-default header" data-spy="affix" data-offset-top="700">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="nav.html" class="navbar-brand" title="codester" data-toggle="tooltip" data-placement="bottom"><img src="img/logo-dark.png" alt=""/></a>
+            <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <i class="icon-bar"></i>
+                <i class="icon-bar"></i>
+                <i class="icon-bar"></i>
+            </button>
+        </div>
+        <ul class="nav navbar-nav nav-pills hidden-xs mainNav ">
+            <li><a href="#sec1">Free Files</a></li>
+            <li><a href="#sec2">Open a store</a></li>
+            <li><a href="#sec3">Become an affiliate</a></li>
+            <li><a href="#sec4">Forum</a></li>
+            <li><a href="#sec5">Blog</a></li>
+        </ul>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav visible-xs">
+                <li>
+                    <a data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-plus"></span>
+                        Scripts & Code
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="">PHP Scripts</a></li>
+                        <li><a href="">JavaScript</a></li>
+                        <li><a href="">CSS</a></li>
+                        <li><a href="">Python</a></li>
+                        <li><a href="">Java</a></li>
+                        <li><a href="">Ruby</a></li>
+                        <li><a href="">C & C++</a></li>
+                        <li><a href="">C#</a></li>
+                        <li><a href="">VB.NET</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-plus"></span>
+                        App Templates
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="">PHP Scripts</a></li>
+                        <li><a href="">JavaScript</a></li>
+                        <li><a href="">CSS</a></li>
+                        <li><a href="">Python</a></li>
+                        <li><a href="">Java</a></li>
+                        <li><a href="">Ruby</a></li>
+                        <li><a href="">C & C++</a></li>
+                        <li><a href="">C#</a></li>
+                        <li><a href="">VB.NET</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-plus"></span>
+                        Themes
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="">PHP Scripts</a></li>
+                        <li><a href="">JavaScript</a></li>
+                        <li><a href="">CSS</a></li>
+                        <li><a href="">Python</a></li>
+                        <li><a href="">Java</a></li>
+                        <li><a href="">Ruby</a></li>
+                        <li><a href="">C & C++</a></li>
+                        <li><a href="">C#</a></li>
+                        <li><a href="">VB.NET</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-plus"></span>
+                        Plugins
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="">PHP Scripts</a></li>
+                        <li><a href="">JavaScript</a></li>
+                        <li><a href="">CSS</a></li>
+                        <li><a href="">Python</a></li>
+                        <li><a href="">Java</a></li>
+                        <li><a href="">Ruby</a></li>
+                        <li><a href="">C & C++</a></li>
+                        <li><a href="">C#</a></li>
+                        <li><a href="">VB.NET</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a data-toggle="dropdown">
+                        <span class="glyphicon glyphicon-plus"></span>
+                        Graphics
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="">PHP Scripts</a></li>
+                        <li><a href="">JavaScript</a></li>
+                        <li><a href="">CSS</a></li>
+                        <li><a href="">Python</a></li>
+                        <li><a href="">Java</a></li>
+                        <li><a href="">Ruby</a></li>
+                        <li><a href="">C & C++</a></li>
+                        <li><a href="">C#</a></li>
+                        <li><a href="">VB.NET</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="navbar-right">
+                <a href="login.html" class="btn navbar-btn btn-sm Login hidden-sm" data-toggle="modal" data-target="#login">Login</a>
+                <div class="modal fade" id="login" data-backdrop="false" tabindex="-1">
+                    <div class="modal-dialog">
+                        <div class="modal-content"></div>
+                    </div>
+                </div>
+                <button class="btn btn-success navbar-btn btn-sm hidden-sm" title="注册" data-toggle="popover" data-html="true" data-content='
+<form action="">
+        <div class="input-group">
+            <label for="tel" class="input-group-addon">手机号</label>
+            <input type="tel" id="tel" class="form-control"/>
+        </div>
+        <br/>
+        <div class="input-group">
+            <label for="password2" class="input-group-addon">密码</label>
+            <input type="password" id="password2" class="form-control"/>
+        </div>
+        <br>
+        <button class="btn btn-default">注册</button>
+    </form>
+                ' data-placement="bottom">Sign up</button>
+            </div>
+        </div>
+    </div>
+    <nav class="navbar hidden-xs">
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <li>
+                    <a data-toggle="dropdown">
+                        Scripts & Code
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="01、全局样式.html">PHP Scripts</a></li>
+                        <li><a href="02、按钮组件表单组件.html">JavaScript</a></li>
+                        <li><a href="03、导航组件和导航条组件.html">CSS</a></li>
+                        <li><a href="04、栅格布局.html">Python</a></li>
+                        <li><a href="05、折叠插件和下拉菜单.html">Java</a></li>
+                        <li><a href="06、滚动监听.html">Ruby</a></li>
+                        <li><a href="07、附加导航.html">C & C++</a></li>
+                        <li><a href="08、模态框.html">C#</a></li>
+                        <li><a href="09、提示工具与弹出框.html">VB.NET</a></li>
+                        <li><a href="10、轮播图.html">VB.NET</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a data-toggle="dropdown">
+                        App Templates
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="01、全局样式.html">PHP Scripts</a></li>
+                        <li><a href="02、按钮组件表单组件.html">JavaScript</a></li>
+                        <li><a href="03、导航组件和导航条组件.html">CSS</a></li>
+                        <li><a href="04、栅格布局.html">Python</a></li>
+                        <li><a href="05、折叠插件和下拉菜单.html">Java</a></li>
+                        <li><a href="06、滚动监听.html">Ruby</a></li>
+                        <li><a href="07、附加导航.html">C & C++</a></li>
+                        <li><a href="08、模态框.html">C#</a></li>
+                        <li><a href="09、提示工具与弹出框.html">VB.NET</a></li>
+                        <li><a href="10、轮播图.html">VB.NET</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a data-toggle="dropdown">
+                        Themes
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="01、全局样式.html">PHP Scripts</a></li>
+                        <li><a href="02、按钮组件表单组件.html">JavaScript</a></li>
+                        <li><a href="03、导航组件和导航条组件.html">CSS</a></li>
+                        <li><a href="04、栅格布局.html">Python</a></li>
+                        <li><a href="05、折叠插件和下拉菜单.html">Java</a></li>
+                        <li><a href="06、滚动监听.html">Ruby</a></li>
+                        <li><a href="07、附加导航.html">C & C++</a></li>
+                        <li><a href="08、模态框.html">C#</a></li>
+                        <li><a href="09、提示工具与弹出框.html">VB.NET</a></li>
+                        <li><a href="10、轮播图.html">VB.NET</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a data-toggle="dropdown">
+                        Plugins
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="01、全局样式.html">PHP Scripts</a></li>
+                        <li><a href="02、按钮组件表单组件.html">JavaScript</a></li>
+                        <li><a href="03、导航组件和导航条组件.html">CSS</a></li>
+                        <li><a href="04、栅格布局.html">Python</a></li>
+                        <li><a href="05、折叠插件和下拉菜单.html">Java</a></li>
+                        <li><a href="06、滚动监听.html">Ruby</a></li>
+                        <li><a href="07、附加导航.html">C & C++</a></li>
+                        <li><a href="08、模态框.html">C#</a></li>
+                        <li><a href="09、提示工具与弹出框.html">VB.NET</a></li>
+                        <li><a href="10、轮播图.html">VB.NET</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a data-toggle="dropdown">
+                        Graphics
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a href="01、全局样式.html">PHP Scripts</a></li>
+                        <li><a href="02、按钮组件表单组件.html">JavaScript</a></li>
+                        <li><a href="03、导航组件和导航条组件.html">CSS</a></li>
+                        <li><a href="04、栅格布局.html">Python</a></li>
+                        <li><a href="05、折叠插件和下拉菜单.html">Java</a></li>
+                        <li><a href="06、滚动监听.html">Ruby</a></li>
+                        <li><a href="07、附加导航.html">C & C++</a></li>
+                        <li><a href="08、模态框.html">C#</a></li>
+                        <li><a href="09、提示工具与弹出框.html">VB.NET</a></li>
+                        <li><a href="10、轮播图.html">VB.NET</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form action="" class="navbar-form navbar-right hidden-xs hidden-sm">
+                <div class="input-group">
+                    <input type="search" class="form-control"/>
+                    <span class="input-group-btn">
+                        <button class="btn btn-default">
+                            <i class="glyphicon glyphicon-search"></i>
+                        </button>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </nav>
+</header>
+<section class="carousel slide" id="banner">
+    <div class="carousel-inner">
+        <div class="item active">
+            <div class="imgBg"></div>
+        </div>
+        <div class="item">
+            <div class="imgBg"></div>
+        </div>
+        <div class="item">
+            <div class="imgBg"></div>
+        </div>
+        <div class="item">
+            <div class="imgBg"></div>
+        </div>
+    </div>
+    <ol class="carousel-indicators">
+        <li data-target="#banner" data-slide-to="0" class="active"></li>
+        <li data-target="#banner" data-slide-to="1"></li>
+        <li data-target="#banner" data-slide-to="2"></li>
+        <li data-target="#banner" data-slide-to="3"></li>
+    </ol>
+    <a href="#banner" class="carousel-control left" data-slide="prev"><i class="glyphicon glyphicon-arrow-left"></i></a>
+    <a href="#banner" class="carousel-control right" data-slide="next"><i class="glyphicon glyphicon-arrow-right"></i></a>
+</section>
+<section id="sec1"></section>
+<section id="sec2"></section>
+<section id="sec3"></section>
+<section id="sec4"></section>
+<section id="sec5"></section>
+
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/bootstrap.js"></script>
+<script>
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip();
+        $('[data-toggle="popover"]').popover();
+        $('#banner').carousel({
+            interval : 2000
+        });
+        $('.header .mainNav a').click(function () {
+            $('body').animate({
+                scrollTop : $(this.hash).offset().top
+            });
+            return false
+        })
+    })
+</script>
+</body>
+</html>

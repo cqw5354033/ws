@@ -1,0 +1,38 @@
+@charset "UTF-8";
+.bg(@bs:cover){
+  background-size: @bs;
+  -webkit-background-size: @bs;
+}
+@f1:1px;
+body{
+  background:url("../img/55.jpg")no-repeat center;
+  height: 1000px;
+  .bg(contain);
+  font-size: @f1 * 12;
+}
+
+.box{
+  width: 1000px;
+  margin: 0 auto;
+  .left{
+    > a{
+      font-size: 20px;
+    }
+    ul{
+      li{
+        list-style: none;
+        a{
+          color: red;
+          &:hover{
+            color: yellow;
+          }
+        }
+      }
+    }
+    a + ul li ~ li{
+      font-size: 40px;
+    }
+  }
+}
+
+

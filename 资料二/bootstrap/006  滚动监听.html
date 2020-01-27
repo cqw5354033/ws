@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--让bootstrap兼容最新版本的ie-->
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <!--以移动设备优先  视窗              宽度=设备宽度              缩放=1         最大缩放=1      禁止用户缩放      -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <style>
+        .myNav a:hover {
+            background: blue!important;
+        }
+        @media (min-width: 1300px) {
+            .container{
+                width: 1270px;
+            }
+        }
+        .bb .nav,.bb .navbar-nav>li{
+            float: none;
+        }
+        .bb .navbar-nav>li{
+            display: inline-block;
+        }
+        .cc{
+            background: yellow;
+        }
+        body>section{
+            height: 100vh;
+        }
+        #sec1{
+            background: red;
+        }
+        #sec2{
+            background: blue;
+        }
+        #sec3{
+            background: green;
+        }
+        #sec4{
+            background: yellow;
+        }
+        #sec5{
+            background: grey;
+        }
+        #sec6{
+            background: #0091e1;
+        }
+        #sec7{
+            background: mediumvioletred;
+        }
+        #sec8{
+            background: gold;
+        }
+        #sec9{
+            background: greenyellow;
+        }
+        #sec10{
+            background: palegreen;
+        }
+    </style>
+</head>
+        <!--滚动监听                            绑定(包含ul)-->
+<body data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+<header>
+                                         <!--导航条的固定定位-->
+    <nav class="navbar navbar-default bb navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="" class="navbar-brand">公司名字</a>
+                <button class="navbar-toggle" data-toggle="collapse" data-target="aa">
+                    <!--<i class="glyphicon glyphicon-list"></i>-->
+                    <i class="icon-bar"></i>
+                    <i class="icon-bar"></i>
+                    <i class="icon-bar"></i>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse aa">
+                <ul class="nav navbar-nav text-center">
+                    <li><a href="#sec1">首页</a></li>
+                    <li><a href="#sec2">关于</a></li>
+                    <li>
+                        <a href="" data-toggle="dropdown">方案
+                            <span class="caret"></span>
+                        </a>
+                                                        <!--菜单向右对齐-->
+                        <ul class="dropdown-menu cc dropdown-menu-right">
+                            <li><a href="#sec3">下拉菜单</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#sec8">下拉菜单</a></li>
+                            <li><a href="#sec9">下拉菜单</a></li>
+                            <li><a href="#sec10">下拉菜单</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#sec4">练习</a></li>
+                    <li><a href="#sec5">新闻</a></li>
+                    <li><a href="#sec6">大新闻</a></li>
+                    <li><a href="#sec7">小新闻</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+<!--section#sec$*7-->
+<section id="sec1"></section>
+<section id="sec2"></section>
+<section id="sec3"></section>
+<section id="sec4"></section>
+<section id="sec5"></section>
+<section id="sec6"></section>
+<section id="sec7"></section>
+<section id="sec8"></section>
+<section id="sec9"></section>
+<section id="sec10"></section>
+<pre>
+    滚动监听：导航条的固定定位：navbar-fixed-top（最上边）navbar-fixed-bottom（最下边）
+    滚动监听：data-spy="scroll"
+    绑定目标（必须包含ul）data-target=".nav"
+    锚点距离最上边的距离data-offset="50"
+</pre>
+<a href="#sec1" class="top btn btn-danger">点击返回顶部</a>
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/bootstrap.js"></script>
+<script>
+    $(function() {
+//        导航条中的a         绑定点击事件
+        $('.nav li a,.top').click(function(){
+//            给body部分 添加动画效果
+            $('body').animate({
+//                滚动条上边的距离 点击的a对应的锚链接的 最上边
+                scrollTop : $(this.hash).offset().top
+            });
+            return false;
+        })
+    })
+</script>
+</body>
+</html>

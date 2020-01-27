@@ -1,0 +1,261 @@
+@charset "utf-8";
+/****************************************projectText star*/
+#projectText .main .item{
+	padding: 0;
+	background: #eee;
+}
+#projectText .main .item div{
+	padding: 0;
+}
+
+#projectText .main .item div img{
+	max-height: 100%;
+}
+#projectText .main .item .text{
+	padding: 20px 17px 0;
+	font-size: 16px;
+	line-height: 1;
+}
+#projectText .main .item .text span{
+	display: inline-block;
+	width: 80px;
+}
+#projectText .main .item .text a{
+	display: inline-block;
+	text-align: center;
+	width: 80px;
+	height: 26px;
+	font-size:18px;
+	line-height: 26px;
+	color: #fff;
+}
+#projectText .main .item .text .hot{
+	background: #1926da;	
+}
+#projectText .main .item .text .more{
+	background: #bfbfbf;
+}
+@media only screen and (min-width: 1200px) {
+	#projectText .main .item .text p:last-of-type{
+		padding-top: 0;
+	}
+}
+@media only screen and (max-width: 992px) and (min-width: 768px) {
+	#projectText .main .item .text{
+		padding-bottom: 30px;		
+	}
+	#projectText .main>div:nth-of-type(odd){
+		border-right:5px solid #fff;
+	}
+	#projectText .main>div:nth-of-type(even){
+		border-left:5px solid #fff;
+	}
+	#projectText .main .item{
+		margin-bottom: 10px;
+	}
+}
+@media only screen and (max-width: 768px) {	
+	#projectText .main>div img{
+		width: 100%;
+	}
+	#projectText .main .item .text{
+		padding-bottom: 35px;		
+	}
+	#projectText .main>div{
+		border-left:15px solid #fff;
+		border-right:15px solid #fff;
+	}
+	#projectText .main .item{
+		margin-bottom: 10px;
+	}
+	#projectText .main .item .text span{
+		width: 140px;
+	}
+}
+/****************************************projectText end*/
+/****************************************teamInteroduction star*/
+.carousel .text img{
+	padding: 5px;
+	border: 1px solid #000;
+	max-height: 200px;
+}
+#banner .img img{
+	max-height: 340px;
+}
+.carousel .carousel-control{
+	background: none;
+	color: #999999;
+	top: 50%;
+	transform: translateY(-50%);
+}
+.carousel .carousel-control .left{
+	text-align: left;
+}
+.carousel .carousel-control .left{
+	text-align: right;
+}
+.carousel .carousel-indicators{
+	width: 100%;
+	left: 0;
+	margin:0 ;
+	bottom: 0;
+	transform: translateY(90%);
+}
+.carousel .carousel-indicators li{
+	padding: 10px;
+	width: calc(100% / 8 - 0px);
+	height: auto;
+	background: none;
+	border: 0;
+}
+.carousel .carousel-indicators li img{
+	margin: 0 auto;
+	border-radius: 50%;
+	padding: 0;
+	 box-shadow: 0 0 0 3px #fff;
+	 transition: all .35s;
+}
+.carousel .carousel-indicators li.active img{
+	box-shadow: 0 0 0 3px #ff0000;
+}
+@media only screen and (min-width:1200px ) {
+	
+	.carousel .img{
+		padding: 0 40px;
+	}
+	.carousel .text{
+		padding: 40px;
+		font-size: 16px;
+	}		
+}
+/*#banner .img img{*/
+	/*max-height: 374px;*/
+/*}*/
+
+@media only screen and (min-width:768px ) {
+	#teamInteroduction{
+		margin-bottom: 190px;
+	}
+	#teamInteroduction .address{
+		margin-top: 150px;
+	}
+	#teamInteroduction .item{
+		height: 350px;
+	}
+	.carousel .text{
+		padding: 10px;	
+		font-size: 16px;
+	}
+	#banner .img{
+		text-align: center;
+	}
+}
+.carousel .text p span{
+	display: block;
+}
+#teamInteroduction .active{
+	margin: 1px;
+}
+@media only screen and (max-width:768px ) {
+
+	#teamInteroduction .item{
+		padding-right: 5px;
+		min-height: 260px;
+	}
+	.carousel .text img{
+		top: 0;	
+	}
+	.carousel .text{
+		padding: 10px;	
+		font-size: 12px;
+	}	
+	.carousel .text p{
+		margin-bottom: 5px;
+	}
+	.carousel .text p span{
+		display: inline;
+	}
+	.carousel .text p a{
+		display: block;
+	}
+}
+
+/****************************************teamInteroduction end*/
+/****************************************investNews star*/
+#investNews{
+	margin-bottom: 40px;
+}
+#investNews .toNews{
+	background:rgb(70,82,243);
+}
+#investNews .col-xs-5 img{
+	width: 100px;
+	height: 100px;
+}
+#investNews .main{
+	background: url(../images/new_bg_03.jpg) repeat-y center top;
+	padding: 50px;
+}
+#investNews .main .item .bg{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);	
+}
+#investNews .main .item:nth-of-type(odd){
+	margin-right: 10px;
+}
+#investNews .main .item:nth-of-type(odd) .bg{
+	right: -8px;
+}
+#investNews .main .item:nth-of-type(even) .bg{
+	left: -8px;
+}
+#investNews .main .item:nth-of-type(odd) .img{
+	float: right;
+}
+#investNews .img{
+	border: 8px solid #fff;
+	border-radius:2px ;
+	box-shadow: 0 0 5px #999;
+}
+#investNews .main .time{
+	color: #f49a45;
+	line-height: 40px;
+	font-size: 20px;
+}
+#investNews .main .text span{
+  display:-webkit-box;   
+  -webkit-box-orient:vertical;   
+  -webkit-line-clamp:3;   
+  overflow:hidden; 
+}
+#projectText img{
+	margin: 0 auto;
+}
+#projectText{
+	padding-bottom: 50px;
+}
+#projectText .main{
+	margin-top: 15px;
+}
+@media only screen and (max-width:768px ) {
+	#investNews .main{
+		background:none;	
+		padding: 20px;	
+	}
+	#investNews .main .item .bg{
+		display: none;
+	}
+	#investNews .main .item{
+		margin-right: 0 !important;
+		float: none !important;
+	}
+	#investNews .main .item .img{
+		float: none !important;
+	}
+	#investNews .main .item .col-xs-5{
+		text-align: center;
+		margin: 10px auto;
+	}
+}
+/****************************************investNews end*/

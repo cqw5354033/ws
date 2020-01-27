@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--让bootstrap兼容最新版本的ie-->
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <!--以移动设备优先  视窗              宽度=设备宽度              缩放=1         最大缩放=1      禁止用户缩放      -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <style>
+        .a{
+            height: 100px;
+            border: 1px solid red;
+        }
+        .box{
+            border: 1px solid black;
+        }
+        .a1{
+            background: red;
+        }
+        .a2{
+            background: yellow;
+        }
+        .a3{
+            background: blue;
+        }
+        .a4{
+            background: green;
+        }
+    </style>
+</head>
+<body>
+<pre>
+    固定宽：container
+    全屏宽：container-fluid
+    xs:max-width:768                    移动端
+    sm:min-width:768  max-width:992     pad端
+    md:min-width:992  max-width:1200    pc端
+    lg:min-width:1200                   pc宽屏
+    辅助工具：隐藏 hidden-*
+              显示 visible-*
+    列偏移：col-*-offset-*
+    列排序：向右：col-*-push-*
+            向左：col-*-pull-*
+</pre>
+
+<div class="container">
+    <div class="row box">
+        <div class="col-md-1 a">1</div>
+        <div class="col-md-1 a">2</div>
+        <div class="col-md-1 a">3</div>
+        <div class="col-md-1 a">4</div>
+        <div class="col-md-1 a">5</div>
+        <div class="col-md-1 a">6</div>
+        <div class="col-md-1 a">7</div>
+        <div class="col-md-1 a">8</div>
+        <div class="col-md-1 a">9</div>
+        <div class="col-md-1 a">10</div>
+        <div class="col-md-1 a">11</div>
+        <div class="col-md-1 a">12</div>
+    </div>
+    <div class="row">
+        <div class="col-md-4 col-sm-6 a">12</div>
+        <div class="col-md-4 col-sm-2 a">12</div>
+        <div class="col-md-4 col-sm-4 a">12</div>
+    </div>
+    <div class="row">
+        <div class="col-lg-5 col-md-4 col-sm-8 col-xs-12 a">左</div>
+        <div class="col-lg-7 col-md-6 col-sm-4 hidden-xs a">右</div>
+        <div class="col-md visible-md-2 a">33333</div>
+    </div>
+
+    <div class="row">
+        <div class="a1 a col-md-5 hidden-xs col-sm-6"></div>
+        <div class="a2 a col-md-3 col-xs-12 hidden-sm"></div>
+        <div class="a3 a col-md-4 hidden-xs col-sm-6"></div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="a1 a col-md-4 hidden-sm"></div>
+        <div class="a2 a col-md-4 hidden-sm"></div>
+        <div class="a3 a col-md-4 hidden-sm"></div>
+        <div class="a4 a col-md-4 col-sm-8 col-sm-offset-2 col-md-offset-0 hidden-md"></div>
+    </div>
+    <br/>`
+    <div class="row">
+        <div class="a a1 col-md-4 col-sm-8 col-sm-push-4 col-md-push-0"></div>
+        <div class="a a3 col-md-8 col-sm-4 col-sm-pull-8 col-md-pull-0"></div>
+    </div>
+    <br/>
+    <div class="row">
+        <div class="a col-md-4 hidden-sm a1 hidden-xs"></div>
+        <div class="a col-md-4 col-sm-5 a2 col-xs-4 col-sm-push-5 col-md-push-0 "></div>
+        <div class="a col-md-4 col-sm-7 a3 col-xs-5 col-sm-pull-7 col-md-pull-0 "></div>
+        <div class="a col-xs-3 a4 visible-xs col-xs-pull-9"></div>
+
+    </div>
+</div>
+
+
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/bootstrap.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+.transition(@ts1:1s){
+  -webkit-transition: @ts1;
+  -moz-transition: @ts1 ;
+  -ms-transition: @ts1 ;
+  -o-transition: @ts1 ;
+  transition: @ts1 ;
+}
+@c000:rgba(100,100,100,.5);
+@f1:1px;
+.box{
+  background: @c000;
+  p{
+    outline: @c000;
+    padding-top: @f1;
+    background: #eee;
+    .transition(@ts1: 3s);
+    span{
+      color: red;
+      .transition;
+      &:hover{
+        color: blue;
+      }
+    }
+  }
+}
+
+
+
+

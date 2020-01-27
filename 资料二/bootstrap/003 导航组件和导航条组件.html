@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--让bootstrap兼容最新版本的ie-->
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <!--以移动设备优先  视窗              宽度=设备宽度              缩放=1         最大缩放=1      禁止用户缩放      -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <style>
+        .myNav img{
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+<pre>
+    导航的基类：nav      表格式导航：nav-tabs    胶囊式导航；nav-pills     两端对齐：nav-justified
+    垂直导航：nav-stacked
+    选中项：active       禁用项：disabled       divider
+    导航条的基类:navbar  默认样式：navbar-default  导航条的头部：navbar-header  品牌（logo）navbar-brand
+    导航条中的元素：
+    右浮动：navbar-right 左浮动：navbar-left 导航；navbar-nav  表单：navbar-form  按钮：navbar-btn
+</pre>
+
+<ul class="nav nav-tabs nav-justified">
+    <li class="active"><a href="">首页</a></li>
+    <li class="disabled"><a href="">关于</a></li>
+    <li class="divider"><a href="">服务</a></li>
+    <li class=""><a href="">方案</a></li>
+    <li class=""><a href="">联系</a></li>
+</ul>
+<!--导航条的基类-->
+<div class="navbar navbar-default myNav">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="" class="navbar-brand"><img src="../img/1_1.png" alt=""/></a>
+        </div>
+        <ul class="nav  navbar-nav">
+            <li class="active"><a href="">首页</a></li>
+            <li class=""><a href="">关于</a></li>
+            <li class=""><a href="">服务</a></li>
+            <li class=""><a href="">方案</a></li>
+            <li class=""><a href="">联系</a></li>
+        </ul>
+        <button class="btn btn-default navbar-btn navbar-left">按钮</button>
+        <form action="" class="navbar-form navbar-left">
+            <div class="input-group">
+                <input type="search" class="form-control"/>
+                <span class="input-group-btn">
+                    <button class="btn btn-default">
+                        <i class="glyphicon glyphicon-search"></i>
+                    </button>
+                </span>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/bootstrap.js"></script>
+</body>
+</html>

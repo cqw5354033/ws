@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--让bootstrap兼容最新版本的ie-->
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <!--以移动设备优先  视窗              宽度=设备宽度              缩放=1         最大缩放=1      禁止用户缩放      -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+</head>
+<body>
+
+<div class="jumbotron">
+    巨幕:jumbotron    一般用在比较醒目的大的区块
+</div>
+
+<div class="container">
+    <div class="jumbotron">
+        这个时候巨幕有圆角
+    </div>
+</div>
+<div class="panel panel-danger">
+    <div class="panel-heading"></div>
+    <div class="panel-body"></div>
+    <div class="panel-footer"></div>
+</div>
+
+            <!--缩略图-->
+<div class="thumbnail">
+                                             <!--带边框的缩略图-->
+    <img src="../img/45.jpg" alt="" class="img-thumbnail"/>
+    <h2>哈哈</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dolore doloribus, ducimus enim et expedita id iure iusto labore laboriosam maxime minus, mollitia numquam odio omnis provident sapiente tempore, veniam!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dolore doloribus, ducimus enim et expedita id iure iusto labore laboriosam maxime minus, mollitia numquam odio omnis provident sapiente tempore, veniam!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dolore doloribus, ducimus enim et expedita id iure iusto labore laboriosam maxime minus, mollitia numquam odio omnis provident sapiente tempore, veniam!</p>
+
+</div>
+
+            <!--媒体组件   该组件实现图文混排效果时，一般图片较大-->
+<div class="media">
+    <div class="media-body">
+        <h2>哈哈</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dolore doloribus, ducimus enim et expedita id iure iusto labore laboriosam maxime minus, mollitia numquam odio omnis provident sapiente tempore, veniam!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dolore doloribus, ducimus enim et expedita id iure iusto labore laboriosam maxime minus, mollitia numquam odio omnis provident sapiente tempore, veniam!</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum dolore doloribus, ducimus enim et expedita id iure iusto labore laboriosam maxime minus, mollitia numquam odio omnis provident sapiente tempore, veniam!</p>
+    </div>
+    <a href="" class="media-right"><img src="../img/77.jpg" alt="" class="img-circle img-thumbnail"/></a>
+</div>
+            <!--该组件实现图文混排效果时，一般图片较小-->
+<dl class="dl-horizontal">
+    <dt><img src="../img/78.jpg" alt="" class="img-responsive"/></dt>
+    <dd>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad, alias atque blanditiis debitis dignissimos dolorem esse ex minus nam nihil perspiciatis praesentium quas quibusdam saepe tenetur voluptas. Accusamus, fugit?</p>
+    </dd>
+</dl>
+图片：img-thumbnail（带边框的缩略图）  img-responsive（响应式）  img-circle（图标椭圆）  img-rounded（图标加圆角）
+            <!--面包蟹导航-->
+<ol class="breadcrumb">
+    <li><a href="">首页</a></li>
+    <li><a href="">产品</a></li>
+    <li><a href="">汽车</a></li>
+    <li><a href="">宝马</a></li>
+    <li><a href="">X6</a></li>
+</ol>
+            <!--分页-->
+<ol class="pagination">
+    <li><a href="">首页</a></li>
+    <li><a href="">产品</a></li>
+    <li><a href="">汽车</a></li>
+    <li><a href="">宝马</a></li>
+    <li><a href="">X6</a></li>
+</ol>
+
+            <!--分页    previous上一页     next下一页-->
+<ul class="pager">
+    <li class="previous"><a href="">上一页</a></li>
+    <li class="next"><a href="">下一页</a></li>
+</ul>
+
+<button class="btn btn-danger">
+    未读邮件
+    <span class="badge">5</span>
+</button>
+
+<div>
+                        <!--label 标签-->
+    随便<span class="label label-info">哈哈</span>
+</div>
+
+            <!--列表组-->
+<nav class="list-group ">
+                        <!--列表项-->
+    <a href="" class="list-group-item list-group-item-success">列表组</a>
+    <a href="" class="list-group-item">列表组</a>
+    <a href="" class="list-group-item">列表组</a>
+    <a href="" class="list-group-item">列表组</a>
+    <a href="" class="list-group-item">列表组</a>
+</nav>
+<br/>
+<br/>
+<br/>
+<!--基类：table  表格的响应式（小于768时四周都加边框）：table-responsive  表格边框：table-bordered-->
+<table class="table table-responsive table-bordered table-hover table-striped">
+    <tr class="danger">
+        <th>序号</th>
+        <th>年龄</th>
+        <th>班级</th>
+        <th>性别</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>20</td>
+        <td>计算机</td>
+        <td>男</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>20</td>
+        <td>计算机</td>
+        <td>男</td>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td>20</td>
+        <td>计算机</td>
+        <td>男</td>
+    </tr>
+</table>
+<!--有一个凹陷效果的背景色-->
+<div class="well"></div>
+
+<!--进度条-->
+<div class="progress">
+                <!--里边的条-->
+    <div class="progress-bar progress-bar-success" style="width: 30%"></div>
+    <div class="progress-bar progress-bar-danger" style="width: 30%"></div>
+</div>
+<div class="progress">
+    <div class="progress-bar progress-bar-success progress-bar-striped active" style="width: 30%"></div>
+</div>
+                <!--嵌入式-->
+<div class="embed-responsive embed-responsive-16by9">
+    <embed src="" type="" width="100%" height="100%"></embed>
+</div>
+
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/bootstrap.js"></script>
+</body>
+</html>

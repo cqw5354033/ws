@@ -1,0 +1,106 @@
+@charset "UTF-8";
+html{
+  font-size: 62.5%;
+}
+a:hover{
+  text-decoration: none;
+}
+@f1:1px;
+@media (max-width: 768px) {
+  .tab-wrap {
+    margin: 0 20px!important;
+  }
+  .main{
+    margin: 0 20px!important;
+  }
+}
+//-------------------------------------tab start-------------------------------------
+.tab{
+  background: #f8f8f8;
+  width: 100%;
+  height: 38px;
+  padding: 0;
+  float: none;
+  zoom: 1;
+  .tab-wrap{
+    margin: 0 128px;
+    font-size: @f1*15;
+    line-height: 38px;
+    a{
+      color: #0000d0;
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+    span{
+      color: #666;
+    }
+  }
+}
+//-------------------------------------tab end-------------------------------------
+
+//-------------------------------------main start-------------------------------------
+.main{
+  margin: 0 128px;
+  h3{
+    font-size: @f1*16;
+    padding-bottom: 10px;
+    margin: 30px 0 0 0;
+    border-bottom: 1px solid #ebebeb;
+    color: #333;
+    sup{
+      color: #fff;
+      padding-left: 2px;
+      vertical-align: top;
+      background-color: #f43d39;
+      margin-left: 6px;
+      top: 8px;
+      font-size: 18px;
+    }
+  }
+  .main-content{
+    float: left;
+    padding: 15px 0 16px 10px;
+    border-bottom: 1px solid #f3f3f3;
+    a{
+      img{
+        width: 24px;
+        height: 24px;
+        float: left;
+        margin:0 8px 4px 0;
+        display: inline-block;
+        font-weight: bold;
+      }
+    }
+    .content{
+      a{
+        &:hover{
+          color: #014cd2;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+//-------------------------------------main end-------------------------------------
+
+//-------------------------------------footer start-------------------------------------
+.footer{
+  height: 42px;
+  line-height: 42px;
+  border-top: 1px solid #ebebeb;
+  background-color: #f8f8f8;
+  text-align: center;
+  color: #666;
+  font-size: @f1*13;
+  margin-top: 40px;
+  width: 100%;
+  a{
+    color: #606060;
+    &:hover{
+      text-decoration: underline;
+      color: black;
+    }
+  }
+}
+//-------------------------------------footer end-------------------------------------

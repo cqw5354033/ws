@@ -1,0 +1,121 @@
+@charset "UTF-8";
+html{
+  font-size: 62.5%;
+}
+a:hover{
+  text-decoration: none;
+}
+@f1:1px;
+//========================================main start========================================
+.main{
+  padding: 85px 0 0;
+  .content{
+    width: 100%;
+    background-color: #FAFAFA;
+    padding: 2%;
+    h1{
+      font-size: 28px!important;
+    }
+    .row{
+      margin: 15px 0;
+      padding: 60px 106px;
+      box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.20);
+      color: #545454;
+      font-size: 14px;
+      line-height: 22px;
+      background: white;
+      text-align: center;
+      h2{
+        line-height: 2.5rem;
+        margin-top: 3rem;
+        padding-bottom: 3rem;
+        color: #2298f4;
+        font-size: 28px;
+      }
+      a{
+        display: block;
+        padding: 10px 0 20px;
+      }
+      p{
+        color: #666666;
+      }
+    }
+  }
+}
+@media (max-width: 768px) {
+  .content{
+    .row{
+      padding: 25px 16px!important;
+      h2{
+        font-size: 20px!important;
+      }
+    }
+  }
+
+
+}
+//========================================main end========================================
+
+//========================================footer start==========================================
+.footer{
+  background: white;
+  .row{
+    padding: 0 60px;
+    .section{
+      .footer-top{
+        font-size: 16px;
+        color: #666666;
+        line-height: 6rem;
+        text-align: left;
+        border-bottom: 1px #E8E8E9 solid;
+        img{
+          margin-right: 6px;
+        }
+        .top-wechat{
+          display: inline-block;
+          margin-right: @f1*6;
+          img{
+            margin-right: 0;
+          }
+        }
+      }
+      .footer-center{
+        .footer-more{
+          margin-right: 10%;
+          float: left;
+          h4{
+            font-size: 20px;
+            color: #666666;
+            line-height: 60px;
+            text-align: left;
+          }
+          a{
+            display: block;
+            font-size: 16px;
+            color: #999999;
+            line-height: 25px;
+            text-align: left;
+            &:hover{
+              color: black;
+            }
+          }
+        }
+      }
+      .footer-bottom{
+        font-size: 14px;
+        color: #666666;
+        line-height: 14px;
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 20px;
+        a{
+          color: inherit;
+          &:hover{
+            color: black;
+          }
+        }
+      }
+    }
+  }
+}
+//========================================footer end==========================================

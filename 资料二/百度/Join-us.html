@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--让bootstrap兼容最新版本的ie-->
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <!--以移动设备优先  视窗              宽度=设备宽度              缩放=1         最大缩放=1      禁止用户缩放      -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet/less" href="css/header.less"/>
+    <link rel="stylesheet/less" href="css/Join-us.less"/>
+    <link rel="stylesheet" href="css/animate.css"/>
+
+</head>
+<body data-spy="scroll" data-target=".header" data-offset="50">
+<!--header start-->
+<header class="navbar header" data-spy="affix" data-offset-top="200">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2 navbar-header">
+                <a href="index.html" class="navbar-brand" title="百度" data-toggle="tooltip"  data-placement="bottom">
+                    <img src="img/logo.png" alt="">
+                </a>
+                <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <i class="glyphicon glyphicon-list"></i>
+                </button>
+            </div>
+            <div class="col-sm-8 col-md-6">
+                <ul class="collapse navbar-collapse nav navbar-nav navbar-pills">
+                    <li class="active"><a href="index.html">关于百度</a></li>
+                    <li><a href="about.html">关于产品</a></li>
+                    <li><a href="Join-us.html">加入我们</a></li>
+                    <li><a href="contact-us.html">联系我们</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-2 col-md-4 navbar-btn">
+                <div class="navbar-left hidden-xs hidden-sm">
+                    <span>中文</span> |
+                    <a href="">EN</a>
+                </div>
+                <div class="visible-sm">
+                    <a data-toggle="dropdown" class="glyphicon glyphicon-list "></a>
+                    <div class="dropdown-menu">
+                        <span>中文</span> |
+                        <a href="">EN</a>
+                    </div>
+                </div>
+                <form action="" class="visible-lg visible-md navbar-right">
+                    <input type="search" placeholder="站内搜索" />
+                    <input type="submit" value="百度一下"/>
+                </form>
+            </div>
+        </div>
+    </div>
+</header>
+<!--header end-->
+
+<section id="home">
+    <div class="carousel slide" id="banner">
+        <div class="carousel-inner">
+            <div class="item active">
+                <div class="carousel-bg"></div>
+                <div class="carousel-Caption">
+                    <span>招最好的人，给最大的空间 </span>
+                    <span>看最后的结果，让优秀人才脱颖而出</span>
+                </div>
+            </div>
+            <div class="item">
+                <div class="carousel-bg"></div>
+                <div class="carousel-Caption">
+                    <span>招最好的人，给最大的空间 </span>
+                    <span>看最后的结果，让优秀人才脱颖而出</span>
+                </div>
+            </div>
+            <div class="item">
+                <div class="carousel-bg"></div>
+                <div class="carousel-Caption">
+                    <span>招最好的人，给最大的空间 </span>
+                    <span>看最后的结果，让优秀人才脱颖而出</span>
+                </div>
+            </div>
+        </div>
+        <a href="#banner" data-slide="prev" class="carousel-control left">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+        </a>
+        <a href="#banner" data-slide="next" class="carousel-control right">
+            <i class="glyphicon glyphicon-chevron-right"></i>
+        </a>
+    </div>
+    <div class="footer">
+        <div class="row">
+            <div class="col-xs-4">
+                <a href="">
+                    <img src="img/76.png" alt=""/>
+                    <img src="img/77.png" alt="" class="hidden"/>
+                    <p>
+                        社会招聘
+                    </p>
+                </a>
+            </div>
+            <div class="col-xs-4">
+                <a href="">
+                    <img src="img/78.png" alt=""/>
+                    <img src="img/79.png" alt="" class="hidden"/>
+                    <p>
+                        校园招聘
+                    </p>
+                </a>
+            </div>
+            <div class="col-xs-4">
+                <a href="">
+                    <img src="img/80.png" alt=""/>
+                    <img src="img/81.png" alt="" class="hidden"/>
+                    <p>
+                        百度校园
+                    </p>
+                </a>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/less.min.js"></script>
+<script src="js/wow.min.js"></script>
+<!--[if lt ie 9]>
+<script>
+    window.onload = function(){
+        var aBody =  document.getElementsByTagName('body')[0];
+        aBody.innerHTML = '你的浏览器版本太低，<a href="https://www.baidu.com">点击此处升级</a>'
+    }
+</script>
+
+<![endif]-->
+</body>
+</html>

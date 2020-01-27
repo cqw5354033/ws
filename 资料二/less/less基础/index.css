@@ -1,0 +1,11 @@
+@charset "UTF-8";
+
+.box{
+    background: #ccc;
+}
+.box p{
+    background: #eee;
+}
+.box p span{
+    color: red;
+}

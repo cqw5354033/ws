@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--让bootstrap兼容最新版本的ie-->
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <!--以移动设备优先  视窗              宽度=设备宽度              缩放=1         最大缩放=1      禁止用户缩放      -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+</head>
+<body>
+提示工具：绑定功能：data-toggle="tooltip"
+            位置：data-placement="right"（right  left  top bottom）
+
+弹出框：绑定功能：data-toggle="popover"
+弹出块的标题部分：title="标题"
+弹出框的内容部分：data-content="内容部分"
+弹出框的位置：data-placement="bottom"
+弹出框的触发方式：data-trigger="hover"  鼠标移入：hover  点击：click  获得焦点：focus
+弹出块的延迟时间：data-delay="1000"
+弹出块的内容部分支持解析标签：data-html="true"
+弹出框是否支持动画（淡入淡出）：data-animation="true 或 false"
+
+<div class="text-center">
+    <a href="" title="百度" data-toggle="tooltip" data-placement="right" data-delay="3000">百度</a>
+    <a href="" title="百度" data-toggle="tooltip" data-placement="top">百度</a>
+    <a href="" title="百度" data-toggle="tooltip" data-placement="left">百度</a>
+    <a href="" title="百度" data-toggle="tooltip" data-placement="bottom">百度</a>
+    <p title="一段话" data-toggle="tooltip" data-placement="top">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur at atque eaque, earum eligendi enim est ex exercitationem fugit illo illum labore mollitia nihil perspiciatis, qui quia repellat tempore. Atque?</p>
+</div>
+
+
+<div data-toggle="popover" title="<h2>这是个主标签</h2>" data-content='
+<a href="modal.html" class="btn btn-success  navbar-btn" data-toggle="modal" data-target=".login">登录</a>
+    <!--模态框的声明层 -->
+    <div class="modal login fade" tabindex="-1" data-backdrop="false" >
+        <!--模态框的窗口声明层-->
+        <div class="modal-dialog">
+            <!--模态框内容声明层-->
+            <div class="modal-content"></div>
+        </div>
+    </div>
+    ' data-html="true" data-placement="bottom"  data-animation="true">弹出框</div>
+
+<input type="text" title="弹出框" data-trigger="focus" data-toggle="popover" data-delay="1000"/>
+
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/bootstrap.js"></script>
+<script>
+//    初始化
+    $(function(){
+        $("[data-toggle='tooltip']").tooltip();
+        $("[data-toggle='popover']").popover();
+    })
+</script>
+</body>
+</html>

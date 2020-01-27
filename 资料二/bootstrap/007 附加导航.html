@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--让bootstrap兼容最新版本的ie-->
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <!--以移动设备优先  视窗              宽度=设备宽度              缩放=1         最大缩放=1      禁止用户缩放      -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <style>
+        #sec1,#sec2,#sec3,#sec4,#sec5{
+            height: 100vh;
+        }
+        #sec1{
+            background: red;
+        }
+        #sec2{
+            background: blue;
+        }
+        #sec3{
+            background: green;
+        }
+        #sec4{
+            background: yellow;
+        }
+        #sec5{
+            background: grey;
+        }
+        .asideBar li{
+            width: 200px;
+        }
+    </style>
+</head>
+<pre>
+    附加导航：body 做滚动监听：data-spy="scroll"
+                绑定目标：data-target=".类名 或 #id"
+        附加导航：固定定位：data-spy="affix"
+            在什么时候添加固定定位：data-offset-top="300"
+</pre>
+        <!--监听滚动条          绑定目标-->
+<body data-spy="scroll" data-target=".asideBar">
+<div class="container">
+    <div class="row">
+        <div class="col-md-3 asideBar">
+                                                             <!--附加导航      滚动到什么时候在变成固定定位-->
+            <ul class="nav nav-pills nav-stacked text-center" data-spy="affix" data-offset-top="451">
+                <li><a href="#sec1">附加导航1</a></li>
+                <li><a href="#sec2">附加导航2</a></li>
+                <li><a href="#sec3">附加导航3</a></li>
+                <li><a href="#sec4">附加导航4</a></li>
+                <li><a href="#sec5">附加导航5</a></li>
+            </ul>
+        </div>
+        <div class="col-md-9">
+            <section id="sec1"></section>
+            <section id="sec2"></section>
+            <section id="sec3"></section>
+            <section id="sec4"></section>
+            <section id="sec5"></section>
+        </div>
+    </div>
+</div>
+
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/bootstrap.js"></script>
+<script>
+    $(function(){
+        $(' .asideBar ul li a ').click(function(){
+            $('body').animate({
+                scrollTop:$(this.hash).offset().top
+            });
+            return false;
+        })
+    })
+</script>
+</body>
+</html>

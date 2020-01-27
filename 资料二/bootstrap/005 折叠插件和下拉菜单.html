@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--让bootstrap兼容最新版本的ie-->
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <!--以移动设备优先  视窗              宽度=设备宽度              缩放=1         最大缩放=1      禁止用户缩放      -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <style>
+        @media (max-width: 768px) {
+            .navbar-header{
+                background: red;
+            }
+        }
+        .myNav a:hover {
+            background: blue!important;
+        }
+    </style>
+</head>
+<body>
+<!--导航条中的折叠-->
+<div class="navbar navbar-default">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="" class="navbar-brand">logo</a>
+            <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                <i class="glyphicon glyphicon-list"></i>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="">首页</a></li>
+                <li><a href="">关于</a></li>
+                <li>
+                    <a href="" data-toggle="dropdown" class="dropdown-toggle">方案 <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="">下拉菜单</a></li>
+                        <li><a href="">下拉菜单</a></li>
+                        <li><a href="">下拉菜单</a></li>
+                        <li><a href="">下拉菜单</a></li>
+                    </ul>
+                </li>
+                <li><a href="">练习</a></li>
+                <li><a href="">新闻</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<!--普通的折叠效果-->
+                                    <!--绑定功能    折叠      绑定目标-->
+<button class="btn btn-default" data-toggle="collapse" data-target=".myNav">折叠</button>
+<ul class="myNav collapse">
+    <li class="active"><a href="">首页</a></li>
+    <li><a href="">关于</a></li>
+    <li><a href="">方案</a></li>
+    <li><a href="">练习</a></li>
+    <li><a href="">新闻</a></li>
+</ul>
+
+<!--面板中的折叠-->
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <a href="#sec1" class="btn btn-success" data-toggle="collapse">面板的折叠</a>
+    </div>
+    <div class="collapse panel-collapse" id="sec1">
+        <div class="panel-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aspernatur beatae, dolorem eaque eligendi enim ex exercitationem fuga itaque maxime natus nihil nostrum omnis provident quasi ratione sit vel, veritatis.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aspernatur beatae, dolorem eaque eligendi enim ex exercitationem fuga itaque maxime natus nihil nostrum omnis provident quasi ratione sit vel, veritatis.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aspernatur beatae, dolorem eaque eligendi enim ex exercitationem fuga itaque maxime natus nihil nostrum omnis provident quasi ratione sit vel, veritatis.</p>
+        </div>
+        <div class="panel-footer">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus consequuntur debitis deserunt doloribus eos exercitationem incidunt, labore magnam maxime necessitatibus nemo omnis perspiciatis, praesentium quas rem soluta ut voluptatibus!</p>
+        </div>
+    </div>
+</div>
+
+<!--下拉菜单-->
+<div class="dropdown">
+    <button class="btn btn-primary " data-toggle="dropdown">
+        下拉菜单
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        <li><a href="">首页</a></li>
+        <li><a href="">关于</a></li>
+        <li><a href="">方案</a></li>
+        <li><a href="">练习</a></li>
+        <li><a href="">新闻</a></li>
+    </ul>
+</div>
+
+<div class="btn-group">
+    <button class="btn btn-default">按钮</button>
+    <button class="btn btn-default" data-toggle="dropdown">
+        <span class="caret"></span>
+    </button>
+    <ul class="dropdown-menu">
+        <li><a href="">下拉</a></li>
+        <li><a href="">下拉</a></li>
+        <li><a href="">下拉</a></li>
+        <li><a href="">下拉</a></li>
+        <li><a href="">下拉</a></li>
+    </ul>
+</div>
+
+
+<!--手风琴-->
+<div class="panel-group" id="content">
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+                                                                                 <!--绑定父级-->
+            <a href="#sec2" class="btn btn-success" data-toggle="collapse" data-parent="#content">面板的折叠</a>
+        </div>
+        <div class="collapse panel-collapse" id="sec2">
+            <div class="panel-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aspernatur beatae, dolorem eaque eligendi enim ex exercitationem fuga itaque maxime natus nihil nostrum omnis provident quasi ratione sit vel, veritatis.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aspernatur beatae, dolorem eaque eligendi enim ex exercitationem fuga itaque maxime natus nihil nostrum omnis provident quasi ratione sit vel, veritatis.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aspernatur beatae, dolorem eaque eligendi enim ex exercitationem fuga itaque maxime natus nihil nostrum omnis provident quasi ratione sit vel, veritatis.</p>
+            </div>
+            <div class="panel-footer">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus consequuntur debitis deserunt doloribus eos exercitationem incidunt, labore magnam maxime necessitatibus nemo omnis perspiciatis, praesentium quas rem soluta ut voluptatibus!</p>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <!--绑定父级-->
+            <a href="#sec3" class="btn btn-success" data-toggle="collapse" data-parent="#content">面板的折叠</a>
+        </div>
+        <div class="collapse panel-collapse" id="sec3">
+            <div class="panel-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aspernatur beatae, dolorem eaque eligendi enim ex exercitationem fuga itaque maxime natus nihil nostrum omnis provident quasi ratione sit vel, veritatis.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aspernatur beatae, dolorem eaque eligendi enim ex exercitationem fuga itaque maxime natus nihil nostrum omnis provident quasi ratione sit vel, veritatis.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aspernatur beatae, dolorem eaque eligendi enim ex exercitationem fuga itaque maxime natus nihil nostrum omnis provident quasi ratione sit vel, veritatis.</p>
+            </div>
+            <div class="panel-footer">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus consequuntur debitis deserunt doloribus eos exercitationem incidunt, labore magnam maxime necessitatibus nemo omnis perspiciatis, praesentium quas rem soluta ut voluptatibus!</p>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <!--绑定父级-->
+            <a href="#sec4" class="btn btn-success" data-toggle="collapse" data-parent="#content">面板的折叠</a>
+        </div>
+        <div class="collapse panel-collapse" id="sec4">
+            <div class="panel-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aspernatur beatae, dolorem eaque eligendi enim ex exercitationem fuga itaque maxime natus nihil nostrum omnis provident quasi ratione sit vel, veritatis.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aspernatur beatae, dolorem eaque eligendi enim ex exercitationem fuga itaque maxime natus nihil nostrum omnis provident quasi ratione sit vel, veritatis.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aspernatur beatae, dolorem eaque eligendi enim ex exercitationem fuga itaque maxime natus nihil nostrum omnis provident quasi ratione sit vel, veritatis.</p>
+            </div>
+            <div class="panel-footer">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus consequuntur debitis deserunt doloribus eos exercitationem incidunt, labore magnam maxime necessitatibus nemo omnis perspiciatis, praesentium quas rem soluta ut voluptatibus!</p>
+            </div>
+        </div>
+    </div>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            <!--绑定父级-->
+            <a href="#sec5" class="btn btn-success" data-toggle="collapse" data-parent="#content">面板的折叠</a>
+        </div>
+        <div class="collapse panel-collapse" id="sec5">
+            <div class="panel-body">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aspernatur beatae, dolorem eaque eligendi enim ex exercitationem fuga itaque maxime natus nihil nostrum omnis provident quasi ratione sit vel, veritatis.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aspernatur beatae, dolorem eaque eligendi enim ex exercitationem fuga itaque maxime natus nihil nostrum omnis provident quasi ratione sit vel, veritatis.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aspernatur beatae, dolorem eaque eligendi enim ex exercitationem fuga itaque maxime natus nihil nostrum omnis provident quasi ratione sit vel, veritatis.</p>
+            </div>
+            <div class="panel-footer">
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus consequuntur debitis deserunt doloribus eos exercitationem incidunt, labore magnam maxime necessitatibus nemo omnis perspiciatis, praesentium quas rem soluta ut voluptatibus!</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<pre>
+    触发折叠的元素（a  input  button） （如果是a，只需要在href属性中写锚链接即可）
+                                            否则：data-target='.类名 或者 #id'
+    绑定功能 ：data-toggle="collapse"
+
+    1、折叠的内容部分：导航条中的折叠和面板中的折叠
+    （这种情况下，折叠的内容部分需要有一个容器包裹起来，
+                    并加上类名 .collapse .navbar-collapse  或者 .collapse .panel-collapse）
+
+    2、手风琴所有的内容部分需要用一个大的容器包裹起来，类名.panel-group
+    触发元素需要加上属性data-parent='父级的.类名 或者 #id'
+
+    3、普通的折叠：直接在内容部分加类名：.collapse
+
+
+</pre>
+
+
+
+
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/bootstrap.js"></script>
+</body>
+</html>

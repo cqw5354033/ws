@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--让bootstrap兼容最新版本的ie-->
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <!--以移动设备优先  视窗              宽度=设备宽度              缩放=1         最大缩放=1      禁止用户缩放      -->
+    <meta name="tviewport" conent="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/loading.css"/>
+    <link rel="stylesheet" href="css/index.css"/>
+
+</head>
+<body data-spy="scroll" data-target=".navbar">
+<!--loading start-->
+<div class="loadingTop wow" data-wow-delay=".8s"></div>
+<div class="loadingMiddle"></div>
+<div class="loadingBottom wow" data-wow-delay=".8s"></div>
+<!--loading end-->
+
+<!--home start-->
+<section id="home">
+    <nav class="navbar navbar-default navbar-fixed-top">
+                    <!--全屏的-->
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="" class="navbar-brand"><img src="img/shiguang_logo-250x50.png" alt="" title="漯河时光"/></a>
+                <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <i class="icon-bar"></i>
+                    <i class="icon-bar"></i>
+                    <i class="icon-bar"></i>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#home">首页</a></li>
+                    <li><a href="#about">关于</a></li>
+                    <li><a href="#service">服务</a></li>
+                    <li><a href="#progress">方案</a></li>
+                    <li><a href="#customer">客户</a></li>
+                    <li><a href="#contact">联系</a></li>
+                </ul>
+                <a href="" class="navbar-right">
+                    <i class="glyphicon glyphicon-phone"></i>
+                    400-6645-361
+                </a>
+            </div>
+        </div>
+    </nav>
+                          <!--滑动-->
+    <div class="carousel slide" id="banner">
+        <div class="carousel-inner">
+            <div class="item active">
+                 <div class="carousel-bg"></div>
+                 <div class="carousel-caption">
+                                                                        <!--动画时间-->
+                     <h1 class="wow bounceIn" data-wow-delay=".8s" data-wow-duration="0.3s">LEARNING</h1>
+                                                                            <!--动画次数-->
+                     <h2 class="wow bounceInUp" data-wow-delay="1.2s" data-wow-iteration="3">我们知道如何解决您的问题</h2>
+                     <p class="wow fadeIn" data-wow-delay="1.8s">We are constantly learning, advancing with the times!</p>
+                 </div>
+             </div>
+            <div class="item">
+                <div class="carousel-bg"></div>
+                <div class="carousel-caption">
+                    <h1 class="wow bounceIn" data-wow-delay=".8s">LEARNING</h1>
+                    <h2 class="wow bounceInUp" data-wow-delay="1.2s">我们知道如何解决您的问题</h2>
+                    <p class="wow fadeIn" data-wow-delay="1.8s">We are constantly learning, advancing with the times!</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="carousel-bg"></div>
+                <div class="carousel-caption">
+                    <h1 class="wow bounceIn" data-wow-delay=".8s">LEARNING</h1>
+                    <h2 class="wow bounceInUp" data-wow-delay="1.2s">我们知道如何解决您的问题</h2>
+                    <p class="wow fadeIn" data-wow-delay="1.8s">We are constantly learning, advancing with the times!</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="carousel-bg"></div>
+                <div class="carousel-caption">
+                    <h1 class="wow bounceIn" data-wow-delay=".8s">LEARNING</h1>
+                    <h2 class="wow bounceInUp" data-wow-delay="1.2s">我们知道如何解决您的问题</h2>
+                    <p class="wow fadeIn" data-wow-delay="1.8s">We are constantly learning, advancing with the times!</p>
+                </div>
+            </div>
+            <div class="item">
+                <div class="carousel-bg"></div>
+                <div class="carousel-caption">
+                    <h1 class="wow bounceIn" data-wow-delay=".8s">LEARNING</h1>
+                    <h2 class="wow bounceInUp" data-wow-delay="1.2s">我们知道如何解决您的问题</h2>
+                    <p class="wow fadeIn" data-wow-delay="1.8s">We are constantly learning, advancing with the times!</p>
+                </div>
+            </div>
+        </div>
+        <ol class="carousel-indicators">
+            <li data-target="#banner" data-slide-to="0" class="active"></li>
+            <li data-target="#banner" data-slide-to="1"></li>
+            <li data-target="#banner" data-slide-to="2"></li>
+            <li data-target="#banner" data-slide-to="3"></li>
+            <li data-target="#banner" data-slide-to="4"></li>
+        </ol>
+        <a href="#banner" data-slide="prev" class="carousel-control left">
+            <i class="glyphicon glyphicon-chevron-left"></i>
+        </a>
+        <a href="#banner" data-slide="next" class="carousel-control right">
+            <i class="glyphicon glyphicon-chevron-right"></i>
+        </a>
+    </div>
+    <a href="#about" class="hidden-xs toAbout"></a>
+</section>
+<!--home end-->
+
+<!--about start-->
+<section id="about">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-md-offset-1 col-sm-8 col-sm-offset-2 col-xs-12">
+                <ul class="nav nav-pills wow bounceInRight" data-wow-delay=".5s">
+                    <li class="active"><a data-toggle="tab" href="#introduction">简介</a></li>
+                    <li><a data-toggle="tab" href="#strength">实力</a></li>
+                    <li><a data-toggle="tab" href="#culture">文化</a></li>
+                    <li><a data-toggle="tab" href="#dynamic ">动态</a></li>
+                </ul>
+                <div class="tab-content wow bounceInRight" data-wow-delay="1s">
+                    <div id="introduction" class="tab-pane fade in active">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aspernatur consectetur deserunt dolorum ea fuga, fugiat itaque labore libero nam optio quae quaerat qui ratione repellat sed sint ut voluptas.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aspernatur consectetur deserunt dolorum ea fuga, fugiat itaque labore libero nam optio quae quaerat qui ratione repellat sed sint ut voluptas.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aspernatur consectetur deserunt dolorum ea fuga, fugiat itaque labore libero nam optio quae quaerat qui ratione repellat sed sint ut voluptas.</p>
+                    </div>
+                    <div id="strength" class="tab-pane fade in">
+                        <h4>完整，完美的策划和设计</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aspernatur consectetur deserunt dolorum ea fuga, fugiat itaque labore libero nam optio quae quaerat qui ratione repellat sed sint ut voluptas.</p>
+                        <h4>完整，完美的策划和设计</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aspernatur consectetur deserunt dolorum ea fuga, fugiat itaque labore libero nam optio quae quaerat qui ratione repellat sed sint ut voluptas.</p>
+                        <h4>完整，完美的策划和设计</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aspernatur consectetur deserunt dolorum ea fuga, fugiat itaque labore libero nam optio quae quaerat qui ratione repellat sed sint ut voluptas.</p>
+                    </div>
+                    <div id="culture" class="tab-pane fade in ">
+                        <h4>完整，完美的策划和设计</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aspernatur consectetur deserunt dolorum ea fuga, fugiat itaque labore libero nam optio quae quaerat qui ratione repellat sed sint ut voluptas.</p>
+                        <h4>完整，完美的策划和设计</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aspernatur consectetur deserunt dolorum ea fuga, fugiat itaque labore libero nam optio quae quaerat qui ratione repellat sed sint ut voluptas.</p>
+                        <h4>完整，完美的策划和设计</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aspernatur consectetur deserunt dolorum ea fuga, fugiat itaque labore libero nam optio quae quaerat qui ratione repellat sed sint ut voluptas.</p>
+                    </div>
+                    <div id="dynamic " class="tab-pane fade in ">
+                        <h4>完整，完美的策划和设计</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aspernatur consectetur deserunt dolorum ea fuga, fugiat itaque labore libero nam optio quae quaerat qui ratione repellat sed sint ut voluptas.</p>
+                        <h4>完整，完美的策划和设计</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aspernatur consectetur deserunt dolorum ea fuga, fugiat itaque labore libero nam optio quae quaerat qui ratione repellat sed sint ut voluptas.</p>
+                        <h4>完整，完美的策划和设计</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad aspernatur consectetur deserunt dolorum ea fuga, fugiat itaque labore libero nam optio quae quaerat qui ratione repellat sed sint ut voluptas.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bot"></div>
+    </div>
+</section>
+<!--about end-->
+
+<!--service start-->
+<section id="service">
+    <div class="container">
+        <div class="We wow rubberBand">
+            我们 <span>提供</span>以下 <span>服务</span> 供您选择
+        </div>
+        <div class="Time">
+            <img src="img/shiguang_splitter.png" alt="Time" class="img-responsive"/>
+        </div>
+        <div class="row">
+            <div class="col-md-3 wow bounceIn" data-wow-delay=".4s">
+                <div class="content">
+                    <i class="glyphicon glyphicon-book"></i>
+                    <h3><a href="">软件制定开发</a></h3>
+                    <p class="hidden-sm hidden-xs"><a href="">我们推出的软件定制、定制软件服务，以最快的速度，简单的流程为客户定制高质量、
+                        易操作的管理软件，协助客户解决管理难题，为客户提供更优质的服务。</a></p>
+                </div>
+            </div>
+            <div class="col-md-3 wow bounceIn" data-wow-delay=".4s">
+                <div class="content">
+                    <i class="glyphicon glyphicon-book"></i>
+                    <h3><a href="">软件制定开发</a></h3>
+                    <p class="hidden-sm hidden-xs"><a href="">我们推出的软件定制、定制软件服务，以最快的速度，简单的流程为客户定制高质量、
+                        易操作的管理软件，协助客户解决管理难题，为客户提供更优质的服务。</a></p>
+                </div>
+            </div>
+            <div class="col-md-3 wow bounceIn" data-wow-delay=".4s">
+                <div class="content">
+                    <i class="glyphicon glyphicon-book"></i>
+                    <h3><a href="">软件制定开发</a></h3>
+                    <p class="hidden-sm hidden-xs"><a href="">我们推出的软件定制、定制软件服务，以最快的速度，简单的流程为客户定制高质量、
+                        易操作的管理软件，协助客户解决管理难题，为客户提供更优质的服务。</a></p>
+                </div>
+            </div>
+            <div class="col-md-3 wow bounceIn" data-wow-delay=".4s">
+                <div class="content">
+                    <i class="glyphicon glyphicon-book"></i>
+                    <h3><a href="">软件制定开发</a></h3>
+                    <p class="hidden-sm hidden-xs"><a href="">我们推出的软件定制、定制软件服务，以最快的速度，简单的流程为客户定制高质量、
+                        易操作的管理软件，协助客户解决管理难题，为客户提供更优质的服务。</a></p>
+                </div>
+            </div>
+            <div class="col-md-3 wow bounceIn" data-wow-delay=".4s">
+                <div class="content">
+                    <i class="glyphicon glyphicon-book"></i>
+                    <h3><a href="">软件制定开发</a></h3>
+                    <p class="hidden-sm hidden-xs"><a href="">我们推出的软件定制、定制软件服务，以最快的速度，简单的流程为客户定制高质量、
+                        易操作的管理软件，协助客户解决管理难题，为客户提供更优质的服务。</a></p>
+                </div>
+            </div>
+            <div class="col-md-3 wow bounceIn" data-wow-delay=".4s">
+                <div class="content">
+                    <i class="glyphicon glyphicon-book"></i>
+                    <h3><a href="">软件制定开发</a></h3>
+                    <p class="hidden-sm hidden-xs"><a href="">我们推出的软件定制、定制软件服务，以最快的速度，简单的流程为客户定制高质量、
+                        易操作的管理软件，协助客户解决管理难题，为客户提供更优质的服务。</a></p>
+                </div>
+            </div>
+            <div class="col-md-3 wow bounceIn" data-wow-delay=".4s">
+                <div class="content">
+                    <i class="glyphicon glyphicon-book"></i>
+                    <h3><a href="">软件制定开发</a></h3>
+                    <p class="hidden-sm hidden-xs"><a href="">我们推出的软件定制、定制软件服务，以最快的速度，简单的流程为客户定制高质量、
+                        易操作的管理软件，协助客户解决管理难题，为客户提供更优质的服务。</a></p>
+                </div>
+            </div>
+            <div class="col-md-3 wow bounceIn" data-wow-delay=".4s">
+                <div class="content">
+                    <i class="glyphicon glyphicon-book"></i>
+                    <h3><a href="">软件制定开发</a></h3>
+                    <p class="hidden-sm hidden-xs"><a href="">我们推出的软件定制、定制软件服务，以最快的速度，简单的流程为客户定制高质量、
+                        易操作的管理软件，协助客户解决管理难题，为客户提供更优质的服务。</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--service end-->
+
+<!--progress start-->
+<section id="progress">
+    <div class="container">
+        <div class="We wow rubberBand">
+            帮助企业<span>站在</span>管理、营销的 <span>顶峰</span>
+        </div>
+        <div class="Time">
+            <img src="img/shiguang_splitter.png" alt="Time" class="img-responsive"/>
+        </div>
+        <div class="row">
+            <div class="col-md-3 wow bounceIn" data-wow-delay=".4s">
+                <div class="content">
+                    <i class="glyphicon glyphicon-book"></i>
+                    <h3><a href="">软件制定开发</a></h3>
+                    <p class="hidden-sm hidden-xs"><a href="">我们推出的软件定制、定制软件服务，以最快的速度，简单的流程为客户定制高质量、
+                        易操作的管理软件，协助客户解决管理难题，为客户提供更优质的服务。</a></p>
+                </div>
+            </div>
+            <div class="col-md-3 wow bounceIn" data-wow-delay=".4s">
+                <div class="content">
+                    <i class="glyphicon glyphicon-book"></i>
+                    <h3><a href="">软件制定开发</a></h3>
+                    <p class="hidden-sm hidden-xs"><a href="">我们推出的软件定制、定制软件服务，以最快的速度，简单的流程为客户定制高质量、
+                        易操作的管理软件，协助客户解决管理难题，为客户提供更优质的服务。</a></p>
+                </div>
+            </div>
+            <div class="col-md-3 wow bounceIn" data-wow-delay=".4s">
+                <div class="content">
+                    <i class="glyphicon glyphicon-book"></i>
+                    <h3><a href="">软件制定开发</a></h3>
+                    <p class="hidden-sm hidden-xs"><a href="">我们推出的软件定制、定制软件服务，以最快的速度，简单的流程为客户定制高质量、
+                        易操作的管理软件，协助客户解决管理难题，为客户提供更优质的服务。</a></p>
+                </div>
+            </div>
+            <div class="col-md-3 wow bounceIn" data-wow-delay=".4s">
+                <div class="content">
+                    <i class="glyphicon glyphicon-book"></i>
+                    <h3><a href="">软件制定开发</a></h3>
+                    <p class="hidden-sm hidden-xs"><a href="">我们推出的软件定制、定制软件服务，以最快的速度，简单的流程为客户定制高质量、
+                        易操作的管理软件，协助客户解决管理难题，为客户提供更优质的服务。</a></p>
+                </div>
+            </div>
+            <div class="col-md-3 wow bounceIn" data-wow-delay=".4s">
+                <div class="content">
+                    <i class="glyphicon glyphicon-book"></i>
+                    <h3><a href="">软件制定开发</a></h3>
+                    <p class="hidden-sm hidden-xs"><a href="">我们推出的软件定制、定制软件服务，以最快的速度，简单的流程为客户定制高质量、
+                        易操作的管理软件，协助客户解决管理难题，为客户提供更优质的服务。</a></p>
+                </div>
+            </div>
+            <div class="col-md-3 wow bounceIn" data-wow-delay=".4s">
+                <div class="content">
+                    <i class="glyphicon glyphicon-book"></i>
+                    <h3><a href="">软件制定开发</a></h3>
+                    <p class="hidden-sm hidden-xs"><a href="">我们推出的软件定制、定制软件服务，以最快的速度，简单的流程为客户定制高质量、
+                        易操作的管理软件，协助客户解决管理难题，为客户提供更优质的服务。</a></p>
+                </div>
+            </div>
+            <div class="col-md-3 wow bounceIn" data-wow-delay=".4s">
+                <div class="content">
+                    <i class="glyphicon glyphicon-book"></i>
+                    <h3><a href="">软件制定开发</a></h3>
+                    <p class="hidden-sm hidden-xs"><a href="">我们推出的软件定制、定制软件服务，以最快的速度，简单的流程为客户定制高质量、
+                        易操作的管理软件，协助客户解决管理难题，为客户提供更优质的服务。</a></p>
+                </div>
+            </div>
+            <div class="col-md-3 wow bounceIn" data-wow-delay=".4s">
+                <div class="content">
+                    <i class="glyphicon glyphicon-book"></i>
+                    <h3><a href="">软件制定开发</a></h3>
+                    <p class="hidden-sm hidden-xs"><a href="">我们推出的软件定制、定制软件服务，以最快的速度，简单的流程为客户定制高质量、
+                        易操作的管理软件，协助客户解决管理难题，为客户提供更优质的服务。</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--progress end-->
+
+<!--customer start-->
+<section id="customer">
+    <div class="container">
+        <div class="We wow rubberBand">
+            因为有你而<span>精彩</span>
+        </div>
+        <div class="Time">
+            <img src="img/shiguang_splitter.png" alt="Time" class="img-responsive"/>
+        </div>
+        <div class="row">
+            <div class="col-md-3 wow flipInY">
+                <img src="img/logo04.jpg" alt="中共漯河市委党校" class="hidden-xs hidden-sm"/>
+                <p><a href="">中共漯河市委党校</a></p>
+            </div>
+            <div class="col-md-3 wow flipInY">
+                <img src="img/logo04.jpg" alt="中共漯河市委党校" class="hidden-xs hidden-sm"/>
+                <p><a href="">中共漯河市委党校</a></p>
+            </div>
+            <div class="col-md-3 wow flipInY">
+                <img src="img/logo04.jpg" alt="中共漯河市委党校" class="hidden-xs hidden-sm"/>
+                <p><a href="">中共漯河市委党校</a></p>
+            </div>
+            <div class="col-md-3 wow flipInY">
+                <img src="img/logo04.jpg" alt="中共漯河市委党校" class="hidden-xs hidden-sm"/>
+                <p><a href="">中共漯河市委党校</a></p>
+            </div>
+            <div class="col-md-3 wow flipInY">
+                <img src="img/logo04.jpg" alt="中共漯河市委党校" class="hidden-xs hidden-sm"/>
+                <p><a href="">中共漯河市委党校</a></p>
+            </div>
+            <div class="col-md-3 wow flipInY">
+                <img src="img/logo04.jpg" alt="中共漯河市委党校" class="hidden-xs hidden-sm"/>
+                <p><a href="">中共漯河市委党校</a></p>
+            </div>
+            <div class="col-md-3 wow flipInY">
+                <img src="img/logo04.jpg" alt="中共漯河市委党校" class="hidden-xs hidden-sm"/>
+                <p><a href="">中共漯河市委党校</a></p>
+            </div>
+            <div class="col-md-3 wow flipInY">
+                <img src="img/logo04.jpg" alt="中共漯河市委党校" class="hidden-xs hidden-sm"/>
+                <p><a href="">中共漯河市委党校</a></p>
+            </div>
+            <div class="col-md-3 wow flipInY">
+                <img src="img/logo04.jpg" alt="中共漯河市委党校" class="hidden-xs hidden-sm"/>
+                <p><a href="">中共漯河市委党校</a></p>
+            </div>
+            <div class="col-md-3 wow flipInY">
+                <img src="img/logo04.jpg" alt="中共漯河市委党校" class="hidden-xs hidden-sm"/>
+                <p><a href="">中共漯河市委党校</a></p>
+            </div>
+            <div class="col-md-3 wow flipInY">
+                <img src="img/logo04.jpg" alt="中共漯河市委党校" class="hidden-xs hidden-sm"/>
+                <p><a href="">中共漯河市委党校</a></p>
+            </div>
+            <div class="col-md-3 wow flipInY">
+                <img src="img/logo04.jpg" alt="中共漯河市委党校" class="hidden-xs hidden-sm"/>
+                <p><a href="">中共漯河市委党校</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+<!--customer end-->
+
+<!--contact start-->
+<section id="contact">
+    <div class="container">
+        <div class="We wow rubberBand">
+            因为有你而<span>精彩</span>
+        </div>
+        <div class="Time">
+            <img src="img/shiguang_splitter.png" alt="Time" class="img-responsive"/>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 wow flipInX">
+                <p class="hidden-xs">
+                    <i class="glyphicon glyphicon-zoom-in"></i> &nbsp;
+                    漯河时光网络科技有限公司
+                </p>
+                <p>
+                    <i class="glyphicon glyphicon-sort"></i> &nbsp;
+                    <a href="" title="地图上找到我们" data-toggle="tooltip" data-placement="bottom">漯河市源汇区柳江路69号44幢1单元101</a>
+                </p>
+                <p>
+                    <i class="glyphicon glyphicon-phone"></i> &nbsp;
+                    <a href="">0395-5565361</a> ,
+                    <a href="">400-6650-361</a>
+                </p>
+                <p>
+                    <i class="glyphicon glyphicon-save"></i> &nbsp;
+                    QQ <a href="">9348526</a>
+                    ；Email：support@ 5shiguang.net
+                </p>
+                <a href=""><i class="glyphicon glyphicon-plus"></i>在线提交需求</a>
+                <a href=""><i class="glyphicon glyphicon-plus"></i>查找工作机会</a>
+            </div>
+            <div class="col-sm-4 col-xs-6 col-xs-6 wow flipInX text-center">
+                <img src="img/qrcode_for_weibo.png" alt="" title="官方微博@时光网络科技" data-toggle="tooltip" data-placement="bottom" />
+                <p class="hidden-xs">官方微博 <a href="">@时光网络科技</a></p>
+            </div>
+            <div class="col-sm-4 col-xs-6 col-xs-6 wow flipInX text-center">
+                <img src="img/qrcode_for_weixin.jpg" alt="" title="官方微信" data-toggle="tooltip" data-placement="bottom"/>
+                <p class="hidden-xs">官方微信</p>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!--contact end-->
+
+
+
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/wow.min.js"></script>
+
+<script>
+    if (!(/msie [6|7|8|9]/i.test(navigator.userAgent))){
+        new WOW().init();
+    }
+</script>
+<script src="js/loading.js" charset="UTF-8"></script>
+<script src="js/index.js"></script>
+
+<!--lt   小于-->
+<!--lte  小于等于-->
+<!--gt   大于-->
+<!--get  大于等于-->
+<!--不写  就是等于-->
+
+<!--[if lt ie 9]>
+<script>
+    window.onload = function(){
+        var aBody =  document.getElementsByTagName('body')[0];
+        aBody.innerHTML = '你的浏览器版本太低，<a href="https://www.baidu.com">点击此处升级</a>'
+    }
+</script>
+
+<![endif]-->
+</body>
+</html>

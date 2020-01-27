@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!--让bootstrap兼容最新版本的ie-->
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <!--以移动设备优先  视窗              宽度=设备宽度              缩放=1         最大缩放=1      禁止用户缩放      -->
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+
+    <link rel="stylesheet" href="css/bootstrap.css"/>
+    <link rel="stylesheet" href="css/animate.css"/>
+    <link rel="stylesheet/less" href="css/top.less"/>
+    <link rel="stylesheet/less" href="css/header.less"/>
+    <link rel="stylesheet/less" href="css/contact-us.less"/>
+</head>
+<body data-spy="scroll" data-target=".header" data-offset="50">
+<!--header start-->
+<header class="navbar header" data-spy="affix">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-2 navbar-header">
+                <a href="index.html" class="navbar-brand" title="百度" data-toggle="tooltip"  data-placement="bottom">
+                    <img src="img/logo.png" alt="">
+                </a>
+                <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <i class="glyphicon glyphicon-list"></i>
+                </button>
+            </div>
+            <div class="col-sm-8 col-md-6">
+                <ul class="collapse navbar-collapse nav navbar-nav navbar-pills">
+                    <li class="active"><a href="index.html">关于百度</a></li>
+                    <li><a href="about.html">关于产品</a></li>
+                    <li><a href="Join-us.html">加入我们</a></li>
+                    <li><a href="contact-us.html">联系我们</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-2 col-md-4 navbar-btn">
+                <div class="navbar-left hidden-xs hidden-sm">
+                    <span>中文</span> |
+                    <a href="">EN</a>
+                </div>
+                <div class="visible-sm">
+                    <a data-toggle="dropdown" class="glyphicon glyphicon-list "></a>
+                    <div class="dropdown-menu">
+                        <span>中文</span> |
+                        <a href="">EN</a>
+                    </div>
+                </div>
+                <form action="" class="visible-lg visible-md navbar-right">
+                    <input type="search" placeholder="站内搜索" />
+                    <input type="submit" value="百度一下"/>
+                </form>
+            </div>
+        </div>
+    </div>
+</header>
+<!--header end-->
+
+<!--main start-->
+<main class="main">
+    <div class="box">
+        <h1>联系我们</h1>
+        <div class="contact">
+            <p>
+                <a href="">总机：(+86 10)5992 8888</a>
+                <a href="">TEL: (+86 10)5992 8888</a>
+                <a href="">传真：(+86 10)5992 0000</a>
+                <a href="">FAX:(+86 10)5992 0000</a>
+            </p>
+        </div>
+        <div class="address ">
+            <a href="" class="clearfix row">
+                <img src="img/82.jpg" alt="" class="col-md-5 hidden-xs img-responsive"/>
+                <div class="address-contact col-md-5 col-md-offset-1">
+                    <h2>百度大厦</h2>
+                    <p>北京市海淀区上地十街10号百度大厦</p>
+                    <p class="hidden-xs">Baidu Campus, No. 10 Shangdi 10th Street, Haidian District, Beijing, China</p>
+                    <p>邮 编：100085</p>
+                </div>
+            </a>
+            <a href="" class="clearfix row">
+                <img src="img/83.jpg" alt="" class="col-md-5  hidden-xs img-responsive"/>
+                <div class="address-contact col-sm-5 col-md-offset-1">
+                    <h2>百度大厦</h2>
+                    <p>北京市海淀区上地十街10号百度大厦</p>
+                    <p class="hidden-xs">Baidu Campus, No. 10 Shangdi 10th Street, Haidian District, Beijing, China</p>
+                    <p>邮 编：100085</p>
+                </div>
+            </a>
+        </div>
+        <footer class="footer">
+            <p></p>
+            <div class="footer-content">
+                <div class="row hidden-xs">
+                    <div class="col-sm-2">
+                        <p>合作联系</p>
+                    </div>
+                    <div class="col-sm-5">
+                        <a href="">市场合作：upmco@baidu.com</a>
+                    </div>
+                    <div class="col-sm-5">
+                        <a href="">
+                            校园合作：campusmaster@baidu.com <br/>
+                            战略合作：zhoujianwei@baidu.com
+                        </a>
+                    </div>
+                </div>
+                <div class="row hidden-xs">
+                    <div class="col-sm-2">
+                        <p>业务联系</p>
+                    </div>
+                    <div class="col-sm-5">
+                        <a href="">百度无线：mbaidu@baidu.com</a>
+                    </div>
+                    <div class="col-sm-5">
+                        <a href="">
+                            百度推广售后热线：4008900088
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2">
+                        <p>投诉中心</p>
+                    </div>
+                    <div class="col-sm-6 col-lg-offset-2">
+                        <a href="">投诉中心网址： http://help.baidu.com</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+</main>
+<!--main end-->
+
+<script src="js/jquery-1.11.3.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/less.min.js"></script>
+
+<!--[if lt ie 9]>
+<script>
+    window.onload = function(){
+        var aBody =  document.getElementsByTagName('body')[0];
+        aBody.innerHTML = '你的浏览器版本太低，<a href="https://www.baidu.com">点击此处升级</a>'
+    }
+</script>
+
+<![endif]-->
+</body>
+</html>

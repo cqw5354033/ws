@@ -1,0 +1,83 @@
+@charset "UTF-8";
+html{
+  font-size: 62.5%;
+}
+a:hover{
+  text-decoration: none;
+}
+@f1:1px;
+
+body{
+  overflow: hidden;
+}
+body, body > section, #home .carousel-bg{
+  height: 100vh;
+}
+body > section, #home .carousel-bg{
+  background: no-repeat center;
+  background-size: cover;
+}
+//-----------------------------------main start----------------------------------
+#home .carousel-bg{
+  /*背景图固定在页面中不动*/
+  background-attachment: fixed;
+}
+#home .item:first-of-type .carousel-bg{
+  background-image: url("../img/banner02.jpg");
+}
+#home .item:nth-of-type(2) .carousel-bg{
+  background-image: url("../img/banner03.jpg");
+}
+#home .item:last-of-type .carousel-bg{
+  background-image: url("../img/banner04.jpg");
+}
+#home .item{
+  position: relative;
+  left: 0;
+  opacity: .8;
+  transition-property: opacity;
+  .carousel-Caption{
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    span{
+      display: block;
+      font-size: 28px;
+      color: #ffffff;
+      height: 57px;
+      margin: 0 0 10px;
+    }
+  }
+}
+//-----------------------------------main end----------------------------------
+
+//-----------------------------------footer start----------------------------------
+.footer{
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  list-style: none;
+  background: rgba(255, 255, 255, .8);
+  text-align: center;
+  .row{
+    margin: 0 34px;
+    a{
+      display: block;
+      padding: 25px 0;
+      p{
+        margin: 15px auto 0;
+        font-size: 20px;
+        font-weight: 600;
+        color: #2298F4;
+        opacity: 0.7;
+        transition: .4s;
+      }
+      &:hover p{
+        color: #337ab7;
+      }
+    }
+  }
+}
+//-----------------------------------footer end----------------------------------
+
