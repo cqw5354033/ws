@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html ng-app="text">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../angular.js"></script>
+    <script>
+        let mod=angular.module('text',[]);
+        mod.controller('main',function(){
+
+        })
+    </script>
+</head>
+<body ng-controller="main">
+<input type="text" ng-model="a"/>
+{{a}}
+<script>
+//    jquery $('') 方便查找元素，省去循环语句，语法更加简洁，丰富的插件
+//
+//    好处1：anjular 实现了前端代码的  mvc
+//    m: model(数据模型 js中就是数据的声明)
+//    v:  view(试图模型，前端代码，html代码)
+//    c:  controller(控制器模型，前端代码，业务逻辑的处理)
+//
+//    好处2： 双向数据绑定 省去了繁琐的dom操作，专注数据处理
+//
+//    ng-app:  表示angular 代码的负责范围
+//    ng-model: 指令 把input的value值和控制器中的text变量 做一个双向绑定
+//    {{}}:     是个取值表达式  把text变量显示在html中
+//
+//    好处3：路由机制，构建单页面 (conmom.js,reset.css等) 一次性把需要的资源全部（css js）请求到本地，
+//                  需要新的视图，用ajax请求。节省网络资源，增强了用户体验。
+//
+//    好处4：模块化 和 复用  解决了空间污染的问题，指令系统便于代码的复用
+//
+//    好处5：市场占有率高    内容管理系统（普遍会用到angular.js）
+
+
+
+</script>
+</body>
+</html>

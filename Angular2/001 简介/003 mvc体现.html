@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html ng-app="mod1">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../angular.js"></script>
+
+</head>
+<body>
+<!--视图层-->
+<div ng-controller="cont1">
+    这是式图内部的文字
+    {{txt}}
+</div>
+
+<script>
+    angular.module('mod1',[])
+//    controller 控制器
+    .controller('cont1',['$scope',function($scope){
+//        模型层
+        $scope.txt='这是我在控制中声明的数据';
+    }]);
+
+//    ng-controller指令：声明视图由哪个控制器管理
+//    .controller方法： 声明控制器（控制器必须要声明在模块下）
+//    $scope 代表的是当前控制器的作用域
+</script>
+</body>
+</html>

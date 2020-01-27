@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="mod1">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../angular.js"></script>
+    <style>
+        .error,.error2,.error3{
+            color: red;
+        }
+    </style>
+    <script>
+        let mod = angular.module('mod1',[]);
+        mod.controller('main',function($scope){
+            $scope.username='';
+            $scope.password='';
+            $scope.email='';
+            $scope.error='';
+            $scope.error2='';
+            $scope.error3='';
+
+            $scope.$watch('username',function(newdata){
+                if(newdata == ''){
+                    $scope.error='*'
+                }else if(newdata.length<5 || newdata.length>10){
+                    $scope.error='用户名在5-10位之间'
+                }else{
+                    $scope.error=''
+                }
+            });
+            $scope.$watch('password',function(newdata){
+                if(newdata == ''){
+                    $scope.error2='*'
+                }else if(newdata.length<5 || newdata.length>10){
+                    $scope.error2='密码在5-10位之间'
+                }else{
+                    $scope.error2=''
+                }
+            });
+            $scope.$watch('email',function(newdata){
+                if(newdata == ''){
+                    $scope.error3='*'
+                }else if(newdata.length<5 || newdata.length>10){
+                    $scope.error3='邮箱在5-10位之间'
+                }else{
+                    $scope.error3=''
+                }
+            });
+
+        })
+    </script>
+</head>
+<body ng-controller="main">
+<p>用户名：<input type="text" ng-model="username"/><span class="error">{{error}}</span></p>
+<p>密码：<input type="text" ng-model="password"/><span class="error2">{{error2}}</span></p>
+<p>邮箱：<input type="text" ng-model="email"/><span class="error3">{{error3}}</span></p>
+</body>
+</html>

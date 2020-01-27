@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html ng-app="mod1">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../angular.js"></script>
+</head>
+<body ng-controller="cont1">
+
+<h3>苹果7 价格{{price|currency:'￥'}}</h3>
+<p>转换成大写：{{zuzhi|uppercase}}</p>
+<p>转换成小写：{{zuzhi|lowercase}}</p>
+<p>字符串的截取：{{str|limitTo:-2}}</p>   <!--从第一个到第六个字符串-->
+<p>格式化时间戳：{{time1|date:'yyyy-MM-dd HH-ww-ss'}}</p>
+<p>保留有效数字{{price2|number:2|currency:'￥'}}</p>
+
+
+<!--数据排序：orderBy-->
+<ul>
+    <li ng-repeat="item in obj1">
+        {{item.name+':'+item.age+':'+item.caichan}}
+    </li>
+</ul>
+<h3>年龄排行榜：</h3>
+<ul>
+    <li ng-repeat="item in obj1|orderBy:'age':'true'">     <!--数据排序：orderBy-->
+        {{item.name+':'+item.age+':'+item.caichan}}
+    </li>
+</ul>
+<h3>财产排行榜：</h3>
+<ul>
+    <li ng-repeat="item in obj1|orderBy:'caichan':'true'">
+        {{item.name+':'+item.age+':'+item.caichan}}
+    </li>
+</ul>
+
+<!--过滤数据：filter-->
+<h3>过滤数据</h3>
+<ul>
+    <li ng-repeat="item in obj1|filter:'张'">   <!--只让姓张的显示-->
+        {{item.name+':'+item.age+':'+item.caichan}}
+    </li>
+</ul>
+
+<p>搜索 <input type="text" ng-model="tiaojian"/></p>
+<ul>
+    <li ng-repeat="item in shangpin|filter:tiaojian">
+        {{item.name}}
+    </li>
+</ul>
+
+<script>
+    //    过滤器  用于 格式化 数据 （可以把过滤器理解成一个函数）
+    angular.module('mod1',[])
+            .controller('cont1',function($scope){
+                $scope.price=5999;
+                $scope.zuzhi='www.baiDu.com';
+                $scope.str='www.jd.com';
+                $scope.time1=23456789;
+                $scope.price2=12.34567;
+                $scope.obj1=[
+                    {name:'张飞',age:30,caichan:20000},
+                    {name:'张静',age:40,caichan:10000},
+                    {name:'李虎',age:20,caichan:-200},
+                    {name:'陈泉纬',age:21,caichan:100000}
+                ];
+
+                $scope.tiaojian='';
+                $scope.shangpin=[
+                    {name:'华为手机'},
+                    {name:'苹果手机'},
+                    {name:'小米手机'},
+                    {name:'联想电脑'},
+                    {name:'戴尔电脑'},
+                    {name:'机械师电脑'}
+                ];
+            })
+</script>
+</body>
+</html>

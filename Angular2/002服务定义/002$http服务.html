@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="mod1">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../angular.js"></script>
+</head>
+<body ng-controller="cont1">
+
+<h3>注册</h3>
+<p>用户名：<input type="text" ng-model="username"/></p>
+<p>密码：<input type="text" ng-model="password"/></p>
+<button ng-click="zhuce()">注册</button>
+
+
+<script>
+
+    angular.module('mod1',[])
+            .controller('cont1',function($scope,$http){
+//                jquery 发送用户名 密码 给服务器     ./1.php
+//                algular 也封装了发送 ajax 的方法   $http 服务
+                $scope.zhuce=function(){
+//                    获取数据发送ajax    发送ajax
+                    $http.get('./1.php?username='+$scope.username+'&password='+$scope.password)
+                            .success(function(){
+//                                处理成功的逻辑
+                            })
+                            .error(function(){
+//                                处理失败的逻辑
+                            })
+                }
+            })
+</script>
+</body>
+</html>

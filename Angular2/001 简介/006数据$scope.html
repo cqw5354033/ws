@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html ng-app="mod1">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../angular.js"></script>
+    <script>
+        angular.module('mod1',[])
+                .controller('cont1',function($scope){
+                    $scope.text='这是cont1中的数据';
+                })
+                .controller('cont2',function($scope){
+                    $scope.text2='这是cont2中的数据';
+                })
+    </script>
+</head>
+<body>
+<div ng-controller="cont1">
+    {{text}}
+    <div ng-controller="cont2">
+        {{text2}}
+    </div>
+</div>
+
+
+<pre>
+    （当前作用域）
+    $scope 下声明的数据 在当前控制器中生效
+    当控制器并列使用时，$scope是不能相互访问的
+    当控制嵌套使用时，子控制器 能访问 父控制器scope （父控制器不能访问自控制器）
+    $scope 可以互相嵌套，形成一个树状结构
+</pre>
+
+</body>
+</html>

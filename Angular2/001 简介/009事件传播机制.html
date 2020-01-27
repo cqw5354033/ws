@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="mod1">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../angular.js"></script>
+    <script>
+        let mod = angular.module('mod1',[]);
+        mod.controller('main1',function($scope){
+            $scope.$on('func1',function(evt,data){
+                alert(data);
+            })
+        });
+        mod.controller('main2',function($scope){
+            $scope.text='这是一个秘密'
+        });
+        mod.controller('main3',function($scope){
+            $scope.$on('func1',function(evt,data){
+                alert('main3也知道了'+data);
+            })
+        });
+    </script>
+</head>
+<body>
+<div ng-controller="main1">
+    <div ng-controller="main2">
+        <button ng-click="$emit('func1',text)">点击（向上广播）</button>
+        <button ng-click="$broadcast('func1',text)">点击（向下广播）</button>
+        <div ng-controller="main3">
+
+        </div>
+    </div>
+</div>
+
+<pre>
+    $emit('func1')          事件广播   当代码执行的时候 就会向上广播事件
+    $broadcast('func1')     事件广播   当代码执行的时候 就会向下广播事件
+    事件广播 一般用于controller之间传递数据
+</pre>
+</body>
+</html>

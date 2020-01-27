@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html ng-app="mod1">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../angular.js"></script>
+</head>
+<body>
+<div ng-controller="cont1">
+    这是商品的详情页
+    <button ng-click="add()">添加</button>
+
+</div>
+<div ng-controller="cont2">
+    这是购物车的页面
+    <h3>商品列表</h3>
+    {{shangpin}}
+</div>
+<script>
+//    服务：定义一些 公共的数据 或者是公共的方法
+    angular.module('mod1',[])
+            .value('bianliang1','这是变量1的数据')     //定义变量   模块范围内都能访问到（下同）
+            .constant('changliang1','这是常量1')        //定义常量（不能被重新赋值）
+            .factory('fac1',function(){                 //factory语法（制造）
+                return{
+                    name:'张三',
+                    age:'30',
+                    like:function(){
+                        alert('张三喜欢打牌！！！');
+                    }
+                }
+            })
+            .service('ser1',function(){             //service 语法  （工厂）
+                this.name='李四';
+                this.age='40';
+                this.like=function(){
+                    alert('李四也TM喜欢打牌！！！');
+                }
+            })
+            .provider('myProvider',function(){      //provider 语法   （供应者）
+                this.name='王五';
+                this.age='50';
+                this.like=function(){
+                    alert('你猜王五喜欢干嘛???');
+                };
+                this.$get=function(){
+                    return this;
+                }
+            })
+            .factory('addsp',function(){
+                return{};
+            })
+            .controller('cont1',function($scope,bianliang1,changliang1,fac1,addsp){
+//                $scope.shangpin='';       //用户添加到购物车的商品
+//                $scope.add=function(){
+                    addsp.shangpin1 = '苹果手机';
+
+//                };
+                console.log(bianliang1);
+                console.log(changliang1);
+//                fac1.like();
+
+
+            })
+            .controller('cont2',function($scope,bianliang1,ser1,myProvider,addsp){
+                console.log(bianliang1);
+//                ser1.like();
+//                myProvider.like();
+//
+                $scope.shangpin='';
+                $scope.shangpin=addsp.shangpin1;
+                console.log(addsp.shangpin1);
+            })
+</script>
+</body>
+</html>

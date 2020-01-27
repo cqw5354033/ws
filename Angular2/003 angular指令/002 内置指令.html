@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html ng-app="mod1">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../angular.js"></script>
+    <style>
+       input{
+           outline: none;
+       }
+        .red{
+            border: 1px solid red;
+        }
+        .green{
+            border: 1px solid green;
+        }
+
+    </style>
+</head>
+<body ng-controller="cont1">
+
+<pre style="display: none">
+    ng-app  定义应用程序的根元素  指定模块
+    ng-controller   定义控制器
+    ng-class        用于动态设置dom元素的样式
+
+</pre>
+
+用户名：<input type="text" ng-model="username" ng-class="{red:putred,green:putgreen}"/>
+
+
+
+<script>
+    angular.module('mod1',[])
+            .controller('cont1',function($scope){
+                $scope.username='';
+                $scope.putred = 0;      //数据位0 不显示红框， 为1，显示红框
+                $scope.putgreen=0;      //数据位0  不显示绿框，为1，显示绿框
+                $scope.$watch('username',function(newdata){
+                    if(newdata.length<5||newdata.length>10){
+//                        不合法   让input框变成红色
+                        if(newdata!=''){
+                            $scope.putred=1;
+                            $scope.putgreen=0;
+                        }
+                    }else{
+//                        合法     让input框便绿色
+                        $scope.putred=0;
+                        $scope.putgreen=1;
+                    }
+                    if(newdata ==''){
+                        $scope.putred=0;
+                        $scope.putgreen=0;
+                    }
+                })
+            })
+</script>
+</body>
+</html>

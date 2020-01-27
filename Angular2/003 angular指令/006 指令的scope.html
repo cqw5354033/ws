@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html ng-app="mod1">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../angular.js"></script>
+
+</head>
+<body>
+<div ng-controller="indexcont">
+    <p>单价：{{price}}</p>
+    <p>数量：{{num}}</p>
+    <zonghe price=price num=num></zonghe>
+</div>
+
+<div ng-controller="logincont">
+    <p>单价：{{price2}}</p>
+    <p>数量：{{num2}}</p>
+
+    <!--传递字符串类型的数据-->
+    <zonghe  price=price2 num=num2></zonghe>
+</div>
+<script>
+    angular.module('mod1',[])
+            .directive('zonghe',function(){
+                return{
+                    rectrict:'E',
+
+                    template:'<p>商品的总价为：{{ji}} </p>',
+                    scope:{
+//                        price:'@',      //@ 接收字符串类型或数字类型的数据
+//                        num:'@'
+                        price:'=',      //= 接收一个变量      &传递一个函数
+                        num:'='
+                    },
+                    link:function(scope){
+            //scope 默认指向的是控制器的scope   scope声明成独立的作用域
+                        scope.ji='';
+                        scope.ji = scope.price*scope.num;
+                    }
+                }
+            })
+            .controller('indexcont',function($scope){
+                $scope.price='100';
+                $scope.num='10';
+            })
+            .controller('logincont',function($scope){
+                $scope.price2='500';
+                $scope.num2='10';
+            })
+</script>
+</body>
+</html>

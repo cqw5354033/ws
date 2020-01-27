@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="mod1">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../angular.js"></script>
+
+</head>
+<body>
+<div ng-controller="indexcont">
+    <login price="100" num="10"></login>
+
+</div>
+<script>
+    angular.module('mod1',[])
+            .directive('login',function(){
+                return{
+                    restride:'C',
+                    template:'<p>1000000000000</p>',
+                    templateUrl:'./danDuDeWenJianLi',
+                    link:function(scope,ele,attrs){
+//                        参数 1 scope 是作用域 默认指向 控制器的$scope（可独立）
+//                        参数 2 当前指令的元素标签
+                        ele.css('color','red');
+
+//                        参数 3 指令中 属性的集合
+                        console.log(attrs.price);
+
+//                        参数 4 其他指令暴露出来的对象
+
+                    }
+                }
+            })
+            .controller('indexcont',function($scope){
+                $scope.price='500';
+                $scope.num='10';
+            })
+</script>
+</body>
+</html>

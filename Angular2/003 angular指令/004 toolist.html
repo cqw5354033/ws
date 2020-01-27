@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en" ng-app="mod1">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../angular.js"></script>
+    <script>
+        angular.module('mod1',[])
+                .controller('cont1',function($scope){
+                    $scope.data=[];
+                    $scope.a='';
+                    $scope.b=function(){
+                        if($scope.a!=''){
+                            $scope.data.push($scope.a);
+                        }
+                    };
+                    $scope.shanchu=function(aaa){
+                        $scope.data.splice(aaa,1);
+                    }
+                })
+    </script>
+</head>
+<body ng-controller="cont1">
+<h3>添加计划 <input type="text" ng-model="a"/>
+    <button ng-click="b()">确定</button>
+
+</h3>
+<h3 ng-if="data.length!=0">计划列表</h3>
+<ul>
+    <li ng-repeat="item in data track by $index">
+        {{item}}
+        <button ng-click="shanchu($index)">删除</button>
+    </li>
+</ul>
+
+
+</body>
+</html>

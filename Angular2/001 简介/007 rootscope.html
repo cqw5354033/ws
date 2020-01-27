@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="mod1">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../angular.js"></script>
+    <script>
+        angular.module('mod1',[])
+                .controller('cont1',function($scope,$rootScope){
+                    $scope.text='这是cont1中的数据';  //局部变量
+//                    在当前控制器下（子控制器下）生效
+
+                    $rootScope.text3='这是在rootScope下声明的全局变量'
+                })
+                .controller('cont2',function($scope){
+                    $scope.text2='这是cont2中的数据';
+                })
+    </script>
+</head>
+<body>
+
+{{text3}}
+<div ng-controller="cont1">
+    {{text}}
+    {{text3}}
+</div>
+<div ng-controller="cont2">
+    {{text2}}
+    {{text3}}
+</div>
+
+<pre>
+    （根作用域）
+    $rootScope 在angular中是根作用域， 在ng-app所指定的范围内生效
+</pre>
+</body>
+</html>

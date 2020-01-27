@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+
+</head>
+<body>
+
+<script>
+    var str1 = '这是字符串1';
+    var str2 = str1;            //当变量赋值的时候，如果是单一的数据类型，是值传递（开辟新空间）
+    str2 = '啊啊啊啊';
+    console.log(str2);
+    console.log(str1);
+
+    var str3 = {name:'张三'}; //如果是数组或者对象的时候，是引用传递（不开辟新的内存空间）
+    var str4 = str3;
+    str4.name='李四';
+    console.log(str4);
+    console.log(str3);
+
+    var num=100;
+    var obj = {name:'小红'};
+    function ceshi(can1,can2){
+//        num=can1      值传递，开辟新的空间
+        can1 = 10;
+        can2.name='小明';     //引用传递，操作同一个空间
+    }
+    ceshi(num,obj);
+    alert(num);
+    alert(obj.name);
+</script>
+</body>
+</html>

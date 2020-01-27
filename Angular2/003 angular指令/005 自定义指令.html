@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html ng-app="mod1">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../angular.js"></script>
+
+</head>
+<body>
+<div ng-controller="indexcont">
+    <!--<hello></hello>-->
+    <p login=""></p>
+
+
+</div>
+<div ng-controller="logincont">
+
+    <p login="" class="login"></p>
+</div>
+<script>
+    angular.module('mod1',[])
+//            自定义
+            .directive('hello',function(){
+                return{
+                    rectrict:'E',    //"A" attribute 属性的形式调用  "E" element 标签的形式
+                                    //"C" class    class名的形式
+
+//                    视图模版的内容
+                    template:'<div>这是自定义的第一个指令</div>',
+//                    是否替换原来的标签
+                    replace:true
+                }
+            })
+            .directive('login',function(){
+                return{
+                    restride:'C',
+                    template:'<p>用户名：<input type="text"/></p>'+
+                        '<p>密码：<input type="text"/></p>'+
+                        '<p>'+
+                        '<button>登录</button>'+
+                        '</p>',
+                    link:function(){        //js业务逻辑的处理
+
+                    }
+                }
+            })
+            .controller('indexcont',function($scope){
+
+            })
+            .controller('logincont',function($scope){
+
+            })
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en" ng-app="mod1">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="public.css"/>
+    <script src="angular.js"></script>
+    <!--路由模块文件-->
+    <script src="https://apps.bdimg.com/libs/angular-route/1.3.13/angular-route.js"></script>
+    <script src="public.js"></script>
+</head>
+<body>
+<!--angular路由机制  页面跳转时，不会发生真正的跳转，而是把视图层做一个更新。-->
+<!--再用对应的控制器进行逻辑控制, 这样就大大提升了性能，加快了速度-->
+
+    <div ng-view></div>
+
+</body>
+</html>

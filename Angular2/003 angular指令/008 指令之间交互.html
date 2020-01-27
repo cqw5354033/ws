@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html ng-app="mod1">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../angular.js"></script>
+</head>
+<body>
+<div ng-controller="cont1">
+    <zhiling1></zhiling1>
+    <zhiling2></zhiling2>
+</div>
+
+<script>
+    angular.module('mod1',[])
+            .directive('zhiling1',function(){
+                return{
+                    restrict:'E',
+                    controller:function(){
+                        this.fangfa1=function(){
+                            alert('指令之间的交互1');
+                        };
+                        this.fangfa2=function(){
+                            alert('指令之间的交互2');
+                        }
+                    },
+                    tempalte:'<div>我是指令1</div>'
+                }
+            })
+            .directive('zhiling2',function(){
+                return{
+                    restrict:'E',
+                    require:'zhiling1',
+                    tempalte:'<div>我是指令2</div>',
+                    link:function(scope,ele,attrs,contr){
+                        console.log(contr);
+                        contr.fangfa1();
+                    }
+                }
+            })
+            .directive('zhiling3',function(){
+                return{
+                    restrict:'E',
+                    tempalte:'<div>我是指令3</div>'
+                }
+            })
+            .controller('cont1',function($scope){
+
+            })
+</script>
+</body>
+</html>
