@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>工具集</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <script src="layui/layui.js"></script>
+</head>
+<body>
+<div id="test"></div>
+<script>
+
+    layui.use('util', function(){
+        var util = layui.util;
+        // 固定块
+        //执行
+        util.fixbar({
+            bar1: true
+            ,bar2:true
+            ,click: function(type){
+                console.log(type);
+                if(type === 'bar1'){
+                    alert('点击了bar1')
+                }
+            },
+            bgcolor:'#f00'
+            ,showHeight:300//   控制出现top按钮的滚动条高度临界值
+            ,css:{right:200,bottom:200}
+        });
+
+        // 倒计时
+        //示例
+        var endTime = new Date(2019,1,1).getTime() //假设为结束日期
+            ,serverTime = new Date().getTime(); //假设为当前服务器时间，这里采用的是本地时间，实际使用一般是取服务端的
+
+        util.countdown(endTime, serverTime, function(date, serverTime, timer){
+            var str = date[0] + '天' + date[1] + '时' +  date[2] + '分' + date[3] + '秒';
+            layui.$('#test').html('距离2019年1月1日还有：'+ str);
+        });
+
+
+    });
+
+
+</script>
+</body>
+</html>

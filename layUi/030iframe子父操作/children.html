@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <script src="../jquery-1.11.3.min.js"></script>
+    <script src="../layui/layui.js"></script>
+</head>
+<body>
+
+<button id="new" class="layui-btn">在父层弹出一个层</button>
+<button id="closeIframe" class="layui-btn">关闭iframe</button>
+<button id="transmit" class="layui-btn layui-btn-primary">给父页面传值</button>
+<script>
+    let index = parent.layer.getFrameIndex(window.name); //获取窗口索引
+
+    //在父层弹出一个层
+    $('#new').on('click', function(){
+        parent.layer.msg('Hi, man', {shade: 0.3})
+    });
+
+    //关闭iframe
+    $('#closeIframe').click(function(){
+        parent.layer.close(index);
+    });
+
+    //给父页面传值
+    $('#transmit').on('click', function(){
+        parent.$('#layerDemo').text('我被改变了');
+        parent.layer.tips('Look here', '#layerDemo', {time: 5000});
+        parent.layer.close(index);
+        parent.window.location.href="../006form.html";
+    });
+</script>
+</body>
+</html>

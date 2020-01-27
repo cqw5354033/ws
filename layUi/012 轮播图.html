@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>轮播图</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+</head>
+<body>
+<div class="layui-carousel" id="test1">
+    <div carousel-item>
+        <div style="background-color: #0b9a00">条目1</div>
+        <div style="background-color: #f0ad4e">条目2</div>
+        <div style="background-color: #f0e5ed">条目3</div>
+        <div style="background-color: #0dc2ce">条目4</div>
+        <div style="background-color: #0d0d0d">条目5</div>
+    </div>
+</div>
+
+<script src="layui/layui.js"></script>
+<script>
+    layui.use('carousel', function(){
+        var carousel = layui.carousel;
+        //建造实例
+        carousel.render({
+            elem: '#test1'
+            ,width: '50%' //设置容器宽度
+            ,arrow: 'always' //始终显示箭头
+            // ,anim: 'updown' //切换动画方式
+            ,indicator:'outside'//小圆点的位置（在里面还是在外面）
+            // ,full:'true'//全屏轮播
+        });
+    });
+</script>
+</body>
+</html>

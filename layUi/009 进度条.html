@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>进度条与面板</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <script src="layui/layui.js"></script>
+</head>
+<body style="background-color: #ccc">
+<!--进度条-->
+<div class="layui-progress layui-progress-big">
+    <div class="layui-progress-bar" lay-percent="20%"></div>
+</div>
+
+<div class="layui-progress layui-progress-big">
+    <div class="layui-progress-bar layui-bg-orange" lay-percent="50%"></div>
+</div>
+
+<div class="layui-progress layui-progress-big" lay-showPercent="true">
+    <div class="layui-progress-bar layui-bg-blue" lay-percent="80%"></div>
+</div>
+
+<!--面板-->
+<div class="layui-collapse" lay-accordion>
+    <div class="layui-colla-item">
+        <h2 class="layui-colla-title">杜甫</h2>
+        <div class="layui-colla-content layui-show">内容区域</div>
+    </div>
+    <div class="layui-colla-item">
+        <h2 class="layui-colla-title">李清照</h2>
+        <div class="layui-colla-content layui-show">内容区域</div>
+    </div>
+    <div class="layui-colla-item">
+        <h2 class="layui-colla-title">鲁迅</h2>
+        <div class="layui-colla-content layui-show">内容区域</div>
+    </div>
+</div>
+
+
+<script>
+    //注意：选项卡 依赖 element 模块，否则无法进行功能性操作
+    layui.use('element', function(){
+        var element = layui.element;
+
+        //…
+    });
+</script>
+</body>
+</html>

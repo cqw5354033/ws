@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Title</title>
+    <script src="jquery-3.3.1.js"></script>
+    <script src="layer_mobile/layer.js"></script>
+</head>
+<body>
+<button class="a1">信息框</button>
+<button class="a2">提示</button>
+<button class="a3">询问框</button>
+<button class="a4">底部对话框</button>
+<script>
+    $('.a1').click(function () {
+        //信息框
+        layer.open({
+            content: '移动版和PC版不能同时存在同一页面'
+            ,btn: '我知道了'
+        });
+    });
+
+    $('.a2').click(function () {
+        //提示
+        layer.open({
+            content: 'hello layer'
+            ,skin: 'msg'
+            ,time: 2 //2秒后自动关闭
+        });
+    })
+
+    $('.a3').click(function () {
+        //询问框
+        layer.open({
+            content: '您确定要刷新一下本页面吗？'
+            ,btn: ['刷新', '不要']
+            ,yes: function(index){
+                location.reload();
+                layer.close(index);
+            }
+        });
+    })
+
+    $('.a4').click(function () {
+        //底部对话框
+        layer.open({
+            content: '这是一个底部弹出的询问提示'
+            ,btn: [ '删除','取消']
+            ,skin: 'footer'
+            ,yes: function(index, layero){
+                //按钮【按钮一】的回调
+                layer.open({content: '执行删除操作'})
+            }
+        });
+    })
+
+
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

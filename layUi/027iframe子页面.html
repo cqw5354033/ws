@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Title</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <script src="jquery-1.11.3.min.js"></script>
+    <script src="layui/layui.js"></script>
+</head>
+<body>
+<div >
+    <button id="layerDemo" data-method="setTop" class="layui-btn">多窗口模式，层叠置顶</button>
+</div>
+这是子页面
+<script>
+    layui.use('layer',function () {
+        var layer = layui.layer;
+
+        $('#layerDemo').on('click', function(){
+            layer.open({
+                type: 2,
+                area: ['600px'],
+                fixed: false, //不固定
+                maxmin: true,
+                content: '027iframe孙子页面.html',
+                success: function(layero, index) {
+                    layer.iframeAuto(index);
+
+                },
+            });
+        });
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>表单验证</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <script src="layui/layui.js"></script>
+</head>
+<body>
+<div class="layui-form" lay-filter="test1">
+    <div class="layui-form-item">
+        <label class="layui-form-label">下拉</label>
+        <div class="layui-input-inline">
+            <select name="">
+                <option value=""></option>
+                <option value="0">写作</option>
+                <option value="1">阅读</option>
+            </select>
+        </div>
+    </div>
+</div>
+<input type="text" lay-verify="email\phone" lay-ignore="false" lay-verType="alert">
+<input type="checkbox" checked lay-skin="switch" lay-filter="encrypt" title="是否加密" >
+<button lay-submit>提交</button>
+
+<script>
+    layui.use('form', function(){
+        var form = layui.form;
+
+        // 更新渲染：
+        form.render();      //更新全部
+        form.render("select");  //刷新select选择框渲染
+        form.render("select","test1");      //更新 lay-filter="test1" 所在容器内的全部表单状态
+
+        // 事件监听：
+        // 下拉选择框被选中时触发，回调函数返回一个object参数，携带两个成员：
+        form.on('select(filter)',function (data) {
+            console.log(data.elem);//得到select原始DOM对象
+            console.log(data.value);//得到被选中的值
+            console.log(data.othis);//得到美化后的DOM对象
+
+        })
+    });
+</script>
+</body>
+</html>

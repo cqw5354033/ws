@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>这次一定要弄会有数据的分页</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <script src="layui/layui.js"></script>
+</head>
+<body>
+<table id="demo" lay-filter="test"></table>
+<script>
+    layui.use('table', function () {
+        var table = layui.table;
+
+        table.render({
+            elem: '#demo'
+            , height: 312
+            , theme: "#000"
+            , url: 'http://localhost:3000/data' //数据接口
+            , page: true//开启分页,
+            ,limits: [10,20,50]  //每页条数的选择项，默认：[10,20,30,40,50,60,70,80,90]。
+            ,limit: 6 //每页默认显示的数量
+            , cols: [[ //表头
+                {field: 'id', title: 'ID', width: 80, sort: true, fixed: 'left'}
+                , {field: 'username', title: '用户名', width: 80}
+                , {field: 'sex', title: '性别', width: 80, sort: true}
+                , {field: 'city', title: '城市', width: 80}
+                , {field: 'sign', title: '签名', width: 177}
+                , {field: 'experience', title: '积分', width: 80, sort: true}
+                , {field: 'score', title: '评分', width: 80, sort: true}
+                , {field: 'classify', title: '职业', width: 80}
+                , {field: 'wealth', title: '财富aa', width: 135, sort: true}
+            ]],
+            parseData: function (res) { //res 即为原始返回的数据
+                console.log(res);
+                return {
+                    "code": 0, //解析接口状态
+                    "msg": "",
+                    "count": res.length,
+                    "data": res,
+                };
+            }
+            ,request: {
+                pageName: 'pageNum' //页码的参数名称，默认：page
+                ,
+                limitName: 'rows' //每页数据量的参数名，默认：limit
+            }
+
+        });
+
+    });
+</script>
+</body>
+</html>

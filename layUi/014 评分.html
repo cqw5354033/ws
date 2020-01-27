@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>评分</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <script src="layui/layui.js"></script>
+</head>
+<body>
+<div id="test1"></div>
+
+<script>
+    layui.use('rate',function () {
+        var rate = layui.rate;
+        // 渲染
+        var ins1 = rate.render({
+            elem:'#test1',
+            length:'6',
+            value:'4',
+            theme:'red',
+            half:'true',
+            text:'true',
+            // readonly:'true'//只用于展示而不可点
+            setText:function (value) {
+                var arrs={
+                    '1':'极差',
+                    '2':'差',
+                    '3':'一般',
+                    '4':'好',
+                    '5':'很好'
+                };
+                this.span.text(arrs[value] || (value + "星"));
+            },
+            choose:function (value) {
+                if(value>5){
+                    alert('么么哒');
+                }
+            }
+        })
+
+    });
+</script>
+</body>
+</html>

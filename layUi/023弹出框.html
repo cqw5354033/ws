@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <script src="jquery-1.11.3.min.js"></script>
+    <script src="layui/layui.js"></script>
+</head>
+<body>
+<h2>试试可以捕获吗？</h2>&nbsp;
+<script>
+    layui.use('layer',function () {
+        var layer = layui.layer;
+        // layer.msg('hello',{icon: 5});
+
+        //捕获页
+        layer.open({
+            // type: 1,
+            // shade: false,
+            title: "提示", //不显示标题
+            content: 'h2', //捕获的元素，注意：最好该指定的元素要存放在body最外层，否则可能被其它的相对元素所影响
+            closeBtn: 1,
+            /*cancel: function(){
+                layer.msg('捕获就是从页面已经存在的元素上，包裹layer的结构', {time: 5000, icon:6});
+            }*/
+        });
+
+        //询问框
+        // layer.confirm('您是如何看待前端开发？', {
+        //     btn: ['重要','奇葩'], //按钮
+        //
+        // });
+    })
+</script>
+</body>
+</html>
