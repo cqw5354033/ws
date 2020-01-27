@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        divd{
+            position:relative;
+            margin:50px auto;
+            width:100px;
+            height:100px;
+            box-sizing:border-box;
+            border:1px solid #333;
+            background:linear-gradient(45deg, transparent 49.5%, deeppink 49.5%, deeppink 50.5%, transparent 50.5%);
+        }
+        div::before{
+            content:"";
+            position:absolute;
+            left:0;
+            bottom:0;
+            width:0;
+            height:0;
+            border:49px solid transparent;
+            border-left:49px solid deeppink;
+            border-bottom:49px solid deeppink;
+        }
+
+    </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

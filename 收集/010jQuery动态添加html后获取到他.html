@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Title</title>
+    <script src="jquery-1.11.3.min.js"></script>
+</head>
+<body>
+
+<div class = "tree">
+    <ul class = "tree_ul">
+        <a class="ne_font">弹窗</a>
+    </ul>
+</div>
+
+<script>
+    $("body").on('click','.ne_font',function(){
+        alert("test alert");
+        console.log($(this))
+    });
+    $('.ne_font').click(function () {
+        console.log($(this))
+    });
+    va = `<a class='ne_font'>'append测试'</a>`;
+    $(".tree").append(va);
+
+</script>
+</body>
+</html>

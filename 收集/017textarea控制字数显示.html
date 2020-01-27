@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Title</title>
+</head>
+<body>
+<textarea name="content" id="content" onkeyup="cal();" maxlength="100"
+          onpropertychange="if(value.length>100) value=value.substr(0,100)"></textarea>
+
+<div><span class="text_count">还能输入<span class="num_count">100</span>字</span></div>
+<div><span class="text_count"><span class="num_count">0</span>/100</span></div>
+
+<script src="jquery-1.11.3.min.js"></script>
+<script>
+    function cal(){
+
+        var length = $("#content").val().length;
+
+        if(length>100){
+
+            $("#talkCount").text(length);
+
+            alert("字数请在100字以内.");
+
+        }else{
+
+            $(".num_count").text(length);
+
+        }
+
+    }
+</script>
+</body>
+</html>

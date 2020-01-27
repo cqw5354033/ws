@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>Title</title>
+    <script src="jquery-1.11.3.min.js"></script>
+    <style>
+        #test{
+            border: 1px solid #000;
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="test">
+    <div>aa</div>
+</div>
+<script>
+    $("#test").each(function() {
+        var values_stu_evaluate = ($(this).text());
+        if(/^\s*?$/.test(values_stu_evaluate)) {
+            //如果是空的
+            $("#test").hide();
+        } else {
+            $("#test").show();
+        }
+    });
+</script>
+</body>
+</html>
